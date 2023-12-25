@@ -17,7 +17,7 @@ const Helpcollections = () => {
             <div className='filter_content'>
                 <ul className='filter_content_list'>
                     {helpcollections.map((item) => (
-                        <li>{item}</li>
+                        <li><a href='#'>{item}</a></li>
                     ))}
                 </ul>
             </div>
