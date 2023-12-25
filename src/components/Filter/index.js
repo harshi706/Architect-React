@@ -92,11 +92,23 @@ function Filter() {
                 >
                   <div className="px-[50px] my-5">
                     <div className="filter_container flex gap-32">
+                    <div className="grid grid-cols-6">
+                      <div className="col-span-2">
                       <Featured />
+                      </div>
+                      <div className="col-span-1 ml-[-40px]">                   
                       <Collections />
-                      <Styles />
-                      <Colours />
-                      <Rooms />
+</div>
+     <div className="col-span-1">                      
+     <Styles />
+</div>
+     <div className="col-span-1">                      
+     <Colours />
+</div>
+     <div className="col-span-1">                      
+     <Rooms />
+</div>
+                    </div>
                     </div>
                   </div>
                 </div>
