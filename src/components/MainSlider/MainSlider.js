@@ -22,7 +22,7 @@ function MainSlider() {
   );
   const [scrollX, setScrollX] = useState(0);
   const scrl = useRef(null);
-  // const [sliderData, setSliderData] = useState([]);
+  const [sliderData, setSliderData] = useState([]);
 
   // const dispatch = useDispatch();
   // const sliderSelect = useSelector(selectSliderData);
