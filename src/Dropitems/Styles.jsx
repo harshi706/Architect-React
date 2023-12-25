@@ -8,7 +8,7 @@ const Styles = () => {
       <div className='filter_content'>
         <ul className='filter_content_list'>
           {styles.map((style) => (
-            <li>{style}</li>
+            <li><a href='#'>{style}</a></li>
           ))}
         </ul>
       </div>
