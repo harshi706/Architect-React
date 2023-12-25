@@ -8,7 +8,7 @@ const Rooms = () => {
       <div className='filter_content'>
         <ul className='filter_content_list'>
           {rooms.map((room) => (
-            <li>{room}</li>
+            <li><a href='#'>{room}</a></li>
           ))}
         </ul>
       </div>
