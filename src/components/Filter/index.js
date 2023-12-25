@@ -47,10 +47,10 @@ function Filter() {
         isScrolled ? "bg-white" : "bg-white"
       } `}
     >
-      <div className="filter">
+      <div className="filter" style={{ marginLeft: "0px" }}>
         <div className="Filter-array" ref={scrl}>
           <div
-            className={` slider_lr_container arrow-left ${
+            className={` slider_lr_container arrow-left  ${
               scrollX === 0 ? "hidden" : ""
             }`}
           >
@@ -65,7 +65,7 @@ function Filter() {
           {links.map((value, idx) => (
             <div
               key={idx}
-              className={`Filter-array-element ${
+              className={`Filter-array-element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ent ${
                 idx === selectedFilter ? "selected-array-element" : ""
               }`}
               onClick={(event) => handleDropdownClick(event, idx)}
@@ -91,13 +91,24 @@ function Filter() {
                   onClick={(event) => event.stopPropagation()} // Prevent clicks inside the dropdown from closing it
                 >
                   <div className="px-[50px] my-5">
-                    <h2 className="main_heading">Shop Wallpapers</h2>
                     <div className="filter_container flex gap-32">
+                    <div className="grid grid-cols-6">
+                      <div className="col-span-2">
                       <Featured />
+                      </div>
+                      <div className="col-span-1 ml-[-40px]">                   
                       <Collections />
-                      <Styles />
-                      <Colours />
-                      <Rooms />
+</div>
+     <div className="col-span-1">                      
+     <Styles />
+</div>
+     <div className="col-span-1">                      
+     <Colours />
+</div>
+     <div className="col-span-1">                      
+     <Rooms />
+</div>
+                    </div>
                     </div>
                   </div>
                 </div>
