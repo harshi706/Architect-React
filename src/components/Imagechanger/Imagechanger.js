@@ -32,26 +32,25 @@ const Imagechanger = () => {
   };
 
   return (
-    <div className="main-trend imagechanger w-full h-full flex p-2">
-      <div className="left text-container flex flex-col sm:pr-24 sm:pl-12 px-2 w-1/2 h-full p-1">
-        <div className="text-container">
+    <div className="main-trend imagechanger w-full h-full flex gap-[10px] sm:px-[50px] px-[20px]">
+      <div className="left text-container flex flex-col w-1/2 h-full">
+        <div className="text-container gap-5">
           <h1 className="sm:font-bold font-medium sm:text-3xl text-xl">
-            Get to know your <br />
-            health
+            Get to know your health
           </h1>
-          <h3 className="sm:font-bold font-normal text-gray-500 mb-4 sm:w-[80%] w-auto">
-            Bands shown may be sold separately and may not be 
-            available in all countries
+          <h3 className="sm:font-bold font-normal text-gray-500 mb-4 w-auto">
+            Bands shown may be sold separately and may not be available in all
+            countries
           </h3>
         </div>
         {Heading.map((value, idx) => (
           <div key={idx} className="mb-7 trending-choice">
             {idx === 1 && (
               <>
-                <div className="line-horizontal dark-black-line h-1 w-full bg-gray-300 " />
+                {/* <div className="line-horizontal dark-black-line h-1 w-full bg-gray-300 " /> */}
                 <div
                   onClick={() => handleToggle(idx)}
-                  className="flex items-center justify-between"
+                  className="flex items-center justify-between "
                 >
                   <h1 className="my-4 sm:font-bold font-medium sm:text-2xl text-xl text-left cursor-pointer">
                     {value}
@@ -80,28 +79,26 @@ const Imagechanger = () => {
               </div>
             )}
             {openStates[idx] && (
-              <div className={` sm:w-[23rem] w-[80vw] sm:text-left text-justify`}>
+              <div className={` sm:w-[90%] w-[80vw] sm:text-left text-justify `}>
                 <p className={`${idx + 1}text`}>
                   {openStates[idx] ? text[idx] : ""}
                 </p>
-                {idx === 1 && (
+                {/* {idx === 1 && (
                   <hr className="line-horizontal dark-black-line h-1 w-full bg-gray-300 mt-4 mb-2" />
-                )}
+                )} */}
               </div>
             )}
           </div>
         ))}
       </div>
-      <div className="right image-container flex w-1/2 h-full p-1">
+      <div className="right  flex w-1/2 h-full">
         <div className="flex w-full h-full justify-center items-center">
           {img.map((image, i) => (
             <img
               key={i}
               src={image}
               alt=""
-              className={`rounded-[50px] sm:w-[80%] w-[80vw] h-[72%] ${
-                index === i ? "visible" : "hidden"
-              }`}
+              className={` w-full h-full ${index === i ? "visible" : "hidden"}`}
             />
           ))}
         </div>

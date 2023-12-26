@@ -8,8 +8,8 @@ const Doublecard = () => {
 
   return (
     <>
-      <div className="main-doublecard w-full h-full flex  p-1">
-        <div className="left-doublecard  flex flex-col items-center justify-center w-1/2 h-full  p-1">
+      <div className="main-doublecard w-full h-full flex sm:flex-row flex-col  gap-[10px] sm:px-[50px] px-[20px]  ">
+        <div className="left-doublecard  flex flex-col items-center justify-center sm:w-1/2 w-full h-full">
           <div className="flex w-full h-full justify-center items-center">
             <div className="relative flex justify-center items-center  w-full h-full">
               <h1 className=" text-white z-20 font-bold text-2xl absolute">
@@ -19,7 +19,7 @@ const Doublecard = () => {
             </div>
           </div>
         </div>
-        <div className="right-doublecard  flex w-1/2 h-full p-1">
+        <div className="right-doublecard  flex sm:w-1/2 w-full h-full">
           <div className="flex w-full h-full justify-center items-center">
             <div className="relative flex justify-center items-center  w-full h-full">
               <h1 className=" text-white z-20 font-bold text-2xl absolute">

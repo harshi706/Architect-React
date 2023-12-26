@@ -1,5 +1,6 @@
 import Card from "./card";
 import { list } from "../../assets/cards-list";
+import Offer from "../../assets/salesoffer.jpg";
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import PopUp from "../Reviews/PopUp";
@@ -133,9 +134,9 @@ function Cards() {
   return (
     <div className="pb-20">
       <MainSlider />
-      <div className="pt-12  mb-20  bg-white">
+      <div className="pt-12  mb-20  bg-white sm:px-[50px] px-[20px]">
         <div className="mb-2 w-full flex justify-between items-center">
-          <h2 className="text-bold text-2xl font-serif ml-4">
+          <h2 className="text-bold text-2xl font-serif">
             {trendingData ? "Trending Products" : "Trending Product"}
           </h2>
           <div className="Slidenav flex  bg-white text-2xl cursor-pointer  text-white rounded-full gap-2">
@@ -203,16 +204,26 @@ function Cards() {
           )}
         </Swiper>
       </div>
-      <div className="bg-zinc-100 h-40 border border-black ml-12 mr-10 mb-16"></div>
+      <div
+        className="h-40 my-10 sm:px-[50px] px-[20px] rounded-3xl
+      "
+      >
+        <img
+          src={Offer}
+          alt=""
+          className="w-full h-full object-fit rounded-3xl"
+        />
+      </div>
       <div className="w-full sm:h-[80vh] h-[160vh] m-1 ">
         <Imagechanger />
       </div>
-      <div className="w-full sm:h-[60vh] h-[40vh]  mt-2  mb-2  mx-1">
-        <Doublecard/>
-        </div>
-      <div className="pt-12  mb-20  bg-white">
-        <div className="mb-2 w-full flex justify-between items-center">
-          <h2 className="text-bold text-2xl font-serif ml-4 pt-2">
+      <div className="w-full sm:h-[60vh] h-[100vh]  mt-2  mb-2  mx-1">
+        <Doublecard />
+      </div>
+      {/* flooring */}
+      <div className="  my-10  bg-white sm:px-[50px] px-[20px]">
+        <div className="w-full flex justify-between items-center">
+          <h2 className="text-bold text-2xl font-serif">
             {flooringProducts ? "Flooring" : "Beach and Resort"}
           </h2>
           <div className="Slidenav flex bg-slate-700 text-2xl cursor-pointer  text-white rounded-full gap-2">
@@ -279,9 +290,9 @@ function Cards() {
       </div>
 
       {blindsProducts && (
-        <div className="pt-12  mb-20  bg-white">
-          <div className="mb-2 w-full flex justify-between items-center">
-            <h2 className="text-bold text-2xl font-serif ml-4">
+        <div className="my-10  bg-white sm:px-[50px] px-[20px]">
+          <div className="w-full flex justify-between items-center">
+            <h2 className="text-bold text-2xl font-serif">
               {blindsProducts ? "Blinds" : "Beach and Resort"}
             </h2>
             <div className="Slidenav flex bg-slate-700 text-2xl cursor-pointer  text-white rounded-full gap-2">
@@ -349,9 +360,9 @@ function Cards() {
       )}
 
       {curtainsProducts && (
-        <div className="pt-12  mb-20  bg-white">
-          <div className="mb-2 w-full flex justify-between items-center">
-            <h2 className="text-bold text-2xl font-serif ml-4">
+        <div className="my-10  bg-white sm:px-[50px] px-[20px]">
+          <div className=" w-full flex justify-between items-center">
+            <h2 className="text-bold text-2xl font-serif ">
               {curtainsProducts ? "Curtains" : "Beach and Resort"}
             </h2>
             <div className="Slidenav flex bg-slate-700 text-2xl cursor-pointer  text-white rounded-full gap-2">
@@ -419,9 +430,9 @@ function Cards() {
       )}
 
       {sportsAndGymProducts && (
-        <div className="pt-12  mb-20  bg-white">
-          <div className="mb-2 w-full flex justify-between items-center">
-            <h2 className="text-bold text-2xl font-serif ml-4">
+        <div className="my-10  bg-white sm:px-[50px] px-[20px]">
+          <div className=" w-full flex justify-between items-center">
+            <h2 className="text-bold text-2xl font-serif ">
               {sportsAndGymProducts ? "Sports & Gym" : "Beach and Resort"}
             </h2>
             <div className="Slidenav flex bg-slate-700 text-2xl cursor-pointer  text-white rounded-full gap-2">

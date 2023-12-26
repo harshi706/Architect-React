@@ -150,7 +150,7 @@ const HomePage = () => {
             />
           </button>
         </div>}
-        <div className="notch-buttons fixed z-50 py-2 bg-white w-full h-10  bottom-0 flex flex-row justify-evenly">
+        {/* <div className="notch-buttons fixed z-50 py-2 bg-white w-full h-10  bottom-0 flex flex-row justify-evenly">
           <img src={home} alt="" className=" w-6 h-6" />
           
           <img
@@ -160,7 +160,7 @@ const HomePage = () => {
             onClick={handleSearchIconClick}
           />
           <img src={userprofile} alt="" className=" w-6 h-6" />
-        </div>
+        </div> */}
       </div>
     </>
   );

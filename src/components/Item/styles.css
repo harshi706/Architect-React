@@ -168,16 +168,16 @@
   cursor: not-allowed;
 }
 
-.swiper-button-prev {
+/* .swiper-button-prev {
   margin-left: 82%;
   margin-top: 80px;
 
-}
+} */
 
-.swiper-button-next {
+/* .swiper-button-next {
   margin-right: 2%;
   margin-top: 80px;
-}
+} */
 
 .swiper-horizontal>.swiper-scrollbar,
 .swiper-scrollbar.swiper-scrollbar-horizontal {

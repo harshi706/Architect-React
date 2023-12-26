@@ -1,16 +1,30 @@
 .navbar {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    height: 64px;
-    width: 100%;
-    flex: 1 2 1;
-    padding: 0px 30px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  height: 64px;
+  width: 100%;
+  flex: 1 2 1;
 }
 
 .search_icon_mar {
-    margin: 3px 10px;
+  margin: 3px 10px;
 }
+/* .profile-menu{
+  position: relative;
+}
+.profile-menu::after {
+  content: "";
+  position: absolute;
+  top: -0.125rem;
+  left: -0.125rem;
+  right: -0.125rem;
+  bottom: -0.125rem;
+  z-index: -1;
+}
+.profile-menu:hover::after {
+  transform: scale(1.1); 
+} */
 
 .text-costom-co {
   color: #707072;
@@ -22,7 +36,7 @@
   flex: 3;
 }
 
-.icon_container {
+/* .icon_container {
   width: 2.5rem;
   height: 2.5rem;
   padding: 7px;
@@ -31,7 +45,7 @@
 .icon_container:hover {
   background-color: #efefef;
   border-radius: 50%;
-}
+} */
 
 .navbar-left {
   flex: 1;
@@ -113,15 +127,15 @@
 }
 
 .map-icon {
-  display: none;
+  display: block;
 }
 
-@media only screen and (max-width: 800px)  {
+@media only screen and (max-width: 800px) {
   /* .navbar-logo,
   .searchbar, */
-  .navbar-right {
+  /* .navbar-right {
     display: none;
-  }
+  } */
 
   .bottom-navbar {
     align-items: center;
@@ -147,7 +161,6 @@
 .header-div-sStore-icon {
   height: 25px;
   margin-left: 10px;
-  
 }
 
 .cart-notification {
@@ -173,40 +186,36 @@
 }
 
 @media only screen and (max-width: 450px) {
-  
   .mainlogo {
     visibility: visible;
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: scale(0.9);
+    width: 100px;
+    height: 75px;
+  }
+  .searchbar {
+    display: none;
   }
 
   .navbar {
     flex-direction: row;
     align-items: center;
   }
-  
-  
+
   .text-costom-co {
     display: none;
   }
-  
 
- .map-icon{
+  /* .map-icon {
     display: block;
- }
- .right{
+  } */
+  /* .right {
     display: none;
- }
- .mainlogo{
-    transform: scale(0.9);
- }
-
+  } */
 }
-.MuiBackdrop-root.MuiBackdrop-invisible.MuiModal-backdrop.css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop::-webkit-scrollbar{
-
-        width: 10px !important;
-        background-color: #333 !important;
-    
-
+.MuiBackdrop-root.MuiBackdrop-invisible.MuiModal-backdrop.css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop::-webkit-scrollbar {
+  width: 10px !important;
+  background-color: #333 !important;
 }
