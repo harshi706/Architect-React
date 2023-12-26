@@ -8,15 +8,25 @@ import About_Ayatrio from './Footer_child/About_Ayatrio'
 const Footer = () => {
   return (
     <div>
-      <div className='px-[50px] my-5'>
+      <div className='p-12 bg-{#f5f5f5}'>
         <div className='filter_container flex gap-32'>
-
-          <Joinayatrio />
-          <Ayatrio_Family />
-          <Ayatrio_Services />
-          <Help_Supports />
-          <About_Ayatrio />
-
+          <div className='grid grid-cols-6'>
+            <div className='col-span-2 mr-12'>
+              <Joinayatrio />
+            </div>
+            <div className='col-span-1'>
+              <Ayatrio_Family />
+            </div>
+            <div className='col-span-1'>
+              <Ayatrio_Services />
+            </div>
+            <div className='col-span-1'>
+              <Help_Supports />
+            </div>
+            <div className='col-span-1'>
+              <About_Ayatrio />
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -37,7 +37,8 @@ const Colours = () => {
           {colours.map((color) => (
             <li className='color_item'>
               <img className='color_photo' src={color.image} alt={color.name} />
-              {color.name}
+                       <a href='#'> {color.name}  </a>
+
             </li>
           ))}
         </ul>

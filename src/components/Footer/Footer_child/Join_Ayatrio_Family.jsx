@@ -5,7 +5,7 @@ const Joinayatrio = () => {
     return (
         <div className='filter_item'>
             <div>
-                <h4 className='filter_heading gray-text'>Join Ayatrio Family</h4>
+                <h4 className='filter_heading text-black'>Join Ayatrio Family</h4>
                 <img className='w-[20%]' src={Image} alt='' />
             </div>
             <p className='text-2xl'>Enjoy member-only discounts & offers, early access to Ayatrio sale, delicious gift offers and much more. Join for free.​</p>

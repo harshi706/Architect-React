@@ -11,11 +11,11 @@ const aboutcollections = [
 const Aboutcollections = () => {
     return (
         <div className='filter_item'>
-            <h4 className='filter_heading gray-text'>About Ayatrio</h4>
+            <h4 className='filter_heading text-black'>About Ayatrio</h4>
             <div className='filter_content'>
                 <ul className='filter_content_list'>
                     {aboutcollections.map((item) => (
-                        <li>{item}</li>
+                        <li><a href='#'>{item}</a></li>
                     ))}
                 </ul>
             </div>

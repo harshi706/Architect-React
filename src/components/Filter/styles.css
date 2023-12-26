@@ -21,13 +21,11 @@
   display: flex;
   gap: 0.55rem;
   margin: 0;
-  align-items: center;
 }
 
 .after-arrow {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 5px;
   flex: 1 1;
   font-size: 14px;
@@ -35,8 +33,8 @@
 
 .at {
   border: 1px solid #dddd;
-  padding: 8px 15px;
-  border-radius: 20px;
+  padding: 10px 15px;
+  border-radius: 25px;
   display: flex;
 }
 
@@ -76,7 +74,7 @@
 .Filter-array-element-lebel {
   white-space: nowrap;
   font-weight: 600;
-  padding: 0rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .Filter-array-element:hover {
@@ -111,6 +109,7 @@
     overflow-x: auto;
     justify-content: flex-start;
   }
+
   .filter {
     display: flex;
     flex-direction: column;
@@ -137,9 +136,11 @@
   .arrow-right-filter {
     display: none;
   }
+
   .after-arrow {
     margin-bottom: 10px;
   }
+
   .arrow-left {
     display: none;
   }
