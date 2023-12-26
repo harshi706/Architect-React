@@ -40,8 +40,12 @@ const ProfileComponent = () => {
  
   const checkUser = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/auth/user", {
-        withCredentials: true,
+      const token = localStorage.getItem('token');
+      const response = await axios.get('http://localhost:8080/auth/user', {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`, 
+        }
       });
 
       const data = response.data;
@@ -75,30 +79,31 @@ const ProfileComponent = () => {
     setNewEmail(user.email);
   };
 
-  const handleUserUpdate = async ()=>{
+  const handleUserUpdate = async () => {
+    setEditProfile(false);
 
-    setEditProfile(false)
     const updatedProfile = {
-      displayName: user.displayName,
-      email: user.email,
+      displayName: newName,
+      email: newEmail,
       photoURL: user.image,
     };
 
-    try {
-      const headers =  {
-        'Content-Type': 'application/json',
-        // Authorization: `Bearer ${accessToken}`, // Include the user's access token
-      }
+    console.log({updatedProfile});
 
-      const response = await axios.put('http://localhost:8080/auth/user/update', updatedProfile, {headers});
-  
-      const data = await response.json();
-  
+    try {
+      const token = localStorage.getItem('token');
+      const response = await axios.put('http://localhost:8080/auth/update-profile', updatedProfile, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`, 
+        }
+      });
+
+      const data = response.data;
       console.log(data);
     } catch (error) {
       console.error('Error updating user profile:', error);
     }
-  
   }
 
   // loader

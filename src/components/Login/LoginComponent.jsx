@@ -10,8 +10,12 @@ const LoginComponent = () => {
 
   const checkUser = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/auth/user", {
-        withCredentials: true,
+      const token = localStorage.getItem('token');
+      const response = await axios.get('http://localhost:8080/auth/user', {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`, 
+        }
       });
 
       const data = response.data;
