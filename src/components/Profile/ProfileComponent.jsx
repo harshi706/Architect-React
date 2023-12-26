@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const ProfileComponent = () => {
 
@@ -18,7 +19,7 @@ const ProfileComponent = () => {
     const token = urlParams.get('token');
 
     if (token) {
-      localStorage.setItem("token",token)
+      localStorage.setItem("token", token)
     }
   }, []);
 
@@ -37,19 +38,19 @@ const ProfileComponent = () => {
     setEditProfile(true);
   };
 
- 
+
   const checkUser = async () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.get('http://localhost:8080/auth/user', {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`, 
+          Authorization: `Bearer ${token}`,
         }
       });
 
       const data = response.data;
-      console.log("user data",response.data);
+      console.log("user data", response.data);
 
       if (data.isAuthenticated) {
         setIsAuthenticated(true);
@@ -79,7 +80,9 @@ const ProfileComponent = () => {
     setNewEmail(user.email);
   };
 
+  const token = localStorage.getItem('token');
   const handleUserUpdate = async () => {
+
     setEditProfile(false);
 
     const updatedProfile = {
@@ -88,14 +91,11 @@ const ProfileComponent = () => {
       photoURL: user.image,
     };
 
-    console.log({updatedProfile});
-
     try {
-      const token = localStorage.getItem('token');
       const response = await axios.put('http://localhost:8080/auth/update-profile', updatedProfile, {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`, 
+          Authorization: `Bearer ${token}`,
         }
       });
 
@@ -103,6 +103,23 @@ const ProfileComponent = () => {
       console.log(data);
     } catch (error) {
       console.error('Error updating user profile:', error);
+    }
+  }
+
+  const handleAccountDelete = async ()=>{
+    try {
+      const response = await axios.delete('http://localhost:8080/auth/delete-profile', {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        }
+      });
+
+      console.log(response);
+      const data = response.data;
+      navigate('/home')
+    } catch (error) {
+      console.error('Error deleting user profile:', error);
     }
   }
 
@@ -138,16 +155,21 @@ const ProfileComponent = () => {
         </div>
       </div>
       <div className="w-1/2 bg-white shadow-2xl justify-center flex flex-col items-center rounded-lg overflow-hidden py-4">
-        <div className="flex justify-right items-right my-4">
-        {editProfile ? (
-          <div className="text-right">
-            <button className="text-red-500" onClick={handleCancelUpdate}>Cancel</button>
+        <div className="flex justify-around	items-right my-4 w-full ">
+          <div className="flex">
+            {editProfile ? (
+              <div className="text-right">
+                <button className="text-red-500" onClick={handleCancelUpdate}>Cancel</button>
+              </div>
+            ) : (
+              <div className="text-right align-right">
+                <button className="text-green text-sm" onClick={handleUpdateProfile}> <EditIcon /> Edit Profile</button>
+              </div>
+            )}
           </div>
-        ) : (
-          <div className="text-right align-right">
-            <button className="text-green text-sm" onClick={handleUpdateProfile}> <EditIcon/> Edit Profile</button>
+          <div className="flex justify-between hover:cursor-pointer">
+              <DeleteIcon onClick={handleAccountDelete} />
           </div>
-        )}
         </div>
         <img
           className="s h-48 w-48 rounded-full  object-cover"
@@ -171,10 +193,10 @@ const ProfileComponent = () => {
           />
         </div>
         {
-          editProfile &&  
+          editProfile &&
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleUserUpdate}>Update Profile</button>
         }
-        
+
       </div>
     </div>
   );
