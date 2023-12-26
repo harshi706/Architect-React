@@ -168,16 +168,32 @@
   cursor: not-allowed;
 }
 
-/* .swiper-button-prev {
+.swiper-button-prev {
   margin-left: 82%;
-  margin-top: 80px;
+  margin-top: 132px;
+font-weight: bolder;
+background-color: #a6a6a6;
+border-radius: 50%;
+width: 32px;
+height: 32px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
 
-} */
+.swiper-button-next {
+  margin-right: 6%;
+  margin-top: 132px;
+  font-weight: bolder;
+  background-color: #a6a6a6;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-/* .swiper-button-next {
-  margin-right: 2%;
-  margin-top: 80px;
-} */
+}
 
 .swiper-horizontal>.swiper-scrollbar,
 .swiper-scrollbar.swiper-scrollbar-horizontal {
