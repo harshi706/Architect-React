@@ -33,24 +33,6 @@ function Header({ howMuchScrolled }) {
     setSearchQuery(event.target.value);
   };
 
-  const [userdata, setUserdata] = useState({});
-  console.log("response", userdata);
-
-  const getUser = async () => {
-    try {
-      const response = await axios.get(
-        "http://localhost:8080/auth/login/sucess",
-        {
-          withCredentials: true,
-        }
-      );
-
-      setUserdata(response.data.user);
-      // console.log("user: ", response.data.user);
-    } catch (error) {
-      console.log("error", error);
-    }
-  };
 
   const [searchQuery, setSearchQuery] = useState("");
   const dispatch = useDispatch();
@@ -60,17 +42,10 @@ function Header({ howMuchScrolled }) {
     // console.log("search called");
   }, [dispatch, searchQuery]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      await getUser();
-    };
-    fetchData();
-  }, []);
 
   const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
-      // console.log(window.scrollY);
       if (window.scrollY > 0) {
         setIsScrolled(true);
       } else {

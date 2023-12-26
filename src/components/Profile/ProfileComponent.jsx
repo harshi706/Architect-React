@@ -45,7 +45,7 @@ const ProfileComponent = () => {
       });
 
       const data = response.data;
-      console.log("tahir",response.data);
+      console.log("user data",response.data);
 
       if (data.isAuthenticated) {
         setIsAuthenticated(true);

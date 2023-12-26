@@ -1,11 +1,32 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Google } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import mainlogo from "../../assets/ayatriologo.png";
+import axios from "axios";
 
 const LoginComponent = () => {
 
   const navigate = useNavigate();
+
+  const checkUser = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/auth/user", {
+        withCredentials: true,
+      });
+
+      const data = response.data;
+
+      if (data.isAuthenticated) {
+        navigate('/profile')
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  useEffect(() => {
+    checkUser();
+  }, []);
 
   const handleGoogleLogin = async () => {
     try {
@@ -17,10 +38,6 @@ const LoginComponent = () => {
 
   return (
     <div className="flex items-center transform translate-y-14 justify-center">
-
-
-
-
       <div className="bg-white">
         <div className='img__con111'>
           <img src={mainlogo} alt="logo" className="w-48 m-2" />
