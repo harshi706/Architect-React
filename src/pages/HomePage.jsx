@@ -23,11 +23,11 @@ import { CardData } from '../Features/Slices/FIrstCardSlice';
 const HomePage = () => {
   const dispatch = useDispatch();
   const FirstCardData= useSelector(CardData);
-  useEffect(() => {
-    dispatch({ type: "FETCH_FIRST_CARD_REQUEST" });
-    dispatch({ type: "FETCH_SLIDER_VIEW_REQUEST" });
-  }
-  , [dispatch]);
+  // useEffect(() => {
+  //   dispatch({ type: "FETCH_FIRST_CARD_REQUEST" });
+  //   dispatch({ type: "FETCH_SLIDER_VIEW_REQUEST" });
+  // }
+  // , [dispatch]);
   
   const loader = false
   const navigate = useNavigate();
