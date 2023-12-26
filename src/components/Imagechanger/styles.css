@@ -18,20 +18,40 @@
     align-items: center;
   }
 
-  .imagechanger .right img {
-    width: 90%; /* Adjust the width of the image as needed */
-    height: auto; /* Maintain the aspect ratio */
-    border-radius: 50px; /* Apply the border-radius to the image */
-  }
+  /* .imagechanger .right img {
+    width: 90%; 
+    height: auto;
+    
+  } */
 }
 /* Add custom styles for Swiper navigation here */
-.swiper-button-prev {
+/* .swiper-button-prev {
   margin-left: 88%;
 }
 
 .swiper-button-next {
   right: 20px; 
+} */
+
+.slick-prev {
+  left: 3% !important;
+  z-index: 1;
+}
+.slick-next {
+  right: 3% !important;
+  z-index: 1;
 }
 
-
+.slick-prev:before,.slick-next:before {
+  color: red;
+}
+.slick-slider.slick-initialized {
+  width: 100vw;
+}
+.slick-arrow.slick-prev {
+  background: black;
+}
+.slick-arrow.slick-next {
+  background: black;
+}
 

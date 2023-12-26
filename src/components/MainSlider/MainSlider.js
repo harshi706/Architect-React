@@ -61,7 +61,7 @@ console.log(sliderData)
 
   if (products.length > 0) {
     return (
-      <div className="slider-container">
+      <div className="slider-container sm:px-[50px] px-[20px]">
         <div className="arrow-left" onClick={() => slide(-380)}>
           {scrollX > 0 && <BsArrowLeftCircleFill className="arrow-nav" />}
           {/* <BsArrowLeftCircleFill className='arrow-nav' /> */}

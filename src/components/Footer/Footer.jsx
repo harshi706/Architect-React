@@ -8,7 +8,7 @@ import About_Ayatrio from './Footer_child/About_Ayatrio'
 const Footer = () => {
   return (
     <div>
-      <div className='px-[50px] my-5'>
+      <div className='p-12 bg-{#f5f5f5}'>
         <div className='filter_container flex gap-32'>
           <div className='grid grid-cols-6'>
             <div className='col-span-2 mr-12'>

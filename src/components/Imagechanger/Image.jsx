@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const ProgressBar = ({ progress }) => (
-  <div style={{ position: 'absolute', top: '28px', left: '62px', width: '80%', height: '5px', background: '#ffffff' }}>
+  <div className="absolute top-[0px] left-[0px] w-[100%] h-[5px] bg-white ">
     <div
+    className=" bg-[#808080] h-full"
       style={{
         width: `${progress}%`,
-        height: '100%',
-        background: '#808080',
-        transition: 'width 1s',
+        transition: "width 3s",
       }}
     ></div>
   </div>
@@ -54,18 +53,14 @@ const Image = () => {
 
   const handleCarouselClick = (increment) => {
     const totalImages = images[index]?.length || 1; // Avoid division by zero if there are no images
-    setCarouselIndex((prevIndex) => (prevIndex + increment + totalImages) % totalImages);
+    setCarouselIndex(
+      (prevIndex) => (prevIndex + increment + totalImages) % totalImages
+    );
   };
 
   const renderImages = () => {
     if (index === -1) {
-      return (
-        <img
-          src={images[0][0]}
-          alt=""
-          className={`w-[80%] h-[72%]`}
-        />
-      );
+      return <img src={images[0][0]} alt="" className={`w-[100%] h-[100%]`} />;
     }
 
     return images[index].map((src, imgIdx) => (
@@ -73,7 +68,9 @@ const Image = () => {
         key={imgIdx}
         src={src}
         alt=""
-        className={` w-[80%] h-[72%] ${imgIdx === carouselIndex ? '' : 'hidden'}`}
+        className={` w-[100%] h-[100%] ${
+          imgIdx === carouselIndex ? "" : "hidden"
+        }`}
       />
     ));
   };
@@ -84,9 +81,11 @@ const Image = () => {
     const interval = setInterval(() => {
       if (index !== -1) {
         setCarouselIndex((prevIndex) => (prevIndex + 1) % totalImages);
-        setProgress((prevProgress) => (prevProgress + (1 / totalImages) * 100) % 100);
+        setProgress(
+          (prevProgress) => (prevProgress + (1 / totalImages) * 100) % 100
+        );
       }
-    }, 1000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [index, images]);
@@ -97,8 +96,8 @@ const Image = () => {
 
   return (
     <>
-      <div className="main-image w-full h-100 bg-gray-100 rounded-[50px] flex sm:flex-row flex-col p-2">
-        <div className="left-image text-container flex flex-col items-center justify-center sm:w-1/2 w-full h-full pt-5">
+      <div className="main-image w-full h-100  flex gap-[10px] sm:flex-row flex-col sm:px-[50px] px-[20px]">
+        <div className="left-image text-container flex flex-col m-auto justify-center sm:w-1/2 w-full h-full">
           <div className="sm:text-3xl text-xl font-bold mb-2">
             Trending adfsdd fjddf dffg <br />
             fgdjd vfvdnd
@@ -111,7 +110,7 @@ const Image = () => {
             <div key={idx} className="mb-7">
               {idx === 1 && (
                 <>
-                  <div className="line-horizontal dark-black-line h-1 w-full bg-gray-300" />
+                  {/* <div className="line-horizontal dark-black-line h-1 w-full bg-gray-300" /> */}
                   <div
                     onClick={() => toggleIndex(idx)}
                     className="flex items-center justify-between sm:w-auto w-[80vw]"
@@ -146,15 +145,15 @@ const Image = () => {
                 <p className={`${idx + 1}text`}>
                   {index === idx ? text[idx] : ""}
                 </p>
-                {idx === 1 && (
+                {/* {idx === 1 && (
                   <hr className="line-horizontal dark-black-line h-1 w-full bg-gray-300" />
-                )}
+                )} */}
               </div>
             </div>
           ))}
         </div>
-        <div className="right-image image-container flex sm:w-1/2 w-full h-full p-1">
-          <div className="flex w-full h-full justify-center items-center relative pt-8">
+        <div className="right-image image-container flex sm:w-1/2 w-full h-full">
+          <div className="flex w-full h-full justify-center  relative">
             {progress > 0 && <ProgressBar progress={progress} />}
             {renderImages()}
             <div
