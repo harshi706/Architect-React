@@ -2,15 +2,17 @@ import React from "react";
 import { Google } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import mainlogo from "../../assets/ayatriologo.png";
-import axios from "axios";
 
 const LoginComponent = () => {
+
   const navigate = useNavigate();
 
   const handleGoogleLogin = async () => {
     try {
-      window.open("http://localhost:8080/auth/google/callback", "_self")
-    } catch (error) { }
+      window.open("http://localhost:8080/auth/google/callback","_self");
+    } catch (error) {
+      console.error("Error initiating Google OAuth:", error);
+    }
   };
 
   return (

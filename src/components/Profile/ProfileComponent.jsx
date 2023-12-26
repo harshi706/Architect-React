@@ -1,4 +1,4 @@
-import { Home, Logout } from "@mui/icons-material";
+import { Home } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -13,6 +13,15 @@ const ProfileComponent = () => {
   const [newName, setNewName] = useState("");
   const [newEmail, setNewEmail] = useState("");
 
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+
+    if (token) {
+      localStorage.setItem("token",token)
+    }
+  }, []);
+
   let navigate = useNavigate();
 
   const handleHomeClick = () => {
@@ -20,9 +29,8 @@ const ProfileComponent = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("Login");
+    localStorage.removeItem("token");
     window.open("http://localhost:8080/auth/logout", "_self");
-    navigate("/home");
   };
 
   const handleUpdateProfile = () => {
@@ -75,12 +83,11 @@ const ProfileComponent = () => {
       email: user.email,
       photoURL: user.image,
     };
-    const accessToken = user.accessToken;
-    console.log("token",accessToken);
+
     try {
       const headers =  {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${accessToken}`, // Include the user's access token
+        // Authorization: `Bearer ${accessToken}`, // Include the user's access token
       }
 
       const response = await axios.put('http://localhost:8080/auth/user/update', updatedProfile, {headers});
