@@ -1,24 +1,47 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Google } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import mainlogo from "../../assets/ayatriologo.png";
 import axios from "axios";
 
 const LoginComponent = () => {
+
   const navigate = useNavigate();
+
+  const checkUser = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const response = await axios.get('http://localhost:8080/auth/user', {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`, 
+        }
+      });
+
+      const data = response.data;
+
+      if (data.isAuthenticated) {
+        navigate('/profile')
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  useEffect(() => {
+    checkUser();
+  }, []);
 
   const handleGoogleLogin = async () => {
     try {
-      window.open("http://localhost:8080/auth/google/callback", "_self")
-    } catch (error) { }
+      window.open("http://localhost:8080/auth/google/callback","_self");
+    } catch (error) {
+      console.error("Error initiating Google OAuth:", error);
+    }
   };
 
   return (
     <div className="flex items-center transform translate-y-14 justify-center">
-
-
-
-
       <div className="bg-white">
         <div className='img__con111'>
           <img src={mainlogo} alt="logo" className="w-48 m-2" />
