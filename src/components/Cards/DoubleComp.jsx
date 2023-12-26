@@ -7,7 +7,7 @@ import Double from './Double';
 const DoubleComp = () => {
   return (
     <div>
-      <div className='grid grid-cols-2 h-[35rem] gap-4'>
+      <div className='grid grid-cols-2 h-[35rem] gap-4 mb-12'>
         <div className='col-span-1 ml-12 pr-8 bg-green-950 text-white overflow-hidden'>
         <div ><div className='flex text-3xl pl-56 pt-16'> <FaApple size={32}/>Music</div>
         <div className='text-md pl-52'> Over 100 million songs.</div>
