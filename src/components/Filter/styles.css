@@ -3,7 +3,6 @@
   max-width: 100vw;
   position: relative;
   padding: 1rem 0 0.5rem 1.5rem;
-  margin-left: 35px;
 }
 
 .Filter-array {
@@ -22,7 +21,6 @@
   display: flex;
   gap: 0.55rem;
   margin: 0;
-  /* padding: 0.7rem 1.1rem; */
 }
 
 .after-arrow {
@@ -115,19 +113,16 @@
   .filter {
     display: flex;
     flex-direction: column;
-    padding:1rem 0 0.5rem 0 ;
-    /* margin-left: -13px; */
   }
 
   .Filter-array-element {
     display: flex;
-    gap: 0.00rem;
+    gap: 0.55rem;
     margin: 0;
     align-items: center;
-    justify-content: center;
     white-space: nowrap;
     font-weight: 600;
-    padding: 0.7rem 0.3rem;
+    padding: 0.7rem 1.1rem;
   }
 
   .selected-array-element {
@@ -143,7 +138,7 @@
   }
 
   .after-arrow {
-    display: none;
+    margin-bottom: 10px;
   }
 
   .arrow-left {

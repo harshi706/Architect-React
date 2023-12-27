@@ -34,9 +34,9 @@ const Search = ({ places, onResultClick }) => {
   };
 
   return (
-    <div className="main-search absolute shadow-lg z-20 top-[14%] left-3 ">
+    <div className="main-search absolute shadow-lg z-20 top-[14%] left-3">
       <div
-        className="search flex items-center justify-center border-none mt-[-60px] bg-white"
+        className="search flex items-center border-none bg-white"
         style={{
           borderRadius: "10px 10px 0px 10px",
         }}
@@ -44,10 +44,9 @@ const Search = ({ places, onResultClick }) => {
         <input
           type="text"
           placeholder="Search Ayatrio Maps"
-          className="searchTerm w-[17rem] h-10   border-white p-4 active:border-none focus:outline-none"
+          className="searchTerm w-[17rem] h-10 border-white p-4 active:border-none focus:outline-none"
           style={{
             borderRadius: "10px 10px 0px 0px",
-
           }}
         />
         <div className="searchIcon bg-white flex justify-center items-center w-[2rem]">
@@ -56,7 +55,7 @@ const Search = ({ places, onResultClick }) => {
       </div>
 
       <div
-        className="dropdown-container sm:block hidden absolute sm:top-auto top-10 bg-white w-[19rem] h-44 border border-gray-200 shadow-md overflow-auto"
+        className="dropdown-container bg-white w-[19rem] h-44 border border-gray-200 shadow-md overflow-auto"
         style={{
           borderRadius: "0px 0px 15px 15px",
         }}

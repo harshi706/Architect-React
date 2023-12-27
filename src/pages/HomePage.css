@@ -18,9 +18,9 @@
 
    @media only screen and (max-width: 450px) {
 
-   /* .fixed-ayatrio-map{
+   .fixed-ayatrio-map{
     display: none;
-   } */
+   }
    .notch-buttons{
     display: flex;
    }

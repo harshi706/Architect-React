@@ -47,7 +47,7 @@ function Filter() {
         isScrolled ? "bg-white" : "bg-white"
       } `}
     >
-      <div className="filter">
+      <div className="filter" style={{ marginLeft: "0px" }}>
         <div className="Filter-array" ref={scrl}>
           <div
             className={` slider_lr_container arrow-left  ${
@@ -72,33 +72,16 @@ function Filter() {
               onMouseEnter={() => setActiveDropdown(idx)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              
-              {value && (
+              {/* {value && (
                 <img
-                  src={choserightfloor}
+                  src={value.imgSrc}
                   alt="NA"
-                  className={` relative rounded-full sm:w-[40px] w-[40px] sm:h-[40px] h-[40px] sm:p-2 p-2 mx-2 bg-gray-100 whitespace-nowrap  top-0  flex items-center justify-center 
-                  
-                  ${idx === 1 ? "block" : "hidden"}
-                  
-                  `}
+                  className="Filter-array-element-img"
                 />
-              )
-              }
-
-               {value && (
-               
-                <p
-                  className={`Filter-array-element-lebel rounded-full flex items-center justify-center mx-2 bg-gray-100 whitespace-nowrap ${
-                    value.label === "Find Floor" ? "hidden" : "block"
-                  }
-                  ${value.label==="Sport & Gyn Flooring" ? " w-44 h-10":"w-28 h-10"}
-                  `}
-                >
-                  {value.label}
-                </p>
-                
-              )} 
+              )} */}
+              {value && (
+                <p className="Filter-array-element-lebel">{value.label}</p>
+              )}
 
               {activeDropdown === idx && (
                 <div
@@ -109,23 +92,23 @@ function Filter() {
                 >
                   <div className="px-[50px] my-5">
                     <div className="filter_container flex gap-32">
-                      <div className="grid grid-cols-6">
-                        <div className="col-span-2">
-                          <Featured />
-                        </div>
-                        <div className="col-span-1 ml-[-40px]">
-                          <Collections />
-                        </div>
-                        <div className="col-span-1">
-                          <Styles />
-                        </div>
-                        <div className="col-span-1">
-                          <Colours />
-                        </div>
-                        <div className="col-span-1">
-                          <Rooms />
-                        </div>
+                    <div className="grid grid-cols-6">
+                      <div className="col-span-2">
+                      <Featured />
                       </div>
+                      <div className="col-span-1 ml-[-40px]">                   
+                      <Collections />
+</div>
+     <div className="col-span-1">                      
+     <Styles />
+</div>
+     <div className="col-span-1">                      
+     <Colours />
+</div>
+     <div className="col-span-1">                      
+     <Rooms />
+</div>
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -142,8 +125,8 @@ function Filter() {
             />
           </div>
         </div>
-        <div className="after-arrow sm:block hidden">
-          <div className="at h-[40px]">
+        <div className="after-arrow">
+          <div className="at">
             <img src={filter} alt="" className="seachbar-div2-icon" />
             Filters
           </div>

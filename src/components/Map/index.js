@@ -71,7 +71,7 @@ const Map = ({ setBoundaries, coords, places }) => {
       ) : (
         <>
           {/* <Sidebar places={places} /> */}
-          <Search places={places} onResultClick={handleResultClick} className="sm:block hidden" />
+          <Search places={places} onResultClick={handleResultClick} />
           <GoogleMap
             mapContainerClassName="map-container"
             onLoad={onLoad}

@@ -11,6 +11,7 @@ import { list3 } from "../../assets/mainslide-list";
 import _debounce from "lodash/debounce";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  
   selectSliderData,
   selectSliderLoader,
 } from "../../Features/Slices/sliderSlice";
@@ -40,16 +41,15 @@ function MainSlider() {
 // console.log(sliderData)
   useEffect(() => {
     if (scrl.current) {
-      scrl.current.scrollLeft = 0;
+      scrl.current.scrollLeft = 380;
       scrl.current.style.transition = "none";
     }
   }, []);
-  //380
   // console.log("slider data", sliderData);
   console.log(products);
   const slide = (shift) => {
     if (scrl.current) {
-      const targetScroll = Math.max(scrl.current.scrollLeft + shift, 0);
+      const targetScroll = scrl.current.scrollLeft + shift;
 
       scrl.current.scrollTo({
         left: targetScroll,
@@ -61,10 +61,10 @@ function MainSlider() {
 
   if (products.length > 0) {
     return (
-      <div className="slider-container ">
-        <div className="arrow-left z-20" onClick={() => slide(-190)}>
+      <div className="slider-container sm:px-[50px] px-[20px]">
+        <div className="arrow-left" onClick={() => slide(-380)}>
           {scrollX > 0 && <BsArrowLeftCircleFill className="arrow-nav" />}
-          {/* <BsArrowLeftCircleFill className="arrow-nav" /> */}
+          {/* <BsArrowLeftCircleFill className='arrow-nav' /> */}
         </div>
         <div className="slider-cont" ref={scrl}>
           {products.map((prod, i) => (

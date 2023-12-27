@@ -1,4 +1,4 @@
-// import x from '../../../assets/Virtualimg'--- this is correct but why cant access the images
+// import x from '../../../assets/Virtualimg'--- this is correct
 import Image1 from "../../../assets/last3/image1.png";
 import Image2 from "../../../assets/last3/image2.png";
 

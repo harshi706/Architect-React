@@ -24,7 +24,7 @@ const MapPage = () => {
 
   return (
     <>
-    {/* <Header/> */}
+    <Header/>
     <Map setBoundaries={setBoundaries} coords={coords} places={places} />
     </>
   )
