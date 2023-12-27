@@ -26,7 +26,7 @@ import Skeleton from "react-loading-skeleton";
 import Skeletoncard from "../Skeleton/Skeletoncard";
 import { useSelector } from "react-redux";
 import { selectRecommendedProduct } from "../../Features/Slices/recommendationSlice";
-import Doublecard from "../Doublecard/Doublecard";
+// import Doublecard from "../Doublecard/Doublecard";
 import Multicard from "../Imagechanger/Multicard";
 import Footer from "../Footer/Footer";
 import Tabs from "./Tabs";
@@ -218,9 +218,9 @@ function Cards() {
       <div className="w-full sm:h-[80vh] h-[160vh] m-1 ">
         <Imagechanger />
       </div>
-      <div className="w-full sm:h-[60vh] h-[100vh]  mt-2  mb-2  mx-1">
+      {/* <div className="w-full sm:h-[60vh] h-[100vh]  mt-2  mb-2  mx-1">
         <Doublecard />
-      </div>
+      </div> */}
       {/* flooring */}
       <div className="  my-10  bg-white sm:px-[50px] px-[20px]">
         <div className="w-full flex justify-between items-center">

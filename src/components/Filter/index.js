@@ -80,8 +80,30 @@ function Filter() {
                 />
               )} */}
               {value && (
-                <p className="Filter-array-element-lebel">{value.label}</p>
+                <img
+                  src={choserightfloor}
+                  alt="NA"
+                  className={` relative rounded-full sm:w-[40px] w-[40px] sm:h-[40px] h-[40px] sm:p-2 p-2 mx-2 sm:bg-white bg-gray-100 whitespace-nowrap  top-0  flex items-center justify-center 
+                  
+                  ${idx === 1 ? "sm:hidden block" : "hidden"}
+                  
+                  `}
+                />
               )}
+              {value && (
+                <p
+                  className={` sm:text-base text-sm Filter-array-element-lebel sm:block rounded-full flex items-center justify-center mx-2 sm:bg-white bg-gray-100 whitespace-nowrap ${
+                    value.label === "Find Floor" ? "hidden" : "block"
+                  }
+  ${value.label === "Sport & Gyn Flooring" ? " w-44 h-8" : "w-28 h-8"}
+  `}
+                >
+                  {value.label}
+                </p>
+              )}
+              {/* {value && (
+                <p className="Filter-array-element-lebel">{value.label}</p>
+              )} */}
 
               {activeDropdown === idx && (
                 <div
@@ -92,23 +114,23 @@ function Filter() {
                 >
                   <div className="px-[50px] my-5">
                     <div className="filter_container flex gap-32">
-                    <div className="grid grid-cols-6">
-                      <div className="col-span-2">
-                      <Featured />
+                      <div className="grid grid-cols-6">
+                        <div className="col-span-2">
+                          <Featured />
+                        </div>
+                        <div className="col-span-1 ml-[-40px]">
+                          <Collections />
+                        </div>
+                        <div className="col-span-1">
+                          <Styles />
+                        </div>
+                        <div className="col-span-1">
+                          <Colours />
+                        </div>
+                        <div className="col-span-1">
+                          <Rooms />
+                        </div>
                       </div>
-                      <div className="col-span-1 ml-[-40px]">                   
-                      <Collections />
-</div>
-     <div className="col-span-1">                      
-     <Styles />
-</div>
-     <div className="col-span-1">                      
-     <Colours />
-</div>
-     <div className="col-span-1">                      
-     <Rooms />
-</div>
-                    </div>
                     </div>
                   </div>
                 </div>
@@ -125,8 +147,8 @@ function Filter() {
             />
           </div>
         </div>
-        <div className="after-arrow">
-          <div className="at">
+        <div className="after-arrow sm:block hidden">
+          <div className="at h-[40px]">
             <img src={filter} alt="" className="seachbar-div2-icon" />
             Filters
           </div>
