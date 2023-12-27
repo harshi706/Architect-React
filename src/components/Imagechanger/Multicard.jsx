@@ -17,7 +17,7 @@ const Multicard = () => {
   return (
     <div>
       <div className="bg-zinc-50 rounded-lg h-100 sm:px-[50px] px-[20px] overflow-x-auto">
-        <div className="sm:text-5xl text-3xl font-bold w-full font-sans">
+        <div className="sm:text-5xl text-2xl font-bold w-full font-sans">
           Why Ayatrio so innovative
           <br />
           for home furnishing.
@@ -48,9 +48,11 @@ const Multicard = () => {
               slidesPerView: 3,
             },
           }}
+className="ml-[-50px]"
+          
         >
-          <SwiperSlide>
-            <div className=" relative bg-white rounded-xl sm:w-[80%] w-[80vw] sm:h-320px h-auto mx-0">
+          <SwiperSlide >
+            <div className=" relative bg-white rounded-xl sm:w-[100%] w-[80vw] sm:h-[300px] h-auto  ">
               <div className="mt-8 ml-6 ">
                 <CiDeliveryTruck size={52} />
               </div>
@@ -68,7 +70,7 @@ const Multicard = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="relative bg-white rounded-xl sm:w-[80%] w-[80vw] sm:h-320px h-auto mx-auto">
+            <div className="relative bg-white rounded-xl sm:w-[100%] w-[80vw] sm:h-[300px]  h-auto  " >
               <div className="mt-8 ml-6 mr-12">
                 <IoChatbubblesOutline size={46} />
               </div>
@@ -85,7 +87,7 @@ const Multicard = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="relative bg-white rounded-xl sm:w-[80%] w-[80vw] sm:h-320px h-auto mx-auto">
+            <div className="relative bg-white rounded-xl sm:w-[100%] w-[80vw] sm:h-[300px] h-auto ">
               <div className="mt-8 ml-6 mr-12">
                 <IoMdContacts size={48} />
               </div>
@@ -103,7 +105,7 @@ const Multicard = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="relative bg-white rounded-xl sm:w-[80%] w-[80vw] sm:h-320px h-auto mx-auto">
+            <div className="relative bg-white rounded-xl sm:w-[100%] w-[80vw] sm:h-300px h-auto">
               <div className="mt-8 ml-6 mr-12">
                 <MdMenuBook size={44} />
               </div>

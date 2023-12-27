@@ -239,3 +239,13 @@ justify-content: center;
   gap: 5px;
   margin-left:15px;
 }
+
+
+@media only screen and (max-width: 450px) {
+.swiper-button-prev{
+margin-left: 65%;
+}
+.swiper-button-next{
+margin-right: 6%;
+}
+}

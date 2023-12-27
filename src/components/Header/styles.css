@@ -191,8 +191,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: scale(0.9);
-    width: 100px;
+    margin-left: -15px;
+    width: 130px;
     height: 75px;
   }
   .searchbar {

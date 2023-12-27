@@ -9,7 +9,7 @@ const ProductPage = () => {
  
   return (
     <>
-    <Header/>
+    <Header classname="z-10"/>
     <Topbar/>
     <ProductSidebar/>
     <Products/>
