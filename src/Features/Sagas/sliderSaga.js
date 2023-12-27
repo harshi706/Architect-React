@@ -8,7 +8,7 @@ function* fetchSliderViewSaga() {
     yield put(fetchSliderRequest(true));
     const data = yield call(fetchSliderView);
     yield put(getSliderSuccess(data));
-    console.log("slider data", data);
+    // console.log("slider data", data);
   } catch (error) {
     console.error("Error fetching slider data:", error);
     yield put(getSliderFailure());
