@@ -4,13 +4,14 @@ import PlaceInfo from "./Other/PlaceInfo";
 import Amenities from "./Other/Amenities";
 import Calendar from "./Other/Calendar";
 import Card from "./Other/Card";
+import ItemPage from "../../pages/ItemPage";
 
 const RoomInfo = () => {
   return (
     <div className="flex my-6 ml-1" style={{ width: "100%" }}>
       <div className="mr-4 sm:w-[60%]">
         <div className="room-details pb-4">
-          <h2 className="sm:text-2xl text-lg sm:font-semibold font-medium ">
+          <h2 className="sm:text-2xl text-lg sm:font-semibold font-medium mt-[24rem]">
             Entire villa in Nandgaon, India
           </h2>
           <div className=" text-base">
