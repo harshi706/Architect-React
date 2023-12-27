@@ -7,17 +7,10 @@ import "../components/Product/styles.css";
 const ProductPage = () => {
   return (
     <>
-<<<<<<< HEAD
       <Header />
       <Topbar />
       <ProductSidebar />
       <Products />
-=======
-    <Header/>
-    <Topbar/>
-    <ProductSidebar/>
-    <Products/>
->>>>>>> parent of 918d1b7 (Mobile Responsiveness(part 4))
     </>
   );
 };
