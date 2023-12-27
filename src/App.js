@@ -1,64 +1,70 @@
-import React,{useState,useEffect} from 'react';
-import { Routes, Route } from 'react-router-dom';
-import HomePage from "./pages/HomePage";
-import MapPage from "./pages/MapPage";
-import ProductPage from "./pages/ProductPage";
-import MagazinePage from "./pages/MagazinePage";
-import RoomPage from "./pages/RoomPage";
-import CheckoutPage from "./pages/CheckoutPage";
+import React, { useState, useEffect, lazy, Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
 import { FormProvider } from "./components/Checkoutcomp/FormContext";
-import Shipping from "./pages/Shipping";
-import Paymentpage from "./pages/Paymentpage";
-import Virtualexperiance from "./pages/Virtualexperiance";
-import Splashpage from './pages/Splashpage';
-import LoginPage from './pages/LoginPage';
-import ProfilePage from './pages/ProfilePage';
-import CartPage from './pages/CartPage';
-import ItemPage from './pages/ItemPage';
+
+const Splashpage = lazy(() => import("./pages/Splashpage"));
+const HomePage = lazy(() => import("./pages/HomePage"));
+const MapPage = lazy(() => import("./pages/MapPage"));
+const ProductPage = lazy(() => import("./pages/ProductPage"));
+const MagazinePage = lazy(() => import("./pages/MagazinePage"));
+const RoomPage = lazy(() => import("./pages/RoomPage"));
+const CheckoutPage = lazy(() => import("./pages/CheckoutPage"));
+const Shipping = lazy(() => import("./pages/Shipping"));
+const Paymentpage = lazy(() => import("./pages/Paymentpage"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const ProfilePage = lazy(() => import("./pages/ProfilePage"));
+const Virtualexperiance = lazy(() => import("./pages/Virtualexperiance"));
+const CartPage = lazy(() => import("./pages/CartPage"));
+const ItemPage = lazy(() => import("./pages/ItemPage"));
 
 function App() {
+  const [deviceId, setDeviceId] = useState(null);
 
-  const [deviceId,setDeviceId] = useState(null)
-
-  const generateDeviceId = ()=> {
+  const generateDeviceId = () => {
     const existingDeviceId = localStorage.getItem("deviceId");
-    if(existingDeviceId){
+    if (existingDeviceId) {
       setDeviceId(existingDeviceId);
-    }else{
+    } else {
       const navigatorInfo = `${navigator.userAgent}${navigator.language}${navigator.platform}`;
       const hash = btoa(navigatorInfo);
       setDeviceId(hash);
       localStorage.setItem("deviceid", hash);
     }
-  }
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     generateDeviceId();
-  },[])
-  
+  }, []);
+
   console.log("Device ID:", deviceId);
+
   return (
     <>
       <FormProvider>
-        <Routes>
-          <Route path="/" element={<Splashpage />} />
-          <Route path='/home' element={<HomePage />}/>
-          <Route path="/ayatrio-map" element={<MapPage />} />
-          <Route path="/products" element={<ProductPage />} />
-          <Route path="/magazine" element={<MagazinePage />} />
-          <Route path="/rooms" element={<RoomPage />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
-          <Route path='/shipping' element={<Shipping />} />
-          <Route path='/payment' element={<Paymentpage />} />
-          <Route path='/login' element={<LoginPage/>}/>
-          <Route path ='/profile' element={<ProfilePage/>}/>
-          <Route path='/virtualexperience/*' element={<Virtualexperiance />} />
-          <Route path="*" element={<h1>Not Found</h1>} />
-          <Route path='/cart' element={<CartPage/>}/> 
-          <Route path='/item' element={<ItemPage/>}/>
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Splashpage />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/ayatrio-map" element={<MapPage />} />
+            <Route path="/products" element={<ProductPage />} />
+            <Route path="/magazine" element={<MagazinePage />} />
+            <Route path="/rooms" element={<RoomPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/shipping" element={<Shipping />} />
+            <Route path="/payment" element={<Paymentpage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route
+              path="/virtualexperience/*"
+              element={<Virtualexperiance />}
+            />
+            <Route path="*" element={<h1>Not Found</h1>} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/item" element={<ItemPage />} />
+          </Routes>
+        </Suspense>
       </FormProvider>
-    </> 
+    </>
   );
 }
 

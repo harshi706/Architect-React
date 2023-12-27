@@ -7,7 +7,7 @@ import { TiTick } from "react-icons/ti";
 import Sidebar from "./sidebar";
 import { GoCircle } from "react-icons/go";
 import { FaCircle } from "react-icons/fa";
-import './style.css'
+import "./style.css";
 const Rooms = () => {
   const navigate = useNavigate();
 
@@ -73,11 +73,9 @@ const Rooms = () => {
               }}
               className={`room-item rounded-2xl object-cover w-full opactiy-100 h-full block p-1
              
-            ${
-              selectedActivity[item.id]
-                ? " "
-                : "overlay z-10 "
-            }  ${selectedActivity[item.id] ? " border-2 border-red-500 " : ""}
+            ${selectedActivity[item.id] ? " " : "overlay z-10 "}  ${
+                selectedActivity[item.id] ? " border-2 border-red-500 " : ""
+              }
 
             
             
@@ -107,7 +105,7 @@ const Rooms = () => {
             >
               {item.title}
             </h3>
-            
+
             {selectedActivity[item.id] && (
               <div className="room-item absolute top-2 right-2 z-10  flex items-center opacity-50 justify-center">
                 <div className="circle-container relative flex justify-center items-center">

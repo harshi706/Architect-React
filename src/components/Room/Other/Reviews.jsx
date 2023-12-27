@@ -1,6 +1,7 @@
 import React from "react";
 import Rating from "@mui/material/Rating";
-import StarIcon from "@mui/icons-material/Star"; // Import the Star icon from Material-UI
+import StarIcon from "@mui/icons-material/Star";
+import Swiper from '../../../pages/Swiper' // Import the Star icon from Material-UI
 
 const CustomStar = ({ color, ...props }) => (
   <StarIcon style={{ color, fontSize: "16px" }} {...props} />
@@ -8,6 +9,7 @@ const CustomStar = ({ color, ...props }) => (
 
 const Reviews = () => {
   return (
+    <>
     <div className="py-12 border-t border-b mb-12">
       <h3 className="mb-1 text-xl font-semibold">2 reviews</h3>
       <span className="font-normal text-sm text-gray-500">
@@ -84,6 +86,8 @@ const Reviews = () => {
        
       </div>
     </div>
+    <Swiper/>
+    </>
   );
 };
 

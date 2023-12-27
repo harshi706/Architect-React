@@ -4,8 +4,8 @@ import { useState } from "react";
 import mapStyles from "./mapStyles";
 import MapMarker from "../MapMarker";
 import Sidebar from "../Sidebar";
-import { REACT_APP_GMAP_API_KEY } from "../../config";
-// import { REACT_APP_GMAP_API_KEY } from '../../config.js'
+// import { REACT_APP_GMAP_API_KEY } from "../../config";
+import { REACT_APP_GMAP_API_KEY } from '../../config.js'
 import Search from "./Search";
 const Map = ({ setBoundaries, coords, places }) => {
   const { isLoaded } = useLoadScript({

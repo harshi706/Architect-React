@@ -21,7 +21,7 @@ function MainSlider() {
   );
   const [scrollX, setScrollX] = useState(0);
   const scrl = useRef(null);
-  const [sliderData, setSliderData] = useState([]);
+  // const [sliderData, setSliderData] = useState([]);
 
   // const dispatch = useDispatch();
   // const sliderSelect = useSelector(selectSliderData);
@@ -32,12 +32,12 @@ function MainSlider() {
   //   setSliderData(sliderSelect);
   // }, [dispatch, sliderSelect]);//added dependency sliderselect
 
-  const sliderSelect = useSelector(selectSliderData);
-
-  useEffect(() => {
-    setSliderData(sliderSelect);
-  }, [sliderSelect]);
-  console.log(sliderData);
+  // const sliderSelect = useSelector(selectSliderData);
+  
+  // useEffect(() => {
+  //   setSliderData(sliderSelect);
+  // }, [sliderSelect]);
+// console.log(sliderData)
   useEffect(() => {
     if (scrl.current) {
       scrl.current.scrollLeft = 0;

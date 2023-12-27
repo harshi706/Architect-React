@@ -33,6 +33,7 @@ import Tabs from "./Tabs";
 import Profile from "./Profile";
 import Image from "../Imagechanger/Image";
 import Phone from "./Phone";
+import DoubleComp from "./DoubleComp";
 import { CardData, CardLoader } from "../../Features/Slices/FIrstCardSlice";
 
 function Cards() {
@@ -501,6 +502,7 @@ function Cards() {
 
       <Multicard />
       <Image />
+      <DoubleComp/>
       <Profile />
       <Tabs />
       <Phone />
