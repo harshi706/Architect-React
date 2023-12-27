@@ -30,42 +30,42 @@ export default function RoomImageList() {
 
       {/* ------------------  room/place image gallery ------------------  */}
       <div className="imggallery sm:h-[55vh] h-auto sm:w-auto w-[90vw]">
-        <div className="grid grid-cols-4 grid-rows-2 gap-2 h-full mx-1">
-          <div className="col-span-2 row-span-2">
-            <img
-              className="w-full h-full object-cover rounded-tl-xl rounded-bl-xl"
-              src="https://a0.muscache.com/im/pictures/miso/Hosting-855668970469413787/original/d6132e5d-c9b4-495d-b400-060019d50c2a.jpeg?im_w=960"
+        <div className="grid grid-cols-3 grid-rows-2 gap-2 mx-1">
+          <div className="col-span-1">
+          <img
+              className="w-full h-[22rem] object-cover"
+              src="https://a0.muscache.com/im/pictures/8daebf64-1591-4e32-b7df-b4297f585381.jpg?im_w=720"
               alt=""
             />
           </div>
-          <div className="col-start-3">
+          <div className="col-span-1">
             <img
               className="w-full h-full object-cover"
               src="https://a0.muscache.com/im/pictures/8daebf64-1591-4e32-b7df-b4297f585381.jpg?im_w=720"
               alt=""
             />
           </div>
-          <div className="col-start-4">
+          <div className="col-span-1 row-start-2">
             <img
-              className="w-full h-full object-cover  rounded-tr-xl "
+              className="w-full h-full object-cover"
               src="https://a0.muscache.com/im/pictures/4ee98f0f-73df-41fe-8006-4484413a1249.jpg?im_w=720"
               alt=""
             />
           </div>
-          <div className="col-start-3 row-start-2">
+          <div className="col-start-1 row-start-2">
             <img
               className="w-full h-full object-cover"
               src="https://a0.muscache.com/im/pictures/dbbab7f7-c01c-4802-9ad9-f87def795edc.jpg?im_w=720"
               alt=""
             />
           </div>
-          <div className="col-start-4 row-start-2">
+          {/* <div className="col-start-4 row-start-2">
             <img
               className="w-full h-full object-cover rounded-br-xl"
               src="https://a0.muscache.com/im/pictures/miso/Hosting-855668970469413787/original/15a0762f-b9ca-40a1-b596-900e9450d181.jpeg?im_w=720"
               alt=""
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </>
