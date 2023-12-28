@@ -72,7 +72,6 @@ function Header({ howMuchScrolled }) {
     setSearchQuery("");
   };
   const loginStatus = localStorage.getItem("Login");
-  console.log(loginStatus);
   const [isLoading, setIsLoading] = useState(false);
   const handleLinkClick = (path) => {
     setIsLoading(true);

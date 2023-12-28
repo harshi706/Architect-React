@@ -52,8 +52,8 @@ const Tabs = () => {
       case "all":
         return (
           <div>
-            <div class=" py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div class="relative row-span-2 overflow-hidden circle-container items-center justify-center flex ">
+            <div className=" py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+              <div className="relative row-span-2 overflow-hidden circle-container items-center justify-center flex ">
                 <img
                   className={`h-full w-full object-cover
                   
@@ -92,7 +92,7 @@ const Tabs = () => {
                   </div>
                 ))}
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover "
                   src={work}
@@ -100,35 +100,35 @@ const Tabs = () => {
                 />
               </div>
 
-              <div class="row-span-2  overflow-hidden">
+              <div className="row-span-2  overflow-hidden">
                 <img
                   className="h-full w-full object-cover "
                   src={living}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden sm:hidden block">
+              <div className="overflow-hidden sm:hidden block">
                 <img
                   className="h-full w-full object-cover "
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 sm:block hidden overflow-hidden">
+              <div className="row-span-2 sm:block hidden overflow-hidden">
                 <img
                   className="h-full w-full object-cover "
                   src={kitchen}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover "
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover "
                   src={living}
@@ -150,42 +150,42 @@ const Tabs = () => {
                   src={room}
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden sm:hidden block">
+              <div className="overflow-hidden sm:hidden block">
                 <img
                   className="h-full w-full object-cover "
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="bg-teal-100  overflow-hidden">
+              <div className="bg-teal-100  overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
@@ -199,50 +199,50 @@ const Tabs = () => {
       case "livingroom":
         return (
           <div>
-            <div class="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div class="row-span-2 overflow-hidden">
+            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={living}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={living}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={living}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden sm:hidden block">
+              <div className="overflow-hidden sm:hidden block">
                 <img
                   className="h-full w-full object-cover "
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={living}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={living}
                   alt="Room"
                 />
               </div>
-              <div class="bg-teal-100 overflow-hidden">
+              <div className="bg-teal-100 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={living}
@@ -255,50 +255,50 @@ const Tabs = () => {
       case "kitchen":
         return (
           <div>
-            <div class="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div class="row-span-2 overflow-hidden">
+            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={kitchen}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={kitchen}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={kitchen}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden sm:hidden block">
+              <div className="overflow-hidden sm:hidden block">
                 <img
                   className="h-full w-full object-cover "
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={kitchen}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={kitchen}
                   alt="Room"
                 />
               </div>
-              <div class="bg-teal-100 overflow-hidden">
+              <div className="bg-teal-100 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={kitchen}
@@ -311,50 +311,50 @@ const Tabs = () => {
       case "workspace":
         return (
           <div>
-            <div class="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div class="row-span-2 overflow-hidden">
+            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden sm:hidden block">
+              <div className="overflow-hidden sm:hidden block">
                 <img
                   className="h-full w-full object-cover "
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="bg-teal-100 overflow-hidden">
+              <div className="bg-teal-100 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={work}
@@ -367,50 +367,50 @@ const Tabs = () => {
       case "outdoor":
         return (
           <div>
-            <div class="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div class="row-span-2 overflow-hidden">
+            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden sm:hidden block">
+              <div className="overflow-hidden sm:hidden block">
                 <img
                   className="h-full w-full object-cover "
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="bg-teal-100 overflow-hidden">
+              <div className="bg-teal-100 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
@@ -423,50 +423,50 @@ const Tabs = () => {
       case "bathroom":
         return (
           <div>
-            <div class="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div class="row-span-2 overflow-hidden">
+            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden sm:hidden block">
+              <div className="overflow-hidden sm:hidden block">
                 <img
                   className="h-full w-full object-cover "
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="bg-teal-100 overflow-hidden">
+              <div className="bg-teal-100 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
@@ -479,50 +479,50 @@ const Tabs = () => {
       case "babychildren":
         return (
           <div>
-            <div class="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div class="row-span-2 overflow-hidden">
+            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden sm:hidden block">
+              <div className="overflow-hidden sm:hidden block">
                 <img
                   className="h-full w-full object-cover "
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="bg-teal-100 overflow-hidden">
+              <div className="bg-teal-100 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
@@ -535,50 +535,50 @@ const Tabs = () => {
       case "dining":
         return (
           <div>
-            <div class="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div class="row-span-2 overflow-hidden">
+            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden sm:hidden block">
+              <div className="overflow-hidden sm:hidden block">
                 <img
                   className="h-full w-full object-cover "
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="bg-teal-100 overflow-hidden">
+              <div className="bg-teal-100 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
@@ -591,50 +591,50 @@ const Tabs = () => {
       case "hallway":
         return (
           <div>
-            <div class="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div class="row-span-2 overflow-hidden">
+            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden sm:hidden block">
+              <div className="overflow-hidden sm:hidden block">
                 <img
                   className="h-full w-full object-cover "
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="bg-teal-100 overflow-hidden">
+              <div className="bg-teal-100 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
@@ -647,50 +647,50 @@ const Tabs = () => {
       case "laundry":
         return (
           <div>
-            <div class="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div class="row-span-2 overflow-hidden">
+            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden sm:hidden block">
+              <div className="overflow-hidden sm:hidden block">
                 <img
                   className="h-full w-full object-cover "
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="bg-teal-100 overflow-hidden">
+              <div className="bg-teal-100 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
@@ -703,50 +703,50 @@ const Tabs = () => {
       case "accessories":
         return (
           <div>
-            <div class="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div class="row-span-2 overflow-hidden">
+            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden sm:hidden block">
+              <div className="overflow-hidden sm:hidden block">
                 <img
                   className="h-full w-full object-cover "
                   src={work}
                   alt="Room"
                 />
               </div>
-              <div class="row-span-2 overflow-hidden">
+              <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}
                   alt="Room"
                 />
               </div>
-              <div class="bg-teal-100 overflow-hidden">
+              <div className="bg-teal-100 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"
                   src={room}

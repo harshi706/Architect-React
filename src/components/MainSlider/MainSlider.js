@@ -4,8 +4,28 @@ import { Oval } from "react-loader-spinner";
 import "./Mainslidestyle.css";
 import { list3 } from "../../assets/mainslide-list";
 import _debounce from "lodash/debounce";
+import { useDispatch, useSelector } from "react-redux";
+import { selectSliderData } from "../../Features/Slices/sliderSlice";
 
 function MainSlider() {
+//data fetching
+const dispatch = useDispatch();
+const SliderViewData = useSelector(selectSliderData);
+
+useEffect(() => {
+  if (!SliderViewData || SliderViewData.length === 0) {
+    fetchData();
+  }
+}, [SliderViewData]);
+
+const fetchData = () => {
+  dispatch({ type: "FETCH_SLIDER_VIEW_REQUEST", payload: 10 });
+};
+
+console.log(SliderViewData);
+//
+
+  
   const products = list3.filter(
     (prod) => prod.id === 1 || prod.id === 2 || prod.id === 3
   );
@@ -28,6 +48,8 @@ function MainSlider() {
 
       setScrollX(targetScroll);
     }
+    fetchData()
+
   };
 
   if (products.length > 0) {

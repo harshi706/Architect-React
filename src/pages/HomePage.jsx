@@ -12,10 +12,8 @@ import Expandedbar from "../components/Header/Expandedbar";
 
 
 
+
 const HomePage = () => {
-useEffect(() => {
-    console.log("HomePage");
-  }, []);
 
   const loader = false;
   const navigate = useNavigate();

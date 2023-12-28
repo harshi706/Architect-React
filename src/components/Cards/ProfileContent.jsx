@@ -31,8 +31,6 @@ const ProfileContent = () => {
         prevEl: '.swiper-button-prev',
       }}
       modules={[Navigation]}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
       style={{ '--swiper-navigation-size': '24px' }}
       breakpoints={{
             100: {

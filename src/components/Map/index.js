@@ -34,7 +34,6 @@ const Map = ({ setBoundaries, coords, places }) => {
   const onLoad = (map) => {
     setMap(map);
   };
-  console.log(coords);
   // Custom overlay component
   const CustomMarker = ({ lat, lng, content }) => (
     <OverlayView

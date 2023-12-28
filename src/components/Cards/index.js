@@ -36,6 +36,7 @@ import Phone from "./Phone";
 import DoubleComp from "./DoubleComp";
 import { CardData, CardLoader } from "../../Features/Slices/FIrstCardSlice";
 import { selectSliderData } from "../../Features/Slices/sliderSlice";
+import { useMemo } from "react";
 
 function Cards() {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -43,7 +44,6 @@ function Cards() {
   const handleImageClick = () => {
     setPopupVisible(true);
   };
-  
 
   const [indexClicked, setClicked] = useState(-1);
   const swiperUseref = useRef(null);
@@ -129,11 +129,13 @@ function Cards() {
     recommendedProductsDataFromLocalStorage?.products || [],
     "Sport & Gym Flooring"
   );
+//memo hook
+const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
 
 
   return (
     <div className="pb-20">
-      <MainSlider />
+     {MemoizedMainSlider}
       <div className="pt-12  mb-20  bg-white sm:px-[50px] px-[20px]">
         <div className="mb-2 w-full flex justify-between items-center">
           <h2 className="text-bold text-2xl font-serif">

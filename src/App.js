@@ -1,8 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { FormProvider } from "./components/Checkoutcomp/FormContext";
-import Loader from "react-loader-spinner";
-import ProgressBar from "react-loader-spinner";
 import './App.css'
 const Splashpage = lazy(() => import("./pages/Splashpage"));
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -39,7 +37,7 @@ function App() {
   }, []);
 
   // console.log("Device ID:", deviceId);
-
+  
   return (
     <>
       <FormProvider>

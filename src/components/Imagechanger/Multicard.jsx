@@ -34,8 +34,6 @@ const Multicard = () => {
           // }}
 
           draggable={true}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
           style={{ "--swiper-navigation-size": "24px" }}
           breakpoints={{
             450: {
