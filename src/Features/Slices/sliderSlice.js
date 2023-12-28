@@ -20,6 +20,9 @@ export const sliderSlice = createSlice({
     getSliderFailure: (state) => {
       state.status = "failed";
     },
+    getData: (state) => {
+      return state.sliderData;
+    },
     fetchSliderRequest: (state, action) => {
       state.loader = action.payload;
     },
@@ -31,6 +34,7 @@ export const {
   fetchSliderRequest,
   getSliderSuccess,
   getSliderFailure,
+  
 } = sliderSlice.actions;
 
 export const selectSliderData = (state) => state.slider.sliderData;

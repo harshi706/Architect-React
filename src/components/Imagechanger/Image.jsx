@@ -138,21 +138,21 @@ const Imagechanger = () => {
         <div className="right image-container flex w-1/2 h-full p-1">
           <div className="flex w-full h-full justify-center items-center relative">
             <div className=" absolute top-0 left-0 w-full h-5 z-20 flex justify-center gap-2 items-center">
-              <div className="progressContainer1 bg-white w-1/5 rounded-lg h-2">
+              <div className="progressContainer1 bg-white w-1/6 rounded-lg h-[5px]">
                 <div
-                  className="progressLine rounded-lg bg-slate-600 h-full"
+                  className="progressLine rounded-lg bg-slate-400 h-full"
                   style={{ width: `${progress1}%` }}
                 ></div>
               </div>
-              <div className="progressContainer2 bg-white w-1/5 rounded-lg h-2">
+              <div className="progressContainer2 bg-white w-1/6 rounded-lg h-[5px]">
                 <div
-                  className="progressLine rounded-lg bg-slate-600 h-full"
+                  className="progressLine rounded-lg bg-slate-400 h-full"
                   style={{ width: `${progress2}%` }}
                 ></div>
               </div>
-              <div className="progressContainer3 bg-white w-1/5 rounded-lg h-2">
+              <div className="progressContainer3 bg-white w-1/6 rounded-lg h-[5px]">
                 <div
-                  className="progressLine rounded-lg bg-slate-600 h-full"
+                  className="progressLine rounded-lg bg-slate-400 h-full"
                   style={{ width: `${progress3}%` }}
                 ></div>
               </div>

@@ -3,12 +3,12 @@ import { fetchSliderView } from '../api';
 import { getSliderSuccess, fetchSliderRequest, getSliderFailure } from '../Slices/sliderSlice';
 
 function* fetchSliderViewSaga() {
-    // console.log("slider saga")
+    console.log("slider saga")
   try {
     yield put(fetchSliderRequest(true));
     const data = yield call(fetchSliderView);
     yield put(getSliderSuccess(data));
-    // console.log("slider data", data);
+    console.log("slider data", data);
   } catch (error) {
     console.error("Error fetching slider data:", error);
     yield put(getSliderFailure());

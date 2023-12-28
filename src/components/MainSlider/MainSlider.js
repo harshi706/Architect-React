@@ -1,20 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { Oval } from "react-loader-spinner";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import "./Mainslidestyle.css";
 import { list3 } from "../../assets/mainslide-list";
 import _debounce from "lodash/debounce";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  
-  selectSliderData,
-  selectSliderLoader,
-} from "../../Features/Slices/sliderSlice";
 
 function MainSlider() {
   const products = list3.filter(
@@ -22,19 +11,16 @@ function MainSlider() {
   );
   const [scrollX, setScrollX] = useState(0);
   const scrl = useRef(null);
-  const sliderData = useSelector(selectSliderData);
-  console.log(sliderData);
+
   useEffect(() => {
     if (scrl.current) {
       scrl.current.scrollLeft = 0;
       scrl.current.style.transition = "none";
     }
   }, []);
-  // console.log("slider data", sliderData);
-  console.log(products);
   const slide = (shift) => {
     if (scrl.current) {
-      const targetScroll = Math.max((scrl.current.scrollLeft + shift),0);
+      const targetScroll = Math.max(scrl.current.scrollLeft + shift, 0);
 
       scrl.current.scrollTo({
         left: targetScroll,
@@ -57,7 +43,7 @@ function MainSlider() {
               <div className="circle-container relative items-center justify-center flex sd">
                 <img
                   className="sd rounded-sm"
-                  src={prod.imgSrc}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                  src={prod.imgSrc}
                   alt="Product"
                 />
                 {prod.circles.map((circle, index) => (

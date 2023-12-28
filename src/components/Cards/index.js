@@ -91,14 +91,12 @@ function Cards() {
   useEffect(() => {
     setTrendingData(trendingSelect);
   }, [trendingSelect]);
-  console.log(trendingData);
   const recommendedProducts = useSelector(selectRecommendedProduct);
   const recommendedProductsDataFromLocalStorage = JSON.parse(
     localStorage.getItem("recommendedProducts")
   );
 
   useEffect(() => {
-    // Update local storage only if recommendedProducts has changed
     if (recommendedProductsDataFromLocalStorage !== recommendedProducts) {
       localStorage.setItem(
         "recommendedProducts",
@@ -132,7 +130,6 @@ function Cards() {
     "Sport & Gym Flooring"
   );
 
-  console.log(wallpaperProducts);
 
   return (
     <div className="pb-20">
@@ -180,7 +177,7 @@ function Cards() {
           onSwiper={setSwiperRef}
           className="px-10"
         >
-          {isLoading ? (
+          {true ? (
             <SwiperSlide>
               <div className="flex">""</div>
             </SwiperSlide>

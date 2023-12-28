@@ -38,7 +38,7 @@ function App() {
     generateDeviceId();
   }, []);
 
-  console.log("Device ID:", deviceId);
+  // console.log("Device ID:", deviceId);
 
   return (
     <>
