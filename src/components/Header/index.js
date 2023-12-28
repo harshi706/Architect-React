@@ -16,6 +16,7 @@ import Expandedbar from "./Expandedbar";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { searchProductsRequest } from "../../Features/search/searchSlice";
+import TopLoader from "../AddOn/TopLoader";
 
 function Header({ howMuchScrolled }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,13 +66,21 @@ function Header({ howMuchScrolled }) {
   };
   const handleProfileNav = () => {
     console.log("Profile");
-    navigate("/profile");
+   handleLinkClick("/profile")
   };
   const onClose = () => {
     setSearchQuery("");
   };
   const loginStatus = localStorage.getItem("Login");
   console.log(loginStatus);
+  const [isLoading, setIsLoading] = useState(false);
+  const handleLinkClick = (path) => {
+    setIsLoading(true);
+    setTimeout(() => {
+      navigate(path);
+      setIsLoading(false);
+    }, 1200);
+  };
 
   return (
     <header
@@ -79,13 +88,14 @@ function Header({ howMuchScrolled }) {
         isScrolled ? "bg-white" : "bg-white"
       } ${howMuchScrolled > 20 ? "hidden" : ""}`}
     >
+      {isLoading && <TopLoader />}
       {!searchQuery ? (
         <div className="navbar sm:px-[50px] px-[20px] py-0 flex justify-evenly items-center w-full">
           <div className="left flex items-center sm:gap-5 gap-1 ">
             <div className="profile-menu font-bold p-[7px] hover:bg-slate-200 hover:rounded-full">
               <Menu />
             </div>
-            <Link to="/virtualexperience/vrooms">
+            <Link  onClick={()=>handleLinkClick("/virtualexperience/vrooms")}>
               <div className=" text-costom-co p-[7px] hover:bg-slate-200 hover:rounded-3xl whitespace-nowrap">
                 Virtual Exprience{" "}
               </div>
@@ -103,7 +113,7 @@ function Header({ howMuchScrolled }) {
             </div>
           </div>
           <div className="mainlogo">
-            <Link to="/home">
+            <Link  onClick={()=>handleLinkClick("/home")} >
               <img src={mainlogo} alt="logo" className="sm:w-48 w-52 m-2" />
             </Link>
           </div>
@@ -131,7 +141,7 @@ function Header({ howMuchScrolled }) {
 
             <div
               className="w-10 h-10 p-[7px] hover:bg-slate-200 hover:rounded-full cursor-pointer"
-              onClick={() => navigate("/cart")}
+              onClick={()=>handleLinkClick("/cart")}
             >
               <img src={adtocart} alt="" className="header-div-icon" />
               <div className="cart-notification">3</div>

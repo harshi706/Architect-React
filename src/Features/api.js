@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchRecommendedProduct = async () => {
     // try {
-    //   const response = await fetch('http://localhost:8080/api/getRecommendation');
+    //   const response = await fetch('http://52.66.30.159:8080/api/getRecommendation');
     //   if (!response.ok) {
     //     throw new Error('Failed to fetch recommended products');
     //   }
@@ -14,7 +14,7 @@ export const fetchRecommendedProduct = async () => {
     //   throw new Error(`Error fetching recommended products: ${error.message}`);
     // }
     try{
-      const response = await axios.get('http://localhost:8080/api/getRecommendation');
+      const response = await axios.get('http://52.66.30.159:8080/api/getRecommendation');
       console.log(response.data)
       return response.data;
 
@@ -25,7 +25,7 @@ export const fetchRecommendedProduct = async () => {
 
   export const fetchSliderView = async () => {
     // try {
-    //   const response = await fetch('http://localhost:8080/api/getImgCircle');
+    //   const response = await fetch('http://52.66.30.159:8080/api/getImgCircle');
     //   if (!response.ok) {
     //     throw new Error('Failed to fetch slider');
     //   }
@@ -36,7 +36,7 @@ export const fetchRecommendedProduct = async () => {
     //   throw new Error(`Error fetching slider: ${error.message}`);
     // }
     try{
-      const response = await axios.get('http://localhost:8080/api/getImgCircle');
+      const response = await axios.get('http://52.66.30.159:8080/api/getImgCircle');
       console.log(response.data)
       return response.data;
     }catch(err){
@@ -46,7 +46,7 @@ export const fetchRecommendedProduct = async () => {
 
   export const fetchProductsWithSearch = async (searchQuery) => {
     try {
-      const response = await axios.get('http://localhost:8080/api/products',  {
+      const response = await axios.get('http://52.66.30.159:8080/api/products',  {
         params: {
         search: searchQuery,
       }});
@@ -61,7 +61,7 @@ export const fetchRecommendedProduct = async () => {
   };
   export const fetchFirstImgCardSlider = async () => { 
     try {
-      const response = await axios.get('http://localhost:8080/api/trending-products');
+      const response = await axios.get('http://52.66.30.159:8080/api/trending-products');
       console.log(response.data)
       return response.data;
     } catch (error) {

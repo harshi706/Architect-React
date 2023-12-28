@@ -24,7 +24,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Imagechanger from "../Imagechanger/Imagechanger";
 import Skeleton from "react-loading-skeleton";
 import Skeletoncard from "../Skeleton/Skeletoncard";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectRecommendedProduct } from "../../Features/Slices/recommendationSlice";
 // import Doublecard from "../Doublecard/Doublecard";
 import Multicard from "../Imagechanger/Multicard";
@@ -35,6 +35,7 @@ import Image from "../Imagechanger/Image";
 import Phone from "./Phone";
 import DoubleComp from "./DoubleComp";
 import { CardData, CardLoader } from "../../Features/Slices/FIrstCardSlice";
+import { selectSliderData } from "../../Features/Slices/sliderSlice";
 
 function Cards() {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -42,6 +43,7 @@ function Cards() {
   const handleImageClick = () => {
     setPopupVisible(true);
   };
+  
 
   const [indexClicked, setClicked] = useState(-1);
   const swiperUseref = useRef(null);

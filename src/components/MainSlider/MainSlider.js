@@ -22,23 +22,8 @@ function MainSlider() {
   );
   const [scrollX, setScrollX] = useState(0);
   const scrl = useRef(null);
-  // const [sliderData, setSliderData] = useState([]);
-
-  // const dispatch = useDispatch();
-  // const sliderSelect = useSelector(selectSliderData);
-  // const loaderx = useSelector(selectSliderLoader);
-  // console.log("slider data",sliderData)
-  // useEffect(() => {
-  //   dispatch({ type: "FETCH_SLIDER_VIEW_REQUEST" });
-  //   setSliderData(sliderSelect);
-  // }, [dispatch, sliderSelect]);//added dependency sliderselect
-
-  // const sliderSelect = useSelector(selectSliderData);
-  
-  // useEffect(() => {
-  //   setSliderData(sliderSelect);
-  // }, [sliderSelect]);
-// console.log(sliderData)
+  const sliderData = useSelector(selectSliderData);
+  console.log(sliderData);
   useEffect(() => {
     if (scrl.current) {
       scrl.current.scrollLeft = 0;

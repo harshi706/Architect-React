@@ -4,7 +4,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 const ProgressBar = ({ progress }) => (
   <div className="absolute top-[0px] left-[0px] w-[100%] h-[5px] bg-white ">
     <div
-    className=" bg-[#808080] h-full"
+      className=" bg-[#808080] h-full"
       style={{
         width: `${progress}%`,
         transition: "width 3s",

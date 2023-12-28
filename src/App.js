@@ -43,9 +43,8 @@ function App() {
   return (
     <>
       <FormProvider>
-        <Suspense fallback={<div class="loader">
-          <div class="loader__element"></div>
-        </div>}>
+        <Suspense>
+
         <Routes>
           <Route path="/" element={<Splashpage />} />
           <Route path="/home" element={<HomePage />} />
