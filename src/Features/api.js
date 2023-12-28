@@ -36,7 +36,7 @@ export const fetchRecommendedProduct = async () => {
     //   throw new Error(`Error fetching slider: ${error.message}`);
     // }
     try{
-      const response = await axios.get('http://52.66.30.159:8080/api/getImgCircle?page=1&limit=3');
+      const response = await axios.get('http://52.66.30.159:8080/api/getImgCircle');
       console.log(response.data)
       return response.data;
     }catch(err){

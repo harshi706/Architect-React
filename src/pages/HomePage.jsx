@@ -32,26 +32,12 @@ const HomePage = () => {
     dispatch({ type: "FETCH_SLIDER_VIEW_REQUEST" });
   }, [dispatch]);
   const slidedata = useSelector(selectSliderData);
+  console.log(slidedata);
   useEffect(() => {
     setSliderData(slidedata);
   }, [slidedata]);
   const loader = false;
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     // console.log(window.scrollY);
-  //     if (window.scrollY > 0) {
-  //       setIsScrolled(true);
-  //     } else {
-  //       setIsScrolled(false);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [isScrolled]);
   const handleLoginNav = () => {
     navigate("/login");
   };
@@ -59,9 +45,6 @@ const HomePage = () => {
     console.log("Profile");
     navigate("/profile");
   };
-  // const onClose = () => {
-  //   setSearchText("");
-  // };
 
   const onClose = () => {
     setIsSearchBarVisible(!isSearchBarVisible);
@@ -139,7 +122,7 @@ const HomePage = () => {
           </>
         )}
         <Filter />
-        <Cards sliderData={sliderData} />
+        <Cards />
         {isFilterVisible && (
           <div className="fixed-ayatrio-map">
             <button
