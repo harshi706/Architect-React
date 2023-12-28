@@ -5,7 +5,7 @@ import Calculation from "./Calculation";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { FaStoreAlt } from "react-icons/fa";
-
+import '../styles.css'
 const Card = () => {
   const [imgColor, setImgColor] = useState("red");
   const [widthstate, setwidthstate] = useState(0);
@@ -13,7 +13,6 @@ const Card = () => {
   const [pricestate, setpricestate] = useState(0);
   const [coststate, setcoststate] = useState(7000);
   const [rollstate, setrollstate] = useState(0);
-
 
   const imgSets = {
     red: [
@@ -48,14 +47,12 @@ const Card = () => {
     "Dropdown Text 2",
     "Dropdown Text 3",
     "Dropdown Text 7",
-
   ];
   const dropdownTexts = [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "siuuuuuuuuuuuuuu.",
-
   ];
   useEffect(() => {
     priceCal();
@@ -76,14 +73,16 @@ const Card = () => {
 
   return (
     <>
-      <div className="room-card ml-24 mt-[-300px]  max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="room-card hidden ml-24 mt-[-300px]  max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div>
           <span className="font-bold mr-1 text-black text-xl">₹11,897 </span>
           <span className="font-normal text-lg text-gray-500">night</span>
         </div>
         <div className="actions-area my-4">
           <div className="date-pickers flex w-full rounded-tl-lg rounded-tr-lg m-0 border">
-            <div className="date-right w-1/2 p-3 text-sm text-left">Check In</div>
+            <div className="date-right w-1/2 p-3 text-sm text-left">
+              Check In
+            </div>
             <div className="date-left w-1/2 border-l p-3 text-sm text-left">
               CheckOut
             </div>
@@ -94,14 +93,16 @@ const Card = () => {
               data-dropdown-toggle="dropdownHover"
               data-dropdown-trigger="hover"
               className="text-black bg-white rounded-br-lg rounded-bl-lg text-sm flex justify-between px-5 py-3 text-center border mb-4 mt-0 w-full"
-              type="button">
+              type="button"
+            >
               Guest{" "}
               <svg
                 className="w-2.5 h-2.5 ms-3"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                viewBox="0 0 10 6">
+                viewBox="0 0 10 6"
+              >
                 <path
                   stroke="currentColor"
                   strokeLinecap="round"
@@ -115,35 +116,41 @@ const Card = () => {
             {/* <!-- Dropdown menu --> */}
             <div
               id="dropdownHover"
-              className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+              className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+            >
               <ul
                 className="py-2 text-sm text-gray-700 dark:text-gray-200"
-                aria-labelledby="dropdownHoverButton">
+                aria-labelledby="dropdownHoverButton"
+              >
                 <li>
                   <a
                     href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
                     Guest
                   </a>
                 </li>
                 <li>
                   <a
                     href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
                     Settings
                   </a>
                 </li>
                 <li>
                   <a
                     href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
                     Earnings
                   </a>
                 </li>
                 <li>
                   <a
                     href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
                     Sign out
                   </a>
                 </li>
@@ -154,89 +161,101 @@ const Card = () => {
         <Link to="/checkout">
           <button
             type="button"
-            className="change-dates flex justify-center text-center font-semibold rounded-lg border border-transparent w-full">
+            className="change-dates flex justify-center text-center font-semibold rounded-lg border border-transparent w-full"
+          >
             Change dates
           </button>
         </Link>
       </div>
 
-
       {/* texts */}
-      <div className="mt-[-240px]">
-      <div className="textHolders flex flex-col ml-28">
-        <h1 className="text-2xl font-bold mb-2">Football Shoe</h1>
-        <h3 className="mb-2 font-semibold">
-          Collection: Metropolitan Stories Travel Styles
-        </h3>
-        <h3 className="mb-4 font-semibold">
-          Pattern Number: 77siu7Cr7-{imgColor}
-        </h3>
+      <div className="sm:mt-[-240px] mt-10 sm:w-auto w-[80vw] prefence-text">
+        <div className="textHolders flex flex-col sm:ml-28 ml-0">
+          <h1 className="text-2xl font-bold mb-2">Football Shoe</h1>
+          <h3 className="mb-2 font-semibold">
+            Collection: Metropolitan Stories Travel Styles
+          </h3>
+          <h3 className="mb-4 font-semibold">
+            Pattern Number: 77siu7Cr7-{imgColor}
+          </h3>
 
-        <div className="price">
-          <h2 className="font-bold mb-1">MRP: ₹{coststate}/Shoe</h2>
-          <h5 className="">incl. Of taxes</h5>
-          <h4>Also Includes Taxes</h4>
+          <div className="price">
+            <h2 className="font-bold mb-1">MRP: ₹{coststate}/Shoe</h2>
+            <h5 className="">incl. Of taxes</h5>
+            <h4>Also Includes Taxes</h4>
+          </div>
         </div>
-      </div>
 
-      {/* color-container */}
-      <div className="colorContainer flex flex-col items-start mt-4 ml-28">
-        <h1 className="mb-2 font-bold">Other Colorways</h1>
-        <div className="colors flex gap-3">
-          <div
-            onClick={() => changeColor("red")}
-            className={`color1 w-[50px] h-[50px] rounded-full ${imgColor === "red" ? "border border-slate-800" : ""
+        {/* color-container */}
+        <div className="colorContainer flex flex-col items-start mt-4 sm:ml-28 sm:w-auto w-[80vw]">
+          <h1 className="mb-2 font-bold">Other Colorways</h1>
+          <div className="colors flex gap-3">
+            <div
+              onClick={() => changeColor("red")}
+              className={`color1 w-[50px] h-[50px] rounded-full ${
+                imgColor === "red" ? "border border-slate-800" : ""
               }   bg-red-500`}
-          ></div>
-          <div
-            onClick={() => changeColor("blue")}
-            className={`color1 w-[50px] h-[50px] rounded-full ${imgColor === "blue" ? "border border-slate-800" : ""
+            ></div>
+            <div
+              onClick={() => changeColor("blue")}
+              className={`color1 w-[50px] h-[50px] rounded-full ${
+                imgColor === "blue" ? "border border-slate-800" : ""
               }  bg-blue-500`}
-          ></div>
-          <div
-            onClick={() => changeColor("green")}
-            className={`color1 w-[50px] h-[50px] rounded-full  ${imgColor === "green" ? "border border-slate-800" : ""
+            ></div>
+            <div
+              onClick={() => changeColor("green")}
+              className={`color1 w-[50px] h-[50px] rounded-full  ${
+                imgColor === "green" ? "border border-slate-800" : ""
               } bg-green-500`}
-          ></div>
+            ></div>
+          </div>
+        </div>
+
+        {/* calculations */}
+        <Calculation />
+
+        {/* //buttons */}
+        <div className="buttons mt-4 sm:ml-32 sm:w-auto w-[80vw] ">
+          <div className="guestCheckout">
+            <button className="bg-black text-white w-80 h-16 rounded-full hover:bg-gray-900 transition duration-300">
+              Add To Bag
+            </button>
+          </div>
+          <div className="memberCheckout mt-4">
+            <button className="bg-black text-white w-80 h-16 rounded-full hover:bg-gray-900 transition duration-300">
+              Contact
+            </button>
+          </div>
+        </div>
+
+        {/* table */}
+        <div className="sm:ml-36 sm:w-auto w-[80vw] mt-8 font-bold flex items-center justify-center">How to get it</div>
+        <div className="border border-gray-300 w-72 rounded-xl sm:ml-36 mt-2 pt-4 pb-4 pl-3">
+          <div className="flex items-center">
+            <div>
+              <TbTruckDelivery size={24} />
+            </div>
+            <div className="pl-3">Delivery</div>
+          </div>
+          <div className="sm:pl-60 -ml-3 -mt-1">
+            <MdOutlineArrowForwardIos />
+          </div>
+          <div className="pb-3 text-gray-600 sm:pl-8 -mt-4">
+            Check availability
+          </div>
+          <hr />
+          <div className="flex pt-3">
+            <div className="sm:pr-3">
+              <FaStoreAlt size={24} />
+            </div>
+            <div>In-store</div>
+          </div>
+          <div className="sm:pl-60 -ml-3 -mt-1">
+            <MdOutlineArrowForwardIos />
+          </div>
+          <div className="text-gray-600 pl-9 -mt-4">Check in-store stock</div>
         </div>
       </div>
-
-      {/* calculations */}
-      <Calculation />
-
-      {/* //buttons */}
-      <div className="buttons mt-4 ml-32">
-        <div className="guestCheckout">
-          <button className="bg-black text-white w-80 h-16 rounded-full hover:bg-gray-900 transition duration-300">
-            Add To Bag
-          </button>
-        </div>
-        <div className="memberCheckout mt-4">
-          <button className="bg-black text-white w-80 h-16 rounded-full hover:bg-gray-900 transition duration-300">
-            Contact
-          </button>
-        </div>
-      </div>
-
-      {/* table */}
-      <div className="ml-36 mt-8 font-bold">How to get it</div>
-      <div className="border border-gray-300 w-72 rounded-xl ml-36 mt-2 pt-4 pb-4 pl-3">
-      <div className="flex items-center">
-    <div><TbTruckDelivery size={24} /></div>
-    <div className="pl-3">Delivery</div>
-  </div>
-  <div className="pl-60 -ml-3 -mt-1"><MdOutlineArrowForwardIos /></div>
-  <div className="pb-3 text-gray-600 pl-8 -mt-4">Check availability</div>
-        <hr/>
-        <div className="flex pt-3">
-        <div className="pr-3"><FaStoreAlt size={24} /></div>
-        <div>In-store</div>
-        </div>
-        <div className="pl-60 -ml-3 -mt-1"><MdOutlineArrowForwardIos /></div>
-        <div className="text-gray-600 pl-9 -mt-4">Check in-store stock</div>
-        
-      </div></div>
-      
     </>
   );
 };

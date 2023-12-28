@@ -27,7 +27,7 @@ const handleCal=()=>{
 }
   return (
     <div>
-        <div className="calculation-container mt-2 ml-28 ">
+        <div className="calculation-container mt-2 sm:ml-28 ">
               <div className="text-lg my-6 font-bold flex">
                 Calculate Your Requirements 
                 {!hidden?<div className='mt-1 ml-2'><MdOutlineArrowForwardIos size={16} onClick={handleCal}/></div>:<div className='mt-1 ml-2'><IoIosArrowDown size={16} onClick={handleCal}/></div>}

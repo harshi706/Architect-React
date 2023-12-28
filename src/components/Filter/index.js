@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./styles.css";
+import { useNavigate } from "react-router-dom";
 import { links } from "../../assets/images-links";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -19,6 +20,8 @@ function Filter() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollX, setScrollX] = useState(0);
   const scrl = useRef(null);
+
+  const navigate=useNavigate();
 
   const handleDropdownClick = (event, idx) => {
     event.stopPropagation();
@@ -40,6 +43,21 @@ function Filter() {
 
     setScrollX(targetScroll);
   };
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
+
+  useEffect(() => {
+    // Update isMobile state on window resize
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 450);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <header
@@ -68,10 +86,15 @@ function Filter() {
               className={`Filter-array-element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ent ${
                 idx === selectedFilter ? "selected-array-element" : ""
               }`}
-              onClick={(event) => handleDropdownClick(event, idx)}
+              {...!isMobile ? 
+                { onClick: (event) => handleDropdownClick(event, idx) } 
+                : 
+                { onClick: () => navigate(`/${value.label}`) }
+              }
               onMouseEnter={() => setActiveDropdown(idx)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
+
               {/* {value && (
                 <img
                   src={value.imgSrc}

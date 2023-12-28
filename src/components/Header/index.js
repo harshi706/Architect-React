@@ -23,6 +23,7 @@ function Header({ howMuchScrolled }) {
   const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
 
   const handleSearchIconClick = () => {
+    
     setIsSearchBarVisible(!isSearchBarVisible);
   };
   //section for search-icon click (above)
@@ -31,6 +32,7 @@ function Header({ howMuchScrolled }) {
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
+    setIsSearchBarVisible(true)
   };
 
 
@@ -73,13 +75,13 @@ function Header({ howMuchScrolled }) {
 
   return (
     <header
-      className={`fixed w-full sm:bg-none  top-0 transition-all ease-in-out duration-300  z-[9999] ${
+      className={`fixed w-full sm:bg-none  top-0 transition-all ease-in-out duration-300  z-[9998] ${
         isScrolled ? "bg-white" : "bg-white"
       } ${howMuchScrolled > 20 ? "hidden" : ""}`}
     >
       {!searchQuery ? (
         <div className="navbar sm:px-[50px] px-[20px] py-0 flex justify-evenly items-center w-full">
-          <div className="left flex items-center sm:gap-5 gap-2 ">
+          <div className="left flex items-center sm:gap-5 gap-1 ">
             <div className="profile-menu font-bold p-[7px] hover:bg-slate-200 hover:rounded-full">
               <Menu />
             </div>
@@ -94,18 +96,18 @@ function Header({ howMuchScrolled }) {
             </div>
 
             <div
-              className="  w-10 h-10 notch-buttons p-[7px] hover:bg-slate-200 hover:rounded-full"
-              onClick={handleSearchIconClick}
+              className="sm:hidden block  w-10 h-10 notch-buttons p-[7px] hover:bg-slate-200 hover:rounded-full"
+              onClick={handleSearchChange}
             >
               <img src={search} alt="" className="" />
             </div>
           </div>
           <div className="mainlogo">
             <Link to="/home">
-              <img src={mainlogo} alt="logo" className="w-48 m-2" />
+              <img src={mainlogo} alt="logo" className="sm:w-48 w-52 m-2" />
             </Link>
           </div>
-          <div className="right flex items-center gap-4">
+          <div className="right flex items-center sm:gap-4 gap-2">
             {/* map-icon */}
 
             <div className=" searchbar pt-4 w-40 h-10 items-right justify-end ">

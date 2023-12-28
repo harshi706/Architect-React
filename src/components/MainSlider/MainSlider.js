@@ -41,7 +41,7 @@ function MainSlider() {
 // console.log(sliderData)
   useEffect(() => {
     if (scrl.current) {
-      scrl.current.scrollLeft = 380;
+      scrl.current.scrollLeft = 0;
       scrl.current.style.transition = "none";
     }
   }, []);
@@ -49,7 +49,7 @@ function MainSlider() {
   console.log(products);
   const slide = (shift) => {
     if (scrl.current) {
-      const targetScroll = scrl.current.scrollLeft + shift;
+      const targetScroll = Math.max((scrl.current.scrollLeft + shift),0);
 
       scrl.current.scrollTo({
         left: targetScroll,
@@ -61,8 +61,8 @@ function MainSlider() {
 
   if (products.length > 0) {
     return (
-      <div className="slider-container sm:px-[50px] px-[20px]">
-        <div className="arrow-left" onClick={() => slide(-380)}>
+      <div className="slider-container">
+        <div className="arrow-left z-20" onClick={() => slide(-190)}>
           {scrollX > 0 && <BsArrowLeftCircleFill className="arrow-nav" />}
           {/* <BsArrowLeftCircleFill className='arrow-nav' /> */}
         </div>
@@ -72,7 +72,7 @@ function MainSlider() {
               <div className="circle-container relative items-center justify-center flex sd">
                 <img
                   className="sd rounded-sm"
-                  src={prod.imgSrc}
+                  src={prod.imgSrc}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
                   alt="Product"
                 />
                 {prod.circles.map((circle, index) => (

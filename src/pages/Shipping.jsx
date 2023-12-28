@@ -1,9 +1,14 @@
-import React from 'react'
-import Shippingmain from '../components/Checkoutcomp/Shippingmain'
+import React from "react";
+import Shippingmain from "../components/Checkoutcomp/Shippingmain";
+
 const Shipping = () => {
   return (
-   <Shippingmain/>
-  )
-}
+    <div>
+      {" "}
+      <Shippingmain />
+      
+    </div>
+  );
+};
 
-export default Shipping
+export default Shipping;

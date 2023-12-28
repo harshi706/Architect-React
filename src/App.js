@@ -46,19 +46,6 @@ function App() {
         <Suspense fallback={<div class="loader">
           <div class="loader__element"></div>
         </div>}>
-        {/* <Suspense
-          fallback={
-            <div className="flex justify-center items-center h-screen">
-              
-              <Loader type="TailSpin" color="#4A90E2" height={80} width={80} />
-            </div>
-          }
-        > */}
-        
-        {/* <div class="loader">
-          <div class="loader__element"></div>
-        </div> */}
-
         <Routes>
           <Route path="/" element={<Splashpage />} />
           <Route path="/home" element={<HomePage />} />

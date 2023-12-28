@@ -5,7 +5,7 @@ import RoomImageList from "../components/Room/RoomImageList";
 import RoomInfo from "../components/Room/RoomInfo";
 import Reviews from "../components/Room/Other/Reviews";
 import Header from "../components/Header";
-
+import Footer from '../components/Footer/Footer'
 const RoomPage = () => {
   const [howMuchScrolled, setHowMuchScrolled] = useState(0);
 
@@ -33,10 +33,11 @@ const RoomPage = () => {
     <>
       <div className="container-rooms flex sm:block items-center ">
         <Header />
-        <div className="sm:mx-16 mx-2">
+        <div className=" sm:px-[50px] px-[20px]"  >
           <RoomImageList />
           <RoomInfo />
           <Reviews />
+          <Footer/>
         </div>
       </div>
     </>

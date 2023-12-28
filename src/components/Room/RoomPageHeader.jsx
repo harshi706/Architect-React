@@ -30,11 +30,11 @@ const RoomPageHeader = ({howMuchScrolled}) => {
           </ul>
         </div>
 
-        {
+        {/* {
           howMuchScrolled > 2220 && (
             <div><HeaderInfo/></div>
           )
-        }
+        } */}
        
       </div>
     </nav>

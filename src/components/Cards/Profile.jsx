@@ -10,10 +10,10 @@ import ProfileContent from './ProfileContent';
 const Profile = () => {
   return (
     <div>
-      <div className='bg-zinc-100 h-82'>
-        <div className='grid sm:grid-cols-4 grid-cols-1 gap-4'>
-          <div className='col-span-1'>
-            <div className='col-span-1 sm:ml-12 ml-2 mt-24'>
+      <div className=' '>
+        <div className='grid sm:grid-cols-5 grid-cols-1 gap-4 bg-zinc-100 sm:px-[50px] px-[20px]  '>
+          <div className='col-span-2'>
+            <div className='col-span-1 sm:ml-12  mt-24'>
               <div className='mb-2 '>Inspiration to installation</div>
               <div className='font-bold sm:text-3xl text-xl mb-4'>
                 <span className='whitespace-nowrap'>Meet our designers,</span>
@@ -33,8 +33,8 @@ const Profile = () => {
               </button>
             </div>
           </div>
-          <div className='ml-4 mt-6 col-span-3'>
-            <ProfileContent />
+          <div className=' col-span-3 my-auto overflow-x-auto'>
+            <ProfileContent className="" />
           </div>
         </div>
       </div>
@@ -43,3 +43,4 @@ const Profile = () => {
 };
 
 export default Profile;
+//ml-4 mt-6
