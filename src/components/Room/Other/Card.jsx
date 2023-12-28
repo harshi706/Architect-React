@@ -5,6 +5,8 @@ import Calculation from "./Calculation";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { FaStoreAlt } from "react-icons/fa";
+import { IoIosArrowDown } from "react-icons/io";
+
 import '../styles.css'
 const Card = () => {
   const [imgColor, setImgColor] = useState("red");
@@ -13,6 +15,15 @@ const Card = () => {
   const [pricestate, setpricestate] = useState(0);
   const [coststate, setcoststate] = useState(7000);
   const [rollstate, setrollstate] = useState(0);
+
+  const[visible,setVisible]=useState(false);
+  const handleClick=()=>{
+    setVisible(!visible);
+  };
+  const[hidden, setHidden]=useState(false);
+  const handlefunc=()=>{
+    setHidden(!hidden);
+  }
 
   const imgSets = {
     red: [
@@ -169,6 +180,7 @@ const Card = () => {
       </div>
 
       {/* texts */}
+      <div className="flex items-start justify-start gap-4 w-[80vw]">
       <div className="sm:mt-[-240px] mt-10 sm:w-auto w-[80vw] prefence-text">
         <div className="textHolders flex flex-col sm:ml-28 ml-0">
           <h1 className="text-2xl font-bold mb-2">Football Shoe</h1>
@@ -212,7 +224,47 @@ const Card = () => {
         </div>
 
         {/* calculations */}
-        <Calculation />
+        <div className="border border-gray-300 w-72 rounded-xl sm:ml-28 mt-2 pt-4 pb-4 pl-3">
+        <div className="flex items-center">
+           
+            <div className="pl-3"><Calculation/></div>
+          </div>
+         
+        
+          <hr />
+          <div className="flex items-center pt-3">
+        <div>
+          <TbTruckDelivery size={24} />
+        </div>
+        <div className="pl-3">Delivery</div>
+      </div>
+      <div className="sm:pl-60 -ml-3 -mt-1">
+        {!visible ? (
+        <div className='mt-1 mr-6 cursor-pointer'><MdOutlineArrowForwardIos size={16} onClick={handleClick} /></div>
+        ) : (
+          <div className='mt-1 mr-6 cursor-pointer'><IoIosArrowDown size={16} onClick={handleClick} /></div>
+        )}
+      </div>
+      <div className="pb-3 text-gray-600 sm:pl-8 -mt-4">
+        Check availability
+      </div>
+      {visible && <div><div className="pl-7">Enter pincode:</div><input type="number" name="pincode" value="" className="border border-black ml-8 mb-2" /></div>}
+      <hr />
+      <div className="flex pt-3">
+        <div className="sm:pr-3">
+          <FaStoreAlt size={24} />
+        </div>
+            <div>In-store</div>
+          </div>
+          <div className="sm:pl-60 -ml-3 -mt-1">
+          {!hidden ? (
+          <div className='mt-1 mr-6 cursor-pointer'><MdOutlineArrowForwardIos size={16} onClick={handlefunc} /></div>
+        ) : (
+          <div className='mt-1 mr-6 cursor-pointer'><IoIosArrowDown size={16} onClick={handlefunc} /></div>
+        )}          </div>
+          <div className="text-gray-600 pl-9 -mt-4">Check in-store stock</div>
+          {hidden && <div><div className="pl-7">Enter city:</div><input type="text" name="city" value="" className="border border-black ml-8 mb-2" /></div>}
+        </div>
 
         {/* //buttons */}
         <div className="buttons mt-4 sm:ml-32 sm:w-auto w-[80vw] ">
@@ -228,33 +280,8 @@ const Card = () => {
           </div>
         </div>
 
-        {/* table */}
-        <div className="sm:ml-36 sm:w-auto w-[80vw] mt-8 font-bold flex items-center justify-center">How to get it</div>
-        <div className="border border-gray-300 w-72 rounded-xl sm:ml-36 mt-2 pt-4 pb-4 pl-3">
-          <div className="flex items-center">
-            <div>
-              <TbTruckDelivery size={24} />
-            </div>
-            <div className="pl-3">Delivery</div>
-          </div>
-          <div className="sm:pl-60 -ml-3 -mt-1">
-            <MdOutlineArrowForwardIos />
-          </div>
-          <div className="pb-3 text-gray-600 sm:pl-8 -mt-4">
-            Check availability
-          </div>
-          <hr />
-          <div className="flex pt-3">
-            <div className="sm:pr-3">
-              <FaStoreAlt size={24} />
-            </div>
-            <div>In-store</div>
-          </div>
-          <div className="sm:pl-60 -ml-3 -mt-1">
-            <MdOutlineArrowForwardIos />
-          </div>
-          <div className="text-gray-600 pl-9 -mt-4">Check in-store stock</div>
-        </div>
+       
+      </div>
       </div>
     </>
   );
