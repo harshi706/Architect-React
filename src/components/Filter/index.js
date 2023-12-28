@@ -21,7 +21,7 @@ function Filter() {
   const [scrollX, setScrollX] = useState(0);
   const scrl = useRef(null);
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const handleDropdownClick = (event, idx) => {
     event.stopPropagation();
@@ -65,7 +65,7 @@ function Filter() {
         isScrolled ? "bg-white" : "bg-white"
       } `}
     >
-      <div className="filter" style={{ marginLeft: "0px" }}>
+      <div className="filter sm:mr-0 pr-20" style={{ marginLeft: "0px" }}>
         <div className="Filter-array" ref={scrl}>
           <div
             className={` slider_lr_container arrow-left  ${
@@ -86,15 +86,12 @@ function Filter() {
               className={`Filter-array-element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ent ${
                 idx === selectedFilter ? "selected-array-element" : ""
               }`}
-              {...!isMobile ? 
-                { onClick: (event) => handleDropdownClick(event, idx) } 
-                : 
-                { onClick: () => navigate(`/${value.label}`) }
-              }
+              {...(!isMobile
+                ? { onClick: (event) => handleDropdownClick(event, idx) }
+                : { onClick: () => navigate(`/${value.label}`) })}
               onMouseEnter={() => setActiveDropdown(idx)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-
               {/* {value && (
                 <img
                   src={value.imgSrc}

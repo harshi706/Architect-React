@@ -93,7 +93,7 @@ export default function RoomImageList() {
             />
           </div> */}
         </div>
-        <Card className="sm:hidden grid w-[80vw]"/>
+        {/* <Card className="sm:hidden grid w-[80vw]"/> */}
 
       </div>
 
