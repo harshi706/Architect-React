@@ -26,11 +26,15 @@ import { CardData } from "../Features/Slices/FIrstCardSlice";
 const HomePage = () => {
   const dispatch = useDispatch();
   const FirstCardData = useSelector(CardData);
+  const [sliderData, setSliderData] = useState([]);
   useEffect(() => {
     dispatch({ type: "FETCH_FIRST_CARD_REQUEST" });
     dispatch({ type: "FETCH_SLIDER_VIEW_REQUEST" });
   }, [dispatch]);
-
+  const slidedata = useSelector(selectSliderData);
+  useEffect(() => {
+    setSliderData(slidedata);
+  }, [slidedata]);
   const loader = false;
   const navigate = useNavigate();
   // useEffect(() => {
@@ -135,7 +139,7 @@ const HomePage = () => {
           </>
         )}
         <Filter />
-        <Cards />
+        <Cards sliderData={sliderData} />
         {isFilterVisible && (
           <div className="fixed-ayatrio-map">
             <button
