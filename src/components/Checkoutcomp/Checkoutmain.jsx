@@ -2,7 +2,7 @@ import React from "react";
 import Learn from "./Learn";
 import Form from "./Form";
 import Header from "../Header";
-
+import Footer from '../Footer/Footer'
 const Checkoutmain = () => {
   return (
     <div>
@@ -13,6 +13,7 @@ const Checkoutmain = () => {
           <Form />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./styles.css";
+import { useNavigate } from "react-router-dom";
 import { links } from "../../assets/images-links";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -19,6 +20,8 @@ function Filter() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollX, setScrollX] = useState(0);
   const scrl = useRef(null);
+
+  const navigate = useNavigate();
 
   const handleDropdownClick = (event, idx) => {
     event.stopPropagation();
@@ -40,6 +43,21 @@ function Filter() {
 
     setScrollX(targetScroll);
   };
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
+
+  useEffect(() => {
+    // Update isMobile state on window resize
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 450);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <header
@@ -47,7 +65,7 @@ function Filter() {
         isScrolled ? "bg-white" : "bg-white"
       } `}
     >
-      <div className="filter" style={{ marginLeft: "0px" }}>
+      <div className="filter sm:mr-0 pr-20" style={{ marginLeft: "0px" }}>
         <div className="Filter-array" ref={scrl}>
           <div
             className={` slider_lr_container arrow-left  ${
@@ -68,7 +86,9 @@ function Filter() {
               className={`Filter-array-element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ent ${
                 idx === selectedFilter ? "selected-array-element" : ""
               }`}
-              onClick={(event) => handleDropdownClick(event, idx)}
+              {...(!isMobile
+                ? { onClick: (event) => handleDropdownClick(event, idx) }
+                : { onClick: () => navigate(`/${value.label}`) })}
               onMouseEnter={() => setActiveDropdown(idx)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
@@ -93,7 +113,7 @@ function Filter() {
               {value && (
                 <p
                   className={` sm:text-base text-sm Filter-array-element-lebel sm:block rounded-full flex items-center justify-center mx-2 sm:bg-white bg-gray-100 whitespace-nowrap ${
-                    value.label === "Find Floor" ? "hidden" : "block"
+                    value.label === "Find Floor" ? "sm:hidden hidden" : "block"
                   }
   ${value.label === "Sport & Gyn Flooring" ? " w-44 h-8" : "w-28 h-8"}
   `}

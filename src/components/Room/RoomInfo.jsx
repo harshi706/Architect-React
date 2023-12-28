@@ -36,7 +36,7 @@ const RoomInfo = () => {
       </div>
 
       {/* ------------------ card -------------- */}
-      <div className="sm:block hidden" style={{ width: "40%" }}>
+      <div className="sm:flex hidden" style={{ width: "40%" }}>
         <Card />
       </div>
     </div>

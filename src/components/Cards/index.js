@@ -217,9 +217,11 @@ function Cards({sliderData}) {
           className="w-full h-full object-fit rounded-3xl"
         />
       </div>
-      <div className="w-full sm:h-[80vh] h-[160vh] m-1 ">
+      {/* 1st */}
+      <Image />
+      {/* <div className="w-full sm:h-[80vh] h-[160vh] m-1 ">
         <Imagechanger />
-      </div>
+      </div> */}
       {/* <div className="w-full sm:h-[60vh] h-[100vh]  mt-2  mb-2  mx-1">
         <Doublecard />
       </div> */}
@@ -503,8 +505,11 @@ function Cards({sliderData}) {
       )}
 
       <Multicard />
-      <Image />
-      <DoubleComp/>
+
+      <div className="w-full sm:h-[80vh] h-[160vh] m-1 ">
+        <Imagechanger />
+      </div>
+      <DoubleComp />
       <Profile />
       <Tabs />
       <Phone />

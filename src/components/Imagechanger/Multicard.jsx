@@ -16,8 +16,8 @@ const Multicard = () => {
 
   return (
     <div>
-      <div className="bg-zinc-50 rounded-lg h-100 sm:px-[50px] px-[20px] overflow-x-auto">
-        <div className="sm:text-5xl text-3xl font-bold w-full font-sans">
+      <div className="bg-zinc-50 rounded-lg h-120 sm:px-[50px] px-[20px] overflow-x-auto">
+        <div className="sm:text-5xl text-2xl font-bold w-full font-sans pt-12 pb-8">
           Why Ayatrio so innovative
           <br />
           for home furnishing.
@@ -25,8 +25,8 @@ const Multicard = () => {
         <Swiper
           ref={swiper1Ref}
           modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={20}
-          // slidesPerView={3}
+          spaceBetween={16}
+         // slidesPerView={3}
           navigation={{ clickable: true }}
           // navigation={{
           //   nextEl: ".swiper-button-prev",
@@ -50,16 +50,16 @@ const Multicard = () => {
           }}
         >
           <SwiperSlide>
-            <div className=" relative bg-white rounded-xl sm:w-[80%] w-[80vw] sm:h-320px h-auto mx-0">
-              <div className="mt-8 ml-6 ">
+            <div className=" relative bg-white rounded-2xl sm:w-[100%] w-[60px] sm:h-300px  h-76 pt-2 mb-24">
+              <div className="mt-8 ml-6">
                 <CiDeliveryTruck size={52} />
               </div>
               <h2 className="text-2xl font-bold ml-6 mr-12">
-                Get flexible delivery and easy pickup.
+                Get flexible delivery <br/>and easy pickup.
               </h2>
               <div className="mt-2 ml-6 mr-12 mb-12">
-                Choose two-hour delivery from an Apple Store, free delivery, or
-                easy pickup options.
+                Choose two-hour delivery from an<br/> Apple Store, free delivery, or
+                easy<br/> pickup options.
               </div>
               <br />
               <div className="absolute bottom-1 right-4 mb-8">
@@ -68,15 +68,15 @@ const Multicard = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="relative bg-white rounded-xl sm:w-[80%] w-[80vw] sm:h-320px h-auto mx-auto">
-              <div className="mt-8 ml-6 mr-12">
+            <div className="relative bg-white rounded-xl sm:w-[100%] w-[80vw] sm:h-300px h-76 pt-2">
+              <div className="mt-8 ml-6 mr-12 mb-2">
                 <IoChatbubblesOutline size={46} />
               </div>
               <h2 className="text-2xl font-bold ml-6 mr-12">
-                Shop with a Specialist over video.
+                Shop with a <br/>Specialist<br/> over video.
               </h2>
               <div className="mt-2 ml-6 mr-12 mb-12">
-                Choose your next Mac in a guided, one-way video session.
+                Choose your next Mac in a<br/> guided, one-way video session.
               </div>
               <br />
               <div className="absolute bottom-1 right-4 mb-8">
@@ -85,41 +85,43 @@ const Multicard = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="relative bg-white rounded-xl sm:w-[80%] w-[80vw] sm:h-320px h-auto mx-auto">
-              <div className="mt-8 ml-6 mr-12">
+            <div className="relative bg-white rounded-xl sm:w-[100%] w-[80vw] sm:h-300px h-76 pt-2">
+              <div className="mt-8 ml-6 mr-12 mb-2">
                 <IoMdContacts size={48} />
               </div>
               <h2 className="text-2xl font-bold ml-6 mr-12">
-                Get to know your new Mac.
+                Get to know your<br/> new Mac.
               </h2>
               <div className="mt-2 ml-6 mr-12 mb-12">
-                Learn how to get the most out of your new Mac with a free
-                one-on-one Personal Session.
+                Learn how to get the most out of <br/>your new Mac with a free
+                one-on-<br/>one Personal Session.
               </div>
               <br />
-              <div className="absolute bottom-1 right-4 mb-8">
+              <div className="absolute bottom-1 right-10 mb-8">
                 <IoIosAddCircle size={34} />
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="relative bg-white rounded-xl sm:w-[80%] w-[80vw] sm:h-320px h-auto mx-auto">
-              <div className="mt-8 ml-6 mr-12">
-                <MdMenuBook size={44} />
-              </div>
-              <h2 className="text-2xl font-bold ml-6 mr-12">
-                Get flexible delivery and easy pickup.
-              </h2>
-              <div className="mt-2 ml-6 mr-12 mb-12">
-                Learn how to get the most out of your new Mac with a free
-                one-on-one Personal Session.
-              </div>
-              <br />
-              <div className="absolute bottom-1 right-4 mb-8">
-                <IoIosAddCircle size={34} />
-              </div>
-            </div>
-          </SwiperSlide>
+  <div className="relative bg-white rounded-xl sm:w-[100%] w-[80vw] sm:h-300px h-76 pt-2">
+    <div className="mt-8 ml-6 mr-12 mb-2">
+      <MdMenuBook size={44} />
+    </div>
+    <h2 className="text-2xl font-bold ml-6 mr-12">
+      Get flexible delivery <br/>and easy pickup.
+    </h2>
+    <div className="mt-2 ml-6 mr-12 mb-12" style={{ overflow: 'hidden' }}>
+      Learn how to get the most out of<br/> your new Mac with a free
+      one-on-<br/>one Personal Session.
+    </div>
+    <br />
+    <div className="absolute bottom-1 right-12 mb-8">
+      <IoIosAddCircle size={34} />
+    </div>
+  </div>
+</SwiperSlide>
+
+
         </Swiper>
       </div>
     </div>

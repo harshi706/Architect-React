@@ -44,8 +44,8 @@
 
 :root {
   --main-color: #111;
-  --loader-color: #4CAF50;
-  --back-color: #A5D6A7;
+  --loader-color: #3668e6;
+  --back-color: #83c5ec;
   --time: 3s;
   --size: 3px;
 }
