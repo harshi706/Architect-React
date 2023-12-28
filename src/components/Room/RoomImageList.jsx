@@ -32,9 +32,9 @@ export default function RoomImageList() {
     <>
       {/* ------------------  room/place heading ------------------  */}
       <div className="room-heading  flex justify-between align-middle mt-[4.5rem] mb-8 sm:w-auto w-[100%]">
-        <h1 className="sm:text-2xl text-lg sm:font-semibold font-medium">
-          Beautiful 4 BHK villa Mountain view,Swimming pool
-        </h1>
+        <div className="sm:text-md text-md sm:font-semibold font-medium flex ">
+          <div className="hover:underline">Beautiful 4 BHK villa</div><div>&gt;</div> <div className="hover:underline">Mountain view</div><div>&gt;</div><div className="hover:underline">Swimming pool</div>
+        </div>
         <div className="share-btn flex gap-x-4 text-sm items-center">
           <div className="share flex items-center">
             <IosShareSharpIcon

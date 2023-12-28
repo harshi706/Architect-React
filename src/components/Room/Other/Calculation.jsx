@@ -2,6 +2,7 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
+import { CiCalculator1 } from "react-icons/ci";
 
 const Calculation = () => {
     const [widthstate, setwidthstate] = useState(0);
@@ -27,13 +28,25 @@ const handleCal=()=>{
 }
   return (
     <div>
-        <div className="calculation-container mt-2 sm:ml-28 ">
-              <div className="text-lg my-6 font-bold flex">
-                Calculate Your Requirements 
-                {!hidden?<div className='mt-1 ml-2'><MdOutlineArrowForwardIos size={16} onClick={handleCal}/></div>:<div className='mt-1 ml-2'><IoIosArrowDown size={16} onClick={handleCal}/></div>}
+        <div className="calculation-container sm">
+        <div className="text-lg flex items-center">
+  <div>
+    <CiCalculator1 size={24} className='flex-start -ml-4 mr-3 mb-3'/>
+  </div>
+  <span className=" self-start">Calculate</span>
+  {!hidden ? (
+    <MdOutlineArrowForwardIos size={16} onClick={handleCal} className='cursor-pointer ml-32'/>
+  ) : (
+    <IoIosArrowDown size={16} onClick={handleCal} className='cursor-pointer ml-32'/>
+  )}
+</div>
+
+
+              <div className="pb-3 text-gray-600 sm:pl-5 -mt-4 pt-1">
+               As per your requirement
               </div>
               {hidden && 
-              <div className="calc flex flex-col">
+              <div className="calc mr-4 mb-4 mt-4 flex-col">
                 {/* Dimension Inputs */}
                 <div className="dim flex flex-row">
                   <div
