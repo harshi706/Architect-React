@@ -1,16 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import room from "./room.jpg";
 import work from "./work.jpg";
 import living from "./living.jpg";
 import kitchen from "./kitchen.webp";
 import "./styles.css";
-import { BsArrowRightCircleFill } from "react-icons/bs";
 const Tabs = () => {
-  // const [activeTab, setActiveTab] = useState("all");
-
-  // const handleTabClick = (tab) => {
-  //   setActiveTab(tab);
-  // };
   const [circle1Hovered, setCircle1Hovered] = useState(false);
   const [circle2Hovered, setCircle2Hovered] = useState(false);
 
