@@ -96,7 +96,7 @@ const Imagechanger = () => {
             <h1 className="font-bold text-3xl">
               Get to know your health
             </h1>
-            <h3 className=" text-gray-500 ">
+            <h3 className=" text-gray-500 pt-3.5 ">
               Bands shown may be sold seperately and may not be <br />
               available in all countries
             </h3>
@@ -111,7 +111,7 @@ const Imagechanger = () => {
                 className="flex  items-center"
               >
                 <h1
-                  className={`text-lg font-medium text-left cursor-pointer ${openStates[idx] && "open"
+                  className={`text-lg font-medium  text-left cursor-pointer ${openStates[idx] && "open"
                     }`}
                 >
                   {value}
