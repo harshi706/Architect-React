@@ -1,8 +1,8 @@
 export const links = [
-  {
-    label:"Find Floor",
-    imgSrc: "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
-  },
+  // {
+  //   label:"Find Floor",
+  //   imgSrc: "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
+  // },
   {
     label: "Wallpaper",
     imgSrc:

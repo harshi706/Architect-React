@@ -99,7 +99,7 @@ function Filter() {
                   className="Filter-array-element-img"
                 />
               )} */}
-              {value && (
+              {/* {value && (
                 <img
                   src={choserightfloor}
                   alt="NA"
@@ -109,13 +109,13 @@ function Filter() {
                   
                   `}
                 />
-              )}
+              )} */}
               {value && (
                 <p
                   className={` sm:text-base text-sm Filter-array-element-lebel sm:block rounded-full flex items-center justify-center mx-2 sm:bg-white bg-gray-100 whitespace-nowrap ${
                     value.label === "Find Floor" ? "sm:hidden hidden" : "block"
                   }
-  ${value.label === "Sport & Gyn Flooring" ? " w-44 h-8" : "w-28 h-8"}
+  ${value.label === "Sport & Gyn Flooring" ? " w-32 h-8" : "w-20 h-6"}
   `}
                 >
                   {value.label}
@@ -184,6 +184,20 @@ function Filter() {
             </div>
           </Link>
         </div>
+        <div className="sm:hidden block">
+        <Link to="/magazine">
+            <div className="at">
+              {" "}
+              <img
+                src={choserightfloor}
+                alt=""
+                className="seachbar-div2-icon"
+              />{" "}
+              
+            </div>
+          </Link>
+        </div>
+
       </div>
     </header>
   );
