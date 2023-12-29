@@ -7,8 +7,8 @@ import Double from "./Double";
 const DoubleComp = () => {
   return (
     <div>
-      <div className=" text-center grid sm:grid-cols-2 grid-cols-1 sm:h-[35rem] sm:w-auto w-[100%] gap-4 sm:px-[50px] px-[20px]">
-        <div className="col-span-1 sm:ml-12 ml-0 sm:pr-8 pr-0 bg-green-950 text-white overflow-hidden">
+     <div className=" text-center grid sm:grid-cols-2 grid-cols-1 sm:h-[35rem] sm:w-auto w-[100%] gap-4 sm:px-[50px]">
+        <div className="col-span-1 ml-0 sm:pr-8 pr-0 bg-green-950 text-white overflow-hidden">
           <div>
             <div className="flex items-center justify-center text-3xl  pl-0 sm:pt-16 pt-0">
               {" "}
