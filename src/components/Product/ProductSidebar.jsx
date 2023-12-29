@@ -113,12 +113,14 @@ const Sidebar = ({ places }) => {
           {links.map((tab, i) => (
             <div
               key={i}
-              className={`tabs
+              className={`tabs px-2
           ${
             activeTab === tab
-              ? "activeTabS border border-black rounded-full w-28 flex items-center justify-center mx-2 bg-gray-100 whitespace-nowrap"
-              : "tabS border w-28 border-white rounded-full flex items-center justify-center  mx-2 bg-gray-100 whitespace-nowrap"
-          }`}
+              ? "activeTabS border border-black rounded-full w-28 flex items-center justify-center  mx-2 bg-gray-100 whitespace-nowrap"
+              : "tabS border w-28 border-white rounded-full flex items-center justify-center   mx-2 bg-gray-100 whitespace-nowrap"
+          }
+          ${tab==="Training & Running" ? "w-44": "w-28"}
+          `}
               onClick={() => handleTabClick(tab)}
             >
               {tab}
