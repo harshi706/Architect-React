@@ -118,84 +118,87 @@ const Tabs = () => {
 
   return (
     <>
-      <div
-        className={` wrapper py-20 ${isSticky ? " sticky" : ""
-          } cursor-pointer sm:mb-0 w-full h-full mb-20 sm:px-[50px] px-[20px]
+      <div className="wrapper w-full h-full mb-20 sm:px-[50px] px-[20px] py-20 w-full h-full" ><div ><h2 className="text-xl font-semibold mb-5">
+        More ideas and inspiration</h2></div>
+        <div
+          className={`${isSticky ? " sticky" : ""
+            } cursor-pointer sm:mb-0 
       
        `}
-      >
-        <div
-          className={`bg-white py-5 bloc-tabs1 flex flex-row  sm:overflow-hidden`}
-          style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}
         >
-          {/* sm:mb-[-64px] */}
-          {tabsData.map((tab, i) => (
-            <div
-              key={i}
-              className={` px-5 py-2 tabs
+          <div
+            className={`bg-white py-5 bloc-tabs1 flex flex-row  sm:overflow-hidden`}
+            style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}
+          >
+            {/* sm:mb-[-64px] */}
+            {tabsData.map((tab, i) => (
+              <div
+                key={i}
+                className={` px-5 py-2 tabs
           ${activeTab === tab.key
-                  ? "active-tabs  border border-black mr-2.5 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
-                  : "tabs  border border-white mr-2.5 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
-                }`}
-              onClick={() => handleTabClick(tab.key)}
-            >
-              {tab.label}
-            </div>
-          ))}
-        </div>
+                    ? "active-tabs  border border-black mr-2.5 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
+                    : "tabs  border border-white mr-2.5 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
+                  }`}
+                onClick={() => handleTabClick(tab.key)}
+              >
+                {tab.label}
+              </div>
+            ))}
+          </div>
 
-        {/* <div className="content-tabs">{getContent()}</div> */}
-        <div className="content-tabs">
-          <div>
-            <div className=" text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={tabImages[activeTab][0]}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={tabImages[activeTab][1]}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={tabImages[activeTab][2]}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden sm:hidden block">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={activeTab === "all" ? tabImages[activeTab][3] : tabImages[activeTab][0]}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={tabImages[activeTab][0]}
-                  alt="Room"
-                />
-              </div>
-              <div className="bg-teal-100 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={tabImages[activeTab][0]}
-                  alt="Room"
-                />
+          {/* <div className="content-tabs">{getContent()}</div> */}
+          <div className="content-tabs">
+            <div>
+              <div className=" text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+                <div className="row-span-2 overflow-hidden">
+                  <img
+                    className="h-full w-full object-cover"
+                    src={tabImages[activeTab][0]}
+                    alt="Room"
+                  />
+                </div>
+                <div className="overflow-hidden">
+                  <img
+                    className="h-full w-full object-cover"
+                    src={tabImages[activeTab][1]}
+                    alt="Room"
+                  />
+                </div>
+                <div className="row-span-2 overflow-hidden">
+                  <img
+                    className="h-full w-full object-cover"
+                    src={tabImages[activeTab][2]}
+                    alt="Room"
+                  />
+                </div>
+                <div className="overflow-hidden sm:hidden block">
+                  <img
+                    className="h-full w-full object-cover "
+                    src={work}
+                    alt="Room"
+                  />
+                </div>
+                <div className="row-span-2 overflow-hidden">
+                  <img
+                    className="h-full w-full object-cover"
+                    src={activeTab === "all" ? tabImages[activeTab][3] : tabImages[activeTab][0]}
+                    alt="Room"
+                  />
+                </div>
+                <div className="overflow-hidden">
+                  <img
+                    className="h-full w-full object-cover"
+                    src={tabImages[activeTab][0]}
+                    alt="Room"
+                  />
+                </div>
+                <div className="bg-teal-100 overflow-hidden">
+                  <img
+                    className="h-full w-full object-cover"
+                    src={tabImages[activeTab][0]}
+                    alt="Room"
+                  />
+                </div>
               </div>
             </div>
           </div>
