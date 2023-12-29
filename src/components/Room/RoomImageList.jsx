@@ -19,7 +19,6 @@ export default function RoomImageList() {
     "https://a0.muscache.com/im/pictures/dbbab7f7-c01c-4802-9ad9-f87def795edc.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/miso/Hosting-855668970469413787/original/15a0762f-b9ca-40a1-b596-900e9450d181.jpeg?im_w=720",
   ];
-
   return (
     <>
       {/* ------------------  room/place heading ------------------  */}
@@ -49,8 +48,8 @@ export default function RoomImageList() {
       </div>
 
       {/* ------------------  room/place image gallery ------------------  */}
-      <div className="imggallery  sm:h-[55vh]  sm:w-auto ">
-      <div className="sm:grid hidden sm:grid-cols-3 sm:grid-rows-2 gap-3">
+      <div className="imggallery  sm:h-[55vh]  w-[60vw] ">
+      <div className="sm:grid hidden sm:grid-cols-2 sm:grid-rows-2 gap-3">
   <div className="sm:col-span-1">
     <img
       className="sm:w-full w-[80vw] h-[22rem] object-cover"
@@ -80,9 +79,9 @@ export default function RoomImageList() {
     />
   </div>
 
-  <div className="col-span-1 row-span-2">
+  {/* <div className="col-span-1 row-span-2">
   <Card />
-</div>
+</div> */}
 
           {/* <Card className="sm:hidden grid w-[80vw]"/> */}
           {/* <div className="col-start-4 row-start-2">
