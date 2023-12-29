@@ -504,8 +504,8 @@ const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
       )}
 
       <Multicard />
-
-      <div className="w-full sm:h-[80vh] h-[160vh] m-1 ">
+      {/* removed for overlape sm:h-[80vh] */}
+      <div className="w-full bg-zinc-100 px-12 py-20  h-auto">   
         <Imagechanger />
       </div>
       <DoubleComp />

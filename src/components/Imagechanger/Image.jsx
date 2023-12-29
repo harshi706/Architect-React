@@ -90,7 +90,7 @@ const Imagechanger = () => {
   //
   return (
     <>
-      <div className="main w-full h-full pl-12 flex sm:flex-row flex-col sm:px-[50px] px-[20px]">
+      <div className="main w-full h-full py-20 flex sm:flex-row flex-col sm:px-[50px] px-[20px]">
         <div className="left text-container flex flex-col sm:w-1/2 w-[80vw] h-full">
           <div className="text-container  py-8">
             <h1 className="font-bold text-3xl">
