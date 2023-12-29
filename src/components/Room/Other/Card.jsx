@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Calculation from "./Calculation";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
@@ -53,18 +52,6 @@ const Card = () => {
     setpricestate(calculatedPrice.toFixed(2));
     setrollstate(area.toFixed(2));
   };
-  const dropdownHeadings = [
-    "Dropdown Text 1",
-    "Dropdown Text 2",
-    "Dropdown Text 3",
-    "Dropdown Text 7",
-  ];
-  const dropdownTexts = [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "siuuuuuuuuuuuuuu.",
-  ];
   useEffect(() => {
     priceCal();
   }, [widthstate, heightstate, coststate]);
@@ -84,8 +71,6 @@ const Card = () => {
 
   return (
     <>
-  
-
       {/* texts */}
       <div className="flex justify-start gap-4 w-[28vw] ml-10">
       <div className=" mt-10 sm:w-auto w-[80vw] prefence-text">
@@ -185,9 +170,7 @@ const Card = () => {
             </button>
           </div>
         </div>
-
-       
-      </div>
+           </div>
       </div>
     </>
   );

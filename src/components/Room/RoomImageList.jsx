@@ -2,15 +2,7 @@
 import IosShareSharpIcon from "@mui/icons-material/IosShareSharp";
 import FavoriteBorderSharpIcon from "@mui/icons-material/FavoriteBorderSharp";
 import Card from "./Other/Card";
-import React, { useState, useEffect, useRef } from "react";
-import {
-  Pagination,
-  Navigation,
-  Scrollbar,
-  Mousewheel,
-  FreeMode,
-} from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React from "react";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
@@ -19,17 +11,13 @@ import "swiper/css/scrollbar";
 import "swiper/swiper-bundle.css";
 import "./styles.css";
 export default function RoomImageList() {
-
-
-
-  const image = [
+ const image = [
     "https://a0.muscache.com/im/pictures/8daebf64-1591-4e32-b7df-b4297f585381.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/8daebf64-1591-4e32-b7df-b4297f585381.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/4ee98f0f-73df-41fe-8006-4484413a1249.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/dbbab7f7-c01c-4802-9ad9-f87def795edc.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/miso/Hosting-855668970469413787/original/15a0762f-b9ca-40a1-b596-900e9450d181.jpeg?im_w=720",
   ];
-
   return (
     <>
       {/* ------------------  room/place heading ------------------  */}
