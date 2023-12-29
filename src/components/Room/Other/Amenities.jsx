@@ -130,7 +130,7 @@ const amenties = [
 
 const Amenities = () => {
   return (
-    <div className="place-offerings mt-14 py-12 border-t border-b">
+    <div className="place-offerings mt-14 py-12 border-t">
       <h3 className="mb-6 text-xl font-semibold ml-1">
         What this place offers
       </h3>

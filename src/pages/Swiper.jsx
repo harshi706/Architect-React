@@ -210,7 +210,7 @@ const ItemPage = () => {
   return (
     <>
 
-        <div className="swiper1 mt-10 sm:block hidden mb-[-40px]">
+<div className="swiper1 mt-10 sm:block hidden">
           <Swiper
             {...swiperOptions}
             onSwiper={(swiper) => (swiperRef.current = swiper)}

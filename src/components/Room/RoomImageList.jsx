@@ -1,4 +1,5 @@
 // import * as React from "react";
+import { useState,useRef,useEffect } from "react";
 import IosShareSharpIcon from "@mui/icons-material/IosShareSharp";
 import FavoriteBorderSharpIcon from "@mui/icons-material/FavoriteBorderSharp";
 import Card from "./Other/Card";
@@ -18,6 +19,7 @@ export default function RoomImageList() {
     "https://a0.muscache.com/im/pictures/dbbab7f7-c01c-4802-9ad9-f87def795edc.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/miso/Hosting-855668970469413787/original/15a0762f-b9ca-40a1-b596-900e9450d181.jpeg?im_w=720",
   ];
+
   return (
     <>
       {/* ------------------  room/place heading ------------------  */}
@@ -78,7 +80,10 @@ export default function RoomImageList() {
     />
   </div>
 
-          <div className="col-span-1 row-span-2"><Card/></div>
+  <div className="col-span-1 row-span-2">
+  <Card />
+</div>
+
           {/* <Card className="sm:hidden grid w-[80vw]"/> */}
           {/* <div className="col-start-4 row-start-2">
             <img
