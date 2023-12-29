@@ -47,835 +47,54 @@ const Tabs = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  const getContent = () => {
-    switch (activeTab) {
-      case "all":
-        return (
-          <div>
-            <div className=" py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div className="relative row-span-2 overflow-hidden circle-container items-center justify-center flex ">
-                <img
-                  className={`h-full w-full object-cover
-                  
-                   `}
-                  src={room}
-                  alt="Room"
-                />           
 
-                {circled.map((circle, index) => (
-                  <div
-                    key={index}
-                    className={`circle absolute w-5 h-5 bg-white border-4 border-slate-400 rounded-full`}
-                    style={{
-                      top: `${circle.top}%`,
-                      left: `${circle.left}%`,
-                    }}
-                  >
-                    <div
-                      className={`hover-box flex-row z-10 w-56 rounded-2xl flex items-center
-                     ${circle.top > 75 ? "top-condition" : ""} ${
-                        circle.left > 65 ? "left-condition" : ""
-                      }
-                    `}
-                    >
-                      <div className="flex flex-col">
-                        <h2 className=" font-normal">{circle.productTitle}</h2>
-                        <p className=" text-slate-400">
-                          {circle.productCategory}
-                        </p>
-                        <p className="font-semibold">₹ {circle.price}</p>
-                      </div>
-                      <div className="relative flex items-center justify-center">
-                        <BsArrowRightCircleFill className="flex items-center justify-center" />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
 
-              <div className="row-span-2  overflow-hidden">
-                <img
-                  className="h-full w-full object-cover "
-                  src={living}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden sm:hidden block">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 sm:block hidden overflow-hidden">
-                <img
-                  className="h-full w-full object-cover "
-                  src={kitchen}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover "
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover "
-                  src={living}
-                  alt="Room"
-                />
-              </div>
-            </div>
-          </div>
-        );
-
-      case "bedroom":
-        return (
-          <div>
-            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  alt="room"
-                  src={room}
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden sm:hidden block">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="bg-teal-100  overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-            </div>
-          </div>
-        );
-
-      case "livingroom":
-        return (
-          <div>
-            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={living}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={living}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={living}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden sm:hidden block">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={living}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={living}
-                  alt="Room"
-                />
-              </div>
-              <div className="bg-teal-100 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={living}
-                  alt="Room"
-                />
-              </div>
-            </div>
-          </div>
-        );
-      case "kitchen":
-        return (
-          <div>
-            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={kitchen}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={kitchen}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={kitchen}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden sm:hidden block">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={kitchen}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={kitchen}
-                  alt="Room"
-                />
-              </div>
-              <div className="bg-teal-100 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={kitchen}
-                  alt="Room"
-                />
-              </div>
-            </div>
-          </div>
-        );
-      case "workspace":
-        return (
-          <div>
-            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden sm:hidden block">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="bg-teal-100 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-            </div>
-          </div>
-        );
-      case "outdoor":
-        return (
-          <div>
-            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden sm:hidden block">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="bg-teal-100 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-            </div>
-          </div>
-        );
-      case "bathroom":
-        return (
-          <div>
-            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden sm:hidden block">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="bg-teal-100 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-            </div>
-          </div>
-        );
-      case "babychildren":
-        return (
-          <div>
-            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden sm:hidden block">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="bg-teal-100 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-            </div>
-          </div>
-        );
-      case "dining":
-        return (
-          <div>
-            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden sm:hidden block">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="bg-teal-100 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-            </div>
-          </div>
-        );
-      case "hallway":
-        return (
-          <div>
-            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden sm:hidden block">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="bg-teal-100 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-            </div>
-          </div>
-        );
-      case "laundry":
-        return (
-          <div>
-            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden sm:hidden block">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="bg-teal-100 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-            </div>
-          </div>
-        );
-      case "accessories":
-        return (
-          <div>
-            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden sm:hidden block">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-              <div className="bg-teal-100 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={room}
-                  alt="Room"
-                />
-              </div>
-            </div>
-          </div>
-        );
-      default:
-        return null;
-    }
-  };
-
-  const tabsData = [
-    { key: "all", label: "All" },
-    { key: "bedroom", label: "Bedroom" },
-    { key: "livingroom", label: "Living Room" },
-    { key: "kitchen", label: "Kitchen" },
-    { key: "workspace", label: "Workspace" },
-    { key: "outdoor", label: "Outdoor" },
-    { key: "bathroom", label: "Bathroom" },
-    // { key: "babychildren", label: "Baby & children room" },
-    { key: "dining", label: "Dining" },
-    { key: "hallway", label: "Hallway" },
-    { key: "laundry", label: "Laundry" },
-    { key: "accessories", label: "Accessories" },
-  ];
-
-  // const [isSticky, setIsSticky] = useState(false);
-  // const contentRef = useRef(null);
-
-  // const handleScroll = () => {
-  //   const offset = window.scrollY;
-  //   const contentHeight = contentRef.current.clientHeight;
-  //   const tabsHeight = contentRef.current.offsetTop;
-
-  //   setIsSticky(offset > tabsHeight && offset < tabsHeight + contentHeight);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  // const [activeTab, setActiveTab] = useState("all");
-  // const [isSticky, setIsSticky] = useState(false);
-  // const contentRef = useRef(null);
-  // const blocTabsRef = useRef(null);
-
-  // const handleTabClick = (tab) => {
-  //   setActiveTab(tab);
-  // };
-
-  // const handleScroll = () => {
-  //   const blocTabsTop = blocTabsRef.current.getBoundingClientRect().top;
-  //   setIsSticky(blocTabsTop <= 0);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  // window.addEventListener('scroll', () => {
-  //   const blocTabs = document.querySelector('.bloc-tabs1');
-  //   const contentTabs = document.querySelector('.content-tabs');
-  //   const stickyPoint = blocTabs.offsetTop;
-
-  //   if (window.scrollY >= stickyPoint) {
-  //     blocTabs.classList.add('sticky');
-  //     contentTabs.style.paddingTop = `${blocTabs.offsetHeight}px`;
-  //   } else {
-  //     blocTabs.classList.remove('sticky');
-  //     contentTabs.style.paddingTop = '0';
-  //   }
-  // });
-
-  // const [isSticky, setIsSticky] = useState(false);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const blocTabs = document.querySelector(".bloc-tabs");
-  //     const contentTabs = document.querySelector(".content-tabs");
-
-  //     if (blocTabs && contentTabs) {
-  //       const blocTabsRect = blocTabs.getBoundingClientRect();
-  //       const contentTabsRect = contentTabs.getBoundingClientRect();
-
-  //       setIsSticky(contentTabsRect.top <= blocTabsRect.bottom);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
 
   const [activeTab, setActiveTab] = useState("all");
   const [isSticky, setIsSticky] = useState(false);
-
+  const tabImages = {
+      all: [room, work, living, kitchen],
+      bedroom: [room, room, room],
+      livingroom: [living, living, living],
+      kitchen: [kitchen, kitchen, kitchen],
+      workspace: [work, work, work],
+      outdoor: [room, living, kitchen],
+      bathroom: [room, room, room],
+      dining: [living, kitchen, room],
+      hallway: [room, room, room],
+      laundry: [work, work, work],
+      accessories: [room, living, kitchen],
+    };
   useEffect(() => {
     const handleScroll = () => {
       const blocTabs = document.querySelector(".bloc-tabs1");
       const contentTabs = document.querySelector(".content-tabs");
 
-      // if (blocTabs && contentTabs) {
-      //   const blocTabsRect = blocTabs.getBoundingClientRect();
-      //   const contentTabsRect = contentTabs.getBoundingClientRect();
-
-      //   setIsSticky(contentTabsRect.top <= blocTabsRect.bottom);
-      // }
       if (contentTabs) {
         const contentTabsRect = contentTabs.getBoundingClientRect();
         setIsSticky(contentTabsRect.top <= 0);
       }
     };
-
+  
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const tabsData = [
+    { key: "all", label: "All",img:tabImages.all },
+    { key: "bedroom", label: "Bedroom",img:tabImages.bedroom },
+    { key: "livingroom", label: "Living Room",img:tabImages.livingroom },
+    { key: "kitchen", label: "Kitchen",img:tabImages.kitchen },
+    { key: "workspace", label: "Workspace",img:tabImages.workspace },
+    { key: "outdoor", label: "Outdoor",img:tabImages.outdoor },
+    { key: "bathroom", label: "Bathroom",img:tabImages.bathroom },
+    // { key: "babychildren", label: "Baby & children room" },
+    { key: "dining", label: "Dining",img:tabImages.dining },
+    { key: "hallway", label: "Hallway",img:tabImages.hallway },
+    { key: "laundry", label: "Laundry",img:tabImages.laundry },
+    { key: "accessories", label: "Accessories",img:tabImages.accessories },
+  ];
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -910,7 +129,62 @@ const Tabs = () => {
           ))}
         </div>
 
-        <div className="content-tabs">{getContent()}</div>
+        {/* <div className="content-tabs">{getContent()}</div> */}
+        <div className="content-tabs">
+        <div>
+            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+              <div className="row-span-2 overflow-hidden">
+                <img
+                  className="h-full w-full object-cover"
+                  src={tabImages[activeTab][0]}
+                  alt="Room"
+                />
+              </div>
+              <div className="overflow-hidden">
+                <img
+                  className="h-full w-full object-cover"
+                  src={tabImages[activeTab][1]}
+                  alt="Room"
+                />
+              </div>
+              <div className="row-span-2 overflow-hidden">
+                <img
+                  className="h-full w-full object-cover"
+                  src={tabImages[activeTab][2]}
+                  alt="Room"
+                />
+              </div>
+              <div className="overflow-hidden sm:hidden block">
+                <img
+                  className="h-full w-full object-cover "
+                  src={work}
+                  alt="Room"
+                />
+              </div>
+              <div className="row-span-2 overflow-hidden">
+                <img
+                  className="h-full w-full object-cover"
+                  src={activeTab === "all" ? tabImages[activeTab][3]:tabImages[activeTab][0]}
+                  alt="Room"
+                />
+              </div>
+              <div className="overflow-hidden">
+                <img
+                  className="h-full w-full object-cover"
+                  src={tabImages[activeTab][0]}
+                  alt="Room"
+                />
+              </div>
+              <div className="bg-teal-100 overflow-hidden">
+                <img
+                  className="h-full w-full object-cover"
+                  src={tabImages[activeTab][0]}
+                  alt="Room"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
