@@ -134,7 +134,7 @@ const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
 
 
   return (
-    <div className="pb-20">
+    <div className="">
      {MemoizedMainSlider}
       <div className="pt-12  mb-20  bg-white sm:px-[50px] px-[20px]">
         <div className="mb-2 w-full flex justify-between items-center">
