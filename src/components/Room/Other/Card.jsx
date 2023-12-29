@@ -87,7 +87,7 @@ const Card = () => {
   
 
       {/* texts */}
-      <div className="flex justify-start gap-4 w-[80vw] ml-10">
+      <div className="flex justify-start gap-4 w-[28vw] ml-10">
       <div className=" mt-10 sm:w-auto w-[80vw] prefence-text">
         <div className="textHolders flex flex-col ml-0">
           <h1 className="text-2xl font-bold mb-2">Football Shoe</h1>
