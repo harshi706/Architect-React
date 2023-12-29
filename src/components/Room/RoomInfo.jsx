@@ -30,15 +30,12 @@ const RoomInfo = () => {
 
         {/* ----------------- what this place offers ------------ */}
         <Amenities />
-
-        {/* ---------- select from dates ----------- */}
-        <Calendar />
       </div>
 
       {/* ------------------ card -------------- */}
-      <div className="sm:flex hidden" style={{ width: "40%" }}>
+      {/* <div className="sm:flex hidden" style={{ width: "40%" }}>
         <Card />
-      </div>
+      </div> */}
     </div>
   );
 };
