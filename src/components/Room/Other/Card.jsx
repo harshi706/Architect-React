@@ -84,105 +84,12 @@ const Card = () => {
 
   return (
     <>
-      <div className="room-card hidden ml-24 mt-[-300px]  max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <div>
-          <span className="font-bold mr-1 text-black text-xl">₹11,897 </span>
-          <span className="font-normal text-lg text-gray-500">night</span>
-        </div>
-        <div className="actions-area my-4">
-          <div className="date-pickers flex w-full rounded-tl-lg rounded-tr-lg m-0 border">
-            <div className="date-right w-1/2 p-3 text-sm text-left">
-              Check In
-            </div>
-            <div className="date-left w-1/2 border-l p-3 text-sm text-left">
-              CheckOut
-            </div>
-          </div>
-          <div className="dropdown">
-            <button
-              id="dropdownHoverButton"
-              data-dropdown-toggle="dropdownHover"
-              data-dropdown-trigger="hover"
-              className="text-black bg-white rounded-br-lg rounded-bl-lg text-sm flex justify-between px-5 py-3 text-center border mb-4 mt-0 w-full"
-              type="button"
-            >
-              Guest{" "}
-              <svg
-                className="w-2.5 h-2.5 ms-3"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 10 6"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="m1 1 4 4 4-4"
-                />
-              </svg>
-            </button>
-
-            {/* <!-- Dropdown menu --> */}
-            <div
-              id="dropdownHover"
-              className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-            >
-              <ul
-                className="py-2 text-sm text-gray-700 dark:text-gray-200"
-                aria-labelledby="dropdownHoverButton"
-              >
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    Guest
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    Settings
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    Earnings
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    Sign out
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <Link to="/checkout">
-          <button
-            type="button"
-            className="change-dates flex justify-center text-center font-semibold rounded-lg border border-transparent w-full"
-          >
-            Change dates
-          </button>
-        </Link>
-      </div>
+  
 
       {/* texts */}
-      <div className="flex items-start justify-start gap-4 w-[80vw]">
-      <div className="sm:mt-[-240px] mt-10 sm:w-auto w-[80vw] prefence-text">
-        <div className="textHolders flex flex-col sm:ml-28 ml-0">
+      <div className="flex justify-start gap-4 w-[80vw] ml-10">
+      <div className=" mt-10 sm:w-auto w-[80vw] prefence-text">
+        <div className="textHolders flex flex-col ml-0">
           <h1 className="text-2xl font-bold mb-2">Football Shoe</h1>
           <h3 className="mb-2 font-semibold">
             Collection: Metropolitan Stories Travel Styles
@@ -190,7 +97,6 @@ const Card = () => {
           <h3 className="mb-4 font-semibold">
             Pattern Number: 77siu7Cr7-{imgColor}
           </h3>
-
           <div className="price">
             <h2 className="font-bold mb-1">MRP: ₹{coststate}/Shoe</h2>
             <h5 className="">incl. Of taxes</h5>
@@ -199,7 +105,7 @@ const Card = () => {
         </div>
 
         {/* color-container */}
-        <div className="colorContainer flex flex-col items-start mt-4 sm:ml-28 sm:w-auto w-[80vw]">
+        <div className="colorContainer flex flex-col items-start mt-4 sm:w-auto w-[80vw]">
           <h1 className="mb-2 font-bold">Other Colorways</h1>
           <div className="colors flex gap-3">
             <div
@@ -224,7 +130,7 @@ const Card = () => {
         </div>
 
         {/* calculations */}
-        <div className="border border-gray-300 w-72 rounded-xl sm:ml-28 mt-2 pt-4 pb-4 pl-3">
+        <div className="border border-gray-300 w-72 rounded-xl mt-2 pt-4 pb-4 pl-3">
         <div className="flex items-center">
            
             <div className="pl-3"><Calculation/></div>
@@ -267,7 +173,7 @@ const Card = () => {
         </div>
 
         {/* //buttons */}
-        <div className="buttons mt-4 sm:ml-32 sm:w-auto w-[80vw] ">
+        <div className="buttons mt-4 sm:w-auto w-[80vw] ">
           <div className="guestCheckout">
             <button className="bg-black text-white w-80 h-16 rounded-full hover:bg-gray-900 transition duration-300">
               Add To Bag
