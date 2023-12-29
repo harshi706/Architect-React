@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderInfo from "./HeaderInfo";
+
 
 const RoomPageHeader = ({howMuchScrolled}) => {
   return (
@@ -35,7 +35,6 @@ const RoomPageHeader = ({howMuchScrolled}) => {
             <div><HeaderInfo/></div>
           )
         } */}
-       
       </div>
     </nav>
   );
