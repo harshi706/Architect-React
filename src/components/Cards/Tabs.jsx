@@ -8,25 +8,24 @@ const Tabs = () => {
   const [circle1Hovered, setCircle1Hovered] = useState(false);
   const [circle2Hovered, setCircle2Hovered] = useState(false);
 
-   const circled= [
-        {
-          top: 50,
-          left: 68,
-          productTitle: "Nike Dri-FIT One Women's Tank Top",
-          productCategory: "Athletic Tank Top",
-          price: 1900,
-        },
-        {
-          top: 79,
-          left: 82,
-          productTitle: "Nike Sportswear Essential Repel Women",
-          productCategory: "Athletic Jacket",
-          price: 3995.0,
-        },
-      ]
-  
+  const circled = [
+    {
+      top: 50,
+      left: 68,
+      productTitle: "Nike Dri-FIT One Women's Tank Top",
+      productCategory: "Athletic Tank Top",
+      price: 1900,
+    },
+    {
+      top: 79,
+      left: 82,
+      productTitle: "Nike Sportswear Essential Repel Women",
+      productCategory: "Athletic Jacket",
+      price: 3995.0,
+    },
+  ];
 
-      const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
 
   useEffect(() => {
     // Update isMobile state on window resize
@@ -68,6 +67,19 @@ const Tabs = () => {
         const contentTabsRect = contentTabs.getBoundingClientRect();
         setIsSticky(contentTabsRect.top <= 0);
       }
+      console.log(window.scrollY);
+      if(!isMobile && window.scrollY>4700){
+        setIsSticky(false)
+      }
+      if(isMobile && window.scrollY>5520){
+
+        setIsSticky(false)
+      }
+     
+      // if (blocTabs) {
+      //   const blocTabsRect = blocTabs.getBoundingClientRect();
+      //   setIsSticky(blocTabsRect.top >= 0);
+      // }
     };
   
     window.addEventListener("scroll", handleScroll);

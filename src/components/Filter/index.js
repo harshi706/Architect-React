@@ -115,7 +115,7 @@ function Filter() {
                   className={` sm:text-base text-sm Filter-array-element-lebel sm:block rounded-full flex items-center justify-center mx-2 sm:bg-white bg-gray-100 whitespace-nowrap ${
                     value.label === "Find Floor" ? "sm:hidden hidden" : "block"
                   }
-  ${value.label === "Sport & Gyn Flooring" ? " w-32 h-8" : "w-20 h-6"}
+  ${value.label === "Sport & Gyn Flooring" ? " w-40 h-8" : "w-20 h-6"}
   `}
                 >
                   {value.label}
