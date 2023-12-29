@@ -207,7 +207,7 @@ const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
         </Swiper>
       </div>
       <div
-        className="h-40 my-10 sm:px-[30px] px-[30px]
+        className="h-40 my-10 sm:px-[50px] px-[50px]
       "
       >
         <img
