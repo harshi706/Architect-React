@@ -90,13 +90,13 @@ const Imagechanger = () => {
   //
   return (
     <>
-      <div className="main w-full h-full pl-12 flex sm:flex-row flex-col sm:px-[50px] px-[20px]">
+      <div className="main w-full h-full py-20 flex sm:flex-row flex-col sm:px-[50px] px-[20px]">
         <div className="left text-container flex flex-col sm:w-1/2 w-[80vw] h-full">
           <div className="text-container  py-8">
             <h1 className="font-bold text-3xl">
               Get to know your health
             </h1>
-            <h3 className=" text-gray-500 ">
+            <h3 className=" text-gray-500 pt-3.5 ">
               Bands shown may be sold seperately and may not be <br />
               available in all countries
             </h3>
@@ -111,7 +111,7 @@ const Imagechanger = () => {
                 className="flex  items-center"
               >
                 <h1
-                  className={`text-lg font-medium text-left cursor-pointer ${openStates[idx] && "open"
+                  className={`text-lg font-medium  text-left cursor-pointer ${openStates[idx] && "open"
                     }`}
                 >
                   {value}

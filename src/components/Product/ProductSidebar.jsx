@@ -105,7 +105,7 @@ const Sidebar = ({ places }) => {
 
   return (
     <>
-      <div className=" cursor-pointer sm:mb-0 w-full h-full mb-20 sm:px-[50px] px-[20px] sm:hidden block ">
+      <div className=" cursor-pointer sm:mb-0 w-full h-full  my-20 sm:px-[50px] px-[20px] sm:hidden block ">
         <div
           className="bloc-tabs flex flex-row  sm:overflow-hidden sm:mb-[-64px]"
           style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}
