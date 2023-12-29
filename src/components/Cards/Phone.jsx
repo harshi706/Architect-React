@@ -4,7 +4,7 @@ import apple from "../../Dropitems/apple.jpg";
 const Phone = () => {
   return (
     <div>
-      <div className="sm:relative flex flex-col sm:h-auto h-[75vh] items-center sm:px-[50px] px-[20px]  ">
+      <div className="sm:relative flex flex-col sm:h-auto h-[75vh] items-center sm:px-[50px] px-[20px] sm:z-50 z-50  ">
         <div className=" sm:absolute sm:top-20 text-center flex flex-col items-center justify-center gap-3 sm:w-[40vw] w-[80vw] ">
           <div className="z-20 font-bold sm:text-4xl text-xl  ">
             Why Ayatrio is the best place 

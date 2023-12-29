@@ -12,8 +12,8 @@ const Profile = () => {
     <div>
       <div className=' '>
         <div className='grid sm:grid-cols-5 grid-cols-1 gap-4 bg-zinc-100 sm:px-[50px] px-[20px]  '>
-          <div className='col-span-2'>
-            <div className='col-span-1 sm:ml-12  mt-24'>
+          <div className='col-span-2 sm:mb-auto mb-0'>
+            <div className='col-span-1 sm:ml-12  sm:mt-24 mt-4'>
               <div className='mb-2 '>Inspiration to installation</div>
               <div className='font-bold sm:text-3xl text-xl mb-4'>
                 <span className='whitespace-nowrap'>Meet our designers,</span>

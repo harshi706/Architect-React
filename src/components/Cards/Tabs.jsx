@@ -14,25 +14,24 @@ const Tabs = () => {
   const [circle1Hovered, setCircle1Hovered] = useState(false);
   const [circle2Hovered, setCircle2Hovered] = useState(false);
 
-   const circled= [
-        {
-          top: 50,
-          left: 68,
-          productTitle: "Nike Dri-FIT One Women's Tank Top",
-          productCategory: "Athletic Tank Top",
-          price: 1900,
-        },
-        {
-          top: 79,
-          left: 82,
-          productTitle: "Nike Sportswear Essential Repel Women",
-          productCategory: "Athletic Jacket",
-          price: 3995.0,
-        },
-      ]
-  
+  const circled = [
+    {
+      top: 50,
+      left: 68,
+      productTitle: "Nike Dri-FIT One Women's Tank Top",
+      productCategory: "Athletic Tank Top",
+      price: 1900,
+    },
+    {
+      top: 79,
+      left: 82,
+      productTitle: "Nike Sportswear Essential Repel Women",
+      productCategory: "Athletic Jacket",
+      price: 3995.0,
+    },
+  ];
 
-      const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
 
   useEffect(() => {
     // Update isMobile state on window resize
@@ -52,7 +51,7 @@ const Tabs = () => {
       case "all":
         return (
           <div>
-            <div className=" py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+            <div className=" text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
               <div className="relative row-span-2 overflow-hidden circle-container items-center justify-center flex ">
                 <img
                   className={`h-full w-full object-cover
@@ -60,7 +59,7 @@ const Tabs = () => {
                    `}
                   src={room}
                   alt="Room"
-                />           
+                />
 
                 {circled.map((circle, index) => (
                   <div
@@ -776,72 +775,23 @@ const Tabs = () => {
     { key: "accessories", label: "Accessories" },
   ];
 
-  // const [isSticky, setIsSticky] = useState(false);
-  // const contentRef = useRef(null);
-
-  // const handleScroll = () => {
-  //   const offset = window.scrollY;
-  //   const contentHeight = contentRef.current.clientHeight;
-  //   const tabsHeight = contentRef.current.offsetTop;
-
-  //   setIsSticky(offset > tabsHeight && offset < tabsHeight + contentHeight);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  // const [activeTab, setActiveTab] = useState("all");
-  // const [isSticky, setIsSticky] = useState(false);
-  // const contentRef = useRef(null);
-  // const blocTabsRef = useRef(null);
-
-  // const handleTabClick = (tab) => {
-  //   setActiveTab(tab);
-  // };
-
-  // const handleScroll = () => {
-  //   const blocTabsTop = blocTabsRef.current.getBoundingClientRect().top;
-  //   setIsSticky(blocTabsTop <= 0);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  // window.addEventListener('scroll', () => {
-  //   const blocTabs = document.querySelector('.bloc-tabs1');
-  //   const contentTabs = document.querySelector('.content-tabs');
-  //   const stickyPoint = blocTabs.offsetTop;
-
-  //   if (window.scrollY >= stickyPoint) {
-  //     blocTabs.classList.add('sticky');
-  //     contentTabs.style.paddingTop = `${blocTabs.offsetHeight}px`;
-  //   } else {
-  //     blocTabs.classList.remove('sticky');
-  //     contentTabs.style.paddingTop = '0';
-  //   }
-  // });
+  
 
   // const [isSticky, setIsSticky] = useState(false);
+  const [activeTab, setActiveTab] = useState("all");
+  const [isSticky, setIsSticky] = useState(false);
 
   // useEffect(() => {
   //   const handleScroll = () => {
-  //     const blocTabs = document.querySelector(".bloc-tabs");
+  //     const blocTabs = document.querySelector(".bloc-tabs1");
   //     const contentTabs = document.querySelector(".content-tabs");
 
-  //     if (blocTabs && contentTabs) {
-  //       const blocTabsRect = blocTabs.getBoundingClientRect();
+  //     if (contentTabs && blocTabs) {
   //       const contentTabsRect = contentTabs.getBoundingClientRect();
+  //       const blocTabsRect = blocTabs.getBoundingClientRect();
 
-  //       setIsSticky(contentTabsRect.top <= blocTabsRect.bottom);
+  //       // setIsSticky(contentTabsRect.bottom >= blocTabsRect.top);
+  //       setIsSticky(window.scrollY < blocTabsRect.bottom);
   //     }
   //   };
 
@@ -850,9 +800,6 @@ const Tabs = () => {
   //     window.removeEventListener("scroll", handleScroll);
   //   };
   // }, []);
-
-  const [activeTab, setActiveTab] = useState("all");
-  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -869,6 +816,19 @@ const Tabs = () => {
         const contentTabsRect = contentTabs.getBoundingClientRect();
         setIsSticky(contentTabsRect.top <= 0);
       }
+      console.log(window.scrollY);
+      if(!isMobile && window.scrollY>4700){
+        setIsSticky(false)
+      }
+      if(isMobile && window.scrollY>5520){
+
+        setIsSticky(false)
+      }
+     
+      // if (blocTabs) {
+      //   const blocTabsRect = blocTabs.getBoundingClientRect();
+      //   setIsSticky(blocTabsRect.top >= 0);
+      // }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -876,6 +836,26 @@ const Tabs = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const blocTabs = document.querySelector(".bloc-tabs1");
+  //     const contentTabs = document.querySelector(".content-tabs");
+
+  //     if (blocTabs && contentTabs) {
+  //       const blocTabsRect = blocTabs.getBoundingClientRect();
+  //       const contentTabsRect = contentTabs.getBoundingClientRect();
+  //       const stickyCondition = contentTabsRect.bottom <= window.innerHeight;
+
+  //       setIsSticky(!stickyCondition);
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);

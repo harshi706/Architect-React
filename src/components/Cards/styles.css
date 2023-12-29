@@ -265,16 +265,27 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 10;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 .bloc-tabs1.sticky {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 10;
 }
 
-
+@media screen and (max-width:450px) {
+  .wrapper.sticky .bloc-tabs1 {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 
 /* .circle {

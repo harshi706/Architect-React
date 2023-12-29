@@ -48,7 +48,7 @@ const Multicard = () => {
           }}
         >
           <SwiperSlide>
-            <div className=" relative bg-white rounded-2xl sm:w-[100%] w-[60px] sm:h-300px  h-76 pt-2 mb-24">
+            <div className=" relative bg-white rounded-2xl sm:w-[100%] w-[100%] sm:h-300px  h-76 pt-2 mb-24">
               <div className="mt-8 ml-6">
                 <CiDeliveryTruck size={52} />
               </div>
