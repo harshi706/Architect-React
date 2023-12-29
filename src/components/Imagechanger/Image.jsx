@@ -90,8 +90,8 @@ const Imagechanger = () => {
   //
   return (
     <>
-      <div className="main w-full h-full bg-gray-100 rounded-[50px] flex p-2">
-        <div className="left text-container flex flex-col items-center justify-center w-1/2 h-full  p-1">
+      <div className="main w-full h-full bg-gray-100 rounded-[50px] flex sm:flex-row flex-col p-2 sm:px-[50px] px-[20px]">
+        <div className="left text-container flex flex-col items-center justify-center sm:w-1/2 w-[80vw] h-full  p-1">
           <div className="text-container ">
             <h1 className="font-bold text-3xl">
               Get to know your <br />
@@ -124,7 +124,7 @@ const Imagechanger = () => {
                   <FaChevronDown className="text-2xl my-4 text-gray-500 text-left cursor-pointer" />
                 )}
               </div>
-              <div className={`w-[23rem] ${openStates[idx] ? "open" : ""}`}>
+              <div className={`sm:w-[23rem] w-[80vw] ${openStates[idx] ? "open" : ""}`}>
                 <p className={`${idx + 1}text`}>
                   {openStates[idx] ? text[idx] : ""}
                 </p>

@@ -5,6 +5,7 @@ import RoomImageList from "../components/Room/RoomImageList";
 import RoomInfo from "../components/Room/RoomInfo";
 import Reviews from "../components/Room/Other/Reviews";
 import Header from "../components/Header";
+import ImageCaresoul from '../components/Room/imagecaresoul'
 import Footer from '../components/Footer/Footer'
 const RoomPage = () => {
   const [howMuchScrolled, setHowMuchScrolled] = useState(0);
@@ -35,6 +36,7 @@ const RoomPage = () => {
         <Header />
         <div className=" sm:px-[50px] px-[20px]"  >
           <RoomImageList />
+          <ImageCaresoul/>
           <RoomInfo />
           <Reviews />
           <Footer/>

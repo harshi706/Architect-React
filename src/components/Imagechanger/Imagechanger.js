@@ -32,7 +32,7 @@ const Imagechanger = () => {
   };
 
   return (
-    <div className="main-trend imagechanger w-full h-full flex gap-[10px] sm:px-[50px] px-[20px]">
+    <div className="main-trend imagechanger w-full h-full flex sm:flex-row flex-col gap-[10px] sm:px-[50px] px-[20px]">
       <div className="left text-container flex flex-col w-1/2 h-full">
         <div className="text-container gap-5">
           <h1 className="sm:font-bold font-medium sm:text-3xl text-xl">

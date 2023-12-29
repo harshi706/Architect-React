@@ -17,9 +17,11 @@ import "swiper/css/free-mode";
 import "swiper/css/mousewheel";
 import "swiper/css/scrollbar";
 import "swiper/swiper-bundle.css";
-
 import "./styles.css";
 export default function RoomImageList() {
+
+
+
   const image = [
     "https://a0.muscache.com/im/pictures/8daebf64-1591-4e32-b7df-b4297f585381.jpg?im_w=720",
     "https://a0.muscache.com/im/pictures/8daebf64-1591-4e32-b7df-b4297f585381.jpg?im_w=720",
@@ -31,9 +33,12 @@ export default function RoomImageList() {
   return (
     <>
       {/* ------------------  room/place heading ------------------  */}
-      <div className="room-heading  flex justify-between align-middle mt-[4.5rem] mb-8 sm:w-auto w-[100%]">
+      <div className="room-heading  flex sm:flex-row flex-col gap-5 justify-between align-middle mt-[4.5rem] mb-8 sm:w-auto w-[100%]">
         <div className="sm:text-md text-md sm:font-semibold font-medium flex ">
-          <div className="hover:underline">Beautiful 4 BHK villa</div><div>&gt;</div> <div className="hover:underline">Mountain view</div><div>&gt;</div><div className="hover:underline">Swimming pool</div>
+          <div className="hover:underline">Beautiful 4 BHK villa</div>
+          <div>&gt;</div> <div className="hover:underline">Mountain view</div>
+          <div>&gt;</div>
+          <div className="hover:underline">Swimming pool</div>
         </div>
         <div className="share-btn flex gap-x-4 text-sm items-center">
           <div className="share flex items-center">
@@ -54,8 +59,8 @@ export default function RoomImageList() {
       </div>
 
       {/* ------------------  room/place image gallery ------------------  */}
-      <div className="imggallery sm:h-[55vh] h-auto sm:w-auto w-[100%]  ">
-        <div className="grid   sm:grid-cols-3  sm:grid-rows-2  gap-2 ">
+      <div className="imggallery  sm:h-[55vh] h-auto sm:w-auto w-[100%]  ">
+        <div className="sm:grid hidden   sm:grid-cols-3  sm:grid-rows-2  gap-2 ">
           <div className="sm:col-span-1">
             <img
               className="sm:w-full w-[80vw] h-[22rem] object-cover"
@@ -94,33 +99,50 @@ export default function RoomImageList() {
           </div> */}
         </div>
         {/* <Card className="sm:hidden grid w-[80vw]"/> */}
-
       </div>
 
-      {/* <div className=" sm:hidden mt-10 flex items-center justify-center">
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={0}
-            Pagination
-            Scrollbar
-            Mousewheel
-            FreeMode
-            navigation
-            pagination={{clickable:true}}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
-          >
-            {image.map((img, i) => (
-              <SwiperSlide key={i}>
+
+{/* for only mobile screen */}
+
+{/* <ImageCaresoul/> */}
+      {/* <div className="sm:hidden block">
+        <section aria-label="Newest Photos">
+          <div className="carousel" data-carousel>
+            <button
+              className="carousel-button prev"
+              data-carousel-button="prev"
+            >
+              &#8656;
+            </button>
+            <button
+              className="carousel-button next"
+              data-carousel-button="next"
+            >
+              &#8658;
+            </button>
+            <ul data-slides>
+              <li className="slide" data-active>
                 <img
-                  src={img}
-                  alt={`Slide ${i}`}
-                  style={{ width: "90%", maxWidth: "90%" }}
+                  src="https://a0.muscache.com/im/pictures/8daebf64-1591-4e32-b7df-b4297f585381.jpg?im_w=720"
+                  alt=""
                 />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div> */}
+              </li>
+              <li className="slide">
+                <img
+                  src="https://a0.muscache.com/im/pictures/dbbab7f7-c01c-4802-9ad9-f87def795edc.jpg?im_w=720"
+                  alt=""
+                />
+              </li>
+              <li className="slide">
+                <img
+                  src="https://a0.muscache.com/im/pictures/4ee98f0f-73df-41fe-8006-4484413a1249.jpg?im_w=720"
+                  alt=""
+                />
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div> */}
     </>
   );
 }

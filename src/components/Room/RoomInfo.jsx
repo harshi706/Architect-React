@@ -9,7 +9,7 @@ import ItemPage from "../../pages/ItemPage";
 const RoomInfo = () => {
   return (
     <div className="flex my-6 ml-1" style={{ width: "100%" }}>
-      <div className="mr-4 sm:w-[60%]">
+      <div className="mr-4 sm:w-[60%] sm:mt-0 mt-[-20rem]">
         <div className="room-details pb-4">
           <h2 className="sm:text-2xl text-lg sm:font-semibold font-medium mt-[24rem]">
             Entire villa in Nandgaon, India
