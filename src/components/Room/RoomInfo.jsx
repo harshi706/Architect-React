@@ -2,10 +2,6 @@ import React from "react";
 import Beding from "./Other/Beding";
 import PlaceInfo from "./Other/PlaceInfo";
 import Amenities from "./Other/Amenities";
-import Calendar from "./Other/Calendar";
-import Card from "./Other/Card";
-import ItemPage from "../../pages/ItemPage";
-
 const RoomInfo = () => {
   return (
     <div className="flex my-6 ml-1" style={{ width: "100%" }}>
@@ -30,14 +26,6 @@ const RoomInfo = () => {
 
         {/* ----------------- what this place offers ------------ */}
         <Amenities />
-
-        {/* ---------- select from dates ----------- */}
-        <Calendar />
-      </div>
-
-      {/* ------------------ card -------------- */}
-      <div className="sm:flex hidden" style={{ width: "40%" }}>
-        <Card />
       </div>
     </div>
   );

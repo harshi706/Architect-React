@@ -39,12 +39,12 @@ const Imagechanger = () => {
       idx === clickedIndex ? !state : false
     );
     setOpenStates(newOpenStates);
-  
+
     // Reset progress values when manually toggling
     setProgress1(0);
     setProgress2(0);
     setProgress3(0);
-  
+
     if (clickedIndex === 0) {
       setimgIndex(0);
       setImageSrc(img);
@@ -90,38 +90,36 @@ const Imagechanger = () => {
   //
   return (
     <>
-      <div className="main w-full h-full bg-gray-100 rounded-[50px] flex sm:flex-row flex-col p-2 sm:px-[50px] px-[20px]">
-        <div className="left text-container flex flex-col items-center justify-center sm:w-1/2 w-[80vw] h-full  p-1">
-          <div className="text-container ">
+      <div className="main w-full h-full pl-12 flex sm:flex-row flex-col sm:px-[50px] px-[20px]">
+        <div className="left text-container flex flex-col sm:w-1/2 w-[80vw] h-full">
+          <div className="text-container  py-8">
             <h1 className="font-bold text-3xl">
-              Get to know your <br />
-              health
+              Get to know your health
             </h1>
-            <h3 className="font-bold  text-gray-500 ">
+            <h3 className=" text-gray-500 ">
               Bands shown may be sold seperately and may not be <br />
               available in all countries
             </h3>
           </div>
           {Heading.map((value, idx) => (
-            <div key={idx} className="mb-7">
+            <div key={idx} className="p-0">
               {idx === 1 && (
-                <div className="line-horizontal dark-black-line h-1 w-full   bg-gray-300 " />
+                <div className="" />
               )}
               <div
                 onClick={() => handleToggle(idx)}
-                className="flex  items-center justify-between"
+                className="flex  items-center"
               >
                 <h1
-                  className={`text-2xl mb-2 font-bold text-left cursor-pointer ${
-                    openStates[idx] && "open"
-                  }`}
+                  className={`text-lg font-medium text-left cursor-pointer ${openStates[idx] && "open"
+                    }`}
                 >
                   {value}
                 </h1>
                 {openStates[idx] ? (
-                  <FaChevronUp className="text-2xl my-4 text-gray-500 text-left cursor-pointer" />
+                  <FaChevronUp className="text-2xl p-1 ml-3 my-4 text-gray-500 text-left cursor-pointer" />
                 ) : (
-                  <FaChevronDown className="text-2xl my-4 text-gray-500 text-left cursor-pointer" />
+                  <FaChevronDown className="text-2xl p-1 ml-3 my-4 text-gray-500 text-left cursor-pointer" />
                 )}
               </div>
               <div className={`sm:w-[23rem] w-[80vw] ${openStates[idx] ? "open" : ""}`}>
@@ -129,30 +127,30 @@ const Imagechanger = () => {
                   {openStates[idx] ? text[idx] : ""}
                 </p>
                 {idx === 1 && (
-                  <hr className="line-horizontal dark-black-line h-1 w-full bg-gray-300" />
+                  <hr className="border-0" />
                 )}
               </div>
             </div>
           ))}
         </div>
-        <div className="right image-container flex w-1/2 h-full p-1">
+        <div className="right image-container flex w-1/2 h-full">
           <div className="flex w-full h-full justify-center items-center relative">
-            <div className=" absolute top-0 left-0 w-full h-5 z-20 flex justify-center gap-2 items-center">
-              <div className="progressContainer1 bg-white w-1/6 rounded-lg h-[5px]">
+            <div className=" absolute top-0 left-0 w-full h-6 z-20 flex justify-center gap-2 items-center">
+              <div className="progressContainer1 bg-white bg-opacity-50 w-3/12  h-[3px]">
                 <div
-                  className="progressLine rounded-lg bg-slate-400 h-full"
+                  className="progressLine  bg-white h-full"
                   style={{ width: `${progress1}%` }}
                 ></div>
               </div>
-              <div className="progressContainer2 bg-white w-1/6 rounded-lg h-[5px]">
+              <div className="progressContainer2 bg-white bg-opacity-50 w-3/12  h-[3px]">
                 <div
-                  className="progressLine rounded-lg bg-slate-400 h-full"
+                  className="progressLine  bg-white h-full"
                   style={{ width: `${progress2}%` }}
                 ></div>
               </div>
-              <div className="progressContainer3 bg-white w-1/6 rounded-lg h-[5px]">
+              <div className="progressContainer3 bg-white bg-opacity-50 w-3/12  h-[3px]">
                 <div
-                  className="progressLine rounded-lg bg-slate-400 h-full"
+                  className="progressLine  bg-white  h-full"
                   style={{ width: `${progress3}%` }}
                 ></div>
               </div>
