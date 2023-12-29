@@ -184,3 +184,7 @@
   .carousel-button.next {
     right: 1rem;
   }
+
+.card{
+  position: sticky;
+}

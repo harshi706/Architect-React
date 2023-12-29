@@ -68,6 +68,10 @@ const Tabs = () => {
         setIsSticky(contentTabsRect.top <= 0);
       }
       console.log(window.scrollY);
+    //  for mobile
+      if(isSticky){
+        const contentstart=window.scrollY;
+      }
       if(!isMobile && window.scrollY>4700){
         setIsSticky(false)
       }
@@ -138,7 +142,7 @@ const Tabs = () => {
         {/* <div className="content-tabs">{getContent()}</div> */}
         <div className="content-tabs">
         <div>
-            <div className="py-[80px] text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+            <div className=" text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
               <div className="row-span-2 overflow-hidden">
                 <img
                   className="h-full w-full object-cover"

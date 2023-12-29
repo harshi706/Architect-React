@@ -134,7 +134,7 @@ const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
 
 
   return (
-    <div className="pb-20">
+    <div className="">
      {MemoizedMainSlider}
       <div className="pt-12  mb-20  bg-white sm:px-[50px] px-[20px]">
         <div className="mb-2 w-full flex justify-between items-center">
@@ -207,13 +207,13 @@ const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
         </Swiper>
       </div>
       <div
-        className="h-40 my-10 sm:px-[50px] px-[20px] rounded-3xl
+        className="h-40 my-10 sm:px-[50px] px-[50px]
       "
       >
         <img
           src={Offer}
           alt=""
-          className="w-full h-full object-fit rounded-3xl"
+          className="w-full h-full object-fit"
         />
       </div>
       {/* 1st */}
