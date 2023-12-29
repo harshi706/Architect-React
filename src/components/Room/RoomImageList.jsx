@@ -1,4 +1,5 @@
 // import * as React from "react";
+import { useState,useRef,useEffect } from "react";
 import IosShareSharpIcon from "@mui/icons-material/IosShareSharp";
 import FavoriteBorderSharpIcon from "@mui/icons-material/FavoriteBorderSharp";
 import Card from "./Other/Card";
@@ -47,8 +48,8 @@ export default function RoomImageList() {
       </div>
 
       {/* ------------------  room/place image gallery ------------------  */}
-      <div className="imggallery  sm:h-[55vh]  sm:w-auto ">
-      <div className="sm:grid hidden sm:grid-cols-3 sm:grid-rows-2 gap-3">
+      <div className="imggallery  sm:h-[55vh]  w-[60vw] ">
+      <div className="sm:grid hidden sm:grid-cols-2 sm:grid-rows-2 gap-3">
   <div className="sm:col-span-1">
     <img
       className="sm:w-full w-[80vw] h-[22rem] object-cover"
@@ -78,7 +79,10 @@ export default function RoomImageList() {
     />
   </div>
 
-          <div className="col-span-1 row-span-2"><Card/></div>
+  {/* <div className="col-span-1 row-span-2">
+  <Card />
+</div> */}
+
           {/* <Card className="sm:hidden grid w-[80vw]"/> */}
           {/* <div className="col-start-4 row-start-2">
             <img

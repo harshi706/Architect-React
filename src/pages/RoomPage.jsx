@@ -7,6 +7,7 @@ import Reviews from "../components/Room/Other/Reviews";
 import Header from "../components/Header";
 import ImageCaresoul from '../components/Room/imagecaresoul'
 import Footer from '../components/Footer/Footer'
+import Card from "../components/Room/Other/Card";
 const RoomPage = () => {
   const [howMuchScrolled, setHowMuchScrolled] = useState(0);
 
@@ -32,16 +33,27 @@ const RoomPage = () => {
 
   return (
     <>
-      <div className="container-rooms flex sm:block items-center ">
-        <Header />
-        <div className=" sm:px-[50px] px-[20px]"  >
-          <RoomImageList />
-          <ImageCaresoul/>
-          <RoomInfo />
-          <Reviews />
-          <Footer/>
+  <div className="container-rooms flex sm:block items-center">
+  <Header />
+  <div className="sm:px-[50px] px-[20px]">
+    <div className="flex flex-row">
+      <div className="basis-2/3 flex-grow">
+        <RoomImageList />
+        <ImageCaresoul />
+        <RoomInfo />
+      </div>
+      <div className="basis-1/3">
+        <div className="sticky top-12 mb-16">
+          <Card />
         </div>
       </div>
+    </div>
+    <Reviews />
+    <Footer />
+  </div>
+</div>
+
+
     </>
   );
 };

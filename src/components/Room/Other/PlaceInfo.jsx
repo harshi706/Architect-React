@@ -5,7 +5,7 @@ const PlaceInfo = () => {
   return (
     <>
       <div className="place-features my-4 sm:w-auto w-[80vw] sm:px-[50px] px-[20px]">
-        <div className="hosted-by flex flex-start py-4 border-t border-b font-lg">
+        <div className="hosted-by flex flex-start py-4 border-b font-lg">
           <div className="mr-4">
             <img
               className="w-[40px] h-[40px]"
