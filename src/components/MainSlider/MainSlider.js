@@ -12,12 +12,11 @@ function MainSlider() {
 const dispatch = useDispatch();
 const SliderViewData = useSelector(selectSliderData);
 const [page, setPage] = useState(1);
-
 useEffect(() => {
   if (!SliderViewData || SliderViewData.length === 0) {
     fetchData();
-  }
-}, [SliderViewData]);
+  } 
+}, [page]); 
 const fetchData = () => {
   dispatch({ type: "FETCH_SLIDER_VIEW_REQUEST", payload: {
     page: page,

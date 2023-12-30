@@ -1,5 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { FormProvider } from "./components/Checkoutcomp/FormContext";
 import './App.css'
 const Splashpage = lazy(() => import("./pages/Splashpage"));
@@ -35,16 +35,23 @@ function App() {
   useEffect(() => {
     generateDeviceId();
   }, []);
-
+const Currentlocation = window.location.pathname;
+const [location, setLocation] = useState(Currentlocation);
+  const navigate  = useNavigate();
   // console.log("Device ID:", deviceId);
-  
+  useEffect(() => {
+    window.onload = () => {
+    navigate('/');
+    }
+
+  }, []);
   return (
     <>
       <FormProvider>
         <Suspense>
 
         <Routes>
-          <Route path="/" element={<Splashpage />} />
+          <Route path="/" element={<Splashpage location={location} />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/ayatrio-map" element={<MapPage />} />
           <Route path="/products" element={<ProductPage />} />

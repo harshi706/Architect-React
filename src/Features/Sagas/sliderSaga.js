@@ -5,13 +5,10 @@ import { getSliderSuccess, fetchSliderRequest, getSliderFailure } from '../Slice
 function* fetchSliderViewSaga(action) {
   try {
     const { page, limit } = action.payload;
-    console.log("page", page);
-    console.log("limit", limit);
     yield put(fetchSliderRequest(true));
     const data = yield call(fetchSliderView, page, limit);
     console.log("data", data);
     yield put(getSliderSuccess(data));
-    console.log("slider data", data);
   } catch (error) {
     console.error("Error fetching slider data:", error);
     yield put(getSliderFailure());
