@@ -3,7 +3,7 @@ import { fetchSliderView } from '../api';
 import { getSliderSuccess, fetchSliderRequest, getSliderFailure } from '../Slices/sliderSlice';
 
 function* fetchSliderViewSaga() {
-    // console.log("slider saga")
+    console.log("slider saga")
   try {
     yield put(fetchSliderRequest(true));
     const data = yield call(fetchSliderView);

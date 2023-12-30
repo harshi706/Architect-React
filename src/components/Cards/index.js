@@ -24,9 +24,9 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Imagechanger from "../Imagechanger/Imagechanger";
 import Skeleton from "react-loading-skeleton";
 import Skeletoncard from "../Skeleton/Skeletoncard";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectRecommendedProduct } from "../../Features/Slices/recommendationSlice";
-import Doublecard from "../Doublecard/Doublecard";
+// import Doublecard from "../Doublecard/Doublecard";
 import Multicard from "../Imagechanger/Multicard";
 import Footer from "../Footer/Footer";
 import Tabs from "./Tabs";
@@ -35,6 +35,8 @@ import Image from "../Imagechanger/Image";
 import Phone from "./Phone";
 import DoubleComp from "./DoubleComp";
 import { CardData, CardLoader } from "../../Features/Slices/FIrstCardSlice";
+import { selectSliderData } from "../../Features/Slices/sliderSlice";
+import { useMemo } from "react";
 
 function Cards() {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -89,14 +91,12 @@ function Cards() {
   useEffect(() => {
     setTrendingData(trendingSelect);
   }, [trendingSelect]);
-  console.log(trendingData);
   const recommendedProducts = useSelector(selectRecommendedProduct);
   const recommendedProductsDataFromLocalStorage = JSON.parse(
     localStorage.getItem("recommendedProducts")
   );
 
   useEffect(() => {
-    // Update local storage only if recommendedProducts has changed
     if (recommendedProductsDataFromLocalStorage !== recommendedProducts) {
       localStorage.setItem(
         "recommendedProducts",
@@ -129,12 +129,13 @@ function Cards() {
     recommendedProductsDataFromLocalStorage?.products || [],
     "Sport & Gym Flooring"
   );
+//memo hook
+const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
 
-  console.log(wallpaperProducts);
 
   return (
-    <div className="pb-20">
-      <MainSlider />
+    <div className="">
+     {MemoizedMainSlider}
       <div className="pt-12  mb-20  bg-white sm:px-[50px] px-[20px]">
         <div className="mb-2 w-full flex justify-between items-center">
           <h2 className="text-bold text-2xl font-serif">
@@ -178,7 +179,7 @@ function Cards() {
           onSwiper={setSwiperRef}
           className="px-10"
         >
-          {isLoading ? (
+          {true ? (
             <SwiperSlide>
               <div className="flex">""</div>
             </SwiperSlide>
@@ -206,21 +207,23 @@ function Cards() {
         </Swiper>
       </div>
       <div
-        className="h-40 my-10 sm:px-[50px] px-[20px] rounded-3xl
+        className="h-40 my-10 sm:px-[50px] px-[50px]
       "
       >
         <img
           src={Offer}
           alt=""
-          className="w-full h-full object-fit rounded-3xl"
+          className="w-full h-full object-fit"
         />
       </div>
-      <div className="w-full sm:h-[80vh] h-[160vh] m-1 ">
+      {/* 1st */}
+      <Image />
+      {/* <div className="w-full sm:h-[80vh] h-[160vh] m-1 ">
         <Imagechanger />
-      </div>
-      <div className="w-full sm:h-[60vh] h-[100vh]  mt-2  mb-2  mx-1">
+      </div> */}
+      {/* <div className="w-full sm:h-[60vh] h-[100vh]  mt-2  mb-2  mx-1">
         <Doublecard />
-      </div>
+      </div> */}
       {/* flooring */}
       <div className="  my-10  bg-white sm:px-[50px] px-[20px]">
         <div className="w-full flex justify-between items-center">
@@ -501,8 +504,11 @@ function Cards() {
       )}
 
       <Multicard />
-      <Image />
-      <DoubleComp/>
+      {/* removed for overlape sm:h-[80vh] */}
+      <div className="w-full bg-zinc-100 px-12 py-20  h-auto">   
+        <Imagechanger />
+      </div>
+      <DoubleComp />
       <Profile />
       <Tabs />
       <Phone />

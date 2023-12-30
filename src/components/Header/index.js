@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./styles.css";
 import mainlogo from "../../assets/ayatriologo.png";
 import adtocart from "../../assets/icon/adtocart.svg";
@@ -16,32 +16,35 @@ import Expandedbar from "./Expandedbar";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { searchProductsRequest } from "../../Features/search/searchSlice";
+import TopLoader from "../AddOn/TopLoader";
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 function Header({ howMuchScrolled }) {
   const [isScrolled, setIsScrolled] = useState(false);
   //section for search-icon click(down)
-  const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
+  // const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
 
-  const handleSearchIconClick = () => {
-    setIsSearchBarVisible(!isSearchBarVisible);
-  };
+  // const handleSearchIconClick = () => {
+  //   setIsSearchBarVisible(!isSearchBarVisible);
+  // };
+
   //section for search-icon click (above)
 
   const [isFilterVisible, setIsFilterVisible] = useState(true);
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchEngine, SetSeacrhEngine] = useState("");
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
-
-  const [searchQuery, setSearchQuery] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(searchProductsRequest(searchQuery));
     // console.log("search called");
   }, [dispatch, searchQuery]);
-
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -63,27 +66,49 @@ function Header({ howMuchScrolled }) {
   };
   const handleProfileNav = () => {
     console.log("Profile");
-    navigate("/profile");
+    handleLinkClick("/profile");
   };
   const onClose = () => {
     setSearchQuery("");
+    SetSeacrhEngine("");
   };
   const loginStatus = localStorage.getItem("Login");
-  console.log(loginStatus);
+  const [isLoading, setIsLoading] = useState(false);
+  const handleLinkClick = (path) => {
+    setIsLoading(true);
+    setTimeout(() => {
+      navigate(path);
+      setIsLoading(false);
+    }, 1200);
+  };
 
+  const [isModalOPen, setModalOpen] = useState(false);
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
+  const handleModalClick = (event) => {
+    // Prevent clicks inside the modal from closing it
+    event.stopPropagation();
+  };
+  const inpRef = useRef(null);
   return (
     <header
       className={`fixed w-full sm:bg-none  top-0 transition-all ease-in-out duration-300  z-[9999] ${
         isScrolled ? "bg-white" : "bg-white"
       } ${howMuchScrolled > 20 ? "hidden" : ""}`}
     >
+      {isLoading && <TopLoader />}
       {!searchQuery ? (
-        <div className="navbar sm:px-[50px] px-[20px] py-0 flex justify-evenly items-center w-full">
-          <div className="left flex items-center sm:gap-5 gap-2 ">
+        <div className="navbar  sm:px-[50px] px-[20px] py-0 flex justify-between items-center w-full">
+          <div className="left flex items-center sm:gap-5 gap-1 ">
             <div className="profile-menu font-bold p-[7px] hover:bg-slate-200 hover:rounded-full">
               <Menu />
             </div>
-            <Link to="/virtualexperience/vrooms">
+            <Link onClick={() => handleLinkClick("/virtualexperience/vrooms")}>
               <div className=" text-costom-co p-[7px] hover:bg-slate-200 hover:rounded-3xl whitespace-nowrap">
                 Virtual Exprience{" "}
               </div>
@@ -92,20 +117,78 @@ function Header({ howMuchScrolled }) {
             <div className=" text-costom-co p-[7px] hover:bg-slate-200 hover:rounded-3xl whitespace-nowrap">
               New Arivals
             </div>
+            {/* for only mobole search */}
 
             <div
-              className="  w-10 h-10 notch-buttons p-[7px] hover:bg-slate-200 hover:rounded-full"
-              onClick={handleSearchIconClick}
+              className="sm:hidden block  w-10 h-10 p-[7px]"
+              onClick={handleModalOpen}
             >
-              <img src={search} alt="" className="" />
+              <img src={search} alt="" className="header-div-icon" />
+
+              {isModalOPen && (
+                <div className="modal-overlay z-[9999]  bg-white h-full w-full ">
+                  <div className="modal" onClick={handleModalClick}>
+                    <div className="flex flex-row gap-2 justify-evenly">
+                      <div className="searchDiv  flex flex-col justify-between">
+                        <div className="searchCon relative sm:w-[600px] w-[60vw] h-[40px]  bg-[#e5e5e5] rounded-xl ">
+                          <input
+                            ref={inpRef}
+                            type="text"
+                            placeholder="Search"
+                            className="search-input  border px-4 h-full sm:w-full w-[60vw] ml-8 rounded-xl focus:outline-none"
+                            value={searchEngine}
+                            onChange={(e) => SetSeacrhEngine(e.target.value)}
+                          />
+                          <img
+                            src={search}
+                            alt=""
+                            className="  w-5 mx-1 my-1.5 top-[18%] left-[1%]  absolute z-10"
+                          />
+                        </div>
+                        <div className="dropdown flex flex-col mb-8 gap-4 ">
+                          <div className="head text-slate-400">
+                            <h2>Popular Searches</h2>
+                          </div>
+                          <div className="items">
+                            <div className="dropdown-item font-bold font-sans ">
+                              Products
+                            </div>
+                            <div className="dropdown-item font-bold font-sans ">
+                              Rooms
+                            </div>
+                            <div className="dropdown-item font-bold font-sans ">
+                              Magazine
+                            </div>
+                            <div className="dropdown-item font-bold font-sans ">
+                              Virtual Experience
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <button
+                          onClick={handleModalClose}
+className="border rounded-3xl p-1"
+                          // className="relative top-[10px] bottom-[80px]"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
+
+          {/* for only mobole search */}
+
           <div className="mainlogo">
-            <Link to="/home">
-              <img src={mainlogo} alt="logo" className="w-48 m-2" />
+            <Link onClick={() => handleLinkClick("/home")}>
+              <img src={mainlogo} alt="logo" className="sm:w-48 w-52 m-2" />
             </Link>
           </div>
-          <div className="right flex items-center gap-4">
+          <div className="right flex items-center sm:gap-4 gap-2">
             {/* map-icon */}
 
             <div className=" searchbar pt-4 w-40 h-10 items-right justify-end ">
@@ -129,7 +212,7 @@ function Header({ howMuchScrolled }) {
 
             <div
               className="w-10 h-10 p-[7px] hover:bg-slate-200 hover:rounded-full cursor-pointer"
-              onClick={() => navigate("/cart")}
+              onClick={() => handleLinkClick("/cart")}
             >
               <img src={adtocart} alt="" className="header-div-icon" />
               <div className="cart-notification">3</div>
@@ -166,7 +249,11 @@ function Header({ howMuchScrolled }) {
           </div> */}
         </div>
       ) : (
-        <Expandedbar searchQuery={searchQuery} onClose={onClose} />
+        <Expandedbar
+          searchQuery={searchQuery}
+          onClose={onClose}
+          onSearch={handleSearchChange}
+        />
       )}
     </header>
   );

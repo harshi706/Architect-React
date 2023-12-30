@@ -1,7 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { FormProvider } from "./components/Checkoutcomp/FormContext";
-
+import './App.css'
 const Splashpage = lazy(() => import("./pages/Splashpage"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const MapPage = lazy(() => import("./pages/MapPage"));
@@ -36,32 +36,30 @@ function App() {
     generateDeviceId();
   }, []);
 
-  console.log("Device ID:", deviceId);
-
+  // console.log("Device ID:", deviceId);
+  
   return (
     <>
       <FormProvider>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route path="/" element={<Splashpage />} />
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/ayatrio-map" element={<MapPage />} />
-            <Route path="/products" element={<ProductPage />} />
-            <Route path="/magazine" element={<MagazinePage />} />
-            <Route path="/rooms" element={<RoomPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="/shipping" element={<Shipping />} />
-            <Route path="/payment" element={<Paymentpage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route
-              path="/virtualexperience/*"
-              element={<Virtualexperiance />}
-            />
-            <Route path="*" element={<h1>Not Found</h1>} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/item" element={<ItemPage />} />
-          </Routes>
+        <Suspense>
+
+        <Routes>
+          <Route path="/" element={<Splashpage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/ayatrio-map" element={<MapPage />} />
+          <Route path="/products" element={<ProductPage />} />
+          <Route path="/magazine" element={<MagazinePage />} />
+          <Route path="/rooms" element={<RoomPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/shipping" element={<Shipping />} />
+          <Route path="/payment" element={<Paymentpage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/virtualexperience/*" element={<Virtualexperiance />} />
+          <Route path="*" element={<h1>Not Found</h1>} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/item" element={<ItemPage />} />
+        </Routes>
         </Suspense>
       </FormProvider>
     </>

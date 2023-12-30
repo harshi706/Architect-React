@@ -184,6 +184,7 @@ function App() {
           userPreferredCategories:preferencesDataToSendToBackend.preferredCategories,
         }
       );
+      console.log("tahir",preferencesDataToSendToBackend.preferredCategories);
 
       const data = response.data;
       console.log(data);

@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderInfo from "./HeaderInfo";
+
 
 const RoomPageHeader = ({howMuchScrolled}) => {
   return (
@@ -30,12 +30,11 @@ const RoomPageHeader = ({howMuchScrolled}) => {
           </ul>
         </div>
 
-        {
+        {/* {
           howMuchScrolled > 2220 && (
             <div><HeaderInfo/></div>
           )
-        }
-       
+        } */}
       </div>
     </nav>
   );

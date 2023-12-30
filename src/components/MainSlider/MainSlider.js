@@ -1,55 +1,46 @@
 import React, { useRef, useState, useEffect } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { Oval } from "react-loader-spinner";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import "./Mainslidestyle.css";
 import { list3 } from "../../assets/mainslide-list";
 import _debounce from "lodash/debounce";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  
-  selectSliderData,
-  selectSliderLoader,
-} from "../../Features/Slices/sliderSlice";
+import { selectSliderData } from "../../Features/Slices/sliderSlice";
 
 function MainSlider() {
+//data fetching
+const dispatch = useDispatch();
+const SliderViewData = useSelector(selectSliderData);
+
+useEffect(() => {
+  if (!SliderViewData || SliderViewData.length === 0) {
+    fetchData();
+  }
+}, [SliderViewData]);
+
+const fetchData = () => {
+  dispatch({ type: "FETCH_SLIDER_VIEW_REQUEST", payload: 10 });
+};
+
+console.log(SliderViewData);
+//
+
+  
   const products = list3.filter(
     (prod) => prod.id === 1 || prod.id === 2 || prod.id === 3
   );
   const [scrollX, setScrollX] = useState(0);
   const scrl = useRef(null);
-  const [sliderData, setSliderData] = useState([]);
 
-  // const dispatch = useDispatch();
-  // const sliderSelect = useSelector(selectSliderData);
-  // const loaderx = useSelector(selectSliderLoader);
-  // console.log("slider data",sliderData)
-  // useEffect(() => {
-  //   dispatch({ type: "FETCH_SLIDER_VIEW_REQUEST" });
-  //   setSliderData(sliderSelect);
-  // }, [dispatch, sliderSelect]);//added dependency sliderselect
-
-  const sliderSelect = useSelector(selectSliderData);
-  
-  useEffect(() => {
-    setSliderData(sliderSelect);
-  }, [sliderSelect]);
-console.log(sliderData)
   useEffect(() => {
     if (scrl.current) {
-      scrl.current.scrollLeft = 380;
+      scrl.current.scrollLeft = 0;
       scrl.current.style.transition = "none";
     }
   }, []);
-  // console.log("slider data", sliderData);
-  console.log(products);
   const slide = (shift) => {
     if (scrl.current) {
-      const targetScroll = scrl.current.scrollLeft + shift;
+      const targetScroll = Math.max(scrl.current.scrollLeft + shift, 0);
 
       scrl.current.scrollTo({
         left: targetScroll,
@@ -57,12 +48,14 @@ console.log(sliderData)
 
       setScrollX(targetScroll);
     }
+    fetchData()
+
   };
 
   if (products.length > 0) {
     return (
-      <div className="slider-container sm:px-[50px] px-[20px]">
-        <div className="arrow-left" onClick={() => slide(-380)}>
+      <div className="slider-container">
+        <div className="arrow-left z-20" onClick={() => slide(-190)}>
           {scrollX > 0 && <BsArrowLeftCircleFill className="arrow-nav" />}
           {/* <BsArrowLeftCircleFill className='arrow-nav' /> */}
         </div>

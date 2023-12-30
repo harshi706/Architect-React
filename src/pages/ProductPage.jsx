@@ -3,6 +3,7 @@ import Topbar from "../components/Product/Topbar";
 import ProductSidebar from "../components/Product/ProductSidebar";
 import Products from "../components/Product/Products";
 import "../components/Product/styles.css";
+import Footer from "../components/Footer/Footer";
 
 const ProductPage = () => {
   return (
@@ -11,6 +12,7 @@ const ProductPage = () => {
       <Topbar />
       <ProductSidebar />
       <Products />
+      
     </>
   );
 };

@@ -9,8 +9,14 @@ import ActivityModal from "./ActivityModal";
 import { TiTick } from "react-icons/ti";
 import { FaCircle } from "react-icons/fa";
 import Sidebar from "./sidebar";
+import { FaCartPlus } from "react-icons/fa";
+import { useDispatch, useSelector } from 'react-redux';
+import { setSelectedActivity } from '../../../Features/store';
 const Activities = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const selectedActivity = useSelector((state) => state.rooms.selectedActivity);
+
   const prevHandler = () => {
     navigate("/virtualexperience/vrooms");
   };
@@ -24,7 +30,7 @@ const Activities = () => {
     setSelectedPage(page);
   };
 
-  const [selectedActivity, setSelectedActivity] = useState({});
+  // const [selectedActivity, setSelectedActivity] = useState({});
   const [showCircle, setShowCircle] = useState(false);
   const [showbuttoncontent, setShowbuttoncontent] = useState(false);
 
@@ -32,26 +38,97 @@ const Activities = () => {
     setShowCircle(!showCircle);
   };
 
-  const handleClick = (roomId) => {
-    setSelectedActivity((prevSelectedRooms) => {
-      const updatedSelectedRooms = {
-        ...prevSelectedRooms,
-        [roomId]: !prevSelectedRooms[roomId],
-      };
-      return updatedSelectedRooms;
-    });
-    // setShowCircle(!showCircle);
-    // setShowbuttoncontent(true);
+  // const handleClick = (roomId) => {
+  //   setSelectedActivity((prevSelectedRooms) => {
+  //     const updatedSelectedRooms = {
+  //       ...prevSelectedRooms,
+  //       [roomId]: !prevSelectedRooms[roomId],
+  //     };
+  //     return updatedSelectedRooms;
+  //   });
+  //   // setShowCircle(!showCircle);
+  //   // setShowbuttoncontent(true);
 
-    // Toggle the showCircle state based on the current state of the selected room
+  //   // Toggle the showCircle state based on the current state of the selected room
+  //   setShowCircle((prevShowCircle) => !prevShowCircle);
+  //   // Toggle the showbuttoncontent state based on the current state of the selected room
+  //   setShowbuttoncontent((prevShowButtonContent) => !prevShowButtonContent);
+  // };
+
+  // const handleClick = (roomId, roomPrice, roomTitle, roomImage) => {
+  //   setSelectedActivity((prevSelectedRooms) => {
+  //     if (prevSelectedRooms.some((room) => room.id === roomId)) {
+  //       // Remove the room if it was already selected
+  //       return prevSelectedRooms.filter((room) => room.id !== roomId);
+  //     } else {
+  //       // Add the room to the selected rooms
+  //       return [
+  //         ...prevSelectedRooms,
+  //         { id: roomId, price: roomPrice, title: roomTitle, image: roomImage },
+  //       ];
+  //     }
+  //   });
+
+  //   setShowCircle((prevShowCircle) => !prevShowCircle);
+  //   setShowbuttoncontent((prevShowButtonContent) => !prevShowButtonContent);
+  // };
+
+  // const handleClick = (roomId, roomPrice, roomTitle, roomImage) => {
+  //   setSelectedActivity((prevSelectedRooms) => {
+  //     // Check if the room is already selected
+  //     if (prevSelectedRooms[roomId]) {
+  //       // Deselect the room if it was already selected
+  //       const updatedSelectedRooms = { ...prevSelectedRooms };
+  //       delete updatedSelectedRooms[roomId];
+  //       return updatedSelectedRooms;
+  //     } else {
+  //       // Select the room and add it to the selected rooms
+  //       return {
+  //         ...prevSelectedRooms,
+  //         [roomId]: { id: roomId, price: roomPrice, title: roomTitle, image: roomImage },
+  //       };
+  //     }
+  //   });
+  
+  //   // Toggle the showCircle state based on the current state of the selected room
+  //   setShowCircle((prevShowCircle) => !prevShowCircle);
+  //   // Toggle the showbuttoncontent state based on the current state of the selected room
+  //   setShowbuttoncontent((prevShowButtonContent) => !prevShowButtonContent);
+  // };
+  // const addToCart = () => {
+    
+  //   console.log("selectedrooms", selectedActivity);
+  // };
+
+
+  const handleClick = (roomId, roomPrice, roomTitle, roomImage) => {
+    dispatch(setSelectedActivity({
+      ...selectedActivity,
+      [roomId]: { id: roomId, price: roomPrice, title: roomTitle, image: roomImage },
+    }));
+
     setShowCircle((prevShowCircle) => !prevShowCircle);
-    // Toggle the showbuttoncontent state based on the current state of the selected room
     setShowbuttoncontent((prevShowButtonContent) => !prevShowButtonContent);
   };
+
+  const addToCart = () => {
+    dispatch(setSelectedActivity(selectedActivity));
+    console.log("selectedrooms", selectedActivity);
+  };
+
+
+  
   return (
     <div className=" py-4 relative w-full h-full flex justify-center flex-col bg-[#f4e3dd]">
       <Header />
       <Sidebar selectedPage={selectedPage} onSelectPage={handleSelectPage} />
+      <FaCartPlus
+          size={30}
+          onClick={() => {
+            addToCart();
+            setShowbuttoncontent(false);
+          }}
+        />
       {/* <div className="heading flex items-center justify-between m-16">
         <h1 className="font-bold text-xl text-rose-900">
           What Does Your Day-to-Day
@@ -75,7 +152,7 @@ const Activities = () => {
               alt={item.title}
               style={{ borderRadius: "1rem" }}
               onClick={() => {
-                handleClick(item.id);
+                handleClick(item.id,item.img,item.price,item.title);
                 handleSelect();
               }}
               className={`object-cover  w-full h-full block p-1

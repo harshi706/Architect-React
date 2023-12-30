@@ -24,6 +24,13 @@
   line-height: 1.571;
 }
 
+.foter-info {
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: inherit;
+  padding-right: 20px;
+}
+
 .color_item {
   @apply flex items-center;
 }
