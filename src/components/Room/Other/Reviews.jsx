@@ -1,13 +1,13 @@
 import React from "react";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
-import Swiper from "../../../pages/Swiper"; // Import the Star icon from Material-UI
 import { MdOutlineCleanHands } from "react-icons/md";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { IoKeyOutline } from "react-icons/io5";
 import { FaRegMessage } from "react-icons/fa6";
 import { GrMapLocation } from "react-icons/gr";
 import { IoPricetagOutline } from "react-icons/io5";
+import Carous from "../../../pages/Carous";
 
 const CustomStar = ({ color, ...props }) => (
   <StarIcon style={{ color, fontSize: "16px" }} {...props} />
@@ -250,8 +250,8 @@ const Reviews = () => {
             </div>
           </div>
         </div>
-      </div>
-      <Swiper />
+        <Carous/>
+              </div>
     </>
   );
 };
