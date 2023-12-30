@@ -67,16 +67,12 @@ const Tabs = () => {
         const contentTabsRect = contentTabs.getBoundingClientRect();
         setIsSticky(contentTabsRect.top <= 0);
       }
-<<<<<<< HEAD
-    //  for mobile
-      if(isSticky){
-        const contentstart=window.scrollY;
-=======
+
       console.log(window.scrollY);
       //  for mobile
       if (isSticky) {
         const contentstart = window.scrollY;
->>>>>>> 7bc05d2a23b46d2018d1c555b7d2e234b9c8155b
+      
       }
       if (!isMobile && window.scrollY > 4700) {
         setIsSticky(false)

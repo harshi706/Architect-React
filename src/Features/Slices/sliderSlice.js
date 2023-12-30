@@ -4,6 +4,7 @@ const initialState = {
   status: 'idle',
   loader: false,
   sliderData: [], 
+
 };
 
 export const sliderSlice = createSlice({

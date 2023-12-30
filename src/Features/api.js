@@ -13,9 +13,10 @@ export const fetchRecommendedProduct = async () => {
   }
 };
 
-export const fetchSliderView = async () => {
+export const fetchSliderView = async (page,limit) => {
   try {
-    const response = await axios.get(createApiEndpoint("getImgCircle"));
+    const response = await axios.get(createApiEndpoint("getImgCircle?limit="+limit+"&page="+page));
+    console.log("response",response.data);
     return response.data;
   } catch (err) {
     console.error(err);

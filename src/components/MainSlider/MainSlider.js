@@ -11,15 +11,18 @@ function MainSlider() {
 //data fetching
 const dispatch = useDispatch();
 const SliderViewData = useSelector(selectSliderData);
+const [page, setPage] = useState(1);
 
 useEffect(() => {
   if (!SliderViewData || SliderViewData.length === 0) {
     fetchData();
   }
 }, [SliderViewData]);
-
 const fetchData = () => {
-  dispatch({ type: "FETCH_SLIDER_VIEW_REQUEST", payload: 10 });
+  dispatch({ type: "FETCH_SLIDER_VIEW_REQUEST", payload: {
+    page: page,
+    limit: 3,
+  } });
 };
 
 console.log(SliderViewData);
@@ -39,18 +42,13 @@ console.log(SliderViewData);
     }
   }, []);
   const slide = (shift) => {
-    if (scrl.current) {
-      const targetScroll = Math.max(scrl.current.scrollLeft + shift, 0);
-
-      scrl.current.scrollTo({
-        left: targetScroll,
-      });
-
-      setScrollX(targetScroll);
+    const targetPage = page + (shift > 0 ? 1 : -1);
+    if (targetPage >= 1) {
+      setPage(targetPage);
+      fetchData(targetPage);
     }
-    fetchData()
-
   };
+  
 
   if (products.length > 0) {
     return (
