@@ -6,7 +6,7 @@ const Splashpage = ({location}) => {
   const navigate = useNavigate();
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate(`${location}`);
+      navigate(`${location==='/'?'/home':location}`);
     }, 2000);
 
     return () => {
