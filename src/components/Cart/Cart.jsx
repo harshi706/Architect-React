@@ -1,8 +1,23 @@
 import { Delete, HeartBroken, HeatPumpOutlined } from "@mui/icons-material";
-import React from "react";
+import React,{useState,useEffect} from "react";
+import { useSelector } from "react-redux";
 import Footer from "../Footer/Footer";
 
 const Cart = () => {
+  const selectedItems = useSelector((state) => state.rooms.selectedActivity);
+  console.log('Cart component re-rendered');
+  const [forceRender, setForceRender] = useState(false);
+
+// ... rest of the component code
+
+useEffect(() => {
+  // This will trigger a re-render
+  setForceRender((prev) => !prev);
+}, [selectedItems]);
+
+
+ 
+  console.log('Selected Items:', selectedItems);
   return (
     <div>
       <div className="main-cart flex justify-center items-center min-h-screen">
@@ -72,6 +87,42 @@ const Cart = () => {
                 Member Checkout
               </button>
             </div>
+          </div>
+
+          <div className="middle-cart">
+            {Object.values(selectedItems).map((item) => (
+              <div key={item.id} className="cartitem flex mb-6 border-b pb-4">
+                <div className="img w-48 h-48 mr-8">
+                  <img
+                    src={item.image}
+                    className="w-full h-full object-cover rounded-md"
+                    alt={item.title}
+                  />
+                </div>
+                <div className="cartContent flex flex-col justify-between">
+                  <div className="mainright">
+                    <div className="leftContent flex flex-col">
+                      <h2 className="sm:text-xl text-lg sm:font-semibold font-medium  mb-2">
+                        {item.title}{" "}
+                        {/* Use the correct property from your data */}
+                      </h2>
+                      <h3 className="text-gray-600">
+                        {item.category}{" "}
+                        {/* Use the correct property from your data */}
+                      </h3>
+                    </div>
+                    <div className="rightContent sm:text-xl text-lg sm:font-semibold font-medium">
+                      ₹{item.price}{" "}
+                      {/* Use the correct property from your data */}
+                    </div>
+                    <div className="icons flex items-center space-x-2 mt-4">
+                      <Delete className="hover:text-slate-500 cursor-pointer" />
+                      <HeartBroken className="text-red-700 hover:text-red-500 cursor-pointer" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
