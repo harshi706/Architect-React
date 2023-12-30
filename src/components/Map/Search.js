@@ -105,14 +105,14 @@ const Search = ({ places, onResultClick }) => {
             <Menu />
           </div>
 
-          {!searchQuery ? (
+          {/* {!searchQuery ? (
             <div className=" searchbar pt-4 w-40 h-10 items-right justify-end ">
               <input
                 type="text"
                 onChange={handleSearchChange}
                 value={searchQuery}
                 placeholder="Search"
-                className="searchTerm sm:block hidden relative font-semibold placeholder-gray-400 w-[13rem] h-10 bg-slate-100 p-4 rounded-full active:border-none focus:outline-none hover:bg-slate-200 hover:rounded-3xl"
+                className=" sm:block hidden relative font-semibold placeholder-gray-400 w-[13rem] h-10 bg-slate-100 p-4 rounded-full active:border-none focus:outline-none hover:bg-slate-200 hover:rounded-3xl"
               />
               <img
                 src={search}
@@ -122,7 +122,7 @@ const Search = ({ places, onResultClick }) => {
             </div>
           ) : (
             <Expandedbar searchQuery={searchQuery} onClose={onClose} />
-          )}
+          )} */}
         </div>
       ) : (
         <div className="main-search absolute shadow-lg z-20 top-[14%] left-3">

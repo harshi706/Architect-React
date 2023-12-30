@@ -72,8 +72,8 @@ const Card = () => {
   return (
     <>
       {/* texts */}
-      <div className="flex justify-start gap-4 w-[28vw] ml-10">
-      <div className=" mt-10 sm:w-auto w-[80vw] prefence-text">
+      <div className="flex justify-start gap-4 sm:w-[28vw]  w-[80vw] sm:ml-10 ml-0">
+      <div className=" mt-10  prefence-text">
         <div className="textHolders flex flex-col ml-0">
           <h1 className="text-2xl font-bold mb-2">Football Shoe</h1>
           <h3 className="mb-2 font-semibold">
@@ -160,12 +160,12 @@ const Card = () => {
         {/* //buttons */}
         <div className="buttons mt-4 sm:w-auto w-[80vw] ">
           <div className="guestCheckout">
-            <button className="bg-black text-white w-80 h-16 rounded-full hover:bg-gray-900 transition duration-300">
+            <button className="bg-black text-white sm:w-80 w-40 sm:h-16 h-8 rounded-full hover:bg-gray-900 transition duration-300">
               Add To Bag
             </button>
           </div>
           <div className="memberCheckout mt-4">
-            <button className="bg-black text-white w-80 h-16 rounded-full hover:bg-gray-900 transition duration-300">
+            <button className="bg-black text-white sm:w-80 w-40 sm:h-16 h-8 rounded-full hover:bg-gray-900 transition duration-300">
               Contact
             </button>
           </div>
