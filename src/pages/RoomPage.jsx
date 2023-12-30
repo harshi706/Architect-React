@@ -36,14 +36,14 @@ const RoomPage = () => {
   <div className="container-rooms flex sm:block items-center">
   <Header />
   <div className="sm:px-[50px] px-[20px]">
-    <div className="flex flex-row">
-      <div className="basis-2/3 flex-grow">
+    <div className="flex sm:flex-row flex-col">
+      <div className="sm:basis-2/3 flex flex-col  sm:flex-grow">
         <RoomImageList />
         <ImageCaresoul />
         <RoomInfo />
       </div>
-      <div className="basis-1/3">
-        <div className="sticky top-12 mb-16">
+      <div className="sm:basis-1/3 flex flex-col">
+        <div className="sm:sticky flex top-12 mb-16 ml-0">
           <Card />
         </div>
       </div>
