@@ -97,7 +97,7 @@ function Header({ howMuchScrolled }) {
   const inpRef = useRef(null);
   return (
     <header
-      className={`fixed w-full sm:bg-none  top-0 transition-all ease-in-out duration-300  z-[999] ${
+      className={`fixed w-full sm:bg-none  top-0 transition-all ease-in-out duration-300  z-[9999] ${
         isScrolled ? "bg-white" : "bg-white"
       } ${howMuchScrolled > 20 ? "hidden" : ""}`}
     >

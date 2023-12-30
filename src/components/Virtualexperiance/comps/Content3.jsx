@@ -36,11 +36,11 @@ const Content3 = () => {
     <div className=" py-4 w-full h-full bg-[#f4e3dd]  text-sm">
       <Header />
       <Sidebar selectedPage={selectedPage} onSelectPage={handleSelectPage} />
-      <div className="relative container-tikes flex flex-row items-center gap-10 justify-center">
+      <div className="relative container-tikes flex sm:flex-row flex-col  items-center sm:gap-10 gap-2 justify-center">
         {/* 1st */}
         <div
           onClick={() => handleClick(0)}
-          className={`w-1/5 h-40 my-20 border-t-2 border-b-2 border-pink-950 relative flex items-center flex-col
+          className={`sm:w-1/5 w-[60%] h-40 my-20 border-t-2 border-b-2 border-pink-950 relative flex items-center flex-col
 selectedActivity(index) ? "" :""}
          
          `}
@@ -75,7 +75,7 @@ selectedActivity(index) ? "" :""}
         {/* 2 */}
         <div
           onClick={() => handleClick(1)}
-          className="w-1/5 h-40 my-20 border-t-2 border-b-2 border-pink-950 relative flex items-center flex-col"
+          className="sm:w-1/5 w-[60%]  h-40 my-20 border-t-2 border-b-2 border-pink-950 relative flex items-center flex-col"
         >
           {selectedActivity[1] && (
             <div className="overlay  absolute top-0 left-0 w-full h-full opacity-50 bg-black"></div>
@@ -109,7 +109,7 @@ selectedActivity(index) ? "" :""}
         {/* 3 */}
         <div
           onClick={() => handleClick(2)}
-          className="w-1/5 h-40 my-20 border-t-2 border-b-2 border-pink-950 relative flex items-center flex-col"
+          className="sm:w-1/5 w-[60%]  h-40 my-20 border-t-2 border-b-2 border-pink-950 relative flex items-center flex-col"
         >
           {selectedActivity[2] && (
             <div className="overlay  absolute top-0 left-0 w-full h-full opacity-50 bg-black"></div>
@@ -143,7 +143,7 @@ selectedActivity(index) ? "" :""}
         {/* 4 */}
         <div
           onClick={() => handleClick(3)}
-          className="w-1/5 h-40 my-20 border-t-2 border-b-2 border-pink-950 relative flex items-center flex-col"
+          className="sm:w-1/5 w-[60%]  h-40 my-20 border-t-2 border-b-2 border-pink-950 relative flex items-center flex-col"
         >
           {selectedActivity[3] && (
             <div className="overlay  absolute top-0 left-0 w-full h-full opacity-50 bg-black"></div>

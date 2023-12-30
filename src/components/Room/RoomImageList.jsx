@@ -22,7 +22,7 @@ export default function RoomImageList() {
   return (
     <>
       {/* ------------------  room/place heading ------------------  */}
-      <div className="room-heading  flex sm:flex-row flex-col gap-5 justify-between align-middle mt-[4.5rem] mb-8 sm:w-auto w-[100%]">
+      <div className="room-heading  sm:flex hidden sm:flex-row flex-col gap-5 justify-between align-middle mt-[4.5rem] mb-8 sm:w-auto w-[100%]">
         <div className="sm:text-md text-md sm:font-semibold font-medium flex ">
           <div className="hover:underline">Beautiful 4 BHK villa</div>
           <div>&gt;</div> <div className="hover:underline">Mountain view</div>
