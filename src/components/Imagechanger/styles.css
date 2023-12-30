@@ -25,13 +25,26 @@
   } */
 }
 /* Add custom styles for Swiper navigation here */
-/* .swiper-button-prev {
-  margin-left: 88%;
+ .swiper-button-prev {
+  color: black;
+  font-weight: 300;
+  margin-top: 8rem;
+  background-color: rgb(197, 197, 197);
+  border-radius: 50%;
+  height: 32px;
+  width: 28px;
+  padding: 4px;
 }
 
 .swiper-button-next {
-  right: 20px; 
-} */
+  margin-top: 8rem;
+  color: black;
+  background-color: rgb(197, 197, 197);
+  border-radius: 50%;
+  height: 32px;
+  width: 28px;
+  padding: 4px;
+} 
 
 .slick-prev {
   left: 3% !important;
