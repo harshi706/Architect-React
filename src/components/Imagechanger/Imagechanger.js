@@ -56,7 +56,7 @@ const Imagechanger = () => {
                   onClick={() => handleToggle(idx)}
                   className="flex items-center "
                 >
-                  <h1 className="my-4 sm:font-bold font-medium sm:text-2xl text-xl text-left cursor-pointer">
+                  <h1 className="expanding-text my-4 sm:font-bold font-medium sm:text-xl text-xl text-left cursor-pointer">
                     {value}
                   </h1>
                   {index === idx ? (
