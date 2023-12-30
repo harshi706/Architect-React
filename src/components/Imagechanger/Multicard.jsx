@@ -30,9 +30,9 @@ const Multicard = () => {
           navigation={{ clickable: true }}
           // navigation={{
           //   nextEl: ".swiper-button-prev",
-          //   prevEl: ".swiper-button-next",
-          // }}
-
+             //   prevEl: ".swiper-button-next",
+           // }}
+    
           draggable={true}
           style={{ "--swiper-navigation-size": "24px" }}
           breakpoints={{
