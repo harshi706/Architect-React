@@ -452,9 +452,22 @@ const Tabs = () => {
   const handlecolor = () => {
     setOpenColor(!opencolor);
   };
+
+  const [openAllcolor, setOpenAllcolor] = useState(false);
+  const handleAllcolor = () => {
+    setOpenAllcolor(!openAllcolor);
+  };
   const [openCaategory, setOpenCategory] = useState(false);
   const handleCategory = () => {
     setOpenCategory(!openCaategory);
+  };
+  const [openAllCategory, setOpenAllCategory] = useState(false);
+  const handleAllCategory = () => {
+    setOpenAllCategory(!openAllCategory);
+  };
+  const [openAllType, setOpenAllType] = useState(false);
+  const handleAllType = () => {
+    setOpenAllType(!openAllType);
   };
 
   const [selectedCircle, setSelectedCircle] = useState([]);
@@ -481,6 +494,11 @@ const Tabs = () => {
   };
   const closeAll = () => {
     setOpenAll(false);
+    setOpenAllType(false);
+    setOpenAllCategory(false);
+    setOpenAllcolor(false);
+    setOpenAllSIze(false);
+    setopenallsort(false);
   };
 
   const renderSortItem = (text, idx) => (
@@ -502,6 +520,61 @@ const Tabs = () => {
       </div>
     </div>
   );
+  const rendercategory = (text, idx) => (
+    <div className="flex justify-between" key={idx}>
+      <label for="age1" className="">
+        {text.name}
+      </label>
+      <div className="flex gap-6">
+        <label>{text.value}</label>
+        <input type="checkbox" id="age6" name="age" value="36" />
+      </div>
+    </div>
+  );
+
+  const rendersizeheight = (text, idx) => (
+    <div className="flex justify-between" key={idx}>
+      <label for="age1" className="">
+        {text.name}
+      </label>
+      <div className="flex gap-6">
+        <label>{text.value}</label>
+        <input type="checkbox" id="age6" name="age" value="36" />
+      </div>
+    </div>
+  );
+  const renderTypeContent = (text, idx) => (
+    <div className="flex justify-between" key={idx}>
+      <label for="age1" className="">
+        {text.name}
+      </label>
+      <div className="flex gap-6">
+        <label>{text.value}</label>
+        <input type="checkbox" id="age6" name="age" value="36" />
+      </div>
+    </div>
+  );
+
+  const renderType = (text, idx) => (
+    <div
+      className={`flex justify-between
+                    
+                    
+                    `}
+      key={idx}
+    >
+      <label for="age1" className="">
+        {text.name}
+      </label>
+      <div className="flex gap-6">
+        <label>{text.value}</label>
+        <input type="checkbox" id="age6" name="age" value="36" />
+      </div>
+    </div>
+  );
+
+  const commonClasses =
+    "px-3 py-2 mr-2.5 rounded-full flex items-center  bg-gray-100 whitespace-nowrap";
 
   return (
     <>
@@ -523,21 +596,28 @@ const Tabs = () => {
               <div>
                 <button
                   onClick={() => {
-                    handleOpen();
-                    handleTabClick();
+                    if (window.innerWidth <= 450) {
+                      handleAll();
+                      handleTabClick();
+                      handleAllsort();
+                    } else {
+                      handleOpen();
+                      handleTabClick();
+                    }
                   }}
-                  className={` Tabbtn justify-between
+                  className={` Tabbtn 
                   ${
                     openSort
-                      ? "active-tabs  border border-black px-3 py-2 mr-2.5 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
-                      : "tabS  border border-white mr-2.5 px-3 py-2 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
+                      ? `active-tabs  border border-black ${commonClasses} `
+                      : `tabS  border border-white ${commonClasses}`
                   }
+                  ${window.innerWidth<=450 ? " justify-center":" justify-between"}
                   `}
                 >
-                  Sort 
+                  Sort
                   <img
                     src={arrow}
-                    className={`w-6 h-6  mt-1
+                    className={`w-6 h-6  mt-1 sm:block hidden
                 ${openSort ? " rotate-90" : "-rotate-90"}
                 
                 `}
@@ -557,21 +637,28 @@ const Tabs = () => {
             <div className="dropdown2 ">
               <button
                 onClick={() => {
-                  handleSize();
-                  handleTabClick();
+                  if (window.innerWidth <= 450) {
+                    handleAll();
+                    handleTabClick();
+                    handleAllSize();
+                  } else {
+                    handleSize();
+                    handleTabClick();
+                  }
                 }}
-                className={`Tabbtn justify-between
+                className={`Tabbtn 
                   ${
                     openSize
-                      ? "active-tabs  border border-black px-3 py-2 mr-2.5 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
-                      : "tabS  border border-white mr-2.5 px-3 py-2 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
+                      ? `active-tabs  border border-black ${commonClasses}`
+                      : `tabS  border border-white ${commonClasses}`
                   }
+                  ${window.innerWidth<=450 ? " justify-center":" justify-between"}
                   `}
               >
                 Size &nbsp;
                 <img
                   src={arrow}
-                  className={`w-6 h-6  mt-1
+                  className={`w-6 h-6  mt-1 sm:block hidden
                 ${openSize ? " rotate-90" : "-rotate-90"}
                 
                 `}
@@ -632,22 +719,7 @@ const Tabs = () => {
                   {/* ******************************************** */}
                   {openHeight ? (
                     <div className="flex flex-col gap-4">
-                      {htarr.map((text, idx) => (
-                        <div className="flex justify-between" key={idx}>
-                          <label for="age1" className="">
-                            {text.name}
-                          </label>
-                          <div className="flex gap-6">
-                            <label>{text.value}</label>
-                            <input
-                              type="checkbox"
-                              id="age6"
-                              name="age"
-                              value="36"
-                            />
-                          </div>
-                        </div>
-                      ))}
+                      {htarr.map(rendersizeheight)}
                     </div>
                   ) : null}
                   <hr />
@@ -660,21 +732,28 @@ const Tabs = () => {
             <div>
               <button
                 onClick={() => {
-                  handlecolor();
-                  handleTabClick();
+                  if (window.innerWidth <= 450) {
+                    handleAll();
+                    handleTabClick();
+                    handleAllcolor();
+                  } else {
+                    handlecolor();
+                    handleTabClick();
+                  }
                 }}
-                className={`Tabbtn justify-between
+                className={`Tabbtn 
                   ${
                     opencolor
-                      ? "active-tabs  border border-black px-3 py-2 mr-2.5 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
-                      : "tabS  border border-white mr-2.5 px-3 py-2 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
+                      ? `active-tabs  border border-black ${commonClasses}`
+                      : `tabS  border border-white ${commonClasses}`
                   }
+                  ${window.innerWidth<=450 ? " justify-center":" justify-between"}
                   `}
               >
                 Color &nbsp;
                 <img
                   src={arrow}
-                  className={`w-6 h-6  mt-1
+                  className={`w-6 h-6  mt-1 sm:block hidden
                 ${opencolor ? " rotate-90" : "-rotate-90"}
                 
                 `}
@@ -710,21 +789,28 @@ const Tabs = () => {
             <div>
               <button
                 onClick={() => {
-                  handleCategory();
-                  handleTabClick();
+                  if (window.innerWidth <= 450) {
+                    handleAll();
+                    handleTabClick();
+                    handleAllCategory();
+                  } else {
+                    handleCategory();
+                    handleTabClick();
+                  }
                 }}
-                className={`Tabbtn justify-between
+                className={`Tabbtn 
                   ${
                     openCaategory
-                      ? "active-tabs  border border-black px-3 py-2 mr-2.5 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
-                      : "tabS  border border-white mr-2.5 px-3 py-2 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
+                      ? `active-tabs  border border-black ${commonClasses}`
+                      : `tabS  border border-white ${commonClasses}`
                   }
+                  ${window.innerWidth<=450 ? " justify-center":" justify-between"}
                   `}
               >
                 Category &nbsp;
                 <img
                   src={arrow}
-                  className={`w-6 h-6  mt-1
+                  className={`w-6 h-6  mt-1 sm:block hidden
                 ${openCaategory ? " rotate-90" : "-rotate-90"}
                 
                 `}
@@ -733,22 +819,7 @@ const Tabs = () => {
               </button>
               {openCaategory ? (
                 <div className="absolute bg-white flex flex-col  gap-7 py-5 rounded-2xl w-72 border h-80 overflow-y-auto px-5">
-                  {categoryarr.map((text, idx) => (
-                    <div className="flex justify-between" key={idx}>
-                      <label for="age1" className="">
-                        {text.name}
-                      </label>
-                      <div className="flex gap-6">
-                        <label>{text.value}</label>
-                        <input
-                          type="checkbox"
-                          id="age6"
-                          name="age"
-                          value="36"
-                        />
-                      </div>
-                    </div>
-                  ))}
+                  {categoryarr.map(rendercategory)}
                 </div>
               ) : null}
             </div>
@@ -756,21 +827,28 @@ const Tabs = () => {
             <div>
               <button
                 onClick={() => {
-                  handleType();
-                  handleTabClick();
+                  if (window.innerWidth <= 450) {
+                    handleAll();
+                    handleTabClick();
+                    handleAllType();
+                  } else {
+                    handleType();
+                    handleTabClick();
+                  }
                 }}
-                className={`Tabbtn justify-between
+                className={`Tabbtn 
                   ${
                     openType
-                      ? "active-tabs  border border-black px-3 py-2 mr-2.5 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
-                      : "tabS  border border-white mr-2.5 px-3 py-2 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
+                      ? `active-tabs  border border-black ${commonClasses}`
+                      : `tabS  border border-white ${commonClasses}`
                   }
+                  ${window.innerWidth<=450 ? " justify-center":" justify-between"}
                   `}
               >
                 Type &nbsp;
                 <img
                   src={arrow}
-                  className={`w-6 h-6  mt-1
+                  className={`w-6 h-6  mt-1 sm:block hidden
                 ${openType ? " rotate-90" : "-rotate-90"}
                 
                 `}
@@ -779,28 +857,7 @@ const Tabs = () => {
               </button>
               {openType ? (
                 <div className="bg-white absolute flex flex-col  gap-7 py-5 rounded-2xl w-72 border h-80 overflow-y-auto px-5">
-                  {typearr.map((text, idx) => (
-                    <div
-                      className={`flex justify-between
-                    
-                    
-                    `}
-                      key={idx}
-                    >
-                      <label for="age1" className="">
-                        {text.name}
-                      </label>
-                      <div className="flex gap-6">
-                        <label>{text.value}</label>
-                        <input
-                          type="checkbox"
-                          id="age6"
-                          name="age"
-                          value="36"
-                        />
-                      </div>
-                    </div>
-                  ))}
+                  {typearr.map(renderType)}
 
                   <button
                     className={`text-left underline
@@ -810,27 +867,7 @@ const Tabs = () => {
                   >
                     +7 more
                   </button>
-                  {openContent
-                    ? 
-                    
-                    typeContent.map((text, idx) => (
-                        <div className="flex justify-between" key={idx}>
-                          <label for="age1" className="">
-                            {text.name}
-                          </label>
-                          <div className="flex gap-6">
-                            <label>{text.value}</label>
-                            <input
-                              type="checkbox"
-                              id="age6"
-                              name="age"
-                              value="36"
-                            />
-                          </div>
-                        </div>
-                      ))
-                      
-                    : null}
+                  {openContent ? typeContent.map(renderTypeContent) : null}
 
                   <button
                     onClick={handleContent}
@@ -851,18 +888,19 @@ const Tabs = () => {
                   handleAll();
                   handleTabClick();
                 }}
-                className={`Tabbtn z-0 justify-between
+                className={`Tabbtn z-0 
                   ${
                     openAll
-                      ? "active-tabs  border border-black px-3 py-2 mr-2.5 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
-                      : "tabS  border border-white mr-2.5 px-3 py-2 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
+                      ? `active-tabs  border border-black ${commonClasses}`
+                      : `tabS  border border-white ${commonClasses}`
                   }
+                  ${window.innerWidth<=450 ? " justify-center":" justify-between"}
                   `}
               >
                 All Filters &nbsp;
                 <img
                   src={choserightfloor}
-                  className={`w-6 h-6  
+                  className={`w-6 h-6  sm:block hidden
                 
                 
                 `}
@@ -870,7 +908,7 @@ const Tabs = () => {
                 />
               </button>
               {openAll ? (
-                <div className="menu-overlay overflow-y-auto bg-white  border-2 fixed  w-[30vw]  right-0 top-0 z-[5000] rounded-2xl    h-full">
+                <div className="menu-overlay overflow-y-auto bg-white  border-2 fixed  sm:w-[30vw] w-[100vw] sm:h-auto h-[80vh]  right-0 sm:top-0 bottom-0 z-[5000] rounded-2xl">
                   <div className="menu-option bg-white  pt-5  w-[100%] h-[100vh] border-slate-600 z-[5001]">
                     <div className="flex flex-col px-4 gap-6">
                       <div className="flex justify-between gap-32">
@@ -884,7 +922,7 @@ const Tabs = () => {
                           onClick={handleAllsort}
                           className="text-left flex justify-between"
                         >
-                          Color &nbsp;
+                          Sort &nbsp;
                           <img
                             src={arrow}
                             className={`w-6 h-6  mt-1
@@ -908,7 +946,7 @@ const Tabs = () => {
                           onClick={handleAllSize}
                           className="text-left flex justify-between"
                         >
-                          Color &nbsp;
+                          Size &nbsp;
                           <img
                             src={arrow}
                             className={`w-6 h-6  mt-1
@@ -921,44 +959,105 @@ const Tabs = () => {
                         {openAllSize ? (
                           <div className="flex flex-col gap-7">
                             <p className="text-left font-semibold">Width</p>
-                            {wdharr.map((text, idx) => (
-                              <div className="flex justify-between" key={idx}>
-                                <label for="age1" className="">
-                                  {text.name}
-                                </label>
-                                <input
-                                  type="radio"
-                                  id="age1"
-                                  name="age"
-                                  value="30"
-                                />
-                              </div>
-                            ))}
+                            {wdharr.map(rendersizewidth)}
 
                             <p className="text-left font-semibold">Height</p>
-                            {htarr.map((text, idx) => (
-                              <div className="flex justify-between" key={idx}>
-                                <label for="age1" className="">
-                                  {text.name}
-                                </label>
-                                <input
-                                  type="radio"
-                                  id="age1"
-                                  name="age"
-                                  value="30"
-                                />
-                              </div>
-                            ))}
+                            {htarr.map(rendersizewidth)}
                           </div>
                         ) : null}
                       </div>
                       <hr />
                       {/* ****************************** */}
-                      <div>size</div>
-                      <div>color</div>
-                      <div>category</div>
-                      <div>Type</div>
-                      <div>Price</div>
+                      {/* 3rd div */}
+                      <div className="flex flex-col gap-7">
+                        <div
+                          onClick={handleAllcolor}
+                          className="text-left flex justify-between"
+                        >
+                          Color &nbsp;
+                          <img
+                            src={arrow}
+                            className={`w-6 h-6  mt-1
+                ${openAllcolor ? " rotate-90" : "-rotate-90"}
+                
+                `}
+                            alt=""
+                          />
+                        </div>
+                        {openAllcolor ? (
+                          <div className="flex flex-col gap-7">
+                            {srtarr.map(renderSortItem)}
+                          </div>
+                        ) : null}
+                      </div>
+                      <hr />
+
+                      {/* 4th div */}
+                      <div className="flex flex-col gap-7">
+                        <div
+                          onClick={handleAllCategory}
+                          className="text-left flex justify-between"
+                        >
+                          Category &nbsp;
+                          <img
+                            src={arrow}
+                            className={`w-6 h-6  mt-1
+                ${openAllCategory ? " rotate-90" : "-rotate-90"}
+                
+                `}
+                            alt=""
+                          />
+                        </div>
+                        {openAllCategory ? (
+                          <div className="flex flex-col gap-7">
+                            {categoryarr.map(rendercategory)}
+                          </div>
+                        ) : null}
+                      </div>
+                      <hr />
+                      {/* 5th div */}
+                      <div className="flex flex-col gap-7">
+                        <div
+                          onClick={handleAllType}
+                          className="text-left flex justify-between"
+                        >
+                          Type &nbsp;
+                          <img
+                            src={arrow}
+                            className={`w-6 h-6  mt-1
+                ${openAllType ? " rotate-90" : "-rotate-90"}
+                
+                `}
+                            alt=""
+                          />
+                        </div>
+                        {openAllType ? (
+                          <div className="flex flex-col gap-7">
+                            {typearr.map(renderType)}
+
+                            <button
+                              className={`text-left underline
+                  ${openContent ? "hidden" : "block"}
+                  `}
+                              onClick={handleContent}
+                            >
+                              +7 more
+                            </button>
+                            {openContent
+                              ? typeContent.map(renderTypeContent)
+                              : null}
+
+                            <button
+                              onClick={handleContent}
+                              className={`text-left underline ${
+                                openContent ? "block" : "hidden"
+                              }`}
+                            >
+                              Less
+                            </button>
+                          </div>
+                        ) : null}
+                      </div>
                       <hr />
                     </div>
                     <div className="pt-10 flex items-center justify-center flex-row gap-3">
@@ -977,11 +1076,14 @@ const Tabs = () => {
           </div>
 
           <hr />
-
+          {/* iimages */}
           <div className="">
-            <div className="pt-[32px] flex flex-row gap-6">
+            <div className="pt-[32px] grid sm:grid-cols-4 grid-cols-2 sm:gap-6 gap-0">
               {curtainImage.map((text, idx) => (
-                <div className="flex flex-col gap-3 hover-div" key={idx}>
+                <div
+                  className="flex flex-col gap-3 hover-divnine sm:border-none border-b border-r"
+                  key={idx}
+                >
                   <div className="flex justify-between checkbox-div">
                     <input type="checkbox" />
                     <label htmlFor="">Compare</label>
@@ -989,7 +1091,7 @@ const Tabs = () => {
                   <img src={text.image} alt="" />
                   <p className="text-sm font-semibold">{text.title}</p>
                   <p className="text-sm">{text.detail}</p>
-                  <p className="text-sm font-semibold  w-28 h-10 bg-yellow-400 flex items-center justify-center">
+                  <p className="text-sm price-box font-semibold  w-28 h-10 bg-yellow-400 flex items-center justify-center">
                     Rs. <span className="text-3xl"> {text.price}</span>
                   </p>
                   <p className="text-sm flex flex-row gap-1 items-center text-black">
@@ -1003,13 +1105,6 @@ const Tabs = () => {
                 </div>
               ))}
             </div>
-            {/* <div>
-              <div>
-                <input type="checkbox" />
-                <label htmlFor="">Compare</label>
-              </div>
-              <img src="" alt="" />
-            </div> */}
           </div>
         </div>
       </div>

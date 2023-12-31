@@ -53,7 +53,7 @@ const Products = () => {
       <div className="flex flex-row gap-3 sm:w-[65vw] sm:overflow-x-hidden overflow-x-auto mb-16">
         {pdt.map((txt, idx) => (
           <div key={idx} className="flex flex-col gap-2">
-            <img className="w-[120px] h-[70px]" src={txt.img} alt={txt.name} />
+            <img className="sm:min-w-[120px]  sm:h-[70px] min-w-[120px] h-[70px]" src={txt.img} alt={txt.name} />
             <p>{txt.name}</p>
           </div>
         ))}
@@ -61,7 +61,7 @@ const Products = () => {
 
       {/* relevant text */}
 
-      <p className="w-[50vw] text-base text-justify">
+      <p className="sm:w-[50vw] w-[100%] text-base text-justify">
         Waking up to harsh sunlight can put your mornings to an unpleasant
         start. And more than that, uncovered windows also take away your
         privacy. Curtains and blinds keep your home secured, and at the same
