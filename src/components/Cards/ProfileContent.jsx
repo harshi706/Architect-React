@@ -22,7 +22,7 @@ const ProfileContent = () => {
     { name: 'Rajit4', image: linkdln },
   ];
   return (
-    <div className='transparent rounded-lg h-100 pb-16'>
+    <div className='transparent rounded-lg h-100 pb-8'>
     <Swiper
       spaceBetween={20}
       // slidesPerView={3}
@@ -56,6 +56,7 @@ const ProfileContent = () => {
               </a>
             </div>
           </div>
+          <br/><br/><br/><br/>
         </SwiperSlide>
       ))}
       <div className='swiper-button-next'></div>
