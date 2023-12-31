@@ -8,7 +8,8 @@ import { IoIosArrowDown } from "react-icons/io";
 import IosShareSharpIcon from "@mui/icons-material/IosShareSharp";
 import FavoriteBorderSharpIcon from "@mui/icons-material/FavoriteBorderSharp";
 
-import '../styles.css'
+import "../styles.css";
+import zIndex from "@mui/material/styles/zIndex";
 const Card = () => {
   const [imgColor, setImgColor] = useState("red");
   const [widthstate, setwidthstate] = useState(0);
@@ -24,7 +25,7 @@ const Card = () => {
   const [hidden, setHidden] = useState(false);
   const handlefunc = () => {
     setHidden(!hidden);
-  }
+  };
 
   const imgSets = {
     red: [
@@ -117,18 +118,21 @@ const Card = () => {
             <div className="colors flex gap-3">
               <div
                 onClick={() => changeColor("red")}
-                className={`color1 w-[50px] h-[50px] rounded-full ${imgColor === "red" ? "border border-slate-800" : ""
-                  }   bg-red-500`}
+                className={`color1 w-[50px] h-[50px] rounded-full ${
+                  imgColor === "red" ? "border border-slate-800" : ""
+                }   bg-red-500`}
               ></div>
               <div
                 onClick={() => changeColor("blue")}
-                className={`color1 w-[50px] h-[50px] rounded-full ${imgColor === "blue" ? "border border-slate-800" : ""
-                  }  bg-blue-500`}
+                className={`color1 w-[50px] h-[50px] rounded-full ${
+                  imgColor === "blue" ? "border border-slate-800" : ""
+                }  bg-blue-500`}
               ></div>
               <div
                 onClick={() => changeColor("green")}
-                className={`color1 w-[50px] h-[50px] rounded-full  ${imgColor === "green" ? "border border-slate-800" : ""
-                  } bg-green-500`}
+                className={`color1 w-[50px] h-[50px] rounded-full  ${
+                  imgColor === "green" ? "border border-slate-800" : ""
+                } bg-green-500`}
               ></div>
             </div>
           </div>
@@ -136,10 +140,10 @@ const Card = () => {
           {/* calculations */}
           <div className="border border-gray-300 w-72 rounded-xl mt-2 pt-4 pb-4 pl-3">
             <div className="flex items-center">
-
-              <div className="pl-3"><Calculation /></div>
+              <div className="pl-3">
+                <Calculation />
+              </div>
             </div>
-
 
             <hr />
             <div className="flex items-center pt-3">
@@ -148,32 +152,61 @@ const Card = () => {
               </div>
               <div className="pl-3">Delivery</div>
             </div>
-            <div className="sm:pl-60 -ml-3 -mt-1">
+            <div className="pl-60 -ml-3 -mt-1">
               {!visible ? (
-                <div className='mt-1 mr-6 cursor-pointer'><MdOutlineArrowForwardIos size={16} onClick={handleClick} /></div>
+                <div className="mt-1 sm:mr-6 cursor-pointer">
+                  <MdOutlineArrowForwardIos size={16} onClick={handleClick} />
+                </div>
               ) : (
-                <div className='mt-1 mr-6 cursor-pointer'><IoIosArrowDown size={16} onClick={handleClick} /></div>
+                <div className="mt-1 mr-6 cursor-pointer">
+                  <IoIosArrowDown size={16} onClick={handleClick} />
+                </div>
               )}
             </div>
-            <div className="pb-3 text-gray-600 sm:pl-8 -mt-4">
+            <div className="pb-3 text-gray-600 pl-8 -mt-4">
               Check availability
             </div>
-            {visible && <div><div className="pl-7">Enter pincode:</div><input type="number" name="pincode" value="" className="border border-black ml-8 mb-2" /></div>}
+            {visible && (
+              <div>
+                <div className="pl-7">Enter pincode:</div>
+                <input
+                  type="number"
+                  name="pincode"
+                  value=""
+                  className="border border-black ml-8 mb-2"
+                />
+              </div>
+            )}
             <hr />
             <div className="flex pt-3">
               <div className="sm:pr-3">
                 <FaStoreAlt size={24} />
               </div>
-              <div>In-store</div>
+              <div className="pl-3">In-store</div>
             </div>
-            <div className="sm:pl-60 -ml-3 -mt-1">
+            <div className="pl-60 -ml-3 -mt-1">
               {!hidden ? (
-                <div className='mt-1 mr-6 cursor-pointer'><MdOutlineArrowForwardIos size={16} onClick={handlefunc} /></div>
+                <div className="mt-1 mr-6 cursor-pointer">
+                  <MdOutlineArrowForwardIos size={16} onClick={handlefunc} />
+                </div>
               ) : (
-                <div className='mt-1 mr-6 cursor-pointer'><IoIosArrowDown size={16} onClick={handlefunc} /></div>
-              )}          </div>
+                <div className="mt-1 mr-6 cursor-pointer">
+                  <IoIosArrowDown size={16} onClick={handlefunc} />
+                </div>
+              )}{" "}
+            </div>
             <div className="text-gray-600 pl-9 -mt-4">Check in-store stock</div>
-            {hidden && <div><div className="pl-7">Enter city:</div><input type="text" name="city" value="" className="border border-black ml-8 mb-2" /></div>}
+            {hidden && (
+              <div>
+                <div className="pl-7">Enter city:</div>
+                <input
+                  type="text"
+                  name="city"
+                  value=""
+                  className="border border-black ml-8 mb-2"
+                />
+              </div>
+            )}
           </div>
 
           {/* //buttons */}

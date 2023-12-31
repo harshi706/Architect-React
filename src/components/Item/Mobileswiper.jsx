@@ -153,7 +153,7 @@ const Mobileswiper = () => {
 
   return (
     <>
-      <div className="w-full sm:hidden block">
+      <div className="w-full sm:hidden block " style={{zIndex:1}}>
         <div className="textHead flex px-3 flex-col mt-28">
           <h1 className="text-2xl font-semibold mb-2  ">
             Football Shoe

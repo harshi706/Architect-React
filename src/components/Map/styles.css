@@ -18,10 +18,13 @@
   padding: 0.75rem 0rem;
   border-radius: 2.5rem;
   align-items: center;
-  background-color: #efefef;
 }
 
 .seachbar-div2-icon {
   height: 20px;
   margin-right: 10px;
+}
+
+.map-bg{
+  background-color: transparent !important;
 }
