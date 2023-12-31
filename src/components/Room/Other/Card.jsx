@@ -6,7 +6,8 @@ import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { FaStoreAlt } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 
-import '../styles.css'
+import "../styles.css";
+import zIndex from "@mui/material/styles/zIndex";
 const Card = () => {
   const [imgColor, setImgColor] = useState("red");
   const [widthstate, setwidthstate] = useState(0);
@@ -15,14 +16,14 @@ const Card = () => {
   const [coststate, setcoststate] = useState(7000);
   const [rollstate, setrollstate] = useState(0);
 
-  const[visible,setVisible]=useState(false);
-  const handleClick=()=>{
+  const [visible, setVisible] = useState(false);
+  const handleClick = () => {
     setVisible(!visible);
   };
-  const[hidden, setHidden]=useState(false);
-  const handlefunc=()=>{
+  const [hidden, setHidden] = useState(false);
+  const handlefunc = () => {
     setHidden(!hidden);
-  }
+  };
 
   const imgSets = {
     red: [
@@ -72,105 +73,137 @@ const Card = () => {
   return (
     <>
       {/* texts */}
-      <div className="flex justify-start gap-4 sm:w-[28vw]  w-[80vw] sm:ml-10 ml-0">
-      <div className=" mt-10  prefence-text">
-        <div className="textHolders flex flex-col ml-0">
-          <h1 className="text-2xl font-bold mb-2">Football Shoe</h1>
-          <h3 className="mb-2 font-semibold">
-            Collection: Metropolitan Stories Travel Styles
-          </h3>
-          <h3 className="mb-4 font-semibold">
-            Pattern Number: 77siu7Cr7-{imgColor}
-          </h3>
-          <div className="price">
-            <h2 className="font-bold mb-1">MRP: ₹{coststate}/Shoe</h2>
-            <h5 className="">incl. Of taxes</h5>
-            <h4>Also Includes Taxes</h4>
+      <div
+        className="flex justify-start gap-4 sm:w-[28vw]  w-[80vw] sm:ml-10 ml-0 "
+        style={{ zIndex: 1 }}
+      >
+        <div className=" mt-10  prefence-text">
+          <div className="textHolders flex flex-col ml-0">
+            <h1 className="text-2xl font-bold mb-2">Football Shoe</h1>
+            <h3 className="mb-2 font-semibold">
+              Collection: Metropolitan Stories Travel Styles
+            </h3>
+            <h3 className="mb-4 font-semibold">
+              Pattern Number: 77siu7Cr7-{imgColor}
+            </h3>
+            <div className="price">
+              <h2 className="font-bold mb-1">MRP: ₹{coststate}/Shoe</h2>
+              <h5 className="">incl. Of taxes</h5>
+              <h4>Also Includes Taxes</h4>
+            </div>
           </div>
-        </div>
 
-        {/* color-container */}
-        <div className="colorContainer flex flex-col items-start mt-4 sm:w-auto w-[80vw]">
-          <h1 className="mb-2 font-bold">Other Colorways</h1>
-          <div className="colors flex gap-3">
-            <div
-              onClick={() => changeColor("red")}
-              className={`color1 w-[50px] h-[50px] rounded-full ${
-                imgColor === "red" ? "border border-slate-800" : ""
-              }   bg-red-500`}
-            ></div>
-            <div
-              onClick={() => changeColor("blue")}
-              className={`color1 w-[50px] h-[50px] rounded-full ${
-                imgColor === "blue" ? "border border-slate-800" : ""
-              }  bg-blue-500`}
-            ></div>
-            <div
-              onClick={() => changeColor("green")}
-              className={`color1 w-[50px] h-[50px] rounded-full  ${
-                imgColor === "green" ? "border border-slate-800" : ""
-              } bg-green-500`}
-            ></div>
+          {/* color-container */}
+          <div className="colorContainer flex flex-col items-start mt-4 sm:w-auto w-[80vw]">
+            <h1 className="mb-2 font-bold">Other Colorways</h1>
+            <div className="colors flex gap-3">
+              <div
+                onClick={() => changeColor("red")}
+                className={`color1 w-[50px] h-[50px] rounded-full ${
+                  imgColor === "red" ? "border border-slate-800" : ""
+                }   bg-red-500`}
+              ></div>
+              <div
+                onClick={() => changeColor("blue")}
+                className={`color1 w-[50px] h-[50px] rounded-full ${
+                  imgColor === "blue" ? "border border-slate-800" : ""
+                }  bg-blue-500`}
+              ></div>
+              <div
+                onClick={() => changeColor("green")}
+                className={`color1 w-[50px] h-[50px] rounded-full  ${
+                  imgColor === "green" ? "border border-slate-800" : ""
+                } bg-green-500`}
+              ></div>
+            </div>
           </div>
-        </div>
 
-        {/* calculations */}
-        <div className="border border-gray-300 w-72 rounded-xl mt-2 pt-4 pb-4 pl-3">
-        <div className="flex items-center">
-           
-            <div className="pl-3"><Calculation/></div>
-          </div>
-         
-        
-          <hr />
-          <div className="flex items-center pt-3">
-        <div>
-          <TbTruckDelivery size={24} />
-        </div>
-        <div className="pl-3">Delivery</div>
-      </div>
-      <div className="sm:pl-60 -ml-3 -mt-1">
-        {!visible ? (
-        <div className='mt-1 mr-6 cursor-pointer'><MdOutlineArrowForwardIos size={16} onClick={handleClick} /></div>
-        ) : (
-          <div className='mt-1 mr-6 cursor-pointer'><IoIosArrowDown size={16} onClick={handleClick} /></div>
-        )}
-      </div>
-      <div className="pb-3 text-gray-600 sm:pl-8 -mt-4">
-        Check availability
-      </div>
-      {visible && <div><div className="pl-7">Enter pincode:</div><input type="number" name="pincode" value="" className="border border-black ml-8 mb-2" /></div>}
-      <hr />
-      <div className="flex pt-3">
-        <div className="sm:pr-3">
-          <FaStoreAlt size={24} />
-        </div>
-            <div>In-store</div>
-          </div>
-          <div className="sm:pl-60 -ml-3 -mt-1">
-          {!hidden ? (
-          <div className='mt-1 mr-6 cursor-pointer'><MdOutlineArrowForwardIos size={16} onClick={handlefunc} /></div>
-        ) : (
-          <div className='mt-1 mr-6 cursor-pointer'><IoIosArrowDown size={16} onClick={handlefunc} /></div>
-        )}          </div>
-          <div className="text-gray-600 pl-9 -mt-4">Check in-store stock</div>
-          {hidden && <div><div className="pl-7">Enter city:</div><input type="text" name="city" value="" className="border border-black ml-8 mb-2" /></div>}
-        </div>
+          {/* calculations */}
+          <div className="border border-gray-300 w-72 rounded-xl mt-2 pt-4 pb-4 pl-3">
+            <div className="flex items-center">
+              <div className="pl-3">
+                <Calculation />
+              </div>
+            </div>
 
-        {/* //buttons */}
-        <div className="buttons mt-4 sm:w-auto w-[80vw] ">
-          <div className="guestCheckout">
-            <button className="bg-black text-white sm:w-80 w-40 sm:h-16 h-8 rounded-full hover:bg-gray-900 transition duration-300">
-              Add To Bag
-            </button>
+            <hr />
+            <div className="flex items-center pt-3">
+              <div>
+                <TbTruckDelivery size={24} />
+              </div>
+              <div className="pl-3">Delivery</div>
+            </div>
+            <div className="pl-60 -ml-3 -mt-1">
+              {!visible ? (
+                <div className="mt-1 sm:mr-6 cursor-pointer">
+                  <MdOutlineArrowForwardIos size={16} onClick={handleClick} />
+                </div>
+              ) : (
+                <div className="mt-1 mr-6 cursor-pointer">
+                  <IoIosArrowDown size={16} onClick={handleClick} />
+                </div>
+              )}
+            </div>
+            <div className="pb-3 text-gray-600 pl-8 -mt-4">
+              Check availability
+            </div>
+            {visible && (
+              <div>
+                <div className="pl-7">Enter pincode:</div>
+                <input
+                  type="number"
+                  name="pincode"
+                  value=""
+                  className="border border-black ml-8 mb-2"
+                />
+              </div>
+            )}
+            <hr />
+            <div className="flex pt-3">
+              <div className="sm:pr-3">
+                <FaStoreAlt size={24} />
+              </div>
+              <div className="pl-3">In-store</div>
+            </div>
+            <div className="pl-60 -ml-3 -mt-1">
+              {!hidden ? (
+                <div className="mt-1 mr-6 cursor-pointer">
+                  <MdOutlineArrowForwardIos size={16} onClick={handlefunc} />
+                </div>
+              ) : (
+                <div className="mt-1 mr-6 cursor-pointer">
+                  <IoIosArrowDown size={16} onClick={handlefunc} />
+                </div>
+              )}{" "}
+            </div>
+            <div className="text-gray-600 pl-9 -mt-4">Check in-store stock</div>
+            {hidden && (
+              <div>
+                <div className="pl-7">Enter city:</div>
+                <input
+                  type="text"
+                  name="city"
+                  value=""
+                  className="border border-black ml-8 mb-2"
+                />
+              </div>
+            )}
           </div>
-          <div className="memberCheckout mt-4">
-            <button className="bg-black text-white sm:w-80 w-40 sm:h-16 h-8 rounded-full hover:bg-gray-900 transition duration-300">
-              Contact
-            </button>
+
+          {/* //buttons */}
+          <div className="buttons mt-4 sm:w-auto w-[80vw] ">
+            <div className="guestCheckout">
+              <button className="bg-black text-white sm:w-80 w-40 sm:h-16 h-8 rounded-full hover:bg-gray-900 transition duration-300">
+                Add To Bag
+              </button>
+            </div>
+            <div className="memberCheckout mt-4">
+              <button className="bg-black text-white sm:w-80 w-40 sm:h-16 h-8 rounded-full hover:bg-gray-900 transition duration-300">
+                Contact
+              </button>
+            </div>
           </div>
         </div>
-           </div>
       </div>
     </>
   );

@@ -14,6 +14,7 @@ const Tabs = () => {
   const [circle1Hovered, setCircle1Hovered] = useState(false);
   const [circle2Hovered, setCircle2Hovered] = useState(false);
 
+  
   const circled = [
     {
       top: 50,
@@ -118,7 +119,7 @@ const Tabs = () => {
 
   return (
     <>
-      <div className="wrapper w-full h-full mb-20 sm:px-[50px] px-[20px] py-20 w-full h-full" ><div ><h2 className="text-xl font-bold mb-5">
+      <div className="wrapper mb-20 sm:px-[50px] px-[20px] py-20 w-full h-full" ><div ><h2 className="text-xl font-bold mb-5">
         More ideas and inspiration</h2></div>
         <div
           className={`${isSticky ? " sticky" : ""
