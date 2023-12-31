@@ -5,6 +5,8 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { FaStoreAlt } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
+import IosShareSharpIcon from "@mui/icons-material/IosShareSharp";
+import FavoriteBorderSharpIcon from "@mui/icons-material/FavoriteBorderSharp";
 
 import "../styles.css";
 import zIndex from "@mui/material/styles/zIndex";
@@ -73,13 +75,30 @@ const Card = () => {
   return (
     <>
       {/* texts */}
-      <div
-        className="flex justify-start gap-4 sm:w-[28vw]  w-[80vw] sm:ml-10 ml-0 "
-        style={{ zIndex: 1 }}
-      >
-        <div className=" mt-10  prefence-text">
+
+      <div className="flex justify-start gap-4 sm:w-[28vw]  w-[80vw] sm:ml-10 ml-0">
+        <div className=" mt-5  prefence-text">
+
+          <div className="share-btn flex gap-x-4 text-sm justify-end">
+            <div className="share flex items-center">
+              <IosShareSharpIcon
+                className="text-xs"
+                style={{ fontSize: "18px" }}
+              />
+              <span className="ml-1 underline sm:text-sm text-sm   tracking-[.012rem]  sm:font-normal">Share</span>
+            </div>
+            <div className="save flex items-center">
+              <FavoriteBorderSharpIcon
+                className="text-xs"
+                style={{ fontSize: "18px" }}
+              />
+              <span className="ml-1 underline sm:text-sm text-sm   tracking-[.012rem]  sm:font-normal">Save</span>
+            </div>
+          </div>
+
+
           <div className="textHolders flex flex-col ml-0">
-            <h1 className="text-2xl font-bold mb-2">Football Shoe</h1>
+            <h1 className="text-2xl mt-5 font-bold mb-2">Football Shoe</h1>
             <h3 className="mb-2 font-semibold">
               Collection: Metropolitan Stories Travel Styles
             </h3>

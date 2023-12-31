@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities{
+  .main{
+    box-shadow: 2px 2px 0 theme('colors.orange.600');
+  }
+}
+
 *{
   box-sizing: border-box;
   margin: 0;

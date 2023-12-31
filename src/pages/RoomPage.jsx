@@ -33,29 +33,25 @@ const RoomPage = () => {
 
   return (
     <>
-  <div className="container-rooms flex sm:block items-center">
-  <Header />
-  <div className="sm:px-[50px] px-[20px]">
-    <div className="flex sm:flex-row flex-col">
-      <div className="sm:basis-2/3 block  sm:flex-grow">
-        <RoomImageList />
-        <ImageCaresoul />
-        <div className="sm:hidden flex">
-
-        <Card/>      
+      <div className="container-rooms flex sm:block items-center">
+        <Header />
+        <div className="sm:px-[50px] mt-[65px] px-[20px]">
+          <div className="flex sm:flex-row flex-col">
+            <div className="sm:basis-2/3 flex flex-col  sm:flex-grow">
+              <RoomImageList />
+              <ImageCaresoul />
+              <RoomInfo />
+            </div>
+            <div className="sm:basis-1/3 flex flex-col">
+              <div className="sm:sticky flex top-12 mb-16 ml-0">
+                <Card />
+              </div>
+            </div>
+          </div>
+          <Reviews />
+          <Footer />
         </div>
-        <RoomInfo />
       </div>
-      <div className="sm:basis-1/3 hidden">
-        <div className="sm:sticky flex top-12 mb-16 ml-0">
-          <Card />
-        </div>
-      </div>
-    </div>
-    <Reviews />
-    <Footer />
-  </div>
-</div>
 
 
     </>

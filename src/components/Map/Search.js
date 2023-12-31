@@ -191,6 +191,8 @@ const Search = ({ places, onResultClick }) => {
             <input
               type="text"
               placeholder="Search Ayatrio Maps"
+              value={searchQuery}
+              onChange={handleSearchChange}
               className="searchTerm w-[17rem] h-10 border-white p-4 active:border-none focus:outline-none"
               style={{
                 borderRadius: "10px 10px 10px 10px",
@@ -201,7 +203,7 @@ const Search = ({ places, onResultClick }) => {
             </div>
           </div>
 
-          <div
+          {searchQuery &&<div
             className="dropdown-container bg-white w-[19rem] h-44 border border-gray-200 shadow-md overflow-auto"
             style={{
               borderRadius: "0px 0px 15px 15px",
@@ -236,7 +238,7 @@ const Search = ({ places, onResultClick }) => {
                 />
               </div>
             ))}
-          </div>
+          </div>}
         </div>
       )}
     </>

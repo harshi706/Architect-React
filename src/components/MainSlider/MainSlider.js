@@ -11,21 +11,20 @@ function MainSlider() {
 //data fetching
 const dispatch = useDispatch();
 const SliderViewData = useSelector(selectSliderData);
-
+const [page, setPage] = useState(1);
 useEffect(() => {
   if (!SliderViewData || SliderViewData.length === 0) {
     fetchData();
-  }
-}, [SliderViewData]);
-
+  } 
+}, [page]); 
 const fetchData = () => {
-  dispatch({ type: "FETCH_SLIDER_VIEW_REQUEST", payload: 10 });
+  dispatch({ type: "FETCH_SLIDER_VIEW_REQUEST", payload: {
+    page: page,
+    limit: 3,
+  } });
 };
 
-console.log(SliderViewData);
-//
 
-  
   const products = list3.filter(
     (prod) => prod.id === 1 || prod.id === 2 || prod.id === 3
   );
@@ -39,18 +38,13 @@ console.log(SliderViewData);
     }
   }, []);
   const slide = (shift) => {
-    if (scrl.current) {
-      const targetScroll = Math.max(scrl.current.scrollLeft + shift, 0);
-
-      scrl.current.scrollTo({
-        left: targetScroll,
-      });
-
-      setScrollX(targetScroll);
+    const targetPage = page + (shift > 0 ? 1 : -1);
+    if (targetPage >= 1) {
+      setPage(targetPage);
+      fetchData(targetPage);
     }
-    fetchData()
-
   };
+  
 
   if (products.length > 0) {
     return (
@@ -71,28 +65,28 @@ console.log(SliderViewData);
                 {prod.circles.map((circle, index) => (
                   <div
                     key={index}
-                    className={`circle absolute w-5 h-5 bg-white border-4 border-slate-400 rounded-full`}
+                    className={`circle absolute effect`}
                     style={{
                       top: `${circle.top}%`,
                       left: `${circle.left}%`,
                     }}
                   >
                     <div
-                      className={`hover-box flex-row z-10 w-56 rounded-2xl flex items-center
-                     ${circle.top > 75 ? "top-condition" : ""} ${
-                        circle.left > 65 ? "left-condition" : ""
-                      }
+                      className={`hover-box flex-row z-10 w-44 h-44 flex items-center bg-white
+                     ${circle.top > 75 ? "top-condition" : ""} ${circle.left > 65 ? "left-condition" : ""
+                        }
                     `}
+                    
                     >
                       <div className="flex flex-col">
-                        <h2 className=" font-normal">{circle.productTitle}</h2>
-                        <p className=" text-slate-400">
-                          {circle.productCategory}
-                        </p>
-                        <p className="font-semibold">₹ {circle.price}</p>
-                      </div>
-                      <div className="relative flex items-center justify-center">
-                        <BsArrowRightCircleFill className="flex items-center justify-center" />
+                        <div className="flex flex-col basis-3/4 w-36 flex-grow relative -ml-1">
+                          <h2 className="font-bold pt-1 pr-2">{circle.productTitle}</h2>
+                          <p className="font-normal">{circle.productCategory}</p>
+                          <p className="font-bold bg-yellow-400 h-8 w-16 pl-2 main">₹ {circle.price}</p><br />
+                        </div>
+                        <div className="absolute inset-y-0 right-0  border-l border-black flex items-center justify-center basis-1/4 flex-grow pl-2 pr-2 ml-2">
+                          <BsArrowRightCircleFill className="flex items-center justify-center" />
+                        </div>
                       </div>
                     </div>
                   </div>

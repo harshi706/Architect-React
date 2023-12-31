@@ -2,13 +2,13 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import { fetchSliderView } from '../api';
 import { getSliderSuccess, fetchSliderRequest, getSliderFailure } from '../Slices/sliderSlice';
 
-function* fetchSliderViewSaga() {
-    console.log("slider saga")
+function* fetchSliderViewSaga(action) {
   try {
+    const { page, limit } = action.payload;
     yield put(fetchSliderRequest(true));
-    const data = yield call(fetchSliderView);
+    const data = yield call(fetchSliderView, page, limit);
+    console.log("data", data);
     yield put(getSliderSuccess(data));
-    console.log("slider data", data);
   } catch (error) {
     console.error("Error fetching slider data:", error);
     yield put(getSliderFailure());
