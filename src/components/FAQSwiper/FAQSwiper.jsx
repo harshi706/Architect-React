@@ -28,8 +28,8 @@ const FAQSwiper = () => {
     spaceBetween: 30,
     slidesPerView: 4,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".my-swiper-button-next",
+      prevEl: ".my-swiper-button-prev",
     },
   };
 
@@ -71,7 +71,7 @@ const FAQSwiper = () => {
     >
       <Swiper {...swiperParams} ref={swiperRef}>
         {data.map((curElement, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide className="my-swiper-slide" key={index}>
             <div className="flex flex-col items-start space-y-10 hover:underline cursor-pointer">
               <div className="space-y-4">
                 <h3 className="font-bold text-lg">{curElement.heading}</h3>
@@ -86,8 +86,8 @@ const FAQSwiper = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="swiper-button-prev" onClick={goPrev}></div>
-      <div className="swiper-button-next" onClick={goNext}></div>
+      <div className="my-swiper-button-prev" onClick={goPrev}></div>
+      <div className="my-swiper-button-next" onClick={goNext}></div>
     </div>
   );
 };
