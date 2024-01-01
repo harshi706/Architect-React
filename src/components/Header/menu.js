@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import "./styles.css";
@@ -18,7 +18,7 @@ import arrow from "../../assets/icon/backarrow.svg";
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectectedMenu, setSelectedmenu] = useState(null);
-  const open = Boolean(anchorEl);
+ // const open = Boolean(anchorEl);
 
   const [mainContent, SetMainContent] = useState(true);
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MdSearch, MdAccessTime } from "react-icons/md";
-import { IoClose,IoHome } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 import { GoHome } from "react-icons/go";
 const Searchmagazine = () => {
   const [toggleDropdown, setToggleDropdown] = useState(false);

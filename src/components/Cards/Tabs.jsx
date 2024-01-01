@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { BsArrowLeftCircleFill } from "react-icons/bs";
-import "../MainSlider/Mainslidestyle.css";
-import { list3 } from "../../assets/mainslide-list";
+import '../MainSlider/Mainslidestyle.css';
+// import { list3 } from '../../assets/mainslide-list';
 import room from "./room.jpg";
 import work from "./work.jpg";
 import living from "./living.jpg";
@@ -17,13 +16,11 @@ const Tabs = () => {
   // };
   const navigate = useNavigate();
   const handleTab = () => {
-    navigate("/rooms");
-  };
-  const products = list3.filter(
-    (prod) => prod.id === 1 || prod.id === 2 || prod.id === 3
-  );
-  const [circle1Hovered, setCircle1Hovered] = useState(false);
-  const [circle2Hovered, setCircle2Hovered] = useState(false);
+    navigate('/rooms');
+  }
+  // const products = list3.filter(
+  //   (prod) => prod.id === 1 || prod.id === 2 || prod.id === 3
+  // );
   const circled = [
     {
       top: 50,
@@ -46,7 +43,7 @@ const Tabs = () => {
     };
   }, []);
   const [activeTab, setActiveTab] = useState("all");
-  // const [isSticky, setIsSticky] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
   const tabImages = {
     all: [room, work, living, kitchen],
     bedroom: [room, room, room],
@@ -60,7 +57,39 @@ const Tabs = () => {
     laundry: [work, work, work],
     accessories: [room, living, kitchen],
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      const blocTabs = document.querySelector(".bloc-tabs1");
+      const contentTabs = document.querySelector(".content-tabs");
 
+      if (contentTabs) {
+        const contentTabsRect = contentTabs.getBoundingClientRect();
+        setIsSticky(contentTabsRect.top <= 0);
+      }
+
+      console.log(window.scrollY);
+      //  for mobile
+      if (isSticky) {
+        const contentstart = window.scrollY;
+      
+      }
+      if (!isMobile && window.scrollY > 4700) {
+        setIsSticky(false)
+      }
+      if (isMobile && window.scrollY > 5520) {
+
+        setIsSticky(false)
+      }
+      // if (blocTabs) {
+      //   const blocTabsRect = blocTabs.getBoundingClientRect();
+      //   setIsSticky(blocTabsRect.top >= 0);
+      // }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const tabsData = [
     { key: "all", label: "All", img: tabImages.all },
     { key: "bedroom", label: "Bedroom", img: tabImages.bedroom },
@@ -78,205 +107,129 @@ const Tabs = () => {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
-
-  // logic for sticky
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const firstDiv = document.querySelector(".bloc-tabsnone");
-      const thirdDiv = document.querySelector(".classic-tabs");
-
-      if (firstDiv && thirdDiv) {
-        const firstDivHeight = firstDiv.offsetHeight;
-        const thirdDivBottom =
-          thirdDiv.getBoundingClientRect().bottom + window.scrollY;
-        const windowBottom = window.scrollY;
-
-        if (thirdDivBottom <= windowBottom + firstDivHeight) {
-          firstDiv.style.position = "relative"; // Stop being sticky
-        } else {
-          firstDiv.style.position = "sticky"; // Be sticky
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <>
-      <div className="mb-20 sm:px-[50px] px-[20px] py-20 w-full h-full">
-        <div>
-          <h2 className="text-xl font-bold mb-5">More ideas and inspiration</h2>
-        </div>
+      <div className="wrapper mb-20 sm:px-[50px] px-[20px] py-20 w-full h-full" ><div ><h2 className="text-xl font-bold mb-5">
+        More ideas and inspiration</h2></div>
         <div
-          className={`
-             cursor-pointer sm:mb-0 main-div `}
-        >
+          className={`${isSticky ? " sticky" : ""
+            } cursor-pointer sm:mb-0 `}>
           <div
-            className={` py-5 bloc-tabsnone flex flex-row`}
-            style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}
-          >
+            className={`bg-white py-5 bloc-tabs1 flex flex-row  sm:overflow-hidden`}
+            style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
             {/* sm:mb-[-64px] */}
             {tabsData.map((tab, i) => (
               <div
                 key={i}
-                className={` px-5 py-2 tabS
-            ${
-              activeTab === tab.key
-                ? "active-tabs  border border-black mr-2.5 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
-                : "tabs  border border-white mr-2.5 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
-            }`}
-                onClick={() => handleTabClick(tab.key)}
-              >
+                className={` px-5 py-2 tabs
+          ${activeTab === tab.key
+                    ? "active-tabs  border border-black mr-2.5 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
+                    : "tabs  border border-white mr-2.5 rounded-full flex items-center justify-center bg-gray-100 whitespace-nowrap"
+                  }`}
+                onClick={() => handleTabClick(tab.key)}>
                 {tab.label}
               </div>
             ))}
           </div>
           {/* <div className="content-tabs">{getContent()}</div> */}
           <div className="content-tabs">
-            <div className=" classic-tabs text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
-              <div className="row-span-2 overflow-hidden relative">
-                <img
-                  className="h-full w-full object-cover"
-                  src={tabImages[activeTab][0]}
-                  alt="Room"
-                />
-                <div className="text-md text-black absolute top-16 left-10  bg-white border-4 border-slate-400 rounded-full w-5 h-5">
-                  <div
-                    className={`flex-row z-10 mt-4 w-36 h-32 flex items-center pb-2 bg-white`}
-                    onClick={handleTab}
-                  >
-                    <div className="flex flex-row relative">
-                      {circled.map((data) => (
-                        <div
-                          className="flex flex-col basis-3/4 w-36 flex-grow relative ml-1 mr-2.5 pr-2"
-                          key={data.productId}
-                        >
-                          <h2 className="font-bold pt-1 pr-2">
-                            {data.productTitle}
-                          </h2>
-                          <p className="font-normal pb-2">
-                            {data.productCategory}
-                          </p>
-                          <p className="font-bold bg-yellow-400 h-8 w-16 pl-2 main">
-                            ₹{data.price}
-                          </p>
+            <div>
+              <div className=" text-green-800 grid sm:grid-cols-3 grid-cols-2 gap-3 grid-rows-3">
+                <div className="row-span-2 overflow-hidden relative">
+                  <img
+                    className="h-full w-full object-cover"
+                    src={tabImages[activeTab][0]}
+                    alt="Room"/>
+                  <div className="text-md text-black absolute top-16 left-10  bg-white border-4 border-slate-400 rounded-full w-5 h-5">
+                    <div className={`flex-row z-10 mt-4 w-36 h-32 flex items-center pb-2 bg-white`} onClick={handleTab}>
+                      <div className="flex flex-row relative">
+                        {circled.map((data) => (
+                          <div className="flex flex-col basis-3/4 w-36 flex-grow relative ml-1 mr-2.5 pr-2" key={data.productId}>
+                            <h2 className="font-bold pt-1 pr-2">{data.productTitle}</h2>
+                            <p className="font-normal pb-2">{data.productCategory}</p>
+                            <p className="font-bold bg-yellow-400 h-8 w-16 pl-2 main">₹{data.price}</p>
+                          </div>
+                        ))}
+                        <div className="absolute right-0 top-0 border-l border-black flex justify-end items-center h-full pr-2">
+                          <BsArrowRightCircleFill className="flex ml-2 mr-2" />
                         </div>
-                      ))}
-                      <div className="absolute right-0 top-0 border-l border-black flex justify-end items-center h-full pr-2">
-                        <BsArrowRightCircleFill className="flex ml-2 mr-2" />
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="overflow-hidden relative">
-                <img
-                  className="h-full w-full object-cover"
-                  src={tabImages[activeTab][1]}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden relative">
-                <img
-                  className="h-full w-full object-cover"
-                  src={tabImages[activeTab][2]}
-                  alt="Room"
-                />
-                <div className="text-md text-black absolute top-16 left-10  bg-white border-4 border-slate-400 rounded-full w-5 h-5">
-                  <div
-                    className={`flex-row z-10 mt-4 pb-2 w-36 h-32 flex items-center bg-white`}
-                    onClick={handleTab}
-                  >
-                    <div className="flex flex-row relative">
-                      {circled.map((data) => (
-                        <div
-                          className="flex flex-col basis-3/4 w-36 flex-grow relative ml-1 mr-2.5 pr-2"
-                          key={data.productId}
-                        >
-                          <h2 className="font-bold pt-1 pr-2">
-                            {data.productTitle}
-                          </h2>
-                          <p className="font-normal pb-2">
-                            {data.productCategory}
-                          </p>
-                          <p className="font-bold bg-yellow-400 h-8 w-16 pl-2 main">
-                            ₹{data.price}
-                          </p>
-                        </div>
-                      ))}
+                <div className="overflow-hidden relative">
+                  <img
+                    className="h-full w-full object-cover"
+                    src={tabImages[activeTab][1]}
+                    alt="Room"
+                  />
+                </div>
+                <div className="row-span-2 overflow-hidden relative">
+                  <img
+                    className="h-full w-full object-cover"
+                    src={tabImages[activeTab][2]}
+                    alt="Room"
+                  />
+                  <div className="text-md text-black absolute top-16 left-10  bg-white border-4 border-slate-400 rounded-full w-5 h-5">
+                    <div className={`flex-row z-10 mt-4 pb-2 w-36 h-32 flex items-center bg-white`} onClick={handleTab}>
+                      <div className="flex flex-row relative">
+                        {circled.map((data) => (
+                          <div className="flex flex-col basis-3/4 w-36 flex-grow relative ml-1 mr-2.5 pr-2" key={data.productId}>
+                            <h2 className="font-bold pt-1 pr-2">{data.productTitle}</h2>
+                            <p className="font-normal pb-2">{data.productCategory}</p>
+                            <p className="font-bold bg-yellow-400 h-8 w-16 pl-2 main">₹{data.price}</p>
+                          </div>
+                        ))}
 
-                      <div className="absolute right-0 top-0 border-l border-black flex justify-end items-center h-full pr-2">
-                        <BsArrowRightCircleFill className="flex ml-2 mr-2" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="overflow-hidden sm:hidden block">
-                <img
-                  className="h-full w-full object-cover "
-                  src={work}
-                  alt="Room"
-                />
-              </div>
-              <div className="row-span-2 overflow-hidden relative">
-                <img
-                  className="h-full w-full object-cover"
-                  src={
-                    activeTab === "all"
-                      ? tabImages[activeTab][3]
-                      : tabImages[activeTab][0]
-                  }
-                  alt="Room"
-                />
-                <div className="text-md text-black absolute top-16 left-10  bg-white border-4 border-slate-400 rounded-full w-5 h-5">
-                  <div
-                    className={`flex-row z-10 mt-4 w-36 h-32 flex items-center pb-2 bg-white`}
-                    onClick={handleTab}
-                  >
-                    <div className="flex flex-row relative">
-                      {circled.map((data) => (
-                        <div
-                          className="flex flex-col basis-3/4 w-36 flex-grow relative ml-1 mr-2.5 pr-2"
-                          key={data.productId}
-                        >
-                          <h2 className="font-bold pt-1 pr-2">
-                            {data.productTitle}
-                          </h2>
-                          <p className="font-normal pb-2">
-                            {data.productCategory}
-                          </p>
-                          <p className="font-bold bg-yellow-400 h-8 w-16 pl-2 main">
-                            ₹{data.price}
-                          </p>
+                        <div className="absolute right-0 top-0 border-l border-black flex justify-end items-center h-full pr-2">
+                          <BsArrowRightCircleFill className="flex ml-2 mr-2" />
                         </div>
-                      ))}
-
-                      <div className="absolute right-0 top-0 border-l border-black flex justify-end items-center h-full pr-2">
-                        <BsArrowRightCircleFill className="flex ml-2 mr-2" />
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={tabImages[activeTab][0]}
-                  alt="Room"
-                />
-              </div>
-              <div className="bg-teal-100 overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  src={tabImages[activeTab][0]}
-                  alt="Room"
-                />
+                <div className="overflow-hidden sm:hidden block">
+                  <img
+                    className="h-full w-full object-cover "
+                    src={work}
+                    alt="Room"
+                  />
+                </div>
+                <div className="row-span-2 overflow-hidden relative">
+                  <img
+                    className="h-full w-full object-cover"
+                    src={activeTab === "all" ? tabImages[activeTab][3] : tabImages[activeTab][0]}
+                    alt="Room"
+                  />
+                  <div className="text-md text-black absolute top-16 left-10  bg-white border-4 border-slate-400 rounded-full w-5 h-5">
+                    <div className={`flex-row z-10 mt-4 w-36 h-32 flex items-center pb-2 bg-white`} onClick={handleTab}>
+                      <div className="flex flex-row relative">
+                        {circled.map((data) => (
+                          <div className="flex flex-col basis-3/4 w-36 flex-grow relative ml-1 mr-2.5 pr-2" key={data.productId}>
+                            <h2 className="font-bold pt-1 pr-2">{data.productTitle}</h2>
+                            <p className="font-normal pb-2">{data.productCategory}</p>
+                            <p className="font-bold bg-yellow-400 h-8 w-16 pl-2 main">₹{data.price}</p>
+                          </div>
+                        ))}
+
+                        <div className="absolute right-0 top-0 border-l border-black flex justify-end items-center h-full pr-2">
+                          <BsArrowRightCircleFill className="flex ml-2 mr-2" />
+                        </div></div></div></div>
+                </div>
+                <div className="overflow-hidden">
+                  <img
+                    className="h-full w-full object-cover"
+                    src={tabImages[activeTab][0]}
+                    alt="Room"
+                  />
+                </div>
+                <div className="bg-teal-100 overflow-hidden">
+                  <img
+                    className="h-full w-full object-cover"
+                    src={tabImages[activeTab][0]}
+                    alt="Room"
+                  />
+                </div>
               </div>
             </div>
           </div>
