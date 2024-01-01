@@ -24,7 +24,7 @@ function MobileSeachBar() {
     
     return (
       <header
-              className={`mobile-search-bar sm:invisible w-full fixed top-0 left-0  transition-all ease-in-out duration-300  z-[99999]
+              className={`mobile-search-bar sm:invisible w-full fixed top-0 left-0  transition-all ease-in-out duration-300  z-[99]
                ${
                   isScrolled ? "bg-white" : "bg-white"
               }

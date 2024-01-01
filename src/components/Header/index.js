@@ -97,7 +97,7 @@ function Header({ howMuchScrolled }) {
   const inpRef = useRef(null);
   return (
     <header
-      className={`fixed w-full sm:bg-none  top-0 transition-all ease-in-out duration-300  z-[999]
+      className={`fixed w-full sm:bg-none  top-0 transition-all ease-in-out duration-300  z-[99999]
        ${
         isScrolled ? "bg-white" : "bg-white"
       } 
@@ -105,7 +105,7 @@ function Header({ howMuchScrolled }) {
     >
       {isLoading && <TopLoader />}
       {!searchQuery ? (
-        <div className="navbar sm:px-[30px] px-[10px] py-0 flex justify-between items-center w-full">
+        <div className="navbar sm:px-[30px] px-[10px] py-0 flex justify-between items-center w-full ">
           <div className="left flex items-center sm:gap-5 gap-1 ">
             <div className="profile-menu font-bold p-[7px] hover:bg-slate-200 hover:rounded-full">
               <Menu />

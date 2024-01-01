@@ -87,3 +87,29 @@
         height: 50vh;
     }
   }
+
+  .indicators {
+    display: flex;
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    /* top: 30px; */
+    visibility: visible;
+  }
+  
+  .indicator {
+    background-color: red;
+    height: 0.15rem;
+    width: 4.2rem;
+    border: none;
+    border-radius: 34px;
+    outline: none;
+    margin: 0 0.2rem;
+    cursor: pointer;
+    opacity: 0.5; /* Set the default opacity for all lines */
+  }
+  
+  .indicator.active {
+    opacity: 1; /* Adjust the opacity for the active line */
+  }
+  

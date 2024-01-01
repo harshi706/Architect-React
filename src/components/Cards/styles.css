@@ -14,6 +14,9 @@
   flex-direction: column;
   position: relative;
 }
+/* .main-div{
+  position: relative;
+} */
 
 .card-img {
   /* width: 980px; */
@@ -233,32 +236,41 @@
   margin-left:15px;
 }
 
-.bloc-tabs1::-webkit-scrollbar {
+.bloc-tabsnone::-webkit-scrollbar {
   display: none;
 }
 
-.bloc-tabs1{
+.bloc-tabsnone{
+  position: sticky;
+  top: 0;
+  background-color: white;
+  overflow-x: auto;
+}
+/* .bloc-tabs19.active-tabs {
+  border-bottom: 2px solid #000; 
+
+/* .bloc-tabs1{
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
-}
+} */
 
-.bloc-tabs--sticky {
+/* .bloc-tabs--sticky {
   position: stickey;
   width: 100%;
   top: 0;
   left: 0;
   right: 0;
-  background-color: white; /* Change to your background color */
+  background-color: white; /*
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* Adjust the margin-top value to match the height of your sticky element */
-.content-tabs{
-  margin-top: 10px; /* Adjust this value according to your design */
+/* .content-tabs{
+
 }
 
 .wrapper.sticky .bloc-tabs1 {
@@ -269,22 +281,22 @@
   padding-left: 50px;
   padding-right: 50px;
 }
-.bloc-tabs1.sticky {
+.bloc-tabs19.sticky {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 10;
-}
+} */
 
 @media screen and (max-width:450px) {
-  .wrapper.sticky .bloc-tabs1 {
+  /* .wrapper.sticky .bloc-tabs1 {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
     padding-left: 20px;
     padding-right: 20px;
-  }
+  } */
 }
 
 
