@@ -1,6 +1,7 @@
 import "../../../Dropitems/Styles";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const AyatrioServices = () => {
   const ServicesCollections = [
@@ -9,6 +10,7 @@ const AyatrioServices = () => {
     "Blinds",
     "Curtatins",
     "Sport Flooring",
+    "Customer Service"
   ];
 
   const [isAccordionOpen, setAccordionOpen] = useState(false);
@@ -33,7 +35,11 @@ const AyatrioServices = () => {
           <ul className="filter_content_list ">
             {ServicesCollections.map((item) => (
               <li>
+              {item === "Customer Service" ? (
+                <Link to="/customer-service">{item}</Link>
+              ) : (
                 <a href="#">{item}</a>
+              )}
               </li>
             ))}
           </ul>
