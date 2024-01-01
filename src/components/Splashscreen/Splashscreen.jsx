@@ -1,5 +1,4 @@
 import React from 'react';
-import './Splashscreen.css';
 import mainlogo from '../../assets/ayatriologo.png';
 const Splashscreen = () => {
   return (
