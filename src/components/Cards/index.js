@@ -104,6 +104,7 @@ function Cards() {
       );
     }
   }, [recommendedProducts]);
+const productx=list;
 
   function filterProductsByCategory(products, category) {
     return products.filter((product) => product.category === category);
@@ -184,7 +185,7 @@ const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
               <div className="flex">""</div>
             </SwiperSlide>
           ) : (
-            trendingData.map((product, idx) => {
+            productx.map((product, idx) => {
               return (
                 <SwiperSlide key={idx} className="">
                   <div className="grid grid-cols-1 mt-2  h-full fade-in ">
