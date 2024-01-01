@@ -47,3 +47,12 @@ export const fetchFirstImgCardSlider = async () => {
     throw error;
   }
 };
+export const fetchProfileContent = async () => {
+  try {
+    const response = await axios.get(createApiEndpoint("profileContent"));
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching profile content: ${error.message}`);
+    throw error;
+  }
+}

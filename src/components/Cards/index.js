@@ -88,7 +88,7 @@ function Cards() {
 
 //memo hook
 const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
-
+const MemoizedProfileContent = useMemo(() => <Profile />, []);
 
   return (
     <div className="">
@@ -120,7 +120,7 @@ const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
         <Imagechanger />
       </div>
       <DoubleComp />
-      <Profile />
+      {MemoizedProfileContent}
       <Tabs />
       <Phone />
       <Footer />
