@@ -14,7 +14,6 @@ import "swiper/css/mousewheel";
 import "swiper/css/scrollbar";
 import "swiper/swiper-bundle.css";
 // import { useScrollPosition } from "react-scroll-position";
-
 import Item from "../components/Item/Item";
 import Header from "../components/Header";
 // import Cards from '../components/Cards';

@@ -67,7 +67,7 @@ const Carousel = () => {
   };
 
   return (
-    <section aria-label="Newest Photos" className='sm:hidden block relative top-[60px]'>
+    <section aria-label="Newest Photos" className='sm:hidden block relative top-[60px] mb-16'>
       <div className="carousel" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
         {/* <button className="carousel-button prev" onClick={goToPrevSlide}>&#8656;</button>
         <button className="carousel-button next" onClick={goToNextSlide}>&#8658;</button> */}
@@ -78,6 +78,15 @@ const Carousel = () => {
             </li>
           ))}
         </ul>
+      </div>
+      <div className="indicators"> 
+        {imagest.map((_, index) => (
+          <div
+            key={index}
+            className={`indicator ${index === activeIndex ? 'active' : ''}`}
+            onClick={() => goToSlide(index)}
+          ></div>
+        ))}
       </div>
     </section>
   );
