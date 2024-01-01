@@ -1,19 +1,5 @@
-import React, { useEffect, useState,useRef } from "react";
-import RoomPageHeader from "../components/Room/RoomPageHeader";
-import {
-  Pagination,
-  Navigation,
-  Scrollbar,
-  Mousewheel,
-  FreeMode,
-} from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/free-mode";
-import "swiper/css/mousewheel";
-import "swiper/css/scrollbar";
-import "swiper/swiper-bundle.css";
+import React, { useEffect, useState } from "react";
+// import RoomPageHeader from "../components/Room/RoomPageHeader";
 import "../components/Room/styles.css";
 import RoomImageList from "../components/Room/RoomImageList";
 import RoomInfo from "../components/Room/RoomInfo";
@@ -66,104 +52,7 @@ const RoomPage = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const [showFilter, setShowFilter] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
-  const [wallpaperProducts, setWallpaperProducts] = useState([]);
-  const [popupVisible, setPopupVisible] = useState(false);
-
-  const swiperOptions3 = {
-    slidesPerView: 1,
-    centeredSlides: false,
-    spaceBetween: 1,
-    modules: [Pagination, Scrollbar, Mousewheel, FreeMode],
-    navigation: {
-      nextEl: ".custom-next-button",
-      prevEl: ".custom-prev-button",
-    },
-    noSwiping: true,
-    allowSlidePrev: true,
-    allowSlideNext: true,
-  };
-  const swiperRef = useRef(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setWallpaperProducts([
-          {
-            productName: "Product 1",
-            price: "$100",
-            subcategory: "Category 1",
-            images: "image_url_1.jpg",
-            ratings: 4.5,
-          },
-          {
-            productName: "Product 1",
-            price: "$100",
-            subcategory: "Category 1",
-            images: "image_url_1.jpg",
-            ratings: 4.5,
-          },
-          {
-            productName: "Product 1",
-            price: "$100",
-            subcategory: "Category 1",
-            images: "image_url_1.jpg",
-            ratings: 4.5,
-          },
-          {
-            productName: "Product 1",
-            price: "$100",
-            subcategory: "Category 1",
-            images: "image_url_1.jpg",
-            ratings: 4.5,
-          },
-          {
-            productName: "Product 1",
-            price: "$100",
-            subcategory: "Category 1",
-            images: "image_url_1.jpg",
-            ratings: 4.5,
-          },
-          {
-            productName: "Product 1",
-            price: "$100",
-            subcategory: "Category 1",
-            images: "image_url_1.jpg",
-            ratings: 4.5,
-          },
-          {
-            productName: "Product 1",
-            price: "$100",
-            subcategory: "Category 1",
-            images: "image_url_1.jpg",
-            ratings: 4.5,
-          },
-          {
-            productName: "Product 1",
-            price: "$100",
-            subcategory: "Category 1",
-            images: "image_url_1.jpg",
-            ratings: 4.5,
-          },
-          {
-            productName: "Product 1",
-            price: "$100",
-            subcategory: "Category 1",
-            images: "image_url_1.jpg",
-            ratings: 4.5,
-          },
-          // Add more products as needed
-        ]);
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+ 
 
   return (
     <>

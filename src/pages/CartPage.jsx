@@ -1,12 +1,12 @@
 import React from 'react'
-import Cart from '../components/Cart/Cart'
+import AddCart from '../components/Cart/AddCart'
 import Header from '../components/Header'
 
 const CartPage = () => {
   return (
     <>
-    <Header/>
-    <Cart/>
+      <Header />
+      <AddCart />
     </>
   )
 }
