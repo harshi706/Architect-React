@@ -5,7 +5,11 @@ import AyatrioFamily from './Footer_child/AyatrioFamily'
 import AyatrioServices from './Footer_child/AyatrioServices'
 import HelpSupports from './Footer_child/HelpSupports'
 import AboutAyatrio from './Footer_child/AboutAyatrio'
-import Image from '../../assets/ayatriologo.png';
+import facebook from '../../assets/social-icon/facebook-icon.svg';
+import instagram from '../../assets/social-icon/instagram-icon.svg';
+import twitter from '../../assets/social-icon/twitter-icon.svg';
+import youtube from '../../assets/social-icon/youtube-icon.svg';
+
 
 
 const Footer = () => {
@@ -58,26 +62,57 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div>
-        <div>
-          <div class="flex sm:px-[50px] px-[20px]  sm:flex-row flex-col justify-between p-4">
-            <div class="flex  items-center space-x-4 text-lg font-semibold tracking-tight">
-              <div class="py-2 text-black" >Sign in</div>
-              <div class="py-2">Sign up</div>
-              <div class="py-2 text-black" >Sign in</div>
-              <div class="py-2">Sign up</div>
-            </div>
 
-            <div class="flex gap-3 items-center text-lg font-semibold tracking-tight">
-              <div class="py-2 text-black" >Cookie policy</div>
-              <div class="py-2">Cookie settings</div>
-            </div>
-          </div>
+      <div class="flex sm:px-[50px] px-[20px]  footer_bg sm:flex-row flex-col justify-between p-4">
+        <div class="flex  items-center space-x-4 text-lg font-semibold tracking-tight">
+          <ul class="flex flex-wrap items-center justify-center text-gray-900 dark:text-white">
+            <li>
+              <a href="#" class="me-4 hover:underline">
+                <img className='list-socialicon' src={facebook} alt='' />
+              </a>
+            </li>
+            <li>
+              <a href="#" class="me-4 hover:underline">
+                <img className='list-socialicon' src={instagram} alt='' />
+              </a>
+            </li>
+            <li>
+              <a href="#" class="me-4 hover:underline">
+                <img className='list-socialicon' src={twitter} alt='' />
+              </a>
+            </li>
+            <li>
+              <a href="#" class="me-4 hover:underline">
+                <img className='list-socialicon' src={youtube} alt='' />
+              </a>
+            </li>
+          </ul>
+
         </div>
-        <div class="flex ">
-          <div className='footer_tcon  w-full  justify-center py-2'>
-            <img className='sm:w-[20%] w-[30%]' src={Image} alt='' />
-          </div>
+
+        <div class="flex gap-3">
+          <ul class="flex flex-wrap pt-2.5 justify-center text-gray-900 dark:text-white">
+            <li>
+              <a href="#" class="me-4 text-xs">
+                © Ayatrio furnishing · 2015-2023
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex gap-3">
+          <ul class="flex flex-wrap pt-2.5 justify-center text-gray-900 dark:text-white">
+            <li>
+              <a href="#" class="me-4 text-xs hover:underline">
+                Cookie policy
+              </a>
+            </li>
+            <li>
+              <a href="#" class="me-4 text-xs hover:underline">
+                Cookie settings
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
