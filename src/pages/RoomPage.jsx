@@ -5,9 +5,11 @@ import RoomImageList from "../components/Room/RoomImageList";
 import RoomInfo from "../components/Room/RoomInfo";
 import Reviews from "../components/Room/Other/Reviews";
 import Header from "../components/Header";
-import ImageCaresoul from '../components/Room/imagecaresoul'
-import Footer from '../components/Footer/Footer'
+import ImageCaresoul from "../components/Room/imagecaresoul";
+import Footer from "../components/Footer/Footer";
 import Card from "../components/Room/Other/Card";
+import Mobileswiper from "../components/Item/Mobileswiper";
+import ItemCard from "../components/Item/ItemCard";
 const RoomPage = () => {
   const [howMuchScrolled, setHowMuchScrolled] = useState(0);
 
@@ -31,29 +33,55 @@ const RoomPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const [isFilterVisible, setIsFilterVisible] = useState(true);
+
+  useEffect(() => {
+    let prevScrollPos = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      setIsFilterVisible(
+        currentScrollPos <= prevScrollPos || currentScrollPos < 100
+      );
+      prevScrollPos = currentScrollPos;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+ 
+
   return (
     <>
-      <div className="container-rooms flex sm:block items-center">
-        <Header />
-        <div className="sm:px-[50px] mt-[65px] px-[20px]">
+      <div className="container-rooms flex sm:block items-center ">
+        {isFilterVisible && <Header />}
+        <div className="sm:px-[50px] px-[20px] mt-[65px]">
           <div className="flex sm:flex-row flex-col">
             <div className="sm:basis-2/3 flex flex-col  sm:flex-grow">
               <RoomImageList />
               <ImageCaresoul />
+              {/* <div className="sm:hidden flex">
+                <Card/>
+              </div> */}
               <RoomInfo />
             </div>
-            <div className="sm:basis-1/3 flex flex-col">
+            <div className="sm:basis-1/3 flex flex-col  ">
               <div className="sm:sticky flex top-12 mb-16 ml-0">
                 <Card />
               </div>
             </div>
           </div>
-          <Reviews />
+         
+            <Reviews />
+{/*           
+            <Mobileswiper/> */}
+           
           <Footer />
         </div>
       </div>
-
-
     </>
   );
 };

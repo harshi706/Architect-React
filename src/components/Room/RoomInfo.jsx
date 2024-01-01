@@ -6,7 +6,7 @@ import Amenities from "./Other/Amenities";
 const RoomInfo = () => {
   return (
     <div className="flex sm:my-6 my-0 sm:ml-1 ml-0" style={{ width: "100%" }}>
-      <div className="mr-4 sm:w-[60%] sm:mt-0 mt-[-20rem]">
+      <div className="sm:mr-4 mr-0 sm:w-[60%] w-[100%] sm:mt-0 mt-[-20rem]">
         <div className="room-details pb-4">
           <h2 className="sm:text-2xl text-lg sm:font-semibold font-medium mt-[24rem]"></h2>
           <div className=" text-base">

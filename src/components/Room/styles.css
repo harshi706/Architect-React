@@ -188,3 +188,7 @@
 .card{
   position: sticky;
 }
+
+.rating-map::-webkit-scrollbar{
+  display: none;
+}

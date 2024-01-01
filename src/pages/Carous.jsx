@@ -16,6 +16,8 @@ import "swiper/swiper-bundle.css";
 // import { useScrollPosition } from "react-scroll-position";
 // import Cards from '../components/Cards';
 import ItemCard from "../components/Item/ItemCard";
+// import imageurl1.jpg from '..'
+import image from "../assets/roomswiper.jpg";
 
 const Carous = () => {
   const [showFilter, setShowFilter] = useState(true);
@@ -23,7 +25,6 @@ const Carous = () => {
   const [wallpaperProducts, setWallpaperProducts] = useState([]);
   const [popupVisible, setPopupVisible] = useState(false);
 
-  
   const swiperOptions2 = {
     slidesPerView: 4,
     centeredSlides: false,
@@ -60,63 +61,63 @@ const Carous = () => {
             productName: "Product 1",
             price: "$100",
             subcategory: "Category 1",
-            images: "image_url_1.jpg",
+            images: "image",
             ratings: 4.5,
           },
           {
             productName: "Product 1",
             price: "$100",
             subcategory: "Category 1",
-            images: "image_url_1.jpg",
+            images: "image",
             ratings: 4.5,
           },
           {
             productName: "Product 1",
             price: "$100",
             subcategory: "Category 1",
-            images: "image_url_1.jpg",
+            images: "image",
             ratings: 4.5,
           },
           {
             productName: "Product 1",
             price: "$100",
             subcategory: "Category 1",
-            images: "image_url_1.jpg",
+            images: "image",
             ratings: 4.5,
           },
           {
             productName: "Product 1",
             price: "$100",
             subcategory: "Category 1",
-            images: "image_url_1.jpg",
+            images: "image",
             ratings: 4.5,
           },
           {
             productName: "Product 1",
             price: "$100",
             subcategory: "Category 1",
-            images: "image_url_1.jpg",
+            images: "image",
             ratings: 4.5,
           },
           {
             productName: "Product 1",
             price: "$100",
             subcategory: "Category 1",
-            images: "image_url_1.jpg",
+            images: "image",
             ratings: 4.5,
           },
           {
             productName: "Product 1",
             price: "$100",
             subcategory: "Category 1",
-            images: "image_url_1.jpg",
+            images: "image",
             ratings: 4.5,
           },
           {
             productName: "Product 1",
             price: "$100",
             subcategory: "Category 1",
-            images: "image_url_1.jpg",
+            images: "image",
             ratings: 4.5,
           },
           // Add more products as needed
@@ -196,8 +197,7 @@ const Carous = () => {
 
   return (
     <>
-      <div className="w-full">
-      
+      <div className="sm:w-full w-[80vw] sm:block hidden">
         <hr />
         <div className="swiper2 mt-5 sm:block hidden">
           <Swiper
@@ -249,6 +249,7 @@ const Carous = () => {
                       imgSrc={product.images}
                       rating={product.ratings}
                       key={idx}
+                    
                       setPopupVisible={setPopupVisible}
                       cssClass={"card1flex"}
                     />

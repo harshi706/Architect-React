@@ -60,15 +60,15 @@ const Footer = () => {
       </div>
       <div>
         <div>
-          <div class="flex sm:px-[50px] px-[20px] justify-between p-4">
-            <div class="flex items-center space-x-4 text-lg font-semibold tracking-tight">
+          <div class="flex sm:px-[50px] px-[20px]  sm:flex-row flex-col justify-between p-4">
+            <div class="flex  items-center space-x-4 text-lg font-semibold tracking-tight">
               <div class="py-2 text-black" >Sign in</div>
               <div class="py-2">Sign up</div>
               <div class="py-2 text-black" >Sign in</div>
               <div class="py-2">Sign up</div>
             </div>
 
-            <div class="flex items-center text-lg font-semibold tracking-tight">
+            <div class="flex gap-3 items-center text-lg font-semibold tracking-tight">
               <div class="py-2 text-black" >Cookie policy</div>
               <div class="py-2">Cookie settings</div>
             </div>
@@ -76,7 +76,7 @@ const Footer = () => {
         </div>
         <div class="flex ">
           <div className='footer_tcon  w-full  justify-center py-2'>
-            <img className='w-[20%]' src={Image} alt='' />
+            <img className='sm:w-[20%] w-[30%]' src={Image} alt='' />
           </div>
         </div>
       </div>
