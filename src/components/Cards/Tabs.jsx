@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
+<<<<<<< HEAD
+import '../MainSlider/Mainslidestyle.css';
+// import { list3 } from '../../assets/mainslide-list';
+=======
 import { BsArrowLeftCircleFill } from "react-icons/bs";
 import "../MainSlider/Mainslidestyle.css";
 import { list3 } from "../../assets/mainslide-list";
+>>>>>>> 0aec7483b03232c4a9fd136dcbe1d8c601f6f7e7
 import room from "./room.jpg";
 import work from "./work.jpg";
 import living from "./living.jpg";
@@ -17,6 +22,13 @@ const Tabs = () => {
   // };
   const navigate = useNavigate();
   const handleTab = () => {
+<<<<<<< HEAD
+    navigate('/rooms');
+  }
+  // const products = list3.filter(
+  //   (prod) => prod.id === 1 || prod.id === 2 || prod.id === 3
+  // );
+=======
     navigate("/rooms");
   };
   const products = list3.filter(
@@ -24,6 +36,7 @@ const Tabs = () => {
   );
   const [circle1Hovered, setCircle1Hovered] = useState(false);
   const [circle2Hovered, setCircle2Hovered] = useState(false);
+>>>>>>> 0aec7483b03232c4a9fd136dcbe1d8c601f6f7e7
   const circled = [
     {
       top: 50,

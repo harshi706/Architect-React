@@ -6,11 +6,25 @@
 }
 
 .Filter-array {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   max-width: 100vw;
   overflow-x: scroll;
-  flex: 2.5 1;
+  flex: 2.5 1; */
+  display: flex;
+}
+@media only screen and (max-width: 450px) {
+  .phone{
+  display: flex;
+  justify-content:flex-start;
+  max-width: 100vw;
+  overflow-x: scroll;
+  flex: 2.5 1; 
+  left: 0;
+  }
+  .media{
+    padding: 0;
+  }
 }
 
 .Filter-array::-webkit-scrollbar {
@@ -20,7 +34,8 @@
 .Filter-array-element {
   display: flex;
   gap: 0.55rem;
-  margin: 0;
+  padding-bottom: 3px;
+  padding-top: 0;
 }
 
 .after-arrow {
