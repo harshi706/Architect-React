@@ -55,13 +55,10 @@ const Footer = () => {
               <About_Ayatrio />
             </div>
             <hr className=" border w-[75vw] sm:hidden block" />
-
-
           </div>
         </div>
       </div>
       <div>
-
         <div>
           <div class="flex sm:px-[50px] px-[20px] justify-between p-4">
             <div class="flex items-center space-x-4 text-lg font-semibold tracking-tight">
@@ -75,20 +72,13 @@ const Footer = () => {
               <div class="py-2 text-black" >Cookie policy</div>
               <div class="py-2">Cookie settings</div>
             </div>
-
           </div>
         </div>
-
         <div class="flex ">
           <div className='footer_tcon  w-full  justify-center py-2'>
             <img className='w-[20%]' src={Image} alt='' />
           </div>
-
         </div>
-
-
-
-
       </div>
     </div>
   )

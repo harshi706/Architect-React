@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import RoomPageHeader from "../components/Room/RoomPageHeader";
+// import RoomPageHeader from "../components/Room/RoomPageHeader";
 import "../components/Room/styles.css";
 import RoomImageList from "../components/Room/RoomImageList";
 import RoomInfo from "../components/Room/RoomInfo";

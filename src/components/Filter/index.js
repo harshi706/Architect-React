@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
 import { links } from "../../assets/images-links";
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+// import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import backarrow from "../../assets/icon/backarrow.svg";
 import rightarrow from "../../assets/icon/backarrowRevarce.svg";

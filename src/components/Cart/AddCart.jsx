@@ -3,7 +3,7 @@ import React,{useState,useEffect} from "react";
 import { useSelector } from "react-redux";
 import Footer from "../Footer/Footer";
 
-const Cart = () => {
+const AddCart = () => {
   const selectedItems = useSelector((state) => state.rooms.selectedActivity);
   console.log('Cart component re-rendered');
   const [forceRender, setForceRender] = useState(false);
@@ -131,4 +131,4 @@ useEffect(() => {
   );
 };
 
-export default Cart;
+export default AddCart;
