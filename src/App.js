@@ -23,7 +23,7 @@ const LoginPage = lazy(() => import("./pages/LoginPage"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 const Virtualexperiance = lazy(() => import("./pages/Virtualexperiance"));
 const CartPage = lazy(() => import("./pages/CartPage"));
-const ItemPage = lazy(() => import("./pages/ItemPage"));
+// const ItemPage = lazy(() => import("./pages/ItemPage"));
 
 function App() {
   const [deviceId, setDeviceId] = useState(null);
@@ -73,7 +73,7 @@ const [location, setLocation] = useState(Currentlocation);
           <Route path="/virtualexperience/*" element={<Virtualexperiance />} />
           <Route path="*" element={<h1>Not Found</h1>} />
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/item" element={<ItemPage />} />
+          {/* <Route path="/item" element={<ItemPage />} /> */}
           {/* Below routes were added by Syed Amaan Ali */}
           <Route path="/customer-service" element={<CustomerServicePage/>}/>
           <Route path="/customer-service/shopping-at-ayatrio" element={<ShoppingInfo/>}/>
