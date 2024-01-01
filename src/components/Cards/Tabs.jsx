@@ -112,7 +112,7 @@ const Tabs = () => {
   };
   return (
     <>
-      <div className="wrapper w-full h-full mb-20 sm:px-[50px] px-[20px] py-20 w-full h-full" ><div ><h2 className="text-xl font-bold mb-5">
+      <div className="wrapper mb-20 sm:px-[50px] px-[20px] py-20 w-full h-full" ><div ><h2 className="text-xl font-bold mb-5">
         More ideas and inspiration</h2></div>
         <div
           className={`${isSticky ? " sticky" : ""

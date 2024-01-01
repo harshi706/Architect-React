@@ -1,104 +1,79 @@
 import React from "react";
-import firstShoe from "../../assets/product-img/1.jpeg";
-import secondShoe from "../../assets/product-img/2.jpeg";
-import thirdShoe from "../../assets/product-img/3.jpeg";
-import fourthShoe from "../../assets/product-img/4.png";
-import fifthShoe from "../../assets/product-img/5.png";
-import Footer from '../Footer/Footer'
+import blackcurtain from "../../assets/product/block-out-curtains-700218.avif";
+import lightfilter from "../../assets/product/light-filtering-curtains-700220.avif";
+import netvolie from "../../assets/product/net-volie-curtains-700221.avif";
+import panelcurtain from "../../assets/product/panel-curtains-10702.avif";
+import roomdarkening from "../../assets/product/room-darkening-curtains-700219.avif";
+import sewingmachine from "../../assets/product/sewing-accessories-14350.avif";
+import Footer from "../Footer/Footer";
 const Products = () => {
-  const products = [
+  const pdt = [
     {
       pid: 1,
-      name: "Nike Air Forc 1*07",
-      category: "Men's Shoe",
-      colorAvailable: 1,
-      img: firstShoe,
-      price: 8195.0,
+      name: "Block-out curtains",
+      category: "curtain",
+      img: blackcurtain,
     },
     {
       pid: 2,
-      name: "Nike Air Max Cirro",
-      category: "Men's Slides",
-      colorAvailable: 4,
-      img: secondShoe,
-      price: 3695.0,
+      name: "Room darkening curtains",
+      category: "curtain",
+      img: roomdarkening,
     },
     {
       pid: 3,
-      name: "Nike Killshot 2 leather",
-      category: "Men's Shoe",
-      colorAvailable: 2,
-      img: thirdShoe,
-      price: 7995.0,
+      name: "Light filtering curtains",
+      category: "curtain",
+      img: lightfilter,
     },
     {
       pid: 4,
-      name: "Nike Killshot 2 leather",
-      category: "Men's Shoe",
-      colorAvailable: 2,
-      img: fourthShoe,
-      price: 7995.0,
+      name: "Net & sheer curtains",
+      category: "curtain",
+      img: netvolie,
     },
     {
       pid: 5,
-      name: "Nike Killshot 2 leather",
-      category: "Men's Shoe",
-      colorAvailable: 2,
-      img: fifthShoe,
-      price: 7995.0,
+      name: "Panel curtains",
+      category: "curtain",
+      img: panelcurtain,
     },
     {
       pid: 6,
-      name: "Nike Air Forc 1*07",
-      category: "Men's Shoe",
-      colorAvailable: 1,
-      img: firstShoe,
-      price: 8195.0,
+      name: "Sewing accessories",
+      category: "curtain",
+      img: sewingmachine,
     },
   ];
   return (
-       <section id="products">
-      <div className="bg-white">
-        <div className="  ">
-          <div className="sm:px-0 overflow-hidden px-[20px]  mt-6 grid grid-cols-2 gap-y-4 sm:grid-cols-3 gap-3">
-            {products.map((product) => (
-              <div key={product.id} className="group relative">
-                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                  <img
-                    src={product.img}
-                    alt={product.img}
-                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                  />
-                </div>
-                <div className="mt-4 flex justify-between">
-                  <div>
-                    <h3 className="text-sm text-gray-700">
-                      <a href={product.href}>
-                        <span aria-hidden="true" className="absolute inset-0" />
-                        {product.name}
-                      </a>
-                    </h3>
-                    <p className="mt-1 text-sm text-gray-500">
-                      {product.color}
-                    </p>
-                  </div>
-                </div>
-                <div className="mt-1">
-                  <p className="text-sm font-large font-bold text-gray-900">
-                    ₹ {product.price}
-                  </p>
-                  <p className="mt-1 text-sm font-medium text-gray-900">
-                    {product.category}
-                  </p>
-                </div>
-              </div>
-            ))}
+    <div className="relative top-20 sm:px-[50px] px-[20px] ">
+      {/* main heading of pdt */}
+      <h1 className="text-3xl font-bold mb-10">Curtain</h1>
+      {/* img of product using flex and a fix width */}
+      <div className="flex flex-row gap-3 sm:w-[65vw] sm:overflow-x-hidden overflow-x-auto mb-16">
+        {pdt.map((txt, idx) => (
+          <div key={idx} className="flex flex-col gap-2">
+            <img className="sm:min-w-[120px]  sm:h-[70px] min-w-[120px] h-[70px]" src={txt.img} alt={txt.name} />
+            <p>{txt.name}</p>
           </div>
-        </div>
+        ))}
       </div>
-    </section>
-    
 
+      {/* relevant text */}
+
+      <p className="sm:w-[50vw] w-[100%] text-base text-justify">
+        Waking up to harsh sunlight can put your mornings to an unpleasant
+        start. And more than that, uncovered windows also take away your
+        privacy. Curtains and blinds keep your home secured, and at the same
+        time, regulate the amount of light inside it. From IKEA’s wide range of
+        curtains, there’s a design for every individual taste. Smooth fabrics,
+        unconventional patterns, and diverse colours make this collection truly
+        unique. Apart from being stylish, these curtains also have excellent
+        light blocking features that keep your interiors cool and safe.
+      </p>
+
+
+    </div>
   );
 };
 

@@ -97,9 +97,11 @@ function Header({ howMuchScrolled }) {
   const inpRef = useRef(null);
   return (
     <header
-      className={`fixed w-full sm:bg-none  top-0 transition-all ease-in-out duration-300  z-[999] ${
+      className={`fixed w-full sm:bg-none  top-0 transition-all ease-in-out duration-300  z-[999]
+       ${
         isScrolled ? "bg-white" : "bg-white"
-      } ${howMuchScrolled > 20 ? "hidden" : ""}`}
+      } 
+      ${howMuchScrolled > 20 ? "hidden" : ""}`}
     >
       {isLoading && <TopLoader />}
       {!searchQuery ? (
@@ -191,7 +193,7 @@ className="border rounded-3xl p-1"
           <div className="right flex items-center sm:gap-4 gap-2">
             {/* map-icon */}
 
-            <div className=" searchbar pt-4 w-40 h-10 items-right justify-end ">
+            <div className=" searchbar sm:block hidden pt-4 w-40 h-10 items-right justify-end ">
               <input
                 type="text"
                 onChange={handleSearchChange}

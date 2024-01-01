@@ -67,7 +67,7 @@ const Carousel = () => {
   };
 
   return (
-    <section aria-label="Newest Photos" className='sm:hidden block px-[20px] w-[70vw]'>
+    <section aria-label="Newest Photos" className='sm:hidden block relative top-[60px]'>
       <div className="carousel" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
         {/* <button className="carousel-button prev" onClick={goToPrevSlide}>&#8656;</button>
         <button className="carousel-button next" onClick={goToNextSlide}>&#8658;</button> */}

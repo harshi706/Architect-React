@@ -5,15 +5,15 @@ import Products from "../components/Product/Products";
 import "../components/Product/styles.css";
 import Footer from "../components/Footer/Footer";
 
+import Tabproduct from "../components/Product/TabsProducts";
+
 const ProductPage = () => {
   return (
-    <>
+    <div>
       <Header />
-      <Topbar />
-      <ProductSidebar />
       <Products />
-      
-    </>
+      <Tabproduct />
+    </div>
   );
 };
 
