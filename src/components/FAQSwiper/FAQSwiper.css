@@ -10,12 +10,12 @@
   } */
   
   /* Ensure all slides fit within the container */
-  .swiper-wrapper {
+  .my-swiper-wrapper {
     display: flex;
   }
   
   /* Individual slide */
-  .swiper-slide {
+  .my-swiper-slide {
     flex: 0 0 auto; /* Ensure slides don't grow or shrink */
     width: 25%; /* Adjust slide width as needed */
     text-align: start;
@@ -27,8 +27,8 @@
   }
   
   /* Navigation buttons */
-  .swiper-button-prev,
-  .swiper-button-next {
+  .my-swiper-button-prev,
+  .my-swiper-button-next {
     position: absolute;
     top: 50%;
     width: 30px;
@@ -44,11 +44,11 @@
   }
   
   /* Positioning of the buttons */
-  .swiper-button-prev {
+  .my-swiper-button-prev {
     left: 0px;
   }
   
-  .swiper-button-next {
+  .my-swiper-button-next {
     right: 0px;
   }
   
