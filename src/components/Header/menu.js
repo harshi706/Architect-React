@@ -1,19 +1,19 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import manue from "../../assets/icon/manue.svg";
 import "./styles.css";
-import Menucomp from "../Menucomp/Menucomp";
-import Featured from "../../Dropitems/Featured";
+// import Menu from "@mui/material/Menu";
+// import MenuItem from "@mui/material/MenuItem";
+// import manue from "../../assets/icon/manue.svg";
+// import Menucomp from "../Menucomp/Menucomp";
+// import Featured from "../../Dropitems/Featured";
 import { GrMenu } from "react-icons/gr";
 import Styles from "../../Dropitems/Styles";
 import Colours from "../../Dropitems/Colours";
 import Rooms from "../../Dropitems/Rooms";
 import Collections from "../../Dropitems/Collections";
-import { MenuBook } from "@mui/icons-material";
+// import { MenuBook } from "@mui/icons-material";
 import arrow from "../../assets/icon/backarrow.svg";
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);

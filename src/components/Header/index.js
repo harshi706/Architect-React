@@ -5,19 +5,19 @@ import adtocart from "../../assets/icon/adtocart.svg";
 import liketocart from "../../assets/icon/like.svg";
 import userprofile from "../../assets/icon/profile.svg";
 import search from "../../assets/icon/search.svg";
-import ayatrio_store from "../../assets/icon/ayatrio_store.svg";
-import SimpleBottomNavigation from "./bottombar";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+// import ayatrio_store from "../../assets/icon/ayatrio_store.svg";
+// import SimpleBottomNavigation from "./bottombar";
+// import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Menu from "./menu";
 import { useEffect, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import { Login } from "@mui/icons-material";
+//import { Login } from "@mui/icons-material";
 import Expandedbar from "./Expandedbar";
-import axios from "axios";
+//import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { searchProductsRequest } from "../../Features/search/searchSlice";
 import TopLoader from "../AddOn/TopLoader";
-import { faL } from "@fortawesome/free-solid-svg-icons";
+// import { faL } from "@fortawesome/free-solid-svg-icons";
 
 function Header({ howMuchScrolled }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -98,9 +98,8 @@ function Header({ howMuchScrolled }) {
   return (
     <header
       className={`fixed w-full sm:bg-none  top-0 transition-all ease-in-out duration-300  z-[999]
-       ${
-        isScrolled ? "bg-white" : "bg-white"
-      } 
+       ${isScrolled ? "bg-white" : "bg-white"
+        } 
       ${howMuchScrolled > 20 ? "hidden" : ""}`}
     >
       {isLoading && <TopLoader />}
@@ -170,8 +169,8 @@ function Header({ howMuchScrolled }) {
                       <div>
                         <button
                           onClick={handleModalClose}
-className="border rounded-3xl p-1"
-                          // className="relative top-[10px] bottom-[80px]"
+                          className="border rounded-3xl p-1"
+                        // className="relative top-[10px] bottom-[80px]"
                         >
                           Close
                         </button>

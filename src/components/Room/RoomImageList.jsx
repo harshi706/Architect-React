@@ -1,7 +1,6 @@
 // import * as React from "react";
-import { useState, useRef, useEffect } from "react";
-
-import Card from "./Other/Card";
+// import { useState, useRef, useEffect } from "react";
+// import Card from "./Other/Card";
 import React from "react";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
