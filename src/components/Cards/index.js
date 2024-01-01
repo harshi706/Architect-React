@@ -1,5 +1,5 @@
 // import Card from "./card";
-// import { list } from "../../assets/cards-list";
+import { list } from "../../assets/cards-list";
 import Offer from "../../assets/salesoffer.jpg";
 import React, { useEffect, useRef, useState } from "react";
 // import { Swiper, SwiperSlide } from "swiper/react";
@@ -49,40 +49,11 @@ function Cards() {
     setPopupVisible(true);
   };
 
-  const [indexClicked, setClicked] = useState(-1);
-  const swiperUseref = useRef(null);
 
-  const swiperOptions = {
-    slidesPerView: 3.2,
-    centeredSlides: false,
-    spaceBetween: 1,
-    modules: [Pagination, Scrollbar, Mousewheel, FreeMode],
-    navigation: {
-      nextEl: ".custom-next-button",
-      prevEl: ".custom-prev-button",
-    },
-    noSwiping: true,
-    allowSlidePrev: true,
-    allowSlideNext: true,
-  };
-  const swiperOptions2 = {
-    slidesPerView: 4.08,
-    centeredSlides: false,
-    spaceBetween: 1,
-    modules: [Pagination, Scrollbar, Mousewheel, FreeMode],
-    navigation: {
-      nextEl: ".custom-next-button",
-      prevEl: ".custom-prev-button",
-    },
-    noSwiping: true,
-    allowSlidePrev: true,
-    allowSlideNext: true,
-  };
+
   const closePopup = () => {
     setPopupVisible(false);
   };
-  const swiper1Ref = useRef(null);
-  const swiper2Ref = useRef(null);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -113,29 +84,10 @@ function Cards() {
     return products.filter((product) => product.category === category);
   }
 
-  // const wallpaperProducts = filterProductsByCategory(
-  //   recommendedProductsDataFromLocalStorage?.products || [],
-  //   "Wallpaper"
-  // );
-  // const flooringProducts = filterProductsByCategory(
-  //   recommendedProductsDataFromLocalStorage?.products || [],
-  //   "Flooring"
-  // );
-  // const blindsProducts = filterProductsByCategory(
-  //   recommendedProductsDataFromLocalStorage?.products || [],
-  //   "Blinds"
-  // );
-  // const curtainsProducts = filterProductsByCategory(
-  //   recommendedProductsDataFromLocalStorage?.products || [],
-  //   "Curtains"
-  // );
-  // const sportsAndGymProducts = filterProductsByCategory(
-  //   recommendedProductsDataFromLocalStorage?.products || [],
-  //   "Sport & Gym Flooring"
-  // );
+
 //memo hook
 const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
-
+const MemoizedProfileContent = useMemo(() => <Profile />, []);
 
   return (
     <div className="">
@@ -163,12 +115,11 @@ const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
       <Sports/>
 
       <Multicard />
-      {/* removed for overlape sm:h-[80vh] */}
       <div className="w-full bg-zinc-100 px-12 py-20  h-auto">   
         <Imagechanger />
       </div>
       <DoubleComp />
-      <Profile />
+      {MemoizedProfileContent}
       <Tabs />
       <Phone />
       <Footer />

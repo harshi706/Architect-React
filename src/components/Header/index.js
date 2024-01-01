@@ -80,7 +80,7 @@ function Header({ howMuchScrolled }) {
     setTimeout(() => {
       navigate(path);
       setIsLoading(false);
-    }, 1200);
+    }, 1310);
   };
 
   const [isModalOPen, setModalOpen] = useState(false);

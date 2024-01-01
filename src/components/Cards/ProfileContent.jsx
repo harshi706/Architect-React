@@ -1,5 +1,5 @@
-import React from "react";
-import { Navigation } from "swiper/modules";
+import React, { useEffect, useState } from "react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import { CiDeliveryTruck } from "react-icons/ci";
 // import { IoIosAddCircle, IoMdContacts } from "react-icons/io";
@@ -11,15 +11,27 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import linkdln from "./linkdln.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import { selectProfileData } from "../../Features/Slices/profileSlice";
 
 const ProfileContent = () => {
-
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch({ type: "FETCH_PROFILE_REQUEST", payload: "Profile" });
+  }, []);
+  let profileData = useSelector(selectProfileData);
   const peopleData = [
     { name: 'Rajit1', image: linkdln },
     { name: 'Rajit2', image: linkdln },
     { name: 'Rajit3', image: linkdln },
     { name: 'Rajit4', image: linkdln },
   ];
+  const [peopleState, setPeopleState] = useState(peopleData);
+  useEffect(() => {
+    if (profileData) {
+      setPeopleState(profileData);
+    }
+  }, []);
   return (
     <div className='transparent rounded-lg h-100 pb-8'>
     <Swiper
