@@ -1,10 +1,10 @@
 import React from 'react'
 import './styles.css'
-import Joinayatrio from './Footer_child/Join_Ayatrio_Family'
-import Ayatrio_Family from './Footer_child/Ayatrio_Family'
-import Ayatrio_Services from './Footer_child/Ayatrio_Services'
-import Help_Supports from './Footer_child/Help_Supports'
-import About_Ayatrio from './Footer_child/About_Ayatrio'
+import JoinAyatrioFamily from './Footer_child/JoinAyatrioFamily'
+import AyatrioFamily from './Footer_child/AyatrioFamily'
+import AyatrioServices from './Footer_child/AyatrioServices'
+import HelpSupports from './Footer_child/HelpSupports'
+import AboutAyatrio from './Footer_child/AboutAyatrio'
 import Image from '../../assets/ayatriologo.png';
 
 
@@ -36,23 +36,23 @@ const Footer = () => {
         <div className="filter_container flex gap-32">
           <div className="grid sm:grid-cols-6 grid-cols-1">
             <div className="sm:col-span-2 row-span-1 col-span-1 mr-12 mb-5">
-              <Joinayatrio />
+              <JoinAyatrioFamily />
             </div>
             <hr className=" border w-[75vw] sm:hidden block" />
             <div className="col-span-1">
-              <Ayatrio_Family />
+              <AyatrioFamily />
             </div>
             <hr className=" border w-[75vw] sm:hidden block" />
             <div className="col-span-1">
-              <Ayatrio_Services />
+              <AyatrioServices />
             </div>
             <hr className=" border w-[75vw] sm:hidden block" />
             <div className="col-span-1">
-              <Help_Supports />
+              <HelpSupports />
             </div>
             <hr className=" border w-[75vw] sm:hidden block" />
             <div className="col-span-1">
-              <About_Ayatrio />
+              <AboutAyatrio />
             </div>
             <hr className=" border w-[75vw] sm:hidden block" />
           </div>

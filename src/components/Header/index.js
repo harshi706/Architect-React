@@ -5,16 +5,17 @@ import adtocart from "../../assets/icon/adtocart.svg";
 import liketocart from "../../assets/icon/like.svg";
 import userprofile from "../../assets/icon/profile.svg";
 import search from "../../assets/icon/search.svg";
+import choserightfloor from "../../assets/icon/choserightfloor.svg";
 // import ayatrio_store from "../../assets/icon/ayatrio_store.svg";
 // import SimpleBottomNavigation from "./bottombar";
 // import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Menu from "./menu";
 import { useEffect, useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 //import { Login } from "@mui/icons-material";
 import Expandedbar from "./Expandedbar";
 //import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { searchProductsRequest } from "../../Features/search/searchSlice";
 import TopLoader from "../AddOn/TopLoader";
 // import { faL } from "@fortawesome/free-solid-svg-icons";
@@ -30,7 +31,7 @@ function Header({ howMuchScrolled }) {
 
   //section for search-icon click (above)
 
-  const [isFilterVisible, setIsFilterVisible] = useState(true);
+ // const [isFilterVisible, setIsFilterVisible] = useState(true);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [searchEngine, SetSeacrhEngine] = useState("");
@@ -116,8 +117,17 @@ function Header({ howMuchScrolled }) {
             </Link>
 
             <div className=" text-costom-co p-[7px] hover:bg-slate-200 hover:rounded-3xl whitespace-nowrap">
-              New Arivals
+            <Link to="/magazine">
+            <div className="at">
+              {" "}
+              <img
+                src={choserightfloor}
+                alt=""
+                className="seachbar-div2-icon"
+              />{" "}
+              Find the Right Floor
             </div>
+          </Link>            </div>
             {/* for only mobole search */}
 
             <div

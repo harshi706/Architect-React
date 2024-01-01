@@ -48,7 +48,7 @@ const Imagechanger = () => {
           </h3>
         </div>
         {Heading.map((value, idx) => (
-          <div key={idx} className="trending-choice">
+          <div key={idx} className="trending-choice pb-8">
             {idx === 1 && (
               <>
                 {/* <div className="line-horizontal dark-black-line h-1 w-full bg-gray-300 " /> */}
@@ -98,7 +98,7 @@ const Imagechanger = () => {
         ))}
       </div>
       <div className="right  flex w-1/2 h-full">
-        <div className="flex w-full h-full items-center">
+        <div className="flex w-full h-[36rem] items-center">
           {img.map((image, i) => (
             <img
               key={i}

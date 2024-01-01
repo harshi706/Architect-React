@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { MdSearch, MdAccessTime } from "react-icons/md";
-import { IoClose, IoHome } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 import { GoHome } from "react-icons/go";
 import Menu from "../Header/menu";
 // import search from "../../assets/icon/search.svg";
 import { searchProductsRequest } from "../../Features/search/searchSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 // import Expandedbar from "../Header/Expandedbar";
 import "./styles.css";
 
@@ -17,12 +17,12 @@ const Search = ({ places, onResultClick }) => {
   //section for search-icon click(down)
   const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
 
-  const handleSearchIconClick = () => {
-    setIsSearchBarVisible(!isSearchBarVisible);
-  };
+  // const handleSearchIconClick = () => {
+  //   setIsSearchBarVisible(!isSearchBarVisible);
+  // };
   //section for search-icon click (above)
 
-  const [isFilterVisible, setIsFilterVisible] = useState(true);
+  //const [isFilterVisible, setIsFilterVisible] = useState(true);
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
@@ -52,9 +52,9 @@ const Search = ({ places, onResultClick }) => {
     };
   }, [isScrolled]);
 
-  const onClose = () => {
-    setSearchQuery("");
-  };
+  // const onClose = () => {
+  //   setSearchQuery("");
+  // };
   useEffect(() => {
     setData(places);
   }, [places]);

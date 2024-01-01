@@ -15,7 +15,6 @@ import "swiper/css/mousewheel";
 import "swiper/css/scrollbar";
 import {
   Pagination,
-  Navigation,
   Scrollbar,
   Mousewheel,
   FreeMode,
@@ -24,7 +23,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Imagechanger from "../Imagechanger/Imagechanger";
 // import Skeleton from "react-loading-skeleton";
 // import Skeletoncard from "../Skeleton/Skeletoncard";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectRecommendedProduct } from "../../Features/Slices/recommendationSlice";
 // import Doublecard from "../Doublecard/Doublecard";
 import Multicard from "../Imagechanger/Multicard";
@@ -34,7 +33,7 @@ import Profile from "./Profile";
 import Image from "../Imagechanger/Image";
 import Phone from "./Phone";
 import DoubleComp from "./DoubleComp";
-import { CardData, CardLoader } from "../../Features/Slices/FIrstCardSlice";
+import { CardData } from "../../Features/Slices/FIrstCardSlice";
 // import { selectSliderData } from "../../Features/Slices/sliderSlice";
 import { useMemo } from "react";
 import Trending from "./Trending";
