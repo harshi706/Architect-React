@@ -23,7 +23,7 @@ import TopLoader from "../AddOn/TopLoader";
 function Header({ howMuchScrolled }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
- // const [isFilterVisible, setIsFilterVisible] = useState(true);
+  // const [isFilterVisible, setIsFilterVisible] = useState(true);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [searchEngine, SetSeacrhEngine] = useState("");
@@ -106,12 +106,11 @@ function Header({ howMuchScrolled }) {
             </Link>
 
             <div className=" text-costom-co p-[7px] hover:bg-slate-200 hover:rounded-3xl whitespace-nowrap">
-            <Link to="/magazine">
-            <div className="">
-              Find the Right Floor
+              <Link to="/magazine">
+                <div className="">Find the Right Floor</div>
+              </Link>{" "}
             </div>
-          </Link>            </div>
-            {/* for only mobole search */}
+            {/* for only mobile search */}
 
             <div
               className="sm:hidden block  w-10 h-10 p-[7px]"
@@ -120,9 +119,9 @@ function Header({ howMuchScrolled }) {
               <img src={search} alt="" className="header-div-icon" />
 
               {isModalOPen && (
-                <div className="modal-overlay z-[9999]  bg-white h-full w-full ">
+                <div className="modal-overlay  z-[9999]  bg-white h-full w-full ">
                   <div className="modal" onClick={handleModalClick}>
-                    <div className="flex flex-row gap-2 justify-evenly">
+                    <div className="flex flex-row gap-2 justify-evenly pt-10">
                       <div className="searchDiv  flex flex-col justify-between">
                         <div className="searchCon relative sm:w-[600px] w-[60vw] h-[40px]  bg-[#e5e5e5] rounded-xl ">
                           <input

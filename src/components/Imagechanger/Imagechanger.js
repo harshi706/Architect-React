@@ -94,7 +94,7 @@ const Imagechanger = () => {
         ))}
       </div>
       <div className="right  flex w-1/2 h-full">
-        <div className="flex w-full h-[100%] items-center">
+        <div className="flex w-full h-[36rem] items-center">
           {img.map((image, i) => (
             <img
               key={i}

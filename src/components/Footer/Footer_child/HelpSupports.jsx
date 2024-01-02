@@ -43,8 +43,8 @@ const Helpcollections = () => {
           )}
         </h4>
         {isAccordionOpen && (
-          <div className="filter_content_mobile sm:hidden">
-            <ul className="filter_content_list_mobile flex flex-col gap-[20px] font-normal text-slate-400 ">
+          <div className="filter_content_mobile sm:hidden mb-3">
+            <ul className="filter_content_list_mobile flex flex-col gap-[20px] font-normal text-slate-700 ">
               {helpcollections.map((item) => (
                 <li key={item}>
                   <a href="#">{item}</a>

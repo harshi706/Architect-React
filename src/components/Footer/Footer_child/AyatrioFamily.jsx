@@ -44,8 +44,8 @@ const Familycollections = () => {
           )}
         </h4>
         {isAccordionOpen && (
-          <div className="filter_content_mobile sm:hidden">
-            <ul className="filter_content_list_mobile font-normal flex flex-col gap-[20px] text-slate-400 ">
+          <div className="filter_content_mobile sm:hidden mb-3">
+            <ul className="filter_content_list_mobile font-normal flex flex-col gap-[20px] text-slate-700 ">
               {collections.map((item) => (
                 <li key={item}>
                   <a href="#">{item}</a>

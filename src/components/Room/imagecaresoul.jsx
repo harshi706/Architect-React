@@ -67,18 +67,18 @@ const Carousel = () => {
   };
 
   return (
-    <section aria-label="Newest Photos" className='sm:hidden block relative top-[60px] mb-16'>
+    <section aria-label="Newest Photos" className='sm:hidden block '>
       <div className="carousel" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
        
         <ul>
           {imagest.map((src, index) => (
             <li key={src} className={`slide ${index === activeIndex ? 'active' : ''}`}>
-              <img src={src} alt="" />
+              <img src={src} alt="" className="object-cover" />
             </li>
           ))}
         </ul>
       </div>
-      <div className="indicators"> 
+      <div className="indicators flex items-center"> 
         {imagest.map((_, index) => (
           <div
             key={index}

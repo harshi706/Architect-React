@@ -27,7 +27,7 @@
     opacity: 0;
     transition: 200ms opacity ease-in-out;
     transition-delay: 200ms;
-    width: 80vw;
+    width: 90vw;
     height: 45vh;
   }
   
@@ -37,7 +37,7 @@
     height: 50vh;
     /* position: absolute;
     top: 60px; */
-    object-fit: contain;
+    /* object-fit: contain; */
     object-position: center;
   }
   
@@ -90,9 +90,10 @@
 
   .indicators {
     display: flex;
-    position: absolute;
-    bottom: -1rem;
-    left: 0;
+    position: relative;
+    top: 2rem;
+    align-items: center;
+    justify-content: center;
     /* top: 30px; */
     visibility: visible;
   }

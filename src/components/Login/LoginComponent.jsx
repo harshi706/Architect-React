@@ -46,12 +46,12 @@ const LoginComponent = () => {
           <img src={mainlogo} alt="logo" className="w-48 m-2" />
         </div>
 
-        <div className=" break-words mt-[30px] mb-[10px] w-full text-black sm:text-[30px] text-xl font-[600] -tracking-[1.2px] sm:block flex  ">
+        <div className=" break-words mt-[30px] mb-[10px] w-full text-black sm:text-[30px] text-xl font-[600] -tracking-[1.2px] sm:block flex items-center justify-center  ">
           <h3>Wellcome to ayatrio family profile</h3>
         </div>
         <div
-          className="Modal_subtitle"
-          style={{ margin: "0px 0 38px", width: "60%" }}
+          className="Modal_subtitle mb-[38px] sm:w-[60%] sm:text-left text-center flex items-center justify-center"
+         
         >
           Become a member of Ayatrio Family today. It's free to join? Get the
           details.
