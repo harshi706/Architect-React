@@ -91,7 +91,7 @@ const MemoizedProfileContent = useMemo(() => <Profile />, []);
     <div className="">
       {MemoizedMainSlider}
       <Trending />
-      <div className="h-40 my-10 sm:px-[50px] px-[50px]">
+      <div className="h-40 my-10 sm:px-[50px] px-[20px]">
         <img src={Offer} alt="" className="w-full h-full object-fit" />
       </div>
       {/* 1st */}
