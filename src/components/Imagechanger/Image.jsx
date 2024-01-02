@@ -93,7 +93,7 @@ const Imagechanger = () => {
       <div className="main w-full h-full py-20 flex sm:flex-row flex-col sm:px-[50px] px-[20px]">
         <div className="left text-container flex flex-col sm:w-1/2 w-[80vw] h-full">
           <div className="text-container  py-8">
-            <h1 className="font-bold text-3xl">
+            <h1 className="font-bold sm:text-3xl  text-xl">
               Get to know your health
             </h1>
             <h3 className=" text-gray-500 pt-3.5 ">
@@ -108,10 +108,11 @@ const Imagechanger = () => {
               )}
               <div
                 onClick={() => handleToggle(idx)}
-                className="flex  items-center"
+                
+                className="flex  items-center "
               >
                 <h1
-                  className={`text-lg font-medium  text-left cursor-pointer ${openStates[idx] && "open"
+                  className={`sm:text-2xl text-[20px] font-medium  text-left cursor-pointer ${openStates[idx] && "open"
                     }`}
                 >
                   {value}
@@ -158,7 +159,7 @@ const Imagechanger = () => {
             <img
               src={imageSrc[imgindex]}
               alt=""
-              className=" w-[100%] h-[36rem]"
+              className=" w-[100%] h-[100%]"
             />
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 // import { CiDeliveryTruck } from "react-icons/ci";
 // import { IoIosAddCircle, IoMdContacts } from "react-icons/io";

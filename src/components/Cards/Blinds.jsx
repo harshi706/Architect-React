@@ -19,7 +19,7 @@ import {
 import "react-loading-skeleton/dist/skeleton.css";
 import { useSelector } from "react-redux";
 import { selectRecommendedProduct } from "../../Features/Slices/recommendationSlice";
-//import { CardData, CardLoader } from "../../Features/Slices/FIrstCardSlice";
+// import { CardData, CardLoader } from "../../Features/Slices/FIrstCardSlice";
 const Blinds = () => {
     
     const [swiperRef, setSwiperRef] = useState(null);

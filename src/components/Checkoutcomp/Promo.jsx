@@ -35,7 +35,7 @@ const Promo = () => {
           </div>
           <h3>How would you like to pay?</h3>
           <div className="flex items-center">
-            <h3 className="mb-4 mt-2 px-4 flex items-center deliver border border-black rounded-md h-12 w-80 border-2 border-solid p-1">
+            <h3 className="mb-4 mt-2 px-4 flex items-center deliver  border-black rounded-md h-12 w-80 border-2 border-solid p-1">
               <svg
                 className="h-4 w-4 text-black mr-2"
                 width="24"

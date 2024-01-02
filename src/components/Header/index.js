@@ -12,7 +12,7 @@ import choserightfloor from "../../assets/icon/choserightfloor.svg";
 import Menu from "./menu";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-//import { Login } from "@mui/icons-material";
+
 import Expandedbar from "./Expandedbar";
 //import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -22,14 +22,6 @@ import TopLoader from "../AddOn/TopLoader";
 
 function Header({ howMuchScrolled }) {
   const [isScrolled, setIsScrolled] = useState(false);
-  //section for search-icon click(down)
-  // const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
-
-  // const handleSearchIconClick = () => {
-  //   setIsSearchBarVisible(!isSearchBarVisible);
-  // };
-
-  //section for search-icon click (above)
 
  // const [isFilterVisible, setIsFilterVisible] = useState(true);
 
@@ -44,7 +36,6 @@ function Header({ howMuchScrolled }) {
 
   useEffect(() => {
     dispatch(searchProductsRequest(searchQuery));
-    // console.log("search called");
   }, [dispatch, searchQuery]);
 
   const navigate = useNavigate();
@@ -92,16 +83,13 @@ function Header({ howMuchScrolled }) {
     setModalOpen(false);
   };
   const handleModalClick = (event) => {
-    // Prevent clicks inside the modal from closing it
     event.stopPropagation();
   };
   const inpRef = useRef(null);
   return (
     <header
       className={`fixed w-full sm:bg-none  top-0 transition-all ease-in-out duration-300  z-[99999]
-       ${
-        isScrolled ? "bg-white" : "bg-white"
-      } 
+       ${isScrolled ? "bg-white" : "bg-white"} 
       ${howMuchScrolled > 20 ? "hidden" : ""}`}
     >
       {isLoading && <TopLoader />}
@@ -175,7 +163,6 @@ function Header({ howMuchScrolled }) {
                         <button
                           onClick={handleModalClose}
                           className="border rounded-3xl p-1"
-                        // className="relative top-[10px] bottom-[80px]"
                         >
                           Close
                         </button>
@@ -239,20 +226,6 @@ function Header({ howMuchScrolled }) {
               />
             )}
           </div>
-
-          {/* <div className="map-icon">
-            <button
-              type="button"
-              className="flex items-center justify-center  z-10  text-white bg-black hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
-              onClick={() => navigate("/ayatrio-map")}
-            >
-              <img
-                src={ayatrio_store}
-                alt=""
-                className="header-div-sStore-icon"
-              />
-            </button>
-          </div> */}
         </div>
       ) : (
         <Expandedbar

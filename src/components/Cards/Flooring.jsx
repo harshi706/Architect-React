@@ -12,6 +12,7 @@ import "swiper/css/mousewheel";
 import "swiper/css/scrollbar";
 import {
   Pagination,
+  // Navigation,
   Scrollbar,
   Mousewheel,
   FreeMode,
@@ -36,9 +37,9 @@ const Flooring = () => {
     allowSlidePrev: true,
     allowSlideNext: true,
   };
-  const closePopup = () => {
-    setPopupVisible(false);
-  };
+  // const closePopup = () => {
+  //   setPopupVisible(false);
+  // };
   const swiper2Ref = useRef(null);
   const [isLoading, setLoading] = useState(true);
 

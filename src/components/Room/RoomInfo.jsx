@@ -8,7 +8,7 @@ const RoomInfo = () => {
     <div className="flex sm:my-6 my-0 sm:ml-1 ml-0" style={{ width: "100%" }}>
       <div className="sm:mr-4 mr-0 sm:w-[60%] w-[100%] sm:mt-0 mt-[-20rem]">
         <div className="room-details pb-4">
-          <h2 className="sm:text-2xl text-lg sm:font-semibold font-medium mt-[24rem]"></h2>
+          <h2 className="sm:text-2xl text-lg sm:font-semibold font-medium mt-[24rem]">Room Details</h2>
           <div className=" text-base">
             16+ guests4 bedrooms5 beds3 bathrooms
           </div>
@@ -18,6 +18,7 @@ const RoomInfo = () => {
         </div>
         <div>
           <div>
+          {/* star */}
             <div className="border border-gray-300  sm:h-20 h-auto sm:gap-0 gap-3 sm:w-[46vw] w-[100%] rounded-lg  flex flex-row justify-center items-center">
               <div id="box1" className="flex flex-row border-r pr-4 sm:order-1 order-2">
                 <svg
@@ -175,15 +176,17 @@ const RoomInfo = () => {
                 </svg>
               </div>
 
+{/* text */}
               <div
-                className="pl-4 pr-5 sm:block hidden font-medium"
+                className="pl-4 pr-5 sm:block hidden font-medium sm:order-2"
                 style={{ lineHeight: "1.2" }}
               >
                 One of the most loved homes on
                 <br />
                 Airbnb, according to guests
               </div>
-              <div id="box2" className="flex flex-col border-r pr-4 sm:order2 order-1">
+              {/* 5star */}
+              <div id="box2" className="flex flex-col border-r pr-4 sm:order-3 order-1">
                 <div className="text-lg font-bold text-center">5.0</div>
                 <div className="flex flex-row text-xs">
                   <FaStar />
@@ -193,7 +196,8 @@ const RoomInfo = () => {
                   <FaStar />
                 </div>
               </div>
-              <div id="box3" className="flex sm:pb-0 pb-4 flex-col pl-3 sm:order-3 order-3">
+              {/* review */}
+              <div id="box3" className="flex sm:pb-0 pb-4 flex-col pl-3 sm:order-4 order-3">
                 <div className="text-center text-xl font-bold">43</div>
                 <div className="underline text-sm -mt-2">Reviews</div>
               </div>

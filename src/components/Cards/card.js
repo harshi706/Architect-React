@@ -1,26 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './styles.css';
-import StarIcon from '@mui/icons-material/Star';
+
+import StarIcon from '../../assets/svg/star-full-icon.svg'
 import Carousel from './swip';
 import rev from '../../assets/rev.webp';
 import PopUp from '../Reviews/PopUp';
 import { useNavigate } from 'react-router-dom';
 
 function Card(props) {
-  const [isFullBioVisible, setFullBioVisible] = useState(false);
-  const [isPopupVisible, setPopupVisible]=useState(false)
+
   const navigate = useNavigate();
 
   const handleImageClick = () => {
     props.setPopupVisible(true);
   };
 
-  const closePopup = () => {
-    props.setPopupVisible(false);
-  };
-  const toggleFullBio = () => {
-    setFullBioVisible(!isFullBioVisible);
-  };
+  
 
   return (
     <>
@@ -43,7 +38,8 @@ function Card(props) {
           <div className="card-title" onClick={()=>navigate('/rooms')}> 
             <div className="card-title-desc">{props.title}</div>
             <div className="card-rating">
-              <StarIcon fontSize="small" />
+            <img src={StarIcon} className='w-6 h-6' alt="" />
+             
               {props.rating}
             </div>
           </div>

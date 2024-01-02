@@ -42,11 +42,10 @@ import Curtains from "./Curtains";
 import Sports from "./Sports";
 
 function Cards() {
-  const [swiperRef, setSwiperRef] = useState(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
-  const handleImageClick = () => {
-    setPopupVisible(true);
-  };
+  // const handleImageClick = () => {
+  //   setPopupVisible(true);
+  // };
 
 
 
@@ -90,31 +89,22 @@ const MemoizedProfileContent = useMemo(() => <Profile />, []);
 
   return (
     <div className="">
-     {MemoizedMainSlider}
-      <Trending/>
+      {MemoizedMainSlider}
+      <Trending />
       <div className="h-40 my-10 sm:px-[50px] px-[50px]">
-        <img
-          src={Offer}
-          alt=""
-          className="w-full h-full object-fit"
-        />
+        <img src={Offer} alt="" className="w-full h-full object-fit" />
       </div>
       {/* 1st */}
       <Image />
-      {/* <div className="w-full sm:h-[80vh] h-[160vh] m-1 ">
-        <Imagechanger />
-      </div> */}
-      {/* <div className="w-full sm:h-[60vh] h-[100vh]  mt-2  mb-2  mx-1">
-        <Doublecard />
-      </div> */}
-      {/* flooring */}
-      <Flooring/>
-      <Blinds/>
-     <Curtains/>
-      <Sports/>
+
+      <Flooring />
+      <Blinds />
+      <Curtains />
+      <Sports />
 
       <Multicard />
-      <div className="w-full bg-zinc-100 px-12 py-20  h-auto">   
+      {/* removed for overlape sm:h-[80vh] */}
+      <div className="w-full bg-zinc-100 sm:px-[50px] px-[20px] py-20  h-auto">
         <Imagechanger />
       </div>
       <DoubleComp />

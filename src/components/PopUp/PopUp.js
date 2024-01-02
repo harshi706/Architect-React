@@ -52,11 +52,11 @@ function App() {
     setOpenPopUp2(true);
   };
 
-  const resetPopups = () => {
-    setOpenPopUp1(true);
-    setOpenPopUp2(false);
-    setOpenPopUp3(false);
-  };
+  // const resetPopups = () => {
+  //   setOpenPopUp1(true);
+  //   setOpenPopUp2(false);
+  //   setOpenPopUp3(false);
+  // };
 
   const goTo = () => {
     setOpenPopUp3(true);

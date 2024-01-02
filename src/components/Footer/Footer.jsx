@@ -15,27 +15,7 @@ import youtube from '../../assets/social-icon/youtube-icon.svg';
 const Footer = () => {
   return (
     <div>
-      {/* <div className='p-12 bg-{#f5f5f5}'>
-        <div className='filter_container flex gap-32'>
-          <div className='grid grid-cols-6'>
-            <div className='col-span-2 mr-12'>
-              <Joinayatrio />
-            </div>
-            <div className='col-span-1'>
-              <Ayatrio_Family />
-            </div>
-            <div className='col-span-1'>
-              <Ayatrio_Services />
-            </div>
-            <div className='col-span-1'>
-              <Help_Supports />
-            </div>
-            <div className='col-span-1'>
-              <About_Ayatrio />
-            </div>
-          </div>
-        </div>
-      </div> */}
+      
       <div className="sm:px-[50px] px-[20px] mt-20 pt-10 footer-container ">
         <div className="filter_container flex gap-32">
           <div className="grid sm:grid-cols-6 grid-cols-1">

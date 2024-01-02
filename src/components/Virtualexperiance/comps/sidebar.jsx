@@ -1,19 +1,6 @@
 import React from "react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ selectedPage, onSelectPage }) => {
-  // const [selected, setSelected] = useState("content1");
-  // console.log("Current selected state:", selected);
-  // const navigate = useNavigate();
-
-  // const getCircleClassName = (content) => {
-  //   const isSelected = selected === content;
-  //   return `circle relative z-20 w-5 h-5 rounded-full mb-20 ${
-  //     isSelected ? "bg-red-700 ring-0" : "bg-transparent ring-2 ring-brown-700"
-  //   }`;
-  // };
-
   const circleData = [
     {
       id: "/virtualexperience/vrooms",
@@ -45,7 +32,6 @@ const Sidebar = ({ selectedPage, onSelectPage }) => {
       tag: "content6",
       text: "Which Width of Wood Flooring Would You Prefer",
     },
-    // Add more circle data as needed
   ];
 
   return (
@@ -72,20 +58,10 @@ const Sidebar = ({ selectedPage, onSelectPage }) => {
                     : "bg-transparent ring-2 ring-brown-700"
                 }`}
               ></div>
-              {/* <div className={getCircleClassName(circle.tag)}></div> */}
             </button>
             {index < circleData.length && (
               <div className="line absolute top-2 left-39 right-40 z-0  h-0.5 w-1/2 bg-orange-50 "></div>
             )}
-            {/* <div
-              key={index}
-              className="line absolute top-2 left-52 z-0 h-0.5 bg-orange-50"
-              style={{
-               
-                left: `calc(20% * ${index})`,
-                width: `60px`,
-              }}
-            ></div> */}
           </div>
         ))}
       </div>

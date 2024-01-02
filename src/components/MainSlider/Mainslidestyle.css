@@ -119,3 +119,10 @@
   border: 6px solid rgba(200, 198, 198, 0.7); 
 }
 
+
+@media screen and (max-width:450px) {
+  .sd{
+    width: 20rem;
+    height: 57vh;
+  }
+}

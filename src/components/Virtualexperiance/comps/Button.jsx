@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { CiCirclePlus } from "react-icons/ci";
 import { GoCircle } from "react-icons/go";
 import { TiTick } from "react-icons/ti";
 const Button = ({onSelect}) => {
@@ -16,7 +15,7 @@ const handleClick=()=>{
       <button onClick={handleClick} className="absolute top-5 right-5 text-center border-none rounded-[50%] z-100 ">
       {showTick && <TiTick size={25} color="#2F4F4F" /> && <GoCircle size={30} color="white" />}
         {!showTick }
-        {/* <GoCircle className=" border-none"  size={30}/> */}
+     
       </button>
     </div>
   );

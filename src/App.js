@@ -1,5 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { FormProvider } from "./components/Checkoutcomp/FormContext";
 import './App.css'
 const CustomerServicePage = lazy(() => import("./pages/CustomerServicePage"));

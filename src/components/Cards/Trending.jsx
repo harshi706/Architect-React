@@ -12,10 +12,18 @@ import "swiper/css/free-mode";
 import "swiper/css/mousewheel";
 import "swiper/css/scrollbar";
 import {
+<<<<<<< HEAD
     Pagination,
     Scrollbar,
     Mousewheel,
     FreeMode,
+=======
+  Pagination,
+
+  Scrollbar,
+  Mousewheel,
+  FreeMode,
+>>>>>>> 2e2686bcef086057e46365f2f50deb436ebab309
 } from "swiper/modules";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useSelector } from "react-redux";
@@ -25,10 +33,17 @@ const Trending = () => {
 
     const [swiperRef, setSwiperRef] = useState(null);
     const [isPopupVisible, setPopupVisible] = useState(false);
+<<<<<<< HEAD
     const handleImageClick = () => {
         setPopupVisible(true);
     };
     const swiperUseref = useRef(null);
+=======
+    // const handleImageClick = () => {
+    //   setPopupVisible(true);
+    // };
+    //   const swiperUseref = useRef(null);
+>>>>>>> 2e2686bcef086057e46365f2f50deb436ebab309
     const swiperOptions2 = {
         slidesPerView: 4.08,
         centeredSlides: false,
@@ -46,7 +61,7 @@ const Trending = () => {
         setPopupVisible(false);
     };
     const swiper1Ref = useRef(null);
-    const swiper2Ref = useRef(null);
+    // const swiper2Ref = useRef(null);
     const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -61,8 +76,31 @@ const Trending = () => {
     }, [trendingSelect]);
     const recommendedProducts = useSelector(selectRecommendedProduct);
     const recommendedProductsDataFromLocalStorage = JSON.parse(
+<<<<<<< HEAD
         localStorage.getItem("recommendedProducts")
     );
+=======
+      localStorage.getItem("recommendedProducts")
+    );
+  
+    useEffect(() => {
+      if (recommendedProductsDataFromLocalStorage !== recommendedProducts) {
+        localStorage.setItem(
+          "recommendedProducts",
+          JSON.stringify(recommendedProducts)
+        );
+      }
+    }, [recommendedProducts]);
+  
+    function filterProductsByCategory(products, category) {
+      return products.filter((product) => product.category === category);
+    }
+  
+    // const wallpaperProducts = filterProductsByCategory(
+    //   recommendedProductsDataFromLocalStorage?.products || [],
+    //   "Wallpaper"
+    // );
+>>>>>>> 2e2686bcef086057e46365f2f50deb436ebab309
 
     useEffect(() => {
         if (recommendedProductsDataFromLocalStorage !== recommendedProducts) {

@@ -1,35 +1,7 @@
 import React from "react";
-// import Modal from "react-modal";
-// import ReactDOM from "react-dom";
 
-// Modal.setAppElement("#root");
 const CartModal = ({ selectedRooms, onClose }) => {
-  // const getTotalCost = () => {
-  //   // Calculate the total cost based on the selected rooms
-  //   // You may want to replace this with your actual pricing logic
-  //   const costPerRoom = 50; // Replace with your actual cost per room
-  //   return selectedRooms.length * costPerRoom;
-  // };
-
-  // return (
-  //   <Modal isOpen={isOpen} onRequestClose={onClose} contentLabel="Cart Modal">
-  //     <h2>Selected Rooms</h2>
-  //     <ul>
-  //       {selectedRooms.map((roomId) => (
-  //         <li key={roomId}>Room ID: {roomId}</li>
-  //       ))}
-  //     </ul>
-  //     <p>Total Cost: ${getTotalCost()}</p>
-  //     <button onClick={onClose}>Close</button>
-  //   </Modal>
-  // );
   console.log(selectedRooms);
-  // const totalCost = selectedRooms.reduce((acc, room) => { return acc + room.price),0}
-
-  // const totalCost = selectedRooms.reduce((acc, room) => {
-  //   console.log("room.price:", room.price);
-  //   return acc + room.price;
-  // }, 0);
 
   const totalCost = selectedRooms.reduce((acc, room) => {
     // console.log("room.price:", room.price);

@@ -70,7 +70,7 @@ const PlaceInfo = () => {
           in India. Enjoy Star gazing at our open terrace with a sky deck during
           cold winters.
         </p>
-        <div className="underline font-[16px] font-semibold mb-2 cursor-pointer">
+        <div className="underline font-[16px]  mb-2 cursor-pointer">
           Show more
           <KeyboardArrowRightIcon />
         </div>

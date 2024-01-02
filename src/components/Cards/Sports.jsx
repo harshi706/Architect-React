@@ -24,10 +24,20 @@ import { selectRecommendedProduct } from "../../Features/Slices/recommendationSl
 const Sports = () => {
     const [swiperRef, setSwiperRef] = useState(null);
     const [isPopupVisible, setPopupVisible] = useState(false);
+<<<<<<< HEAD
     const handleImageClick = () => {
         setPopupVisible(true);
     };
 
+=======
+    // const handleImageClick = () => {
+    //   setPopupVisible(true);
+    // };
+  
+    // const [indexClicked, setClicked] = useState(-1);
+    // const swiperUseref = useRef(null);
+  
+>>>>>>> 2e2686bcef086057e46365f2f50deb436ebab309
     const swiperOptions = {
         slidesPerView: 3.2,
         centeredSlides: false,
@@ -41,11 +51,19 @@ const Sports = () => {
         allowSlidePrev: true,
         allowSlideNext: true,
     };
+<<<<<<< HEAD
 
     const closePopup = () => {
         setPopupVisible(false);
     };
     const swiper1Ref = useRef(null);
+=======
+   
+    // const closePopup = () => {
+    //   setPopupVisible(false);
+    // };
+    // const swiper1Ref = useRef(null);
+>>>>>>> 2e2686bcef086057e46365f2f50deb436ebab309
     const swiper2Ref = useRef(null);
     const [isLoading, setLoading] = useState(true);
 

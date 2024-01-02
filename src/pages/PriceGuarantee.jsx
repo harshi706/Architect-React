@@ -61,7 +61,7 @@ const PriceGuarantee = () => {
                 </p>
               </div>
               <div>
-                <img src="https://www.ikea.com/images/df/f6/dff696a5fff1917bfb078a9ab30cc7ac.jpg?f=l" />
+                <img src="https://www.ikea.com/images/df/f6/dff696a5fff1917bfb078a9ab30cc7ac.jpg?f=l" alt=""/>
               </div>
             </div>
           </div>
@@ -76,13 +76,13 @@ const PriceGuarantee = () => {
             </div>
             <div className="flex space-x-2">
               <div>
-                <img src="https://www.ikea.com/images/51/33/51333ade6e31c4e9e11a8d63a22c34c1.png?f=s" />
+                <img src="https://www.ikea.com/images/51/33/51333ade6e31c4e9e11a8d63a22c34c1.png?f=s" alt=""/>
               </div>
               <div>
-                <img src="https://www.ikea.com/images/40/87/4087fc25dec3dc2826a7e3d2fed97e80.png?f=s" />
+                <img src="https://www.ikea.com/images/40/87/4087fc25dec3dc2826a7e3d2fed97e80.png?f=s" alt=""/>
               </div>
               <div>
-                <img src="https://www.ikea.com/images/f5/6e/f56efea354e8cb3a7c07ed1daf97531b.png?f=s" />
+                <img src="https://www.ikea.com/images/f5/6e/f56efea354e8cb3a7c07ed1daf97531b.png?f=s" alt=""/>
               </div>
             </div>
           </div>

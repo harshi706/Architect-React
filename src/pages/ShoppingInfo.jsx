@@ -33,7 +33,7 @@ const ShoppingInfo = () => {
             </div>
             <div className="flex w-1/2">
               <div>
-                <img src="https://www.ikea.com/images/47/a5/47a5903aaf7d1c233ef9d16c3c7aa640.png?f=l" />
+                <img src="https://www.ikea.com/images/47/a5/47a5903aaf7d1c233ef9d16c3c7aa640.png?f=l" alt=""/>
               </div>
             </div>
           </div>
@@ -45,7 +45,7 @@ const ShoppingInfo = () => {
           <div className="flex w-full justify-between space-x-5">
             <div className="flex w-1/2">
               <div>
-                <img src="https://www.ikea.com/images/bb/99/bb993818c7cbcae700212d260d717bbe.png?f=l" />
+                <img src="https://www.ikea.com/images/bb/99/bb993818c7cbcae700212d260d717bbe.png?f=l" alt="" />
               </div>
             </div>
             <div className="flex flex-col w-1/2">
@@ -267,7 +267,7 @@ const ShoppingInfo = () => {
             </div>
             <div className="flex space-x-7">
               <div className="flex w-1/2">
-                <img src="https://www.ikea.com/images/9e/43/9e433e3e936c8533905ff94c318a182f.png?f=l" />
+                <img src="https://www.ikea.com/images/9e/43/9e433e3e936c8533905ff94c318a182f.png?f=l" alt="" />
               </div>
               <div className="flex w-1/2">
                 <div className="flex-col space-y-10">
@@ -295,7 +295,7 @@ const ShoppingInfo = () => {
             </div>
             <div className="flex space-x-7">
               <div className="flex w-1/2">
-                <img src="https://www.ikea.com/images/67/bf/67bf1800c4cb51aea95058e2efeee29b.png?f=l" />
+                <img src="https://www.ikea.com/images/67/bf/67bf1800c4cb51aea95058e2efeee29b.png?f=l" alt=""/>
               </div>
               <div className="flex w-1/2">
                 <div className="flex-col space-y-10">
@@ -322,7 +322,7 @@ const ShoppingInfo = () => {
             </div>
             <div className="flex space-x-7">
               <div className="flex w-1/2">
-                <img src="https://www.ikea.com/images/d8/b4/d8b462fbcfee4913cd2f8a87447ffb39.png?f=l" />
+                <img src="https://www.ikea.com/images/d8/b4/d8b462fbcfee4913cd2f8a87447ffb39.png?f=l" alt=""/>
               </div>
               <div className="flex w-1/2">
                 <div className="flex-col space-y-10">
@@ -350,7 +350,7 @@ const ShoppingInfo = () => {
             </div>
             <div className="flex space-x-7">
               <div className="flex w-1/2">
-                <img src="https://www.ikea.com/images/95/fb/95fb094637e719106582980fcc605290.jpg?f=l" />
+                <img src="https://www.ikea.com/images/95/fb/95fb094637e719106582980fcc605290.jpg?f=l" alt=""/>
               </div>
               <div className="flex w-1/2">
                 <div className="flex-col space-y-10">
@@ -387,7 +387,7 @@ const ShoppingInfo = () => {
             </div>
             <div className="flex space-x-7">
               <div className="flex w-1/2">
-                <img src="https://www.ikea.com/images/b0/3d/b03d90c888a8c109900cebdffc4646c2.png?f=l" />
+                <img src="https://www.ikea.com/images/b0/3d/b03d90c888a8c109900cebdffc4646c2.png?f=l" alt=""/>
               </div>
               <div className="flex w-1/2">
                 <div className="flex-col space-y-10">
