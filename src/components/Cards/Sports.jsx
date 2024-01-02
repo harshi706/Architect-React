@@ -24,12 +24,12 @@ import { CardData, CardLoader } from "../../Features/Slices/FIrstCardSlice";
 const Sports = () => {
     const [swiperRef, setSwiperRef] = useState(null);
     const [isPopupVisible, setPopupVisible] = useState(false);
-    const handleImageClick = () => {
-      setPopupVisible(true);
-    };
+    // const handleImageClick = () => {
+    //   setPopupVisible(true);
+    // };
   
-    const [indexClicked, setClicked] = useState(-1);
-    const swiperUseref = useRef(null);
+    // const [indexClicked, setClicked] = useState(-1);
+    // const swiperUseref = useRef(null);
   
     const swiperOptions = {
       slidesPerView: 3.2,
@@ -57,10 +57,10 @@ const Sports = () => {
       allowSlidePrev: true,
       allowSlideNext: true,
     };
-    const closePopup = () => {
-      setPopupVisible(false);
-    };
-    const swiper1Ref = useRef(null);
+    // const closePopup = () => {
+    //   setPopupVisible(false);
+    // };
+    // const swiper1Ref = useRef(null);
     const swiper2Ref = useRef(null);
     const [isLoading, setLoading] = useState(true);
   

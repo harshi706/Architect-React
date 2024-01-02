@@ -10,7 +10,7 @@ const AyatrioServices = () => {
     "Blinds",
     "Curtatins",
     "Sport Flooring",
-    "Customer Service"
+    "Customer Service",
   ];
 
   const [isAccordionOpen, setAccordionOpen] = useState(false);
@@ -18,16 +18,6 @@ const AyatrioServices = () => {
     setAccordionOpen(!isAccordionOpen);
   };
   return (
-    // <div className='filter_item'>
-    //     <h4 className='filter_heading text-black'>Service</h4>
-    //     <div className='filter_content'>
-    //         <ul className='filter_content_list'>
-    //             {ServicesCollections.map((item) => (
-    //                 <li><a href='#'>{item}</a></li>
-    //             ))}
-    //         </ul>
-    //     </div>
-    // </div>
     <div className="filter_item">
       <div className="sm:block hidden ">
         <h4 className={`filter_heading text-black mb-[20px]`}>Service</h4>
@@ -35,11 +25,11 @@ const AyatrioServices = () => {
           <ul className="filter_content_list ">
             {ServicesCollections.map((item) => (
               <li>
-              {item === "Customer Service" ? (
-                <Link to="/customer-service">{item}</Link>
-              ) : (
-                <a href="#">{item}</a>
-              )}
+                {item === "Customer Service" ? (
+                  <Link to="/customer-service">{item}</Link>
+                ) : (
+                  <a href="#">{item}</a>
+                )}
               </li>
             ))}
           </ul>

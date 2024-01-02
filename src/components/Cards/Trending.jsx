@@ -12,7 +12,7 @@ import "swiper/css/mousewheel";
 import "swiper/css/scrollbar";
 import {
   Pagination,
-  Navigation,
+
   Scrollbar,
   Mousewheel,
   FreeMode,
@@ -25,10 +25,10 @@ const Trending = () => {
 
     const [swiperRef, setSwiperRef] = useState(null);
     const [isPopupVisible, setPopupVisible] = useState(false);
-    const handleImageClick = () => {
-      setPopupVisible(true);
-    };
-      const swiperUseref = useRef(null);
+    // const handleImageClick = () => {
+    //   setPopupVisible(true);
+    // };
+    //   const swiperUseref = useRef(null);
     const swiperOptions2 = {
       slidesPerView: 4.08,
       centeredSlides: false,
@@ -46,7 +46,7 @@ const Trending = () => {
       setPopupVisible(false);
     };
     const swiper1Ref = useRef(null);
-    const swiper2Ref = useRef(null);
+    // const swiper2Ref = useRef(null);
     const [isLoading, setLoading] = useState(true);
   
     useEffect(() => {
@@ -77,10 +77,10 @@ const Trending = () => {
       return products.filter((product) => product.category === category);
     }
   
-    const wallpaperProducts = filterProductsByCategory(
-      recommendedProductsDataFromLocalStorage?.products || [],
-      "Wallpaper"
-    );
+    // const wallpaperProducts = filterProductsByCategory(
+    //   recommendedProductsDataFromLocalStorage?.products || [],
+    //   "Wallpaper"
+    // );
 
   return (
     <div>

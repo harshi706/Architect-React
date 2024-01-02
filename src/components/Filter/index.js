@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
 import { links } from "../../assets/images-links";
-// import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import backarrow from "../../assets/icon/backarrow.svg";
 import rightarrow from "../../assets/icon/backarrowRevarce.svg";
@@ -17,7 +16,6 @@ import Featured from "../../Dropitems/Featured";
 function Filter() {
   const [selectedFilter, setSelectedFilter] = useState(null);
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [scrollX, setScrollX] = useState(0);
   const scrl = useRef(null);
 
@@ -61,9 +59,8 @@ function Filter() {
 
   return (
     <header
-      className={`absolute top-16 w-full  filter-array transition-all ease-in-out duration-300  z-[20] ${
-        isScrolled ? "bg-white" : "bg-white"
-      } `}
+      className={`absolute top-16 w-full  filter-array transition-all ease-in-out duration-300  z-[20] bg-white
+      `}
     >
       <div className="filter sm:mr-0 pr-20" style={{ marginLeft: "0px" }}>
         <div className="Filter-array" ref={scrl}>
@@ -92,24 +89,7 @@ function Filter() {
               onMouseEnter={() => setActiveDropdown(idx)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              {/* {value && (
-                <img
-                  src={value.imgSrc}
-                  alt="NA"
-                  className="Filter-array-element-img"
-                />
-              )} */}
-              {/* {value && (
-                <img
-                  src={choserightfloor}
-                  alt="NA"
-                  className={` relative rounded-full sm:w-[40px] w-[40px] sm:h-[40px] h-[40px] sm:p-2 p-2 mx-2 sm:bg-white bg-gray-100 whitespace-nowrap  top-0  flex items-center justify-center 
-                  
-                  ${idx === 1 ? "sm:hidden block" : "hidden"}
-                  
-                  `}
-                />
-              )} */}
+              
               {value && (
                 <p
                   className={` sm:text-base text-sm Filter-array-element-lebel sm:block rounded-full flex items-center justify-center mx-2 sm:bg-white bg-gray-100 whitespace-nowrap ${
@@ -121,9 +101,7 @@ function Filter() {
                   {value.label}
                 </p>
               )}
-              {/* {value && (
-                <p className="Filter-array-element-lebel">{value.label}</p>
-              )} */}
+              
 
               {activeDropdown === idx && (
                 <div

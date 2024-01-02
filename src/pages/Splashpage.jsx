@@ -12,7 +12,7 @@ const Splashpage = ({location}) => {
     return () => {
       clearTimeout(timer);
     };
-  }, [navigate]);
+  }, [navigate, location]);
 
   return (
     <>

@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../Header";
 import { TiTick } from "react-icons/ti";
 import Sidebar from "./sidebar";
-import { GoCircle } from "react-icons/go";
 import { FaCircle } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
@@ -92,6 +91,8 @@ const Rooms = () => {
     setShowCircle((prevShowCircle) => !prevShowCircle);
     setShowbuttoncontent((prevShowButtonContent) => !prevShowButtonContent);
   };
+
+  const selectedItems = useSelector((state) => state.rooms.selectedActivity);
 
   // const handleClick = (roomId, roomPrice, roomTitle, roomImage) => {
   //   dispatch(setSelectedActivity({ roomId, roomPrice, roomTitle, roomImage }));

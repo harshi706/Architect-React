@@ -22,14 +22,14 @@ import { selectRecommendedProduct } from "../../Features/Slices/recommendationSl
 import { CardData, CardLoader } from "../../Features/Slices/FIrstCardSlice";
 
 const Curtains = () => {
-    const [swiperRef, setSwiperRef] = useState(null);
+     const [swiperRef, setSwiperRef] = useState(null);
     const [isPopupVisible, setPopupVisible] = useState(false);
-    const handleImageClick = () => {
-      setPopupVisible(true);
-    };
+    // const handleImageClick = () => {
+    //   setPopupVisible(true);
+    // };
   
-    const [indexClicked, setClicked] = useState(-1);
-    const swiperUseref = useRef(null);
+    // const [indexClicked, setClicked] = useState(-1);
+    // const swiperUseref = useRef(null);
   
     const swiperOptions = {
       slidesPerView: 3.2,
@@ -44,23 +44,23 @@ const Curtains = () => {
       allowSlidePrev: true,
       allowSlideNext: true,
     };
-    const swiperOptions2 = {
-      slidesPerView: 4.08,
-      centeredSlides: false,
-      spaceBetween: 1,
-      modules: [Pagination, Scrollbar, Mousewheel, FreeMode],
-      navigation: {
-        nextEl: ".custom-next-button",
-        prevEl: ".custom-prev-button",
-      },
-      noSwiping: true,
-      allowSlidePrev: true,
-      allowSlideNext: true,
-    };
-    const closePopup = () => {
-      setPopupVisible(false);
-    };
-    const swiper1Ref = useRef(null);
+    // const swiperOptions2 = {
+    //   slidesPerView: 4.08,
+    //   centeredSlides: false,
+    //   spaceBetween: 1,
+    //   modules: [Pagination, Scrollbar, Mousewheel, FreeMode],
+    //   navigation: {
+    //     nextEl: ".custom-next-button",
+    //     prevEl: ".custom-prev-button",
+    //   },
+    //   noSwiping: true,
+    //   allowSlidePrev: true,
+    //   allowSlideNext: true,
+    // };
+    // const closePopup = () => {
+    //   setPopupVisible(false);
+    // };
+    // const swiper1Ref = useRef(null);
     const swiper2Ref = useRef(null);
     const [isLoading, setLoading] = useState(true);
   

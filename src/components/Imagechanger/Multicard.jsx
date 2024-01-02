@@ -26,12 +26,9 @@ const Multicard = () => {
           ref={swiper1Ref}
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={16}
-         // slidesPerView={3}
+       
           navigation={{ clickable: true }}
-          // navigation={{
-          //   nextEl: ".swiper-button-prev",
-             //   prevEl: ".swiper-button-next",
-           // }}
+         
     
           draggable={true}
           style={{ "--swiper-navigation-size": "24px" }}

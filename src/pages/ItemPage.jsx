@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
   Pagination,
-  Navigation,
+  
   Scrollbar,
   Mousewheel,
   FreeMode,
@@ -13,10 +13,10 @@ import "swiper/css/free-mode";
 import "swiper/css/mousewheel";
 import "swiper/css/scrollbar";
 import "swiper/swiper-bundle.css";
-// import { useScrollPosition } from "react-scroll-position";
+
 import Item from "../components/Item/Item";
 import Header from "../components/Header";
-// import Cards from '../components/Cards';
+
 import ItemCard from "../components/Item/ItemCard";
 import Mobileswiper from "../components/Item/Mobileswiper";
 
@@ -164,12 +164,6 @@ const ItemPage = () => {
     };
   }, []);
 
-  // const [showHeader, setShowHeader] = useState(true);
-
-  // // This hook will update the showHeader state based on scroll position
-  // useScrollPosition(({ prevPos, currPos }) => {
-  //   setShowHeader(currPos.y > prevPos.y || currPos.y < 100);
-  // });
 
   const [showHeader, setShowHeader] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -192,23 +186,7 @@ const ItemPage = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollPos]); // Dependency on prevScrollPos to update the effect when it changes
-  // const [showHeader, setShowHeader] = useState(true);
-
-  // useEffect(() => {
-  //   // Function to handle scroll event
-  //   const handleScroll = () => {
-  //     setShowHeader(window.scrollY < 100);
-  //   };
-
-  //   // Add event listener when component mounts
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   // Remove event listener when component unmounts
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []); // Empty dependency array ensures that the effect runs only once during mount and unmount
-
+ 
   return (
     <>
       <div className="w-full">

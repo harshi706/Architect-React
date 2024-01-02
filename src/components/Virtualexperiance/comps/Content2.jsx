@@ -38,9 +38,9 @@ const Content2 = () => {
     setSelectedPage(page);
   };
   const [selected, setSelected] = useState(null);
-  const handleImageClick = (image) => {
-    setSelected(image === selected ? null : image);
-  };
+  // const handleImageClick = (image) => {
+  //   setSelected(image === selected ? null : image);
+  // };
   return (
     <div className="py-4 w-full h-full pb-4 bg-[#f4e3dd] text-sm">
       <Header />

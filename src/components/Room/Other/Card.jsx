@@ -9,7 +9,7 @@ import IosShareSharpIcon from "@mui/icons-material/IosShareSharp";
 import FavoriteBorderSharpIcon from "@mui/icons-material/FavoriteBorderSharp";
 
 import "../styles.css";
-import zIndex from "@mui/material/styles/zIndex";
+// import zIndex from "@mui/material/styles/zIndex";
 const Card = () => {
   const [imgColor, setImgColor] = useState("red");
   const [widthstate, setwidthstate] = useState(0);

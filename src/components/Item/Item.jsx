@@ -14,15 +14,7 @@ const Item = () => {
   const [dropdownOpen3, setDropdownOpen3] = useState(false);
   const [dropdownOpen4, setDropdownOpen4] = useState(false);
   const [fixer, setfixer] = useState(false);
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     if (window.scrollY > 100 && window.scrollY < 500) {
-  //       setfixer(true);
-  //     } else {
-  //       setfixer(false);
-  //     }
-  //   });
-  // }, []);
+
 
   const imgSets = {
     red: [

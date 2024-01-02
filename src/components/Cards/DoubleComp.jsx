@@ -7,7 +7,7 @@ import Double from "./Double";
 const DoubleComp = () => {
   return (
     // sm:h-[35rem] 
-    <div className="py-20 grid sm:grid-cols-2 grid-cols-1 sm:w-auto w-[100%] gap-4 sm:px-[50px]">
+    <div className="py-20 grid sm:grid-cols-2 grid-cols-1 sm:w-auto w-[100%] gap-4 sm:px-[50px] px-[20px]">
       <div className="col-span-1 ml-0 sm:pr-8 pr-0 bg-zinc-100 text-black overflow-hidden">
         <div className="pl-4 pt-4">
           <div className="flex text-3xl  pl-0 pt-0">
@@ -59,8 +59,8 @@ const DoubleComp = () => {
         <div className="mt-20">
           <img
             src={game}
-            className="w-[120%] h-[400px] object-cover"
-            alt="Games Image"
+            className="sm:w-[120%] w-[100%] h-[400px] object-cover"
+            alt="Games"
           />
         </div>
       </div>

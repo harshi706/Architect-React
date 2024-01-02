@@ -13,18 +13,18 @@ import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import "swiper/css/mousewheel";
 import "swiper/css/scrollbar";
-import {
-  Pagination,
-  Navigation,
-  Scrollbar,
-  Mousewheel,
-  FreeMode,
-} from "swiper/modules";
+// import {
+//   Pagination,
+//   Navigation,
+//   Scrollbar,
+//   Mousewheel,
+//   FreeMode,
+// } from "swiper/modules";
 import "react-loading-skeleton/dist/skeleton.css";
 import Imagechanger from "../Imagechanger/Imagechanger";
 // import Skeleton from "react-loading-skeleton";
 // import Skeletoncard from "../Skeleton/Skeletoncard";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectRecommendedProduct } from "../../Features/Slices/recommendationSlice";
 // import Doublecard from "../Doublecard/Doublecard";
 import Multicard from "../Imagechanger/Multicard";
@@ -34,8 +34,8 @@ import Profile from "./Profile";
 import Image from "../Imagechanger/Image";
 import Phone from "./Phone";
 import DoubleComp from "./DoubleComp";
-import { CardData, CardLoader } from "../../Features/Slices/FIrstCardSlice";
-// import { selectSliderData } from "../../Features/Slices/sliderSlice";
+import { CardData} from "../../Features/Slices/FIrstCardSlice";
+
 import { useMemo } from "react";
 import Trending from "./Trending";
 import Flooring from "./Flooring";
@@ -44,46 +44,42 @@ import Curtains from "./Curtains";
 import Sports from "./Sports";
 
 function Cards() {
-  const [swiperRef, setSwiperRef] = useState(null);
-  const [isPopupVisible, setPopupVisible] = useState(false);
-  const handleImageClick = () => {
-    setPopupVisible(true);
-  };
+  // const [isPopupVisible, setPopupVisible] = useState(false);
+  // const handleImageClick = () => {
+  //   setPopupVisible(true);
+  // };
 
-  const [indexClicked, setClicked] = useState(-1);
-  const swiperUseref = useRef(null);
-
-  const swiperOptions = {
-    slidesPerView: 3.2,
-    centeredSlides: false,
-    spaceBetween: 1,
-    modules: [Pagination, Scrollbar, Mousewheel, FreeMode],
-    navigation: {
-      nextEl: ".custom-next-button",
-      prevEl: ".custom-prev-button",
-    },
-    noSwiping: true,
-    allowSlidePrev: true,
-    allowSlideNext: true,
-  };
-  const swiperOptions2 = {
-    slidesPerView: 4.08,
-    centeredSlides: false,
-    spaceBetween: 1,
-    modules: [Pagination, Scrollbar, Mousewheel, FreeMode],
-    navigation: {
-      nextEl: ".custom-next-button",
-      prevEl: ".custom-prev-button",
-    },
-    noSwiping: true,
-    allowSlidePrev: true,
-    allowSlideNext: true,
-  };
-  const closePopup = () => {
-    setPopupVisible(false);
-  };
-  const swiper1Ref = useRef(null);
-  const swiper2Ref = useRef(null);
+  // const swiperOptions = {
+  //   slidesPerView: 3.2,
+  //   centeredSlides: false,
+  //   spaceBetween: 1,
+  //   modules: [Pagination, Scrollbar, Mousewheel, FreeMode],
+  //   navigation: {
+  //     nextEl: ".custom-next-button",
+  //     prevEl: ".custom-prev-button",
+  //   },
+  //   noSwiping: true,
+  //   allowSlidePrev: true,
+  //   allowSlideNext: true,
+  // };
+  // const swiperOptions2 = {
+  //   slidesPerView: 4.08,
+  //   centeredSlides: false,
+  //   spaceBetween: 1,
+  //   modules: [Pagination, Scrollbar, Mousewheel, FreeMode],
+  //   navigation: {
+  //     nextEl: ".custom-next-button",
+  //     prevEl: ".custom-prev-button",
+  //   },
+  //   noSwiping: true,
+  //   allowSlidePrev: true,
+  //   allowSlideNext: true,
+  // };
+  // const closePopup = () => {
+  //   setPopupVisible(false);
+  // };
+  // const swiper1Ref = useRef(null);
+  // const swiper2Ref = useRef(null);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -110,62 +106,30 @@ function Cards() {
     }
   }, [recommendedProducts]);
 
-  function filterProductsByCategory(products, category) {
-    return products.filter((product) => product.category === category);
-  }
+  // function filterProductsByCategory(products, category) {
+  //   return products.filter((product) => product.category === category);
+  // }
 
-  // const wallpaperProducts = filterProductsByCategory(
-  //   recommendedProductsDataFromLocalStorage?.products || [],
-  //   "Wallpaper"
-  // );
-  // const flooringProducts = filterProductsByCategory(
-  //   recommendedProductsDataFromLocalStorage?.products || [],
-  //   "Flooring"
-  // );
-  // const blindsProducts = filterProductsByCategory(
-  //   recommendedProductsDataFromLocalStorage?.products || [],
-  //   "Blinds"
-  // );
-  // const curtainsProducts = filterProductsByCategory(
-  //   recommendedProductsDataFromLocalStorage?.products || [],
-  //   "Curtains"
-  // );
-  // const sportsAndGymProducts = filterProductsByCategory(
-  //   recommendedProductsDataFromLocalStorage?.products || [],
-  //   "Sport & Gym Flooring"
-  // );
-//memo hook
-const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
-
+  const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
 
   return (
     <div className="">
-     {MemoizedMainSlider}
-      <Trending/>
+      {MemoizedMainSlider}
+      <Trending />
       <div className="h-40 my-10 sm:px-[50px] px-[50px]">
-        <img
-          src={Offer}
-          alt=""
-          className="w-full h-full object-fit"
-        />
+        <img src={Offer} alt="" className="w-full h-full object-fit" />
       </div>
       {/* 1st */}
       <Image />
-      {/* <div className="w-full sm:h-[80vh] h-[160vh] m-1 ">
-        <Imagechanger />
-      </div> */}
-      {/* <div className="w-full sm:h-[60vh] h-[100vh]  mt-2  mb-2  mx-1">
-        <Doublecard />
-      </div> */}
-      {/* flooring */}
-      <Flooring/>
-      <Blinds/>
-     <Curtains/>
-      <Sports/>
+
+      <Flooring />
+      <Blinds />
+      <Curtains />
+      <Sports />
 
       <Multicard />
       {/* removed for overlape sm:h-[80vh] */}
-      <div className="w-full bg-zinc-100 px-12 py-20  h-auto">   
+      <div className="w-full bg-zinc-100 sm:px-[50px] px-[20px] py-20  h-auto">
         <Imagechanger />
       </div>
       <DoubleComp />

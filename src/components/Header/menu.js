@@ -1,24 +1,20 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
-// import Button from "@mui/material/Button";
+import { useState } from "react";
+
 import { Link } from "react-router-dom";
 import "./styles.css";
-// import Menu from "@mui/material/Menu";
-// import MenuItem from "@mui/material/MenuItem";
-// import manue from "../../assets/icon/manue.svg";
-// import Menucomp from "../Menucomp/Menucomp";
-// import Featured from "../../Dropitems/Featured";
+
 import { GrMenu } from "react-icons/gr";
 import Styles from "../../Dropitems/Styles";
 import Colours from "../../Dropitems/Colours";
 import Rooms from "../../Dropitems/Rooms";
 import Collections from "../../Dropitems/Collections";
-// import { MenuBook } from "@mui/icons-material";
+
 import arrow from "../../assets/icon/backarrow.svg";
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectectedMenu, setSelectedmenu] = useState(null);
-  const open = Boolean(anchorEl);
+  // const open = Boolean(anchorEl);
 
   const [mainContent, SetMainContent] = useState(true);
 
@@ -211,25 +207,23 @@ ${mainContent ? "block" : "hidden"}
                           )}
                         </div>
                       ))}
-                      
-                        <Link to="/virtualexperience/vrooms">
-                          <button className="bg-blue-500 whitespace-nowrap text-white sm:px-4 px-1 py-2 rounded-md transition duration-300 cursor-pointer hover:bg-blue-700">
-                            Virtual Experience
-                          </button>
-                        </Link>
-                        <button className="bg-blue-500 whitespace-nowrap w-20 h-auto text-white sm:px-4 px-1 py-2 rounded-md transition duration-300 cursor-pointer hover:bg-blue-700">
-                          Sign In
+                      <Link to="/virtualexperience/vrooms">
+                        <button className="bg-blue-500 whitespace-nowrap text-white sm:px-4 px-1 py-2 rounded-md transition duration-300 cursor-pointer hover:bg-blue-700">
+                          Virtual Experience
                         </button>
-                        <button className="bg-red-500 text-white w-24 h-auto px-4 py-2 rounded-md transition duration-300 cursor-pointer hover:bg-red-600">
-                          Sign Up
-                        </button>
-                        <button className="border w-44 h-auto border-green-600 text-green-600 px-4 py-2 rounded-md transition duration-300 cursor-pointer hover:bg-green-600 hover:text-white">
-                          Airbnb your home
-                        </button>{" "}
-                        <button className="border w-32 border-yellow-600 text-yellow-600 px-4 py-2 rounded-md transition duration-300 cursor-pointer hover:bg-yellow-600 hover:text-white">
-                          Help Centre
-                        </button>
-                      
+                      </Link>
+                      <button className="bg-blue-500 whitespace-nowrap w-20 h-auto text-white sm:px-4 px-1 py-2 rounded-md transition duration-300 cursor-pointer hover:bg-blue-700">
+                        Sign In
+                      </button>
+                      <button className="bg-red-500 text-white w-24 h-auto px-4 py-2 rounded-md transition duration-300 cursor-pointer hover:bg-red-600">
+                        Sign Up
+                      </button>
+                      <button className="border w-44 h-auto border-green-600 text-green-600 px-4 py-2 rounded-md transition duration-300 cursor-pointer hover:bg-green-600 hover:text-white">
+                        Airbnb your home
+                      </button>{" "}
+                      <button className="border w-32 border-yellow-600 text-yellow-600 px-4 py-2 rounded-md transition duration-300 cursor-pointer hover:bg-yellow-600 hover:text-white">
+                        Help Centre
+                      </button>
                     </div>
                     <div>
                       <button

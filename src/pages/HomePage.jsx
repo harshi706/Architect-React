@@ -18,9 +18,9 @@ const HomePage = () => {
   const loader = false;
   const navigate = useNavigate();
 
-  const handleLoginNav = () => {
-    navigate("/login");
-  };
+  // const handleLoginNav = () => {
+  //   navigate("/login");
+  // };
   const handleProfileNav = () => {
     console.log("Profile");
     navigate("/profile");
@@ -103,7 +103,7 @@ const HomePage = () => {
           <div className="fixed-ayatrio-map">
             <button
               type="button"
-              className="fixed left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[999] flex -bottom-3 text-white bg-black hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+              className="fixed sm:hidden flex  left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[999]  -bottom-3 text-white bg-black hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-lg px-5 py-2.5 me-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
               onClick={() => navigate("/ayatrio-map")}
             >
               Map{" "}
@@ -113,7 +113,20 @@ const HomePage = () => {
                 className="header-div-sStore-icon"
               />
             </button>
+            <button
+              type="button"
+              className="fixed sm:flex hidden  left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[999]  -bottom-3 text-white bg-black hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+              onClick={() => navigate("/ayatrio-map")}
+            >
+              Near Ayatrio{" "}
+              <img
+                src={ayatrio_store}
+                alt=""
+                className="header-div-sStore-icon"
+              />
+            </button>
           </div>
+          
         )}
 
       </div>

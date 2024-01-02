@@ -1,4 +1,4 @@
-import { Home } from "@mui/icons-material";
+import Home from '../../assets/icon/home.svg'
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -142,7 +142,8 @@ const ProfileComponent = () => {
         className="nav absolute z-10 left-[1%] top-[0.1%] text-[2.5rem]"
         onClick={handleHomeClick}>
         <div className="back">
-          <Home />
+          {/* <Home /> */}
+          <img src={Home} className="w-6 h-6" alt="" />
         </div>
       </div>
       <div

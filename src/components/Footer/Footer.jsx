@@ -1,37 +1,17 @@
 import React from 'react'
 import './styles.css'
 import Joinayatrio from './Footer_child/Join_Ayatrio_Family'
-import Ayatrio_Family from './Footer_child/Ayatrio_Family'
-import Ayatrio_Services from './Footer_child/Ayatrio_Services'
-import Help_Supports from './Footer_child/Help_Supports'
-import About_Ayatrio from './Footer_child/About_Ayatrio'
+import AyatrioFamily from './Footer_child/Ayatrio_Family'
+import AyatrioServices from './Footer_child/Ayatrio_Services'
+import HelpSupports from './Footer_child/Help_Supports'
+import AboutAyatrio from './Footer_child/About_Ayatrio'
 import Image from '../../assets/ayatriologo.png';
 
 
 const Footer = () => {
   return (
     <div>
-      {/* <div className='p-12 bg-{#f5f5f5}'>
-        <div className='filter_container flex gap-32'>
-          <div className='grid grid-cols-6'>
-            <div className='col-span-2 mr-12'>
-              <Joinayatrio />
-            </div>
-            <div className='col-span-1'>
-              <Ayatrio_Family />
-            </div>
-            <div className='col-span-1'>
-              <Ayatrio_Services />
-            </div>
-            <div className='col-span-1'>
-              <Help_Supports />
-            </div>
-            <div className='col-span-1'>
-              <About_Ayatrio />
-            </div>
-          </div>
-        </div>
-      </div> */}
+      
       <div className="sm:px-[50px] px-[20px] mt-20 pt-10 footer-container ">
         <div className="filter_container flex gap-32">
           <div className="grid sm:grid-cols-6 grid-cols-1">
@@ -40,19 +20,19 @@ const Footer = () => {
             </div>
             <hr className=" border w-[75vw] sm:hidden block" />
             <div className="col-span-1">
-              <Ayatrio_Family />
+              <AyatrioFamily />
             </div>
             <hr className=" border w-[75vw] sm:hidden block" />
             <div className="col-span-1">
-              <Ayatrio_Services />
+              <AyatrioServices />
             </div>
             <hr className=" border w-[75vw] sm:hidden block" />
             <div className="col-span-1">
-              <Help_Supports />
+              <HelpSupports />
             </div>
             <hr className=" border w-[75vw] sm:hidden block" />
             <div className="col-span-1">
-              <About_Ayatrio />
+              <AboutAyatrio />
             </div>
             <hr className=" border w-[75vw] sm:hidden block" />
           </div>

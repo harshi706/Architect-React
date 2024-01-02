@@ -1,14 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-import React, { useState, useEffect, useRef } from "react";
-import {
-  Pagination,
-  Navigation,
-  Scrollbar,
-  Mousewheel,
-  FreeMode,
-} from "swiper/modules";
+import React, { useState, useEffect} from "react";
+// import {
+//   Pagination,
+
+//   Scrollbar,
+//   Mousewheel,
+//   FreeMode,
+// } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -28,16 +28,8 @@ const Mobileswiper = () => {
   const [dropdownOpen2, setDropdownOpen2] = useState(false);
   const [dropdownOpen3, setDropdownOpen3] = useState(false);
   const [dropdownOpen4, setDropdownOpen4] = useState(false);
-  const [fixer, setfixer] = useState(false);
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     if (window.scrollY > 100 && window.scrollY < 500) {
-  //       setfixer(true);
-  //     } else {
-  //       setfixer(false);
-  //     }
-  //   });
-  // }, []);
+  // const [fixer, setfixer] = useState(false);
+  
 
   const imgSets = {
     red: [
@@ -114,24 +106,7 @@ const Mobileswiper = () => {
   //2nd
 
   const [showFilter, setShowFilter] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [wallpaperProducts, setWallpaperProducts] = useState([]);
-
-  const swiperOptions = {
-    slidesPerView: 3,
-    centeredSlides: false,
-    spaceBetween: 1,
-    modules: [Pagination, Scrollbar, Mousewheel, FreeMode],
-    navigation: {
-      nextEl: ".custom-next-button",
-      prevEl: ".custom-prev-button",
-    },
-    noSwiping: true,
-    allowSlidePrev: true,
-    allowSlideNext: true,
-  };
-
-  const swiperRef = useRef(null);
+  
 
   useEffect(() => {
     let prevScrollPos = window.scrollY;

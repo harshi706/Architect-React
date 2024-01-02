@@ -69,8 +69,7 @@ const Carousel = () => {
   return (
     <section aria-label="Newest Photos" className='sm:hidden block relative top-[60px] mb-16'>
       <div className="carousel" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
-        {/* <button className="carousel-button prev" onClick={goToPrevSlide}>&#8656;</button>
-        <button className="carousel-button next" onClick={goToNextSlide}>&#8658;</button> */}
+       
         <ul>
           {imagest.map((src, index) => (
             <li key={src} className={`slide ${index === activeIndex ? 'active' : ''}`}>

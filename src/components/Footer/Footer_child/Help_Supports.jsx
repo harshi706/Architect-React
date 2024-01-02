@@ -1,10 +1,9 @@
-import '../../../Dropitems/Styles'
+import "../../../Dropitems/Styles";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-
 const Helpcollections = () => {
-    const [isAccordionOpen, setAccordionOpen] = useState(false);
+  const [isAccordionOpen, setAccordionOpen] = useState(false);
   const handleToggleAccordion = () => {
     setAccordionOpen(!isAccordionOpen);
   };
@@ -17,19 +16,8 @@ const Helpcollections = () => {
     "FAQ",
     "Terms and conditions",
   ];
-    return (
-        // <div className='filter_item'>
-        //     <h4 className='filter_heading text-black'>Help</h4>
-        //     <div className='filter_content'>
-        //         <ul className='filter_content_list'>
-        //             {helpcollections.map((item) => (
-        //                 <li><a href='#'>{item}</a></li>
-        //             ))}
-        //         </ul>
-        //     </div>
-        // </div>
-
-        <div className="filter_item">
+  return (
+    <div className="filter_item">
       <div className="sm:block hidden ">
         <h4 className={`filter_heading text-black mb-[20px] `}>Help</h4>
         <div className="filter_content">
@@ -67,7 +55,7 @@ const Helpcollections = () => {
         )}
       </div>
     </div>
-    );
+  );
 };
 
 export default Helpcollections;

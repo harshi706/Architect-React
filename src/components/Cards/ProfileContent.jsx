@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Navigation} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import { CiDeliveryTruck } from "react-icons/ci";
 // import { IoIosAddCircle, IoMdContacts } from "react-icons/io";
@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { FaLinkedin } from "react-icons/fa";
+// import { FaLinkedin } from "react-icons/fa";
 import linkdln from "./linkdln.jpg";
 
 const ProfileContent = () => {
