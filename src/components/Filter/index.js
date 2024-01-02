@@ -26,18 +26,18 @@ function Filter() {
     }
   };
 
-  function getLabelMargin(label) {
-    const marginMap = {
-      "Wallpaper": "ml-[17rem] mr-[-4rem]",
-      "Flooring": "mr-[-5rem]",
-      "Curtains": "mr-[-5rem]",
-      "Blinds": "mr-[-5rem]",
-      "Hardwood": "ml-[-1px] mr-[-4rem]",
-      "Inspiration": "mr-[-4rem]",
-      "Lakewood": "mr-[-4rem]",
-    };
-    return marginMap[label] || "block";
-  }
+  // function getLabelMargin(label) {
+  //   const marginMap = {
+  //     "Wallpaper": "ml-[17rem] mr-[-4rem]",
+  //     "Flooring": "mr-[-5rem]",
+  //     "Curtains": "mr-[-5rem]",
+  //     "Blinds": "mr-[-5rem]",
+  //     "Hardwood": "ml-[-1px] mr-[-4rem]",
+  //     "Inspiration": "mr-[-4rem]",
+  //     "Lakewood": "mr-[-4rem]",
+  //   };
+  //   return marginMap[label] || "block";
+  // }
 
   const slide = (shift) => {
     const targetScroll = scrl.current.scrollLeft + shift;

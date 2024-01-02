@@ -28,7 +28,7 @@ console.log(SliderViewData);
   const products = list3.filter(
     (prod) => prod.id === 1 || prod.id === 2 || prod.id === 3
   );
-  // const [scrollX, setScrollX] = useState(0);
+  const [scrollX, setScrollX] = useState(0);
   const scrl = useRef(null);
 
   useEffect(() => {
@@ -37,11 +37,21 @@ console.log(SliderViewData);
       scrl.current.style.transition = "none";
     }
   }, []);
+  // const slide = (shift) => {
+  //   const targetPage = page + (shift > 0 ? 1 : -1);
+  //   const targetScroll= Math.max(scrl.current.scrollLeft + shift, 0);
+  //   if (targetPage >= 1) {
+  //     setPage(targetPage);
+  //     fetchData(targetPage);
+  //   }
+  // };
   const slide = (shift) => {
-    const targetPage = page + (shift > 0 ? 1 : -1);
-    if (targetPage >= 1) {
-      setPage(targetPage);
-      fetchData(targetPage);
+    if (scrl.current) {
+      const targetScroll = Math.max(scrl.current.scrollLeft + shift, 0);
+      scrl.current.scrollTo({
+        left: targetScroll,
+      });
+      setScrollX(targetScroll);
     }
   };
   
@@ -108,7 +118,7 @@ console.log(SliderViewData);
             </div>
           ))}
         </div>
-        <div className="arrow-rightS" onClick={() => slide(+380)}>
+        <div className="arrow-rightS" onClick={() => slide(+190)}>
            {(!isMobile) && <BsArrowRightCircleFill className="arrow-nav arrow-right" />}
         </div>
       </div>

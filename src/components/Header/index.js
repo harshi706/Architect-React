@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./styles.css";
 import mainlogo from "../../assets/ayatriologo.png";
 import adtocart from "../../assets/icon/adtocart.svg";
