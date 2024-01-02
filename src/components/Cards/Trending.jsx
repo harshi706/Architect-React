@@ -28,7 +28,7 @@ const Trending = () => {
     const handleImageClick = () => {
         setPopupVisible(true);
     };
-    const swiperUseref = useRef(null);
+   // const swiperUseref = useRef(null);
     const swiperOptions2 = {
         slidesPerView: 4.08,
         centeredSlides: false,

@@ -1,15 +1,12 @@
 // import * as React from "react";
 import React, { useState } from "react";
-
 import { Link } from "react-router-dom";
 import "./styles.css";
-
 import { GrMenu } from "react-icons/gr";
 import Styles from "../../Dropitems/Styles";
 import Colours from "../../Dropitems/Colours";
 import Rooms from "../../Dropitems/Rooms";
 import Collections from "../../Dropitems/Collections";
-
 import arrow from "../../assets/icon/backarrow.svg";
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);

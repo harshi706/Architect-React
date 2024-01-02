@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
   Pagination,
-  Navigation,
   Scrollbar,
   Mousewheel,
   FreeMode,

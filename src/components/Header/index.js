@@ -5,7 +5,7 @@ import adtocart from "../../assets/icon/adtocart.svg";
 import liketocart from "../../assets/icon/like.svg";
 import userprofile from "../../assets/icon/profile.svg";
 import search from "../../assets/icon/search.svg";
-import choserightfloor from "../../assets/icon/choserightfloor.svg";
+// import choserightfloor from "../../assets/icon/choserightfloor.svg";
 // import ayatrio_store from "../../assets/icon/ayatrio_store.svg";
 // import SimpleBottomNavigation from "./bottombar";
 // import AccountCircleIcon from "@mui/icons-material/AccountCircle";

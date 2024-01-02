@@ -1,5 +1,5 @@
 import { Delete, HeartBroken } from "@mui/icons-material";
-import React,{useState,useEffect} from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import Footer from "../Footer/Footer";
 const AddCart = () => {

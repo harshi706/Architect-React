@@ -1,5 +1,5 @@
 // import Card from "./card";
-import { list } from "../../assets/cards-list";
+// import { list } from "../../assets/cards-list";
 import Offer from "../../assets/salesoffer.jpg";
 import React, { useEffect, useRef, useState } from "react";
 // import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,12 +12,12 @@ import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import "swiper/css/mousewheel";
 import "swiper/css/scrollbar";
-import {
-  Pagination,
-  Scrollbar,
-  Mousewheel,
-  FreeMode,
-} from "swiper/modules";
+// import {
+//   Pagination,
+//   Scrollbar,
+//   Mousewheel,
+//   FreeMode,
+// } from "swiper/modules";
 import "react-loading-skeleton/dist/skeleton.css";
 import Imagechanger from "../Imagechanger/Imagechanger";
 // import Skeleton from "react-loading-skeleton";
