@@ -119,13 +119,7 @@ function Header({ howMuchScrolled }) {
 
             <div className=" text-costom-co p-[7px] hover:bg-slate-200 hover:rounded-3xl whitespace-nowrap">
             <Link to="/magazine">
-            <div className="at">
-              {" "}
-              <img
-                src={choserightfloor}
-                alt=""
-                className="seachbar-div2-icon"
-              />{" "}
+            <div className="">
               Find the Right Floor
             </div>
           </Link>            </div>
@@ -209,7 +203,7 @@ function Header({ howMuchScrolled }) {
                 onChange={handleSearchChange}
                 value={searchQuery}
                 placeholder="Search"
-                className="searchTerm sm:block hidden relative font-semibold placeholder-gray-400 w-[13rem] h-10 bg-slate-100 p-4 rounded-full active:border-none focus:outline-none hover:bg-slate-200 hover:rounded-3xl"
+                className="searchTerm sm:block hidden relative font-semibold placeholder-gray-400 w-[12rem] h-10 bg-zinc-100 p-4 rounded-full active:border-none focus:outline-none hover:bg-slate-200 hover:rounded-3xl"
               />
               <img
                 src={search}
