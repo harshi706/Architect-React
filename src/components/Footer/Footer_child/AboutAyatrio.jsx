@@ -1,6 +1,7 @@
 import "../../../Dropitems/Styles";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Aboutcollections = () => {
   const aboutcollections = [
@@ -22,7 +23,15 @@ const Aboutcollections = () => {
           <ul className="filter_content_list ">
             {aboutcollections.map((item) => (
               <li>
-                <a href="#">{item}</a>
+                {item === "This is Ayatrio" ? (
+                  <Link to={"/this-is-ayatrio"}>{item}</Link>
+                ) : item === "Sustainability" ? (
+                  <Link to={"/sustainable-everyday"}>{item}</Link>
+                ) : item === "Ayatrio Stores" ? (
+                  <Link to={"/ayatrio-map"}>{item}</Link>
+                ) : (
+                  <a href="#">{item}</a>
+                )}
               </li>
             ))}
           </ul>
