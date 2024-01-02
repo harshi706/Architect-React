@@ -5,7 +5,10 @@ import adtocart from "../../assets/icon/adtocart.svg";
 import liketocart from "../../assets/icon/like.svg";
 import userprofile from "../../assets/icon/profile.svg";
 import search from "../../assets/icon/search.svg";
-
+import choserightfloor from "../../assets/icon/choserightfloor.svg";
+// import ayatrio_store from "../../assets/icon/ayatrio_store.svg";
+// import SimpleBottomNavigation from "./bottombar";
+// import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Menu from "./menu";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -20,7 +23,7 @@ import TopLoader from "../AddOn/TopLoader";
 function Header({ howMuchScrolled }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const [isFilterVisible, setIsFilterVisible] = useState(true);
+ // const [isFilterVisible, setIsFilterVisible] = useState(true);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [searchEngine, SetSeacrhEngine] = useState("");
@@ -68,7 +71,7 @@ function Header({ howMuchScrolled }) {
     setTimeout(() => {
       navigate(path);
       setIsLoading(false);
-    }, 1200);
+    }, 1310);
   };
 
   const [isModalOPen, setModalOpen] = useState(false);
@@ -103,8 +106,12 @@ function Header({ howMuchScrolled }) {
             </Link>
 
             <div className=" text-costom-co p-[7px] hover:bg-slate-200 hover:rounded-3xl whitespace-nowrap">
-              New Arivals
+            <Link to="/magazine">
+            <div className="">
+              Find the Right Floor
             </div>
+          </Link>            </div>
+            {/* for only mobole search */}
 
             <div
               className="sm:hidden block  w-10 h-10 p-[7px]"
@@ -183,7 +190,7 @@ function Header({ howMuchScrolled }) {
                 onChange={handleSearchChange}
                 value={searchQuery}
                 placeholder="Search"
-                className="searchTerm sm:block hidden relative font-semibold placeholder-gray-400 w-[13rem] h-10 bg-slate-100 p-4 rounded-full active:border-none focus:outline-none hover:bg-slate-200 hover:rounded-3xl"
+                className="searchTerm sm:block hidden relative font-semibold placeholder-gray-400 w-[12rem] h-10 bg-zinc-100 p-4 rounded-full active:border-none focus:outline-none hover:bg-slate-200 hover:rounded-3xl"
               />
               <img
                 src={search}

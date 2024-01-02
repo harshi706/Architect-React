@@ -1,7 +1,7 @@
 import '../../../Dropitems/Styles'
 import Image from '../../../assets/ayatriologo.png';
 
-const Joinayatrio = () => {
+const JoinAyatrioFamily = () => {
     return (
         <div className='filter_item'>
             <h4 className='filter_heading text-black'>Join Ayatrio Family</h4>
@@ -14,4 +14,4 @@ const Joinayatrio = () => {
     );
 };
 
-export default Joinayatrio;
+export default JoinAyatrioFamily;

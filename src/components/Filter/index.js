@@ -2,11 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
 import { links } from "../../assets/images-links";
-import { Link } from "react-router-dom";
-import backarrow from "../../assets/icon/backarrow.svg";
-import rightarrow from "../../assets/icon/backarrowRevarce.svg";
-import filter from "../../assets/icon/filter.svg";
-import choserightfloor from "../../assets/icon/choserightfloor.svg";
 import Collections from "../../Dropitems/Collections";
 import Styles from "../../Dropitems/Styles";
 import Colours from "../../Dropitems/Colours";
@@ -30,6 +25,19 @@ function Filter() {
       setActiveDropdown(idx);
     }
   };
+
+  function getLabelMargin(label) {
+    const marginMap = {
+      "Wallpaper": "ml-[17rem] mr-[-4rem]",
+      "Flooring": "mr-[-5rem]",
+      "Curtains": "mr-[-5rem]",
+      "Blinds": "mr-[-5rem]",
+      "Hardwood": "ml-[-1px] mr-[-4rem]",
+      "Inspiration": "mr-[-4rem]",
+      "Lakewood": "mr-[-4rem]",
+    };
+    return marginMap[label] || "block";
+  }
 
   const slide = (shift) => {
     const targetScroll = scrl.current.scrollLeft + shift;
@@ -57,25 +65,26 @@ function Filter() {
     };
   }, []);
 
+
   return (
     <header
       className={`absolute top-16 w-full  filter-array transition-all ease-in-out duration-300  z-[20] bg-white
       `}
     >
-      <div className="filter sm:mr-0 pr-20" style={{ marginLeft: "0px" }}>
+      <div className="filter sm:mr-0 pr-20 media" style={{ marginLeft: "0px" }}>
         <div className="Filter-array" ref={scrl}>
           <div
             className={` slider_lr_container arrow-left  ${
               scrollX === 0 ? "hidden" : ""
             }`}
           >
-            <img
+            {/* <img
               src={backarrow}
               alt=""
               className="riht-arrow-sty"
               onClick={() => slide(-250)}
               style={{ overflowX: "auto", scrollBehavior: "smooth" }}
-            />
+            /> */}
           </div>
           {links.map((value, idx) => (
             <div
@@ -101,7 +110,9 @@ function Filter() {
                   {value.label}
                 </p>
               )}
-              
+              {/* {value && (
+                <p className="Filter-array-element-lebel">{value.label}</p>
+              )} */}
 
               {activeDropdown === idx && (
                 <div
@@ -135,22 +146,22 @@ function Filter() {
               )}
             </div>
           ))}
-          <div className="slider_lr_container arrow-right-filter">
-            <img
+          {/* <div className="slider_lr_container arrow-right-filter">
+             <img
               src={rightarrow}
               alt=""
               className="riht-arrow-sty"
               onClick={() => slide(+250)}
               style={{ overflowX: "auto", scrollBehavior: "smooth" }}
-            />
-          </div>
+            /> 
+          </div> */}
         </div>
-        <div className="after-arrow sm:block hidden">
-          <div className="at h-[40px]">
+        {/* <div className="after-arrow sm:block hidden">
+           <div className="at h-[40px]">
             <img src={filter} alt="" className="seachbar-div2-icon" />
             Filters
-          </div>
-          <Link to="/magazine">
+          </div> 
+           <Link to="/magazine">
             <div className="at">
               {" "}
               <img
@@ -160,10 +171,10 @@ function Filter() {
               />{" "}
               Find the Right Floor
             </div>
-          </Link>
-        </div>
+          </Link> 
+        </div> */}
         <div className="sm:hidden block">
-        <Link to="/magazine">
+        {/* <Link to="/magazine">
             <div className="at">
               {" "}
               <img
@@ -173,7 +184,7 @@ function Filter() {
               />{" "}
               
             </div>
-          </Link>
+          </Link> */}
         </div>
 
       </div>

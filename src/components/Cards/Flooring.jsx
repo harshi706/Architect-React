@@ -17,7 +17,7 @@ import {
   FreeMode,
 } from "swiper/modules";
 import "react-loading-skeleton/dist/skeleton.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectRecommendedProduct } from "../../Features/Slices/recommendationSlice";
 const Flooring = () => {
 

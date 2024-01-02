@@ -4,12 +4,14 @@ import { watchFetchRecommendedProduct } from './recommendationSaga';
 import { watchFetchSliderView } from './sliderSaga';
 import { watchSearchProducts } from './searchSaga';
 import { watchFetchFirstCard } from './FirstCardSaga';
+import { watchFetchProfileData } from './profileSaga';
 
 export default function* rootSaga() {
   yield all([
     watchFetchRecommendedProduct(),
     watchFetchSliderView(),
     watchSearchProducts(),
-    watchFetchFirstCard()
+    watchFetchFirstCard(),
+    watchFetchProfileData()
   ]);
 }

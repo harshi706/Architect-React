@@ -6,7 +6,7 @@ import Menu from "../Header/menu";
 
 import { searchProductsRequest } from "../../Features/search/searchSlice";
 import { useDispatch } from "react-redux";
-
+// import Expandedbar from "../Header/Expandedbar";
 import "./styles.css";
 
 const Search = ({ places, onResultClick }) => {
@@ -14,6 +14,15 @@ const Search = ({ places, onResultClick }) => {
   const [hoveredItem, setHoveredItem] = useState(null);
 
   const [isScrolled, setIsScrolled] = useState(false);
+  //section for search-icon click(down)
+  const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
+
+  // const handleSearchIconClick = () => {
+  //   setIsSearchBarVisible(!isSearchBarVisible);
+  // };
+  //section for search-icon click (above)
+
+  //const [isFilterVisible, setIsFilterVisible] = useState(true);
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
@@ -43,9 +52,9 @@ const Search = ({ places, onResultClick }) => {
     };
   }, [isScrolled]);
 
-  const onClose = () => {
-    setSearchQuery("");
-  };
+  // const onClose = () => {
+  //   setSearchQuery("");
+  // };
   useEffect(() => {
     setData(places);
   }, [places]);

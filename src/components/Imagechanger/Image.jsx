@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const Imagechanger = () => {
-
+ // const [index, setIndex] = useState(0);
   const [openStates, setOpenStates] = useState([false, false, false]); // State to track open/close state
 
   const text = [
@@ -102,7 +102,7 @@ const Imagechanger = () => {
             </h3>
           </div>
           {Heading.map((value, idx) => (
-            <div key={idx} className="p-0">
+            <div key={idx} className="pb-5">
               {idx === 1 && (
                 <div className="" />
               )}
@@ -159,7 +159,7 @@ const Imagechanger = () => {
             <img
               src={imageSrc[imgindex]}
               alt=""
-              className=" w-[100%] h-[100%]"
+              className=" w-[100%] h-[36rem]"
             />
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import bengta from "../../assets/product/bengta-block-out-curtain-1-length-light-grey__0977118_pe813406_s5.avif";
 import lenda from "../../assets/product/lenda-curtains-with-tie-backs-1-pair-off-white__1136111_pe879297_s5.avif";
 import lill from "../../assets/product/lill-net-curtains-1-pair-white__0887768_pe569661_s5.avif";
@@ -339,22 +340,22 @@ const Tabs = () => {
     },
   ];
 
-  const circled = [
-    {
-      top: 50,
-      left: 68,
-      productTitle: "Nike Dri-FIT One Women's Tank Top",
-      productCategory: "Athletic Tank Top",
-      price: 1900,
-    },
-    {
-      top: 79,
-      left: 82,
-      productTitle: "Nike Sportswear Essential Repel Women",
-      productCategory: "Athletic Jacket",
-      price: 3995.0,
-    },
-  ];
+  // const circled = [
+  //   {
+  //     top: 50,
+  //     left: 68,
+  //     productTitle: "Nike Dri-FIT One Women's Tank Top",
+  //     productCategory: "Athletic Tank Top",
+  //     price: 1900,
+  //   },
+  //   {
+  //     top: 79,
+  //     left: 82,
+  //     productTitle: "Nike Sportswear Essential Repel Women",
+  //     productCategory: "Athletic Jacket",
+  //     price: 3995.0,
+  //   },
+  // ];
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
 
@@ -385,7 +386,7 @@ const Tabs = () => {
   const handleAllsort = () => {
     setopenallsort(!openAllsort);
   };
-  const [dropdownVisible, setDropdownVisible] = useState(false);
+  // const [dropdownVisible, setDropdownVisible] = useState(false);
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };

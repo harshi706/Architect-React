@@ -23,11 +23,11 @@ export const links = [
     imgSrc:
       "https://a0.muscache.com/pictures/957f8022-dfd7-426c-99fd-77ed792f6d7a.jpg",
   },
-  {
-    label: "Sport & Gyn Flooring",
-    imgSrc:
-      "https://a0.muscache.com/pictures/677a041d-7264-4c45-bb72-52bff21eb6e8.jpg",
-  },
+  // {
+  //   label: "Sport & Gyn Flooring",
+  //   imgSrc:
+  //     "https://a0.muscache.com/pictures/677a041d-7264-4c45-bb72-52bff21eb6e8.jpg",
+  // },
   {
     label: "Hardwood",
     imgSrc:
@@ -44,9 +44,9 @@ export const links = [
       "https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg",
   },
  
-  {
-    label: "Lakefront",
-    imgSrc:
-      "https://a0.muscache.com/pictures/ee9e2a40-ffac-4db9-9080-b351efc3cfc4.jpg",
-  },
+  // {
+  //   label: "Lakefront",
+  //   imgSrc:
+  //     "https://a0.muscache.com/pictures/ee9e2a40-ffac-4db9-9080-b351efc3cfc4.jpg",
+  // },
 ];

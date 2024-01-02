@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import { BsArrowLeftCircleFill } from "react-icons/bs";
 import "../MainSlider/Mainslidestyle.css";
-import { list3 } from "../../assets/mainslide-list";
+// import { list3 } from "../../assets/mainslide-list";
 import room from "./room.jpg";
 import work from "./work.jpg";
 import living from "./living.jpg";
@@ -78,8 +78,6 @@ const Tabs = () => {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
-
-  // logic for sticky
 
   useEffect(() => {
     const handleScroll = () => {

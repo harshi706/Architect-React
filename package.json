@@ -35,11 +35,9 @@
     "react-router-dom": "^6.20.0",
     "react-scripts": "^5.0.1",
     "react-scroll": "^1.9.0",
-    "react-slick": "^0.29.0",
     "react-top-loading-bar": "^2.3.1",
     "redux": "^5.0.1",
     "redux-saga": "^1.2.3",
-    "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.0",
     "swiper": "^11.0.5",
     "web-vitals": "^2.1.4"

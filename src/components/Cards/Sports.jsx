@@ -11,15 +11,14 @@ import "swiper/css/mousewheel";
 import "swiper/css/scrollbar";
 import {
   Pagination,
-  Navigation,
   Scrollbar,
   Mousewheel,
   FreeMode,
 } from "swiper/modules";
 import "react-loading-skeleton/dist/skeleton.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectRecommendedProduct } from "../../Features/Slices/recommendationSlice";
-import { CardData, CardLoader } from "../../Features/Slices/FIrstCardSlice";
+//import { CardData } from "../../Features/Slices/FIrstCardSlice";
 
 const Sports = () => {
     const [swiperRef, setSwiperRef] = useState(null);
@@ -44,19 +43,7 @@ const Sports = () => {
       allowSlidePrev: true,
       allowSlideNext: true,
     };
-    const swiperOptions2 = {
-      slidesPerView: 4.08,
-      centeredSlides: false,
-      spaceBetween: 1,
-      modules: [Pagination, Scrollbar, Mousewheel, FreeMode],
-      navigation: {
-        nextEl: ".custom-next-button",
-        prevEl: ".custom-prev-button",
-      },
-      noSwiping: true,
-      allowSlidePrev: true,
-      allowSlideNext: true,
-    };
+   
     // const closePopup = () => {
     //   setPopupVisible(false);
     // };
@@ -69,11 +56,6 @@ const Sports = () => {
         setLoading(false);
       }, 2500);
     }, []);
-    const [trendingData, setTrendingData] = useState([]);
-    const trendingSelect = useSelector(CardData);
-    useEffect(() => {
-      setTrendingData(trendingSelect);
-    }, [trendingSelect]);
     const recommendedProducts = useSelector(selectRecommendedProduct);
     const recommendedProductsDataFromLocalStorage = JSON.parse(
       localStorage.getItem("recommendedProducts")

@@ -21,7 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectRecommendedProduct } from "../../Features/Slices/recommendationSlice";
 // import { CardData, CardLoader } from "../../Features/Slices/FIrstCardSlice";
 const Blinds = () => {
-
+    
     const [swiperRef, setSwiperRef] = useState(null);
     const [isPopupVisible, setPopupVisible] = useState(false);
     const swiperOptions = {
@@ -90,6 +90,7 @@ const Blinds = () => {
                 className="custom-prev-button hover:bg-400 hover:scale-110 hover:text-slate-100  "
               >
                 <FaChevronLeft />
+                
               </div>
               <div
                 onClick={() => swiper2Ref.current.swiper.slideNext()}

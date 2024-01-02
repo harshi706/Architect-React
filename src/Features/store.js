@@ -6,8 +6,7 @@ import sliderReducer from "./Slices/sliderSlice";
 import searchReducer from "./search/searchSlice";
 import FirstCardReducer from './Slices/FIrstCardSlice'
 import authReducer from "./auth/authSlice";
-
-import thunk from 'redux-thunk';
+import profileReducer from "./Slices/profileSlice";
 const sagaMiddleware = createSagaMiddleware();
 
 
@@ -39,6 +38,7 @@ export const store = configureStore({
     productWithSearch:searchReducer,
     auth:authReducer,
     rooms: roomsReducer,
+    profile:profileReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(sagaMiddleware),

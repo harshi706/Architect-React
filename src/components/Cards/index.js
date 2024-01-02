@@ -1,5 +1,5 @@
 // import Card from "./card";
-// import { list } from "../../assets/cards-list";
+import { list } from "../../assets/cards-list";
 import Offer from "../../assets/salesoffer.jpg";
 import React, { useEffect, useRef, useState } from "react";
 // import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,13 +13,12 @@ import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import "swiper/css/mousewheel";
 import "swiper/css/scrollbar";
-// import {
-//   Pagination,
-//   Navigation,
-//   Scrollbar,
-//   Mousewheel,
-//   FreeMode,
-// } from "swiper/modules";
+import {
+  Pagination,
+  Scrollbar,
+  Mousewheel,
+  FreeMode,
+} from "swiper/modules";
 import "react-loading-skeleton/dist/skeleton.css";
 import Imagechanger from "../Imagechanger/Imagechanger";
 // import Skeleton from "react-loading-skeleton";
@@ -34,8 +33,8 @@ import Profile from "./Profile";
 import Image from "../Imagechanger/Image";
 import Phone from "./Phone";
 import DoubleComp from "./DoubleComp";
-import { CardData} from "../../Features/Slices/FIrstCardSlice";
-
+import { CardData } from "../../Features/Slices/FIrstCardSlice";
+// import { selectSliderData } from "../../Features/Slices/sliderSlice";
 import { useMemo } from "react";
 import Trending from "./Trending";
 import Flooring from "./Flooring";
@@ -44,42 +43,16 @@ import Curtains from "./Curtains";
 import Sports from "./Sports";
 
 function Cards() {
-  // const [isPopupVisible, setPopupVisible] = useState(false);
+  const [isPopupVisible, setPopupVisible] = useState(false);
   // const handleImageClick = () => {
   //   setPopupVisible(true);
   // };
 
-  // const swiperOptions = {
-  //   slidesPerView: 3.2,
-  //   centeredSlides: false,
-  //   spaceBetween: 1,
-  //   modules: [Pagination, Scrollbar, Mousewheel, FreeMode],
-  //   navigation: {
-  //     nextEl: ".custom-next-button",
-  //     prevEl: ".custom-prev-button",
-  //   },
-  //   noSwiping: true,
-  //   allowSlidePrev: true,
-  //   allowSlideNext: true,
-  // };
-  // const swiperOptions2 = {
-  //   slidesPerView: 4.08,
-  //   centeredSlides: false,
-  //   spaceBetween: 1,
-  //   modules: [Pagination, Scrollbar, Mousewheel, FreeMode],
-  //   navigation: {
-  //     nextEl: ".custom-next-button",
-  //     prevEl: ".custom-prev-button",
-  //   },
-  //   noSwiping: true,
-  //   allowSlidePrev: true,
-  //   allowSlideNext: true,
-  // };
-  // const closePopup = () => {
-  //   setPopupVisible(false);
-  // };
-  // const swiper1Ref = useRef(null);
-  // const swiper2Ref = useRef(null);
+
+
+  const closePopup = () => {
+    setPopupVisible(false);
+  };
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -106,11 +79,14 @@ function Cards() {
     }
   }, [recommendedProducts]);
 
-  // function filterProductsByCategory(products, category) {
-  //   return products.filter((product) => product.category === category);
-  // }
+  function filterProductsByCategory(products, category) {
+    return products.filter((product) => product.category === category);
+  }
 
-  const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
+
+//memo hook
+const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
+const MemoizedProfileContent = useMemo(() => <Profile />, []);
 
   return (
     <div className="">
@@ -133,7 +109,7 @@ function Cards() {
         <Imagechanger />
       </div>
       <DoubleComp />
-      <Profile />
+      {MemoizedProfileContent}
       <Tabs />
       <Phone />
       <Footer />

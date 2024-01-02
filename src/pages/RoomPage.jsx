@@ -8,7 +8,6 @@ import Header from "../components/Header";
 import ImageCaresoul from "../components/Room/imagecaresoul";
 import Footer from "../components/Footer/Footer";
 import Card from "../components/Room/Other/Card";
-
 const RoomPage = () => {
   const [howMuchScrolled, setHowMuchScrolled] = useState(0);
 

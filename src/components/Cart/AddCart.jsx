@@ -1,9 +1,7 @@
-// import { Delete, HeartBroken} from "@mui/icons-material";
-import React from "react";
+import { Delete, HeartBroken } from "@mui/icons-material";
+import React,{useState,useEffect} from "react";
 import { useSelector } from "react-redux";
 import Footer from "../Footer/Footer";
-import Delete from "../../assets/svg/Delete.svg";
-import HeartBroken from "../../assets/svg/2aMTHzfKzElgi4TgWnTQUrtqOxq.svg";
 const AddCart = () => {
   const selectedItems = useSelector((state) => state.rooms.selectedActivity);
   console.log("Cart component re-rendered");

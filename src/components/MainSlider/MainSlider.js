@@ -23,7 +23,7 @@ const fetchData = () => {
     limit: 3,
   } });
 };
-
+console.log(SliderViewData);
 
   const products = list3.filter(
     (prod) => prod.id === 1 || prod.id === 2 || prod.id === 3
@@ -115,7 +115,7 @@ const fetchData = () => {
     );
   } else {
     return (
-      <div className=" slider-container">
+      <div className="slider-container">
         <Oval
           height={100}
           width={100}
