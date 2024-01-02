@@ -159,7 +159,7 @@ const Imagechanger = () => {
             <img
               src={imageSrc[imgindex]}
               alt=""
-              className=" w-[100%] h-[36rem]"
+              className=" w-[100%] h-[100%]"
             />
           </div>
         </div>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import React, { useState, useEffect } from "react";
 import bengta from "../../assets/product/bengta-block-out-curtain-1-length-light-grey__0977118_pe813406_s5.avif";
 import lenda from "../../assets/product/lenda-curtains-with-tie-backs-1-pair-off-white__1136111_pe879297_s5.avif";
 import lill from "../../assets/product/lill-net-curtains-1-pair-white__0887768_pe569661_s5.avif";
