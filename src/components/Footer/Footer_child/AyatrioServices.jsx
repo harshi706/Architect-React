@@ -5,12 +5,15 @@ import { Link } from "react-router-dom";
 
 const AyatrioServices = () => {
   const ServicesCollections = [
+    "Delivery Service",
+    "Installation Service",
     "Wallpaper",
     "Flooring",
     "Blinds",
     "Curtatins",
     "Sport Flooring",
-    "Customer Service"
+    "Design Service",
+    "Customer Service",
   ];
 
   const [isAccordionOpen, setAccordionOpen] = useState(false);
@@ -35,11 +38,17 @@ const AyatrioServices = () => {
           <ul className="filter_content_list ">
             {ServicesCollections.map((item) => (
               <li>
-              {item === "Customer Service" ? (
-                <Link to="/customer-service">{item}</Link>
-              ) : (
-                <a href="#">{item}</a>
-              )}
+                {item === "Customer Service" ? (
+                  <Link to="/customer-service">{item}</Link>
+                ) : item === "Delivery Service" ? (
+                  <Link to="/delivery-service">{item}</Link>
+                ) :item === "Design Service" ? (
+                  <Link to="/design-service">{item}</Link>
+                ) :item === "Installation Service" ? (
+                  <Link to="/installation-service">{item}</Link>
+                ): (
+                  <a href="#">{item}</a>
+                )}
               </li>
             ))}
           </ul>
