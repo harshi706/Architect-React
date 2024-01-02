@@ -92,6 +92,8 @@ const Rooms = () => {
     setShowbuttoncontent((prevShowButtonContent) => !prevShowButtonContent);
   };
 
+  const selectedItems = useSelector((state) => state.rooms.selectedActivity);
+
   // const handleClick = (roomId, roomPrice, roomTitle, roomImage) => {
   //   dispatch(setSelectedActivity({ roomId, roomPrice, roomTitle, roomImage }));
   //   setShowCircle((prevShowCircle) => !prevShowCircle);

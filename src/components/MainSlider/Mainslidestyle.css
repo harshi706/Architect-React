@@ -58,7 +58,7 @@
   margin-left: 0.3rem;
 }
 
-.slider-container > div {
+.slider-container>div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,17 +74,20 @@
 
 .hover-box {
   position: absolute;
-  top: 15px; /* Adjust the position as needed */
+  top: 15px;
+  /* Adjust the position as needed */
   left: -5px;
   /* transform: translateX(-50%); */
   background-color: white;
   border: 1px solid #ccc;
   padding: 10px;
-  display: none; /* Initially hide the box */
+  display: none;
+  /* Initially hide the box */
 }
 
 .circle:hover .hover-box {
-  display: block; /* Show the box on hover */
+  display: block;
+  /* Show the box on hover */
   flex-direction: row;
   gap: 10px;
 }
@@ -104,6 +107,7 @@
 .circle {
   display: none;
 }
+
 .effect {
   width: 1.25rem;
   height: 1.25rem;
@@ -116,6 +120,13 @@
 .effect:hover {
   width: 1.05rem;
   height: 1.05rem;
-  border: 6px solid rgba(200, 198, 198, 0.7); 
+  border: 6px solid rgba(200, 198, 198, 0.7);
 }
 
+
+@media screen and (max-width:450px) {
+  .sd {
+    width: 23rem;
+    height: 57vh;
+  }
+}

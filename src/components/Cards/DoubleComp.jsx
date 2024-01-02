@@ -1,13 +1,13 @@
 import React from "react";
 import { FaApple } from "react-icons/fa";
 import { GoArrowUpRight } from "react-icons/go";
-import { FaAngleRight } from "react-icons/fa6";
+import right from '../../assets/right.png';
 import game from "../../assets/game.jpg";
 import Double from "./Double";
 const DoubleComp = () => {
   return (
     // sm:h-[35rem] 
-    <div className="py-20 grid sm:grid-cols-2 grid-cols-1 sm:w-auto w-[100%] gap-4 sm:px-[50px]">
+    <div className="py-20 grid sm:grid-cols-2 grid-cols-1 sm:w-auto w-[100%] gap-4 sm:px-[50px] px-[20px]">
       <div className="col-span-1 ml-0 sm:pr-8 pr-0 bg-zinc-100 text-black overflow-hidden">
         <div className="pl-4 pt-4">
           <div className="flex text-3xl  pl-0 pt-0">
@@ -28,7 +28,7 @@ const DoubleComp = () => {
               <GoArrowUpRight className="mt-2 ml-1" />
             </a>
             <a href="#" className="flex ">
-              Learn more <FaAngleRight className="mt-2 ml-1" />
+              Learn more <img src={right} className=" ml-1 w-7 h-7" />
             </a>
           </div>
         </div>
@@ -52,15 +52,15 @@ const DoubleComp = () => {
               <GoArrowUpRight className="mt-2 ml-1" />
             </a>
             <a href="#" className="flex">
-              Learn more <FaAngleRight className="mt-2 ml-1" />
+              Learn more <img src={right} className="ml-1 w-7 h-7" />
             </a>
           </div>
         </div>
         <div className="mt-20">
           <img
             src={game}
-            className="w-[120%] h-[400px] object-cover"
-            alt="Games Image"
+            className="sm:w-[120%] w-[100%] h-[400px] object-cover"
+            alt="Games"
           />
         </div>
       </div>

@@ -29,7 +29,7 @@ const Calculation = () => {
   return (
     <div>
       <div className="calculation-container sm">
-        <div className="text-lg flex items-center">
+        <div className="text-lg flex items-center justify-center">
           <div>
             <CiCalculator1 size={24} className="flex-start -ml-4 mr-3 mb-3" />
           </div>

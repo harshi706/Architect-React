@@ -16,16 +16,6 @@ const Aboutcollections = () => {
     setAccordionOpen(!isAccordionOpen);
   };
   return (
-    // <div className='filter_item'>
-    //     <h4 className='filter_heading text-black'>About Ayatrio</h4>
-    //     <div className='filter_content'>
-    //         <ul className='filter_content_list'>
-    //             {aboutcollections.map((item) => (
-    //                 <li><a href='#'>{item}</a></li>
-    //             ))}
-    //         </ul>
-    //     </div>
-    // </div>
     <div className="filter_item">
       <div className="sm:block hidden ">
         <h4 className={`filter_heading text-black mb-[20px]`}>About Ayatrio</h4>
@@ -60,8 +50,8 @@ const Aboutcollections = () => {
           )}
         </h4>
         {isAccordionOpen && (
-          <div className="filter_content_mobile sm:hidden">
-            <ul className="filter_content_list_mobile font-normal flex flex-col text-slate-400 gap-[20px] ">
+          <div className="filter_content_mobile sm:hidden mb-3">
+            <ul className="filter_content_list_mobile font-normal flex flex-col text-slate-700 gap-[20px] ">
               {aboutcollections.map((item) => (
                 <li key={item}>
                   <a href="#">{item}</a>

@@ -26,9 +26,9 @@ function ItemCard(props) {
     setPopupVisible(false);
   };
 
-  const toggleFullBio = () => {
-    setFullBioVisible(!isFullBioVisible);
-  };
+  // const toggleFullBio = () => {
+  //   setFullBioVisible(!isFullBioVisible);
+  // };
 
   return (
     <>

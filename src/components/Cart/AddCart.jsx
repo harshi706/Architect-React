@@ -1,23 +1,22 @@
 import { Delete, HeartBroken } from "@mui/icons-material";
-import React,{useState,useEffect} from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import Footer from "../Footer/Footer";
-
 const AddCart = () => {
   const selectedItems = useSelector((state) => state.rooms.selectedActivity);
-  console.log('Cart component re-rendered');
-  const [forceRender, setForceRender] = useState(false);
+  console.log("Cart component re-rendered");
+  //   const [forceRender, setForceRender] = useState(false);
 
-// ... rest of the component code
+  // // ... rest of the component code
 
-useEffect(() => {
-  // This will trigger a re-render
-  setForceRender((prev) => !prev);
-}, [selectedItems]);
+  // useEffect(() => {
+  //   // This will trigger a re-render
+  //   setForceRender((prev) => !prev);
+  // }, [selectedItems]);
 
+  console.log("selecteditems", selectedItems);
 
- 
-  console.log('Selected Items:', selectedItems);
+  // console.log('Selected Items:', selectedItems);
   return (
     <div>
       <div className="main-cart flex justify-center items-center min-h-screen">
@@ -116,8 +115,18 @@ useEffect(() => {
                       {/* Use the correct property from your data */}
                     </div>
                     <div className="icons flex items-center space-x-2 mt-4">
-                      <Delete className="hover:text-slate-500 cursor-pointer" />
-                      <HeartBroken className="text-red-700 hover:text-red-500 cursor-pointer" />
+                      <img
+                        src={Delete}
+                        alt=""
+                        className="w-6 h-6 hover:text-slate-500 cursor-pointer "
+                      />
+                      <img
+                        src={HeartBroken}
+                        alt=""
+                        className="text-red-700 hover:text-red-500 cursor-pointer w-6 h-6"
+                      />
+                      {/* <Delete className="hover:text-slate-500 cursor-pointer " /> */}
+                      {/* <HeartBroken className="text-red-700 hover:text-red-500 cursor-pointer" /> */}
                     </div>
                   </div>
                 </div>

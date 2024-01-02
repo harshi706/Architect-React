@@ -39,6 +39,7 @@ const MapPage = () => {
   return (
     <>
       {!isMobile && <Header />}
+      {/* {isMobile && <FiMenu/>} */}
       <Map setBoundaries={setBoundaries} coords={coords} places={places} />
     </>
   );

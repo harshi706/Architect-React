@@ -1,4 +1,4 @@
-import { call, put, debounce, takeLatest } from 'redux-saga/effects';
+import { call, put, debounce} from 'redux-saga/effects';
 import {
   searchProductsSuccess,
   searchProductsFailure,

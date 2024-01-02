@@ -127,6 +127,7 @@ const CustomerServicePage = () => {
                   <img
                     className="max-h-[85px] max-w-[150px]"
                     src={option.image}
+                    alt=""
                   />
                   <p className="text-sm">{option.text}</p>
                 </div>
@@ -211,6 +212,7 @@ const CustomerServicePage = () => {
               <img
                 className="object-contain w-full h-auto "
                 src="https://media.istockphoto.com/id/1331493599/photo/shot-of-a-businessman-using-a-computer-while-working-in-a-call-center.jpg?s=612x612&w=0&k=20&c=ocaFzVRnDARFnANjyd6CMrwAI0Ua6I0Na_MKej8IysA="
+                alt=""
               />
             </div>
           </div>
@@ -238,6 +240,7 @@ const CustomerServicePage = () => {
               <img
                 className="w-full h-auto"
                 src="https://www.ikea.com/ext/ingkadam/m/314e597614cbeb4e/original/PE315126-crop003.jpg?f=xxl"
+                alt=""
               />
             </div>
             <div className="bg-gray-200 flex w-1/3">

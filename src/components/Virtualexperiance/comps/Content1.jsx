@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import Image1 from "../../../assets/last3/image1.png";
-import Image2 from "../../../assets/last3/image2.png";
-import { CiCirclePlus } from "react-icons/ci";
+
 import { useNavigate } from "react-router-dom";
 import Header from "../../Header";
 import Sidebar from "./sidebar";
@@ -41,99 +39,22 @@ const Content1 = () => {
     setShowbuttoncontent(!showbuttoncontent);
   };
 
-  const [selected, setSelected] = useState(null);
-  const handleImageClick = (image) => {
-    setSelected(image === selected ? null : image);
-  };
+  // const [selected, setSelected] = useState(null);
+  // const handleImageClick = (image) => {
+  //   setSelected(image === selected ? null : image);
+  // };
   return (
     <div className=" py-4 w-full h-full bg-[#f4e3dd] text-sm ">
       <Header />
       <Sidebar selectedPage={selectedPage} onSelectPage={handleSelectPage} />
 
       <div className="card-container flex flex-row justify-center  gap-20">
-        {/* <div className="card-1 max-w-xs relative">
-          {selected === Image1 && (
-            <div
-              className="room-item absolute top-2 right-36 z-10  flex items-center opacity-50 justify-center"
-              // style={{ zIndex: 10 }}
-            >
-              <div className="circle-container relative flex justify-center items-center">
-                <FaCircle size={20} color="black" className="opacity-100" />
-
-                <TiTick
-                  className="opacity-100 absolute"
-                  color="white"
-                  size={20}
-                  style={{ opacity: 100 }}
-                />
-              </div>
-            </div>
-          )}
-          <img
-            className={`rounded-2xl  relative  w-44 h-52 ${
-              selected === Image1
-                ? "border-2 border-red-500 overlay rounded-2xl absolute top-0 left-0 w-44 h-52 opacity-50 bg-black"
-                : ""
-            }
-                        `}
-            onClick={() => handleImageClick(Image1)}
-            src={Image1}
-            alt="None"
-          />
-          <h4 className="font-bold">Wood Look</h4>
-          <p className=" text-gray-400">
-            Whether you're looking for real hardwood or floors that look like
-            real hardwood, you'll find a variety of colors and widths of planks
-            to help you find the perfect floor.
-          </p>
-        </div> */}
-        {/* <div className="card-2 max-w-xs relative">
-          
-          {selected === Image2 && (
-            <div
-              className="room-item absolute top-2 right-36 z-10  flex items-center opacity-50 justify-center"
-              // style={{ zIndex: 10 }}
-            >
-              <div className="circle-container relative flex justify-center items-center">
-                <FaCircle size={20} color="black" className="opacity-100" />
-
-                <TiTick
-                  className="opacity-100 absolute"
-                  color="white"
-                  size={20}
-                  style={{ opacity: 100 }}
-                />
-              </div>
-            </div>
-          )}
-          <img
-            className={` rounded-2xl relative  w-44 h-52 ${
-              selected === Image2
-                ? "border-2 border-red-500 overlay rounded-2xl absolute top-0 left-0 w-44 h-52 opacity-50 bg-black"
-                : ""
-            }
-                        `}
-            onClick={() => handleImageClick(Image2)}
-            src={Image2}
-            alt=""
-          />
-          <h3 className="font-bold">Tile Look</h3>
-          <p className="text-gray-400">
-            From concrete to Carrarra marble to the hottest tile looks,
-            available in oversize rectangles to square tile looks to designer
-            curated sheet vinyl.
-          </p>
-        </div> */}
-
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-1  my-0 mx-0 ">
           {dataTiles.map((item) => (
             <div
               key={item.id}
               className="relative overflow-hidden m-1 aspect-w-16 aspect-h-9 group"
             >
-              {/* {selectedActivity[item.id] && (
-                <div className="overlay rounded-2xl absolute top-0 left-0 w-full h-full opacity-50 bg-black"></div>
-              )} */}
               <img
                 src={item.img}
                 alt={item.title}

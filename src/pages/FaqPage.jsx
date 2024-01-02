@@ -210,7 +210,7 @@ const FaqPage = () => {
               {mainGridData.map((curElement) => {
                 return (
                   <div className="flex flex-col space-y-1 cursor-pointer">
-                    <img src={curElement.image} />
+                    <img src={curElement.image} alt=""/>
                     <p>{curElement.text}</p>
                   </div>
                 );

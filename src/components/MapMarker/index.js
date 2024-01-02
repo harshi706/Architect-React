@@ -43,13 +43,13 @@ const MapMarker = ({ place }) => {
     
       >
 
-       <img className='marker-popover-image' loading='lazy' src={place.photo.images.small.url}  />
+       <img className='marker-popover-image' loading='lazy' src={place.photo.images.small.url} alt=""  />
       </Popover>
         </>
       )}
 
       {/* Default content if place or its properties are undefined */}
-      {!place || !place.name || !place.photo || !place.photo.images || !place.photo.images.thumbnail && (
+      {(!place || !place.name || !place.photo || !place.photo.images || !place.photo.images.thumbnail) && (
         <div className="marker-info" onClick={handleMarkerClick}>
           <div className="info-wrapper wrapper">
             <div className="info-title" style={{}}>
