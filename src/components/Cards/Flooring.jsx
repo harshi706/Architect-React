@@ -2,7 +2,8 @@ import Card from "./card";
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./styles.css";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import back from '../../assets/back.png'
+import right from '../../assets/right.png';
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -76,18 +77,18 @@ const Flooring = () => {
           <h2 className="text-bold text-2xl font-serif">
             {flooringProducts ? "Flooring" : "Beach and Resort"}
           </h2>
-          <div className="Slidenav flex bg-slate-700 text-2xl cursor-pointer  text-white rounded-full gap-2">
+          <div className="Slidenav flex  text-2xl cursor-pointer  text-white rounded-full gap-2">
             <div
               onClick={() => swiper2Ref.current.swiper.slidePrev()}
               className="custom-prev-button hover:bg-400 hover:scale-110 hover:text-slate-100  "
             >
-              <FaChevronLeft />
+<img className="w-8 h-8" src={back}/>
             </div>
             <div
               onClick={() => swiper2Ref.current.swiper.slideNext()}
               className="custom-next-button hover:bg-400 hover:scale-110 hover:text-slate-100"
             >
-              <FaChevronRight />
+<img className="w-7 h-9" src={right} />
             </div>
           </div>
         </div>

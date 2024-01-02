@@ -1,7 +1,7 @@
 import React from "react";
 import { FaApple } from "react-icons/fa";
 import { GoArrowUpRight } from "react-icons/go";
-import { FaAngleRight } from "react-icons/fa6";
+import right from '../../assets/right.png';
 import game from "../../assets/game.jpg";
 import Double from "./Double";
 const DoubleComp = () => {
@@ -28,7 +28,7 @@ const DoubleComp = () => {
               <GoArrowUpRight className="mt-2 ml-1" />
             </a>
             <a href="#" className="flex ">
-              Learn more <FaAngleRight className="mt-2 ml-1" />
+              Learn more <img src={right} className=" ml-1 w-7 h-7" />
             </a>
           </div>
         </div>
@@ -52,7 +52,7 @@ const DoubleComp = () => {
               <GoArrowUpRight className="mt-2 ml-1" />
             </a>
             <a href="#" className="flex">
-              Learn more <FaAngleRight className="mt-2 ml-1" />
+              Learn more <img src={right} className="ml-1 w-7 h-7" />
             </a>
           </div>
         </div>

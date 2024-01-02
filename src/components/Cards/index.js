@@ -6,7 +6,6 @@ import React, { useEffect, useRef, useState } from "react";
 // import PopUp from "../Reviews/PopUp";
 import "./styles.css";
 import MainSlider from "../MainSlider/MainSlider";
-// import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
