@@ -82,6 +82,11 @@ function Cards() {
   function filterProductsByCategory(products, category) {
     return products.filter((product) => product.category === category);
   }
+useEffect(() => {
+  const datax = localStorage.getItem("recommendedProducts");
+  const x =  JSON.stringify(datax)
+  console.log(datax);
+}, [])
 
 //memo hook
 const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
