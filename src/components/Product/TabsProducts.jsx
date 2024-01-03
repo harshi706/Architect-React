@@ -2,20 +2,19 @@ import React, { useState, useEffect } from "react";
 import bengta from "../../assets/product/bengta-block-out-curtain-1-length-light-grey__0977118_pe813406_s5.avif";
 import lenda from "../../assets/product/lenda-curtains-with-tie-backs-1-pair-off-white__1136111_pe879297_s5.avif";
 import lill from "../../assets/product/lill-net-curtains-1-pair-white__0887768_pe569661_s5.avif";
-// import netvol from "../../assets/product/net-volie-curtains-700221.avif";
+
 import "./styles.css";
 import { IoMdClose } from "react-icons/io";
 import adtocart from "../../assets/icon/adtocart.svg";
 import liketocart from "../../assets/icon/like.svg";
 import arrow from "../../assets/icon/backarrow.svg";
-// import { BsArrowRightCircleFill } from "react-icons/bs";
+
 import { FaStarHalfAlt } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
-// import filter from "../../assets/icon/filter.svg";
+
 import choserightfloor from "../../assets/icon/choserightfloor.svg";
 const Tabs = () => {
-  // const [circle1Hovered, setCircle1Hovered] = useState(false);
-  // const [circle2Hovered, setCircle2Hovered] = useState(false);
+
 
   const curtainImage = [
     {
@@ -374,117 +373,9 @@ const Tabs = () => {
   }, []);
 
   const [activeTab, setActiveTab] = useState("all");
-  const [isSticky, setIsSticky] = useState(false);
+ 
 
-  //stickynesss of filter
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const blocTabs = document.querySelector(".bloc-tabs1");
-  //     const contentTabs = document.querySelector(".content-tabs");
-
-  //     if (contentTabs) {
-  //       const contentTabsRect = contentTabs.getBoundingClientRect();
-  //       setIsSticky(contentTabsRect.top <= 0);
-  //     }
-  //     console.log(window.scrollY);
-  //     //  for mobile
-  //     if (isSticky) {
-  //       const contentstart = window.scrollY;
-  //     }
-  //     if (!isMobile && window.scrollY > 4700) {
-  //       setIsSticky(false);
-  //     }
-  //     if (isMobile && window.scrollY > 5520) {
-  //       setIsSticky(false);
-  //     }
-
-  //     // if (blocTabs) {
-  //     //   const blocTabsRect = blocTabs.getBoundingClientRect();
-  //     //   setIsSticky(blocTabsRect.top >= 0);
-  //     // }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  // // ? using an api
-  // //! stickyness of tabs
-  // // Get the elements
-  // const blocTabs2 = document.querySelector(".bloc-tabs2");
-  // const imageProduct = document.querySelector(".image-product");
-
-  // // Create the observer
-  // const observer = new IntersectionObserver((entries) => {
-  //   entries.forEach((entry) => {
-  //     if (entry.isIntersecting) {
-  //       // When the image-product element is in the viewport, make bloc-tabs2 sticky
-  //       blocTabs2.classList.add("sticky");
-  //     } else {
-  //       // When the image-product element is not in the viewport, remove the sticky class
-  //       blocTabs2.classList.remove("sticky");
-  //     }
-  //   });
-  // });
-
-  // // Start observing the image-product element
-  // observer.observe(imageProduct);
-
-  // useEffect(() => {
-  //   // Get the elements
-  //   const blocTabs2 = document.querySelector(".bloc-tabs2");
-  //   const imageProduct = document.querySelector(".image-product");
-
-  //   // Check if the elements exist
-  //   if (blocTabs2 && imageProduct) {
-  //     // Create the observer
-  //     const observer = new IntersectionObserver((entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           // When the image-product element is in the viewport, make bloc-tabs2 sticky
-  //           blocTabs2.classList.add("sticky");
-  //         } else {
-  //           // When the image-product element is not in the viewport, remove the sticky class
-  //           blocTabs2.classList.remove("sticky");
-  //         }
-  //       });
-  //     });
-
-  //     // Start observing the image-product element
-  //     observer.observe(imageProduct);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   // Get the elements
-  //   const blocTabs2 = document.querySelector(".bloc-tabs2");
-  //   const imageProduct = document.querySelector(".image-product");
-
-  //   // Check if the elements exist
-  //   if (blocTabs2 && imageProduct) {
-  //     const handleScroll = () => {
-  //       const blocTabs2Top = blocTabs2.getBoundingClientRect().top;
-  //       const imageProductBottom = imageProduct.getBoundingClientRect().bottom;
-
-  //       if (blocTabs2Top <= 0 && imageProductBottom >= 0) {
-  //         // When the bloc-tabs2 element touches the top of the viewport and the image-product element is still in the viewport, make bloc-tabs2 sticky
-  //         blocTabs2.classList.add("sticky");
-  //       } else {
-  //         // Otherwise, remove the sticky class
-  //         blocTabs2.classList.remove("sticky");
-  //       }
-  //     };
-
-  //     // Add the scroll event listener
-  //     window.addEventListener("scroll", handleScroll);
-
-  //     // Remove the event listener when the component is unmounted
-  //     return () => window.removeEventListener("scroll", handleScroll);
-  //   }
-  // }, []);
-
+ 
   const [openSort, setOpenSort] = React.useState(false);
 
   const handleOpen = () => {
@@ -699,7 +590,7 @@ const Tabs = () => {
         >
           <div
             className={`bg-white py-5 bloc-tabs2 flex flex-row`}
-            style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}
+           
           >
             {/* dropdown1 */}
             <div className="dropdown1">

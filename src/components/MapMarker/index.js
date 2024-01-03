@@ -40,6 +40,7 @@ const MapMarker = ({ place }) => {
               ></div>
             </div>
           </div>
+          
           <Popover
             id={id}
             open={open}

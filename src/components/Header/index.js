@@ -1,37 +1,27 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./styles.css";
 import mainlogo from "../../assets/ayatriologo.png";
 import adtocart from "../../assets/icon/adtocart.svg";
 import liketocart from "../../assets/icon/like.svg";
 import userprofile from "../../assets/icon/profile.svg";
 import search from "../../assets/icon/search.svg";
-import choserightfloor from "../../assets/icon/choserightfloor.svg";
+
+import SearchModal from "./MobileSearch";
 // import ayatrio_store from "../../assets/icon/ayatrio_store.svg";
 // import SimpleBottomNavigation from "./bottombar";
 // import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Menu from "./menu";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-//import { Login } from "@mui/icons-material";
+
 import Expandedbar from "./Expandedbar";
 //import axios from "axios";
 import { useDispatch } from "react-redux";
 import { searchProductsRequest } from "../../Features/search/searchSlice";
 import TopLoader from "../AddOn/TopLoader";
-// import { faL } from "@fortawesome/free-solid-svg-icons";
 
 function Header({ howMuchScrolled }) {
   const [isScrolled, setIsScrolled] = useState(false);
-  //section for search-icon click(down)
-  // const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
-
-  // const handleSearchIconClick = () => {
-  //   setIsSearchBarVisible(!isSearchBarVisible);
-  // };
-
-  //section for search-icon click (above)
-
- // const [isFilterVisible, setIsFilterVisible] = useState(true);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [searchEngine, SetSeacrhEngine] = useState("");
@@ -44,7 +34,6 @@ function Header({ howMuchScrolled }) {
 
   useEffect(() => {
     dispatch(searchProductsRequest(searchQuery));
-    // console.log("search called");
   }, [dispatch, searchQuery]);
 
   const navigate = useNavigate();
@@ -84,24 +73,20 @@ function Header({ howMuchScrolled }) {
   };
 
   const [isModalOPen, setModalOpen] = useState(false);
+
   const handleModalOpen = () => {
     setModalOpen(true);
   };
-
-  const handleModalClose = () => {
-    setModalOpen(false);
-  };
-  const handleModalClick = (event) => {
-    // Prevent clicks inside the modal from closing it
+  const handleModalClose = (event) => {
     event.stopPropagation();
+    setModalOpen(false);
+    onClose();
   };
-  const inpRef = useRef(null);
+
   return (
     <header
       className={`fixed w-full sm:bg-none  top-0 transition-all ease-in-out duration-300  z-[99999]
-       ${
-        isScrolled ? "bg-white" : "bg-white"
-      } 
+       ${isScrolled ? "bg-white" : "bg-white"} 
       ${howMuchScrolled > 20 ? "hidden" : ""}`}
     >
       {isLoading && <TopLoader />}
@@ -118,82 +103,19 @@ function Header({ howMuchScrolled }) {
             </Link>
 
             <div className=" text-costom-co p-[7px] hover:bg-slate-200 hover:rounded-3xl whitespace-nowrap">
-            <Link to="/magazine">
-            <div className="at">
-              {" "}
-              <img
-                src={choserightfloor}
-                alt=""
-                className="seachbar-div2-icon"
-              />{" "}
-              Find the Right Floor
+              <Link to="/magazine">
+                <div className="">Find the Right Floor</div>
+              </Link>{" "}
             </div>
-          </Link>            </div>
-            {/* for only mobole search */}
+            {/* for only mobile search */}
 
             <div
               className="sm:hidden block  w-10 h-10 p-[7px]"
               onClick={handleModalOpen}
             >
               <img src={search} alt="" className="header-div-icon" />
-
-              {isModalOPen && (
-                <div className="modal-overlay z-[9999]  bg-white h-full w-full ">
-                  <div className="modal" onClick={handleModalClick}>
-                    <div className="flex flex-row gap-2 justify-evenly">
-                      <div className="searchDiv  flex flex-col justify-between">
-                        <div className="searchCon relative sm:w-[600px] w-[60vw] h-[40px]  bg-[#e5e5e5] rounded-xl ">
-                          <input
-                            ref={inpRef}
-                            type="text"
-                            placeholder="Search"
-                            className="search-input  border px-4 h-full sm:w-full w-[60vw] ml-8 rounded-xl focus:outline-none"
-                            value={searchEngine}
-                            onChange={(e) => SetSeacrhEngine(e.target.value)}
-                          />
-                          <img
-                            src={search}
-                            alt=""
-                            className="  w-5 mx-1 my-1.5 top-[18%] left-[1%]  absolute z-10"
-                          />
-                        </div>
-                        <div className="dropdown flex flex-col mb-8 gap-4 ">
-                          <div className="head text-slate-400">
-                            <h2>Popular Searches</h2>
-                          </div>
-                          <div className="items">
-                            <div className="dropdown-item font-bold font-sans ">
-                              Products
-                            </div>
-                            <div className="dropdown-item font-bold font-sans ">
-                              Rooms
-                            </div>
-                            <div className="dropdown-item font-bold font-sans ">
-                              Magazine
-                            </div>
-                            <div className="dropdown-item font-bold font-sans ">
-                              Virtual Experience
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <button
-                          onClick={handleModalClose}
-                          className="border rounded-3xl p-1"
-                        // className="relative top-[10px] bottom-[80px]"
-                        >
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
-
-          {/* for only mobole search */}
 
           <div className="mainlogo">
             <Link onClick={() => handleLinkClick("/home")}>
@@ -209,7 +131,7 @@ function Header({ howMuchScrolled }) {
                 onChange={handleSearchChange}
                 value={searchQuery}
                 placeholder="Search"
-                className="searchTerm sm:block hidden relative font-semibold placeholder-gray-400 w-[13rem] h-10 bg-slate-100 p-4 rounded-full active:border-none focus:outline-none hover:bg-slate-200 hover:rounded-3xl"
+                className="searchTerm sm:block hidden relative font-semibold placeholder-gray-400 w-[12rem] h-10 bg-zinc-100 p-4 rounded-full active:border-none focus:outline-none hover:bg-slate-200 hover:rounded-3xl"
               />
               <img
                 src={search}
@@ -244,21 +166,17 @@ function Header({ howMuchScrolled }) {
                 className="header-div-icon"
               />
             )}
-          </div>
-
-          {/* <div className="map-icon">
-            <button
-              type="button"
-              className="flex items-center justify-center  z-10  text-white bg-black hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
-              onClick={() => navigate("/ayatrio-map")}
-            >
-              <img
-                src={ayatrio_store}
-                alt=""
-                className="header-div-sStore-icon"
+            {/* for only mobole search */}
+            {isModalOPen && (
+              <SearchModal
+                isOpen={isModalOPen}
+                onClose={handleModalClose}
+                onSearch={(e) =>
+                  dispatch(searchProductsRequest(e.target.value))
+                }
               />
-            </button>
-          </div> */}
+            )}
+          </div>
         </div>
       ) : (
         <Expandedbar

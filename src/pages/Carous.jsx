@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
   Pagination,
-  Navigation,
   Scrollbar,
   Mousewheel,
   FreeMode,
@@ -17,7 +16,7 @@ import "swiper/swiper-bundle.css";
 // import Cards from '../components/Cards';
 import ItemCard from "../components/Item/ItemCard";
 // import imageurl1.jpg from '..'
-import image from "../assets/roomswiper.jpg";
+// import image from "../assets/roomswiper.jpg";
 
 const Carous = () => {
   const [showFilter, setShowFilter] = useState(true);
@@ -180,21 +179,7 @@ const Carous = () => {
   }, [prevScrollPos]); // Dependency on prevScrollPos to update the effect when it changes
   // const [showHeader, setShowHeader] = useState(true);
 
-  // useEffect(() => {
-  //   // Function to handle scroll event
-  //   const handleScroll = () => {
-  //     setShowHeader(window.scrollY < 100);
-  //   };
-
-  //   // Add event listener when component mounts
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   // Remove event listener when component unmounts
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []); // Empty dependency array ensures that the effect runs only once during mount and unmount
-
+  
   return (
     <>
       <div className="sm:w-full w-[80vw] sm:block hidden">

@@ -1,6 +1,6 @@
 import React from 'react';
 import Skeleton from 'react-loading-skeleton';
-// import './Skeletoncard.css'
+
 import "react-loading-skeleton/dist/skeleton.css";
 
 let customCss = {

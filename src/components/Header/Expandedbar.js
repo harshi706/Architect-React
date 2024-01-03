@@ -13,7 +13,7 @@ const Expandedbar = ({ searchText, onClose, onSearch }) => {
     inputRef.current.focus();
   }, []);
   return (
-    <div className="expanded-search-box p-2 sm:block hidden  bg-white sm:h-310px h-full z-30 sm:w-full w-[80vw] flex items-center justify-center">
+    <div className="expanded-search-box p-2 sm:block  bg-white sm:h-310px h-full z-30 sm:w-full w-[80vw] flex items-center justify-center">
       <div className="flex flex-row  justify-between bg-white rounded-lg w-full h-[300px]">
         <div className="logo hidden sm:block">
           <img src={mainlogo} className="w-44 z-30" alt="" />

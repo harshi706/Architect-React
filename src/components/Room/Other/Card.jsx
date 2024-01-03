@@ -9,7 +9,7 @@ import IosShareSharpIcon from "@mui/icons-material/IosShareSharp";
 import FavoriteBorderSharpIcon from "@mui/icons-material/FavoriteBorderSharp";
 
 import "../styles.css";
-import zIndex from "@mui/material/styles/zIndex";
+// import zIndex from "@mui/material/styles/zIndex";
 const Card = () => {
   const [imgColor, setImgColor] = useState("red");
   const [widthstate, setwidthstate] = useState(0);
@@ -138,7 +138,7 @@ const Card = () => {
           </div>
 
           {/* calculations */}
-          <div className="border border-gray-300 w-72 rounded-xl mt-2 pt-4 pb-4 pl-3">
+          <div className="border border-gray-300 w-72 rounded-xl mt-2 pt-4 pb-4 sm:pl-3 pl-6">
             <div className="flex items-center">
               <div className="pl-3">
                 <Calculation />
@@ -210,8 +210,8 @@ const Card = () => {
           </div>
 
           {/* //buttons */}
-          <div className="buttons mt-4 sm:w-auto w-[80vw] ">
-            <div className="guestCheckout">
+          <div className="buttons mt-4 sm:w-auto w-[100%] sm:block flex flex-col items-center justify-center  ">
+            <div className="guestCheckout ">
               <button className="bg-black text-white sm:w-80 w-40 sm:h-16 h-8 rounded-full hover:bg-gray-900 transition duration-300">
                 Add To Bag
               </button>

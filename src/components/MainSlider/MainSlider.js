@@ -3,7 +3,7 @@ import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { Oval } from "react-loader-spinner";
 import "./Mainslidestyle.css";
 import { list3 } from "../../assets/mainslide-list";
-import _debounce from "lodash/debounce";
+// import _debounce from "lodash/debounce";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSliderData } from "../../Features/Slices/sliderSlice";
 
@@ -37,20 +37,43 @@ console.log(SliderViewData);
       scrl.current.style.transition = "none";
     }
   }, []);
+  // const slide = (shift) => {
+  //   const targetPage = page + (shift > 0 ? 1 : -1);
+  //   const targetScroll= Math.max(scrl.current.scrollLeft + shift, 0);
+  //   if (targetPage >= 1) {
+  //     setPage(targetPage);
+  //     fetchData(targetPage);
+  //   }
+  // };
   const slide = (shift) => {
-    const targetPage = page + (shift > 0 ? 1 : -1);
-    if (targetPage >= 1) {
-      setPage(targetPage);
-      fetchData(targetPage);
+    if (scrl.current) {
+      const targetScroll = Math.max(scrl.current.scrollLeft + shift, 0);
+      scrl.current.scrollTo({
+        left: targetScroll,
+      });
+      setScrollX(targetScroll);
     }
   };
   
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
+  useEffect(() => {
+    // Update isMobile state on window resize
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 450);
+    };
+    window.addEventListener("resize", handleResize);
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
 
   if (products.length > 0) {
     return (
       <div className="slider-container">
         <div className="arrow-left z-20" onClick={() => slide(-190)}>
-          {scrollX > 0 && <BsArrowLeftCircleFill className="arrow-nav" />}
+          {(!isMobile )&& (scrollX>0) && <BsArrowLeftCircleFill className="arrow-nav" />}
           {/* <BsArrowLeftCircleFill className='arrow-nav' /> */}
         </div>
         <div className="slider-cont" ref={scrl}>
@@ -95,8 +118,8 @@ console.log(SliderViewData);
             </div>
           ))}
         </div>
-        <div className="arrow-rightS" onClick={() => slide(+380)}>
-          <BsArrowRightCircleFill className="arrow-nav arrow-right" />
+        <div className="arrow-rightS" onClick={() => slide(+190)}>
+           {(!isMobile) && <BsArrowRightCircleFill className="arrow-nav arrow-right" />}
         </div>
       </div>
     );

@@ -1,34 +1,26 @@
-import '../../../Dropitems/Styles'
+import "../../../Dropitems/Styles";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const Familycollections = () => {
-    const collections = [
-        "Log in ",
-        "Join Ayatrio Family",
-        "Member Offers",
-        "Member Workshop & Events ",
-        "Member Feedback",
-      ];
-    
-      const [isAccordionOpen, setAccordionOpen] = useState(false);
-      const handleToggleAccordion = () => {
-        setAccordionOpen(!isAccordionOpen);
-      };
-    return (
-        // <div className='filter_item'>
-        //     <h4 className='filter_heading text-black'>Ayatrio Family</h4>
-        //     <div className='filter_content'>
-        //         <ul className='filter_content_list'>
-        //             {collections.map((item) => (
-        //                 <li><a href='#'>{item}</a></li>
-        //             ))}
-        //         </ul>
-        //     </div>
-        // </div>
-        <div className="filter_item">
+  const collections = [
+    "Log in ",
+    "Join Ayatrio Family",
+    "Member Offers",
+    "Member Workshop & Events ",
+    "Member Feedback",
+  ];
+
+  const [isAccordionOpen, setAccordionOpen] = useState(false);
+  const handleToggleAccordion = () => {
+    setAccordionOpen(!isAccordionOpen);
+  };
+  return (
+    <div className="filter_item">
       <div className="sm:block hidden ">
-        <h4 className={`filter_heading text-black mb-[20px]`}>Ayatrio Family</h4>
+        <h4 className={`filter_heading text-black mb-[20px]`}>
+          Ayatrio Family
+        </h4>
         <div className="filter_content">
           <ul className="filter_content_list ">
             {collections.map((item) => (
@@ -52,10 +44,10 @@ const Familycollections = () => {
           )}
         </h4>
         {isAccordionOpen && (
-          <div className="filter_content_mobile sm:hidden">
-            <ul className="filter_content_list_mobile font-normal flex flex-col gap-[20px] text-slate-400 ">
+          <div className="filter_content_mobile sm:hidden mb-3">
+            <ul className="filter_content_list_mobile font-normal flex flex-col gap-[20px] text-slate-700 ">
               {collections.map((item) => (
-                <li key={item} >
+                <li key={item}>
                   <a href="#">{item}</a>
                 </li>
               ))}
@@ -64,7 +56,7 @@ const Familycollections = () => {
         )}
       </div>
     </div>
-    );
+  );
 };
 
 export default Familycollections;

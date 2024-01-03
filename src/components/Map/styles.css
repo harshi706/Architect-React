@@ -25,6 +25,13 @@
   margin-right: 10px;
 }
 
-.map-bg{
-  background-color: transparent !important;
+.map-bg {
+  background-color: none !important;
+}
+
+@media screen and (max-width: 450px) {
+  /* .map-bg {
+    position: absolute;
+    top: 0;
+  } */
 }

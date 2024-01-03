@@ -1,5 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { FormProvider } from "./components/Checkoutcomp/FormContext";
 import './App.css'
 import axios from "axios";
@@ -24,7 +24,7 @@ const LoginPage = lazy(() => import("./pages/LoginPage"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 const Virtualexperiance = lazy(() => import("./pages/Virtualexperiance"));
 const CartPage = lazy(() => import("./pages/CartPage"));
-const ItemPage = lazy(() => import("./pages/ItemPage"));
+// const ItemPage = lazy(() => import("./pages/ItemPage"));
 
 function App() {
   const [deviceId, setDeviceId] = useState(null);
@@ -44,49 +44,79 @@ function App() {
   useEffect(() => {
     generateDeviceId();
   }, []);
-const Currentlocation = window.location.pathname;
-const [location, setLocation] = useState(Currentlocation);
-  const navigate  = useNavigate();
+  const Currentlocation = window.location.pathname;
+  const [location, setLocation] = useState(Currentlocation);
+  const navigate = useNavigate();
   // console.log("Device ID:", deviceId);
   useEffect(() => {
     window.onload = () => {
-    navigate('/');
-    }
-
+      navigate("/");
+    };
   }, []);
 
   return (
     <>
       <FormProvider>
         <Suspense>
-
-        <Routes>
-          <Route path="/" element={<Splashpage location={location} />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/ayatrio-map" element={<MapPage />} />
-          <Route path="/products" element={<ProductPage />} />
-          <Route path="/magazine" element={<MagazinePage />} />
-          <Route path="/rooms" element={<RoomPage />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
-          <Route path="/shipping" element={<Shipping />} />
-          <Route path="/payment" element={<Paymentpage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/virtualexperience/*" element={<Virtualexperiance />} />
-          <Route path="*" element={<h1>Not Found</h1>} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/item" element={<ItemPage />} />
-          {/* Below routes were added by Syed Amaan Ali */}
-          <Route path="/customer-service" element={<CustomerServicePage/>}/>
-          <Route path="/customer-service/shopping-at-ayatrio" element={<ShoppingInfo/>}/>
-          <Route path="/customer-service/services" element={<ServicesPage/>}/>
-          <Route path="/customer-service/returns-claims/return-policy" element={<ReturnPolicyPage/>}/>
-          <Route path="/customer-service/price-guarantee" element={<PriceGuarantee/>}/>
-          <Route path="/customer-service/faq" element={<FaqPage/>}/>
-          <Route path="/customer-service/gift-cards" element={<GiftCards/>}/>
-          <Route path="/customer-service/contact-us" element={<ContactUsPage/>}/>
-          {/* Above routes were added by Syed Amaan Ali */}
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Splashpage location={location} />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/ayatrio-map" element={<MapPage />} />
+            <Route path="/products" element={<ProductPage />} />
+            <Route path="/magazine" element={<MagazinePage />} />
+            <Route path="/rooms" element={<RoomPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/shipping" element={<Shipping />} />
+            <Route path="/payment" element={<Paymentpage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route
+              path="/virtualexperience/*"
+              element={<Virtualexperiance />}
+            />
+            <Route path="*" element={<h1>Not Found</h1>} />
+            <Route path="/cart" element={<CartPage />} />
+            {/* <Route path="/item" element={<ItemPage />} /> */}
+            {/* Below routes were added by Syed Amaan Ali */}
+            <Route path="/customer-service" element={<CustomerServicePage />} />
+            <Route
+              path="/customer-service/shopping-at-ayatrio"
+              element={<ShoppingInfo />}
+            />
+            <Route
+              path="/customer-service/services"
+              element={<ServicesPage />}
+            />
+            <Route
+              path="/customer-service/returns-claims/return-policy"
+              element={<ReturnPolicyPage />}
+            />
+            <Route
+              path="/customer-service/price-guarantee"
+              element={<PriceGuarantee />}
+            />
+            <Route path="/customer-service/faq" element={<FaqPage />} />
+            <Route
+              path="/customer-service/gift-cards"
+              element={<GiftCards />}
+            />
+            <Route
+              path="/customer-service/contact-us"
+              element={<ContactUsPage />}
+            />
+            <Route path="/delivery-service" element={<DeliveryServicePage />} />
+            <Route
+              path="/installation-service"
+              element={<InstallationServicePage />}
+            />
+            <Route path="/this-is-ayatrio" element={<ThisIsAyatrioPage />} />
+            <Route
+              path="/sustainable-everyday"
+              element={<SustainabilityPage />}
+            />
+            <Route path="/design-service" element={<DesignServicePage />} />
+            {/* Above routes were added by Syed Amaan Ali */}
+          </Routes>
         </Suspense>
       </FormProvider>
     </>

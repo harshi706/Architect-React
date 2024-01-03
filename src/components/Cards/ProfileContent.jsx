@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Navigation} from "swiper/modules";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 // import { CiDeliveryTruck } from "react-icons/ci";
 // import { IoIosAddCircle, IoMdContacts } from "react-icons/io";
@@ -45,10 +46,10 @@ const ProfileContent = () => {
       style={{ '--swiper-navigation-size': '24px' }}
       breakpoints={{
             100: {
-              slidesPerView: 1,
+              slidesPerView: 2,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 3,
             },
             1024: {
               slidesPerView: 3,
@@ -59,18 +60,18 @@ const ProfileContent = () => {
       {peopleState.map((person, index) => (
         <SwiperSlide key={index}>
           <div>
-            <div className="bg-black rounded-full h-40 w-40 mb-2 sm:mt-32 mt-4 sm:ml-4 ml-20"></div>
-            <div className='flex justify-center'>
+            <div className="bg-black rounded-full sm:h-40 h-28 sm:w-40 w-28 mb-2 sm:mt-32 mt-4 sm:ml-4 ml-2"></div>
+            <div className='flex justify-center mr-6'>
               <div className='text-2xl font-bold '>{person.name}</div>
               <a href='#'>
-                <img className='h-10 w-10' src={person.image} alt={`LinkedIn for ${person.name}`} />
+                <img className='sm:h-10 h-6 sm:w-10 w-6 ' src={person.image} alt={`LinkedIn for ${person.name}`} />
               </a>
             </div>
           </div>
           <br/><br/><br/><br/>
         </SwiperSlide>
       ))}
-      <div className='swiper-button-next'></div>
+      <div className='swiper-button-next '></div>
       <div className='swiper-button-prev'></div>
     </Swiper>
   </div>

@@ -3,7 +3,7 @@ import { MdSearch, MdAccessTime } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { GoHome } from "react-icons/go";
 import Menu from "../Header/menu";
-// import search from "../../assets/icon/search.svg";
+
 import { searchProductsRequest } from "../../Features/search/searchSlice";
 import { useDispatch } from "react-redux";
 // import Expandedbar from "../Header/Expandedbar";
@@ -27,7 +27,9 @@ const Search = ({ places, onResultClick }) => {
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
-console.log(places);
+
+  console.log(places);
+
   const [searchQuery, setSearchQuery] = useState("");
   const dispatch = useDispatch();
 
@@ -75,11 +77,14 @@ console.log(places);
   };
   const handleResultClick = (item) => {
     if (onResultClick && item) {
-      onResultClick({ lat: item.geo_location.latitude, lng: item.geo_location.longitude });
+      onResultClick({
+        lat: item.geo_location.latitude,
+        lng: item.geo_location.longitude,
+      });
     } else {
       onResultClick({ lat: 20.593, lng: 78.96 });
     }
-    console.log(item)
+    console.log(item);
   };
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
@@ -101,15 +106,27 @@ console.log(places);
   return (
     <>
       {isMobile ? (
-        <div className="map-bg flex items-center justify-between w-full h-16">
-          <div className=" bg-transparent font-bold p-[7px] hover:bg-slate-200 hover:rounded-full">
+        <div className="map-bg flex flex-row items-center justify-between w-full h-16">
+          <div
+            className=" font-bold p-[7px] hover:bg-slate-200 hover:rounded-full bg-opacity-5 bg-transparent"
+            style={{
+              backgroundColor: "transparent",
+              background: "transparent",
+            }}
+          >
             <Menu />
           </div>
-          <div className="main-search absolute shadow-lg z-20 top-[14%] left-3">
+          <div
+            className="main-search absolute shadow-lg z-20 top-[14%] right-3"
+            style={{
+              backgroundColor: "transparent",
+              background: "transparent",
+            }}
+          >
             <div
               className="search flex items-center border-none bg-white"
               style={{
-                borderRadius: "10px 10px 0px 10px",
+                borderRadius: "20px 20px 20px 20px",
               }}
             >
               <input
@@ -117,16 +134,16 @@ console.log(places);
                 placeholder="Search Ayatrio Maps"
                 className="searchTerm w-[17rem] h-10 border-white p-4 active:border-none focus:outline-none"
                 style={{
-                  borderRadius: "10px 10px 0px 0px",
+                  borderRadius: "20px 20px 20px 20px",
                 }}
               />
-              <div className="searchIcon bg-white flex justify-center items-center w-[2rem]">
+              <div className="searchIcon absolute right-1 bg-white flex justify-center items-center w-[2rem]">
                 <MdSearch className="text-gray-400 text-xl" />
               </div>
             </div>
 
             <div
-              className="dropdown-container hidden bg-white w-[19rem] h-44 border border-gray-200 shadow-md overflow-auto"
+              className="dropdown-container bg-white hidden  w-[19rem] h-44 border border-gray-200 shadow-md overflow-auto"
               style={{
                 borderRadius: "0px 0px 15px 15px",
               }}
@@ -136,7 +153,9 @@ console.log(places);
                   className={`flex justify-evenly items-center hover:bg-gray-100`}
                   key={item._id}
                   onClick={() =>
-                    index === 0 ? handleResultClick() : handleResultClick(item)
+                    index === 0
+                      ? handleResultClick()
+                      : handleResultClick(item)
                   }
                   onMouseEnter={() => handleItemHover(item)}
                   onMouseLeave={() => handleItemHover(null)}
@@ -147,9 +166,7 @@ console.log(places);
                     <MdAccessTime className="text-gray-700 text-xl" />
                   )}
                   <div className="py-2 px-4 text-gray-700 cursor-pointer">
-                    {index === 0
-                      ? "India"
-                      : `${item.name}`}
+                    {index === 0 ? "India" : `${item.name}`}
                   </div>
                   <IoClose
                     className={`text-gray-800 text-xl 
@@ -160,24 +177,6 @@ console.log(places);
               ))}
             </div>
           </div>
-          {/* {!searchQuery ? (
-            <div className=" searchbar pt-4 w-40 h-10 items-right justify-end ">
-              <input
-                type="text"
-                onChange={handleSearchChange}
-                value={searchQuery}
-                placeholder="Search"
-                className=" sm:block hidden relative font-semibold placeholder-gray-400 w-[13rem] h-10 bg-slate-100 p-4 rounded-full active:border-none focus:outline-none hover:bg-slate-200 hover:rounded-3xl"
-              />
-              <img
-                src={search}
-                alt=""
-                className="seachbar-div2-icon absolute z-10"
-              />
-            </div>
-          ) : (
-            <Expandedbar searchQuery={searchQuery} onClose={onClose} />
-          )} */}
         </div>
       ) : (
         <div className="main-search absolute shadow-lg z-20 top-[14%] left-3">
@@ -202,40 +201,44 @@ console.log(places);
             </div>
           </div>
 
-          {true &&<div
-            className="dropdown-container bg-white w-[19rem] h-44 border border-gray-200 shadow-md overflow-auto"
-            style={{
-              borderRadius: "0px 0px 15px 15px",
-            }}
-          >
-            {places.map((item, index) => (
-              <div
-                className={`flex justify-evenly items-center hover:bg-gray-100`}
-                key={item.location_id}
-                onClick={() =>
-                  index === 0 ? handleResultClick() : handleResultClick(item)
-                }
-                onMouseEnter={() => handleItemHover(item)}
-                onMouseLeave={() => handleItemHover(null)}
-              >
-                {index === 0 ? (
-                  <GoHome className="text-gray-700 text-xl" />
-                ) : (
-                  <MdAccessTime className="text-gray-700 text-xl" />
-                )}
-                <div className="py-2 px-4 text-gray-700 cursor-pointer">
-                  {index === 0
-                    ? "India"
-                    : `${item.name} ${(item.address).slice(0, 20)}`}
-                </div>
-                <IoClose
-                  className={`text-gray-800 text-xl 
+          {true && (
+            <div
+              className="dropdown-container bg-white w-[19rem] h-44 border border-gray-200 shadow-md overflow-auto"
+              style={{
+                borderRadius: "0px 0px 15px 15px",
+              }}
+            >
+              {places.map((item, index) => (
+                <div
+                  className={`flex justify-evenly items-center hover:bg-gray-100`}
+                  key={item.location_id}
+                  onClick={() =>
+                    index === 0
+                      ? handleResultClick()
+                      : handleResultClick(item)
+                  }
+                  onMouseEnter={() => handleItemHover(item)}
+                  onMouseLeave={() => handleItemHover(null)}
+                >
+                  {index === 0 ? (
+                    <GoHome className="text-gray-700 text-xl" />
+                  ) : (
+                    <MdAccessTime className="text-gray-700 text-xl" />
+                  )}
+                  <div className="py-2 px-4 text-gray-700 cursor-pointer">
+                    {index === 0
+                      ? "India"
+                      : `${item.name} ${(item.address).slice(0, 20)}`}
+                  </div>
+                  <IoClose
+                    className={`text-gray-800 text-xl 
       ${hoveredItem === item ? "opacity-100" : "opacity-0"}
       `}
-                />
-              </div>
-            ))}
-          </div>}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </>

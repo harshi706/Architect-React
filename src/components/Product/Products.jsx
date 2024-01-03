@@ -5,7 +5,6 @@ import netvolie from "../../assets/product/net-volie-curtains-700221.avif";
 import panelcurtain from "../../assets/product/panel-curtains-10702.avif";
 import roomdarkening from "../../assets/product/room-darkening-curtains-700219.avif";
 import sewingmachine from "../../assets/product/sewing-accessories-14350.avif";
-import Footer from "../Footer/Footer";
 const Products = () => {
   const pdt = [
     {

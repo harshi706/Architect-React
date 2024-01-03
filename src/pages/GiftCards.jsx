@@ -62,12 +62,16 @@ const GiftCards = () => {
                   <img
                     className="flex"
                     src="https://www.ikea.com/images/1d/13/1d13922950e815adedd027dab6cb000d.png?f=l"
+                  
+                    alt=""
                   />
                 </div>
                 <div className="flex">
                   <img
                     className="flex"
                     src="https://www.ikea.com/images/d0/da/d0da1e68d5a522b5c415ebec91a03eb0.png?f=l"
+                  
+                    alt=""
                   />
                 </div>
               </div>
@@ -130,7 +134,7 @@ const GiftCards = () => {
           <section>
             <div className="flex space-x-7 w-full">
               <div className="w-1/2">
-                <img src="https://www.ikea.com/images/ikea-gift-card-c1e223317d716400b161481ec9313cb3.png?f=l" />
+                <img src="https://www.ikea.com/images/ikea-gift-card-c1e223317d716400b161481ec9313cb3.png?f=l" alt=""/>
               </div>
               <div className="space-y-6 w-1/2">
                 <h2 className="font-bold text-2xl">

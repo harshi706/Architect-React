@@ -103,7 +103,7 @@ const Trending = () => {
           onSwiper={setSwiperRef}
           className="px-10"
         >
-          {!trendingData ? (
+          {trendingData ? (
             <SwiperSlide>
               <div className="flex"></div>
             </SwiperSlide>

@@ -16,10 +16,7 @@ const Phone = () => {
             trade-in, connect your new iPhone to your carrier, and get set up
             quickly. You can also chat with a Specialist anytime.
           </div>
-          {/* <div className="z-20 sm:text-base sm:hidden block  text-xs w-[35vw] ">
-            You can choose a payment option that works for you, pay less with a
-            trade-in, connect your new iPhone to your carrier.
-          </div> */}
+          
 
           <a href="#" className="text-sky-600 sm:text-lg text-sm">
             Learn more &gt;

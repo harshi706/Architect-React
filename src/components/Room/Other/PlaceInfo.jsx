@@ -60,7 +60,7 @@ const PlaceInfo = () => {
         </div>
       </div>
       <div className="place-information pt-6 pb-8 border-b">
-        <p className="text-lg text-gray-600 font-[16px] leading-6	mb-6 sm:w-auto text-justify w-[85vw]">
+        <p className="text-lg text-gray-600 font-[16px] leading-6	mb-6 sm:w-auto text-justify w-[100%]">
           Red Tree Villa is designed to cater our guests for all seasons. A
           Premium villa near Karjat, Mumbai and Pune having a lap pool for
           beating the heat in summers, a lush green lawn to enjoy rain dance
@@ -70,7 +70,7 @@ const PlaceInfo = () => {
           in India. Enjoy Star gazing at our open terrace with a sky deck during
           cold winters.
         </p>
-        <div className="underline font-[16px] font-semibold mb-2 cursor-pointer">
+        <div className="underline font-[16px]  mb-2 cursor-pointer">
           Show more
           <KeyboardArrowRightIcon />
         </div>
