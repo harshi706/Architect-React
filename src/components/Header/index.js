@@ -91,7 +91,7 @@ function Header({ howMuchScrolled }) {
     >
       {isLoading && <TopLoader />}
       {!searchQuery ? (
-        <div className="navbar sm:px-[30px] px-[10px] py-0 flex justify-between items-center w-full ">
+        <div className="navbar  border-b-[2.5px] border-slate-500  sm:px-[30px] px-[10px] py-0 flex justify-between items-center w-full ">
           <div className="left flex items-center sm:gap-5 gap-1 ">
             <div className="profile-menu font-bold p-[7px] hover:bg-slate-200 hover:rounded-full">
               <Menu />
