@@ -4,19 +4,10 @@ import { useSelector } from "react-redux";
 import Footer from "../Footer/Footer";
 const AddCart = () => {
   const selectedItems = useSelector((state) => state.rooms.selectedActivity);
-  console.log("Cart component re-rendered");
-  //   const [forceRender, setForceRender] = useState(false);
+  // console.log("Cart component re-rendered");
 
-  // // ... rest of the component code
+  // console.log("selecteditems", selectedItems);
 
-  // useEffect(() => {
-  //   // This will trigger a re-render
-  //   setForceRender((prev) => !prev);
-  // }, [selectedItems]);
-
-  console.log("selecteditems", selectedItems);
-
-  // console.log('Selected Items:', selectedItems);
   return (
     <div>
       <div className="main-cart flex justify-center items-center min-h-screen">

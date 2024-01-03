@@ -55,7 +55,7 @@ const Activities = () => {
 
   const addToCart = () => {
     dispatch(setSelectedActivity(selectedActivity));
-    console.log("selectedrooms", selectedActivity);
+    // console.log("selectedrooms", selectedActivity);
   };
 
   return (

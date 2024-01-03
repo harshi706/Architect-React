@@ -50,7 +50,7 @@ const ProfileComponent = () => {
       });
 
       const data = response.data;
-      console.log("user data", response.data);
+      // console.log("user data", response.data);
 
       if (data.isAuthenticated) {
         setIsAuthenticated(true);
@@ -99,8 +99,8 @@ const ProfileComponent = () => {
         }
       });
 
-      const data = response.data;
-      console.log(data);
+      // const data = response.data;
+      // console.log(data);
     } catch (error) {
       console.error('Error updating user profile:', error);
     }
@@ -115,7 +115,7 @@ const ProfileComponent = () => {
         }
       });
 
-      console.log(response);
+      // console.log(response);
       const data = response.data;
       navigate('/home')
     } catch (error) {

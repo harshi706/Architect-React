@@ -590,7 +590,7 @@ const Tabs = () => {
         >
           <div
             className={`bg-white py-5 bloc-tabs2 flex flex-row`}
-            style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}
+           
           >
             {/* dropdown1 */}
             <div className="dropdown1">
