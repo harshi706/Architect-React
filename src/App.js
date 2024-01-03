@@ -24,6 +24,12 @@ const LoginPage = lazy(() => import("./pages/LoginPage"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 const Virtualexperiance = lazy(() => import("./pages/Virtualexperiance"));
 const CartPage = lazy(() => import("./pages/CartPage"));
+const DeliveryServicePage = lazy(() => import("./pages/DeliveryServicePage"));
+const InstallationServicePage = lazy(() => import("./pages/InstallationServicePage"));
+const ThisIsAyatrioPage = lazy(() => import("./pages/ThisIsAyatrioPage"));
+const SustainabilityPage = lazy(() => import("./pages/SustainabilityPage"));
+const DesignServicePage = lazy(() => import("./pages/DesignServicePage"));
+
 // const ItemPage = lazy(() => import("./pages/ItemPage"));
 
 function App() {

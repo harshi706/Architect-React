@@ -13,14 +13,13 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import linkdln from "./linkdln.jpg";
 import { useDispatch, useSelector } from "react-redux";
-import { selectProfileData } from "../../Features/Slices/profileSlice";
+import { loadProfileFetch, selectProfileData } from "../../Features/Slices/profileSlice";
 
 const ProfileContent = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({ type: "FETCH_PROFILE_REQUEST", payload: "Profile" });
   }, []);
-  let profileData = useSelector(selectProfileData);
   const peopleData = [
     { name: 'Rajit1', image: linkdln },
     { name: 'Rajit2', image: linkdln },
@@ -28,6 +27,9 @@ const ProfileContent = () => {
     { name: 'Rajit4', image: linkdln },
   ];
   const [peopleState, setPeopleState] = useState(peopleData);
+  const profileData = useSelector(selectProfileData);
+  const profileLoad = useSelector(loadProfileFetch);
+  console.log(profileData);
   useEffect(() => {
     if (profileData) {
       setPeopleState(profileData);
@@ -57,7 +59,7 @@ const ProfileContent = () => {
           }}
 
     >
-      {peopleState.map((person, index) => (
+      {profileData.map((person, index) => (
         <SwiperSlide key={index}>
           <div>
             <div className="bg-black rounded-full sm:h-40 h-28 sm:w-40 w-28 mb-2 sm:mt-32 mt-4 sm:ml-4 ml-2"></div>

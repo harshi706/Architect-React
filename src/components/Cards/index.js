@@ -22,7 +22,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Imagechanger from "../Imagechanger/Imagechanger";
 // import Skeleton from "react-loading-skeleton";
 // import Skeletoncard from "../Skeleton/Skeletoncard";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectRecommendedProduct } from "../../Features/Slices/recommendationSlice";
 // import Doublecard from "../Doublecard/Doublecard";
 import Multicard from "../Imagechanger/Multicard";
@@ -64,6 +64,7 @@ function Cards() {
   useEffect(() => {
     setTrendingData(trendingSelect);
   }, [trendingSelect]);
+  // console.log(trendingSelect);
   const recommendedProducts = useSelector(selectRecommendedProduct);
   const recommendedProductsDataFromLocalStorage = JSON.parse(
     localStorage.getItem("recommendedProducts")
@@ -81,7 +82,6 @@ function Cards() {
   function filterProductsByCategory(products, category) {
     return products.filter((product) => product.category === category);
   }
-
 
 //memo hook
 const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
