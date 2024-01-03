@@ -39,7 +39,7 @@ const MapPage = () => {
   const [PlacesData, setPlacesData] = useState([]);
   useEffect(() => {
     const fetchMapData = async()=>{
-      const response = await axios.get("http://34.201.163.233:8080/api/mapPlaces");
+      const response = await axios.get("http://43.204.166.53:8080/api/mapPlaces");
     console.log("api response", response.data);
     setPlacesData(response.data);
     }
