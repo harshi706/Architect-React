@@ -44,6 +44,8 @@
   .info-wrapper .info-image {
     height: 104px;
     width: 104px;
+    background-size: cover;
+    background-position: center;
   }
   
   .info-image {
@@ -81,7 +83,6 @@
     position: fixed;
     margin-bottom: 100px;
     border-radius: 10px;
-    border: 7px solid white;
     top: 0;
   }
   

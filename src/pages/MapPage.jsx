@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import { getPlaceData } from "../api";
 import Map from "../components/Map";
+import axios from "axios";
 
 const MapPage = () => {
   const [places, setPlaces] = useState([]);
@@ -35,11 +36,19 @@ const MapPage = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+  const [PlacesData, setPlacesData] = useState([]);
+  useEffect(() => {
+    const fetchMapData = async()=>{
+      const response = await axios.get("http://34.201.163.233:8080/api/mapPlaces");
+    console.log("api response", response.data);
+    setPlacesData(response.data);
+    }
+    fetchMapData();
+  }, []);
   return (
     <>
       {!isMobile && <Header />}
-      <Map setBoundaries={setBoundaries} coords={coords} places={places} />
+      <Map setBoundaries={setBoundaries} coords={coords} places={places} PlacesData={PlacesData} />
     </>
   );
 };

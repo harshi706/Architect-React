@@ -56,7 +56,7 @@ const ProfileContent = () => {
           }}
 
     >
-      {peopleData.map((person, index) => (
+      {peopleState.map((person, index) => (
         <SwiperSlide key={index}>
           <div>
             <div className="bg-black rounded-full h-40 w-40 mb-2 sm:mt-32 mt-4 sm:ml-4 ml-20"></div>

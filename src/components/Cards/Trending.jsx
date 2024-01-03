@@ -19,7 +19,6 @@ import {
 } from "swiper/modules";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectRecommendedProduct } from "../../Features/Slices/recommendationSlice";
 import { CardData, CardLoader } from "../../Features/Slices/FIrstCardSlice";
 const Trending = () => {
 
@@ -48,39 +47,16 @@ const Trending = () => {
     const swiper1Ref = useRef(null);
     const swiper2Ref = useRef(null);
     const [isLoading, setLoading] = useState(true);
-  
+   const dispatch = useDispatch()
     useEffect(() => {
-      setTimeout(() => {
-        setLoading(false);
-      }, 2500);
+      dispatch({type:'FETCH_FIRST_CARD_REQUEST'})
     }, []);
-    const [trendingData, setTrendingData] = useState([]);
     const trendingSelect = useSelector(CardData);
+    console.log(trendingSelect)
+    const [trendingData, setTrendingData] = useState([]);
     useEffect(() => {
       setTrendingData(trendingSelect);
     }, [trendingSelect]);
-    const recommendedProducts = useSelector(selectRecommendedProduct);
-    const recommendedProductsDataFromLocalStorage = JSON.parse(
-      localStorage.getItem("recommendedProducts")
-    );
-  
-    useEffect(() => {
-      if (recommendedProductsDataFromLocalStorage !== recommendedProducts) {
-        localStorage.setItem(
-          "recommendedProducts",
-          JSON.stringify(recommendedProducts)
-        );
-      }
-    }, [recommendedProducts]);
-  
-    function filterProductsByCategory(products, category) {
-      return products.filter((product) => product.category === category);
-    }
-  
-    const wallpaperProducts = filterProductsByCategory(
-      recommendedProductsDataFromLocalStorage?.products || [],
-      "Wallpaper"
-    );
 
   return (
     <div>
@@ -127,9 +103,9 @@ const Trending = () => {
           onSwiper={setSwiperRef}
           className="px-10"
         >
-          {true ? (
+          {!trendingData ? (
             <SwiperSlide>
-              <div className="flex">""</div>
+              <div className="flex"></div>
             </SwiperSlide>
           ) : (
             trendingData.map((product, idx) => {

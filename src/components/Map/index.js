@@ -6,12 +6,15 @@ import MapMarker from "../MapMarker";
 // import Sidebar from "../Sidebar";
 import { REACT_APP_GMAP_API_KEY } from '../../config.js'
 import Search from "./Search";
-const Map = ({ setBoundaries, coords, places }) => {
+const Map = ({ setBoundaries, coords, places ,PlacesData}) => {
+
+
+  console.log(PlacesData);
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: REACT_APP_GMAP_API_KEY,
   });
   const india_zoom = 5;
-  const hotels_zoom= 8;
+  const hotels_zoom= 11;
   const [zoom, setZoom] = useState(india_zoom);
   const [map, setMap] = useState(null);
   const [selectedCoords, setSelectedCoords] = useState(coords);
@@ -46,21 +49,21 @@ const Map = ({ setBoundaries, coords, places }) => {
     </OverlayView>
   );
 
-  const handleBoundsChanged = () => {
-    if (map) {
-      const bounds = map.getBounds();
-      const ne = {
-        lat: bounds.getNorthEast().lat(),
-        lng: bounds.getNorthEast().lng(),
-      };
-      const sw = {
-        lat: bounds.getSouthWest().lat(),
-        lng: bounds.getSouthWest().lng(),
-      };
+  // const handleBoundsChanged = () => {
+  //   if (map) {
+  //     const bounds = map.getBounds();
+  //     const ne = {
+  //       lat: bounds.getNorthEast().lat(),
+  //       lng: bounds.getNorthEast().lng(),
+  //     };
+  //     const sw = {
+  //       lat: bounds.getSouthWest().lat(),
+  //       lng: bounds.getSouthWest().lng(),
+  //     };
 
-      setBoundaries({ ne, sw });
-    }
-  };
+  //     setBoundaries({ ne, sw });
+  //   }
+  // };
 
   return (
     <>
@@ -69,7 +72,7 @@ const Map = ({ setBoundaries, coords, places }) => {
       ) : (
         <>
           {/* <Sidebar places={places} /> */}
-          <Search places={places} onResultClick={handleResultClick} />
+          <Search places={PlacesData} onResultClick={handleResultClick} />
           <GoogleMap
             mapContainerClassName="map-container"
             onLoad={onLoad}
@@ -81,18 +84,17 @@ const Map = ({ setBoundaries, coords, places }) => {
               styles: mapStyles,
               mapId: "2d6636895d6a199d",
             }}
-            onBoundsChanged={handleBoundsChanged}
+            // onBoundsChanged={handleBoundsChanged}
           >
-            {places &&
-              places.length > 0 &&
-              places.map((place, i) => (
+            {PlacesData &&
+              PlacesData.map((place, i) => (
                 <CustomMarker
-                  lat={place.latitude}
-                  lng={place.longitude}
-                  key={i}
+                  lat={place.geo_location.latitude}
+                  lng={place.geo_location.longitude}
+                  key={places._id}
                   content={<MapMarker place={place} />}
                 />
-              ))}
+              ))}          
           </GoogleMap>
 
           <div />

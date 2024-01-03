@@ -21,7 +21,7 @@ function App() {
       console.error("Error fetching categories:", error.message);
     }
   };
-  
+  console.log(fetchedCategories)
   const fetchCitiesAndHobbies = async () => {
     try {
       const response = await axios.get("http://localhost:8080/api/citiesAndHobbies");

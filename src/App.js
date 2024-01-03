@@ -2,6 +2,7 @@ import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { FormProvider } from "./components/Checkoutcomp/FormContext";
 import './App.css'
+import axios from "axios";
 const CustomerServicePage = lazy(() => import("./pages/CustomerServicePage"));
 const ShoppingInfo = lazy(() => import("./pages/ShoppingInfo"));
 const ServicesPage = lazy(() => import("./pages/ServicesPage"));
@@ -53,6 +54,7 @@ const [location, setLocation] = useState(Currentlocation);
     }
 
   }, []);
+
   return (
     <>
       <FormProvider>

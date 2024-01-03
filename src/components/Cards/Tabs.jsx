@@ -67,7 +67,6 @@ const Tabs = () => {
         setIsSticky(contentTabsRect.top <= 0);
       }
 
-      console.log(window.scrollY);
       //  for mobile
       if (isSticky) {
         const contentstart = window.scrollY;

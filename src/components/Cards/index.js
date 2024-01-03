@@ -88,11 +88,11 @@ function Cards() {
 //memo hook
 const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
 const MemoizedProfileContent = useMemo(() => <Profile />, []);
-
+const MemoizedTrendingProducts = useMemo(()=><Trending/>,[])
   return (
     <div className="">
      {MemoizedMainSlider}
-      <Trending/>
+      {MemoizedTrendingProducts}
       <div className="h-40 my-10 sm:px-[50px] px-[50px]">
         <img
           src={Offer}
