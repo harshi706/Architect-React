@@ -10,6 +10,7 @@
 .search_icon_mar {
   margin: 3px 10px;
 }
+
 /* .profile-menu{
   position: relative;
 }
@@ -155,7 +156,7 @@
 }
 
 .header-div-icon {
-  height: 25px;
+  height: 23px;
 }
 
 .header-div-sStore-icon {
@@ -178,6 +179,7 @@
   margin-top: -30px;
   margin-left: 20px;
 }
+
 .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.MuiMenu-paper.MuiMenu-paper.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
   top: 8.4rem !important;
   left: 0 !important;
@@ -195,6 +197,7 @@
     width: 120px;
     height: 75px;
   }
+
   .searchbar {
     display: none;
   }
@@ -215,6 +218,7 @@
     display: none;
   } */
 }
+
 .MuiBackdrop-root.MuiBackdrop-invisible.MuiModal-backdrop.css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop::-webkit-scrollbar {
   width: 10px !important;
   background-color: #333 !important;
@@ -246,7 +250,8 @@
 }
 
 .modal-content {
-  max-width: 100vw; /* Set the maximum width of your modal content */
+  max-width: 100vw;
+  /* Set the maximum width of your modal content */
   width: 100%;
   text-align: center;
 }
