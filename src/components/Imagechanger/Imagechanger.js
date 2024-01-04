@@ -45,10 +45,7 @@ const Imagechanger = () => {
           </h3>
         </div>
         {Heading.map((value, idx) => (
-          <div
-            key={idx}
-            className="trending-choice "
-          >
+          <div key={idx} className="trending-choice ">
             {idx === 1 && (
               <>
                 <div
@@ -100,7 +97,9 @@ const Imagechanger = () => {
               key={i}
               src={image}
               alt=""
-              className={` w-full h-full ${index === i ? "visible" : "hidden"}`}
+              className={` w-full h-full ${
+                index === i ? "visible" : "hidden"
+              } lazyloaded`}
             />
           ))}
         </div>
