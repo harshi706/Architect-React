@@ -39,10 +39,10 @@
   position: absolute;
   top: 50%;
   right: 10px;
-  /* Adjust the right offset as needed */
   transform: translateY(-50%);
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 
@@ -58,7 +58,7 @@
   margin-left: 0.3rem;
 }
 
-.slider-container>div {
+.slider-container > div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,7 +67,14 @@
 .slider-cont::-webkit-scrollbar {
   display: none;
 }
+/* .slider-cont {
+  transition: scrollLeft 1.2s ease-in-out;
+} */
 
+.slider-cont {
+  /* existing styles */
+  transition: scrollLeft 4s ease; /* Adjust the transition duration as needed */
+}
 .circle {
   position: absolute;
 }
@@ -123,10 +130,38 @@
   border: 6px solid rgba(200, 198, 198, 0.7);
 }
 
-
-@media screen and (max-width:450px) {
+@media screen and (max-width: 450px) {
   .sd {
     width: 23rem;
     height: 57vh;
   }
 }
+
+
+/* @-webkit-keyframes slide_animation{
+  0% {left:0px}
+  10% {left:0px}
+  20% {left:1200px}
+  30% {left:1200px}
+  40% {left: 2400px}
+  50% {left:2400px}
+  60% {left:1200px}
+  70% {left:1200px}
+  80% {left:0px}
+  90% {left:0px}
+  100% {left:0px}
+} */
+
+/* .slider-cont{
+  -webkit-animation-name: slide_animation;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+  animation-timing-function: linear;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+
+} */

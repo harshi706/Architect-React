@@ -2,7 +2,8 @@ export const list3 = [
   {
     id: 1,
     imgSrc: [
-      "https://i0.wp.com/theluxuryeditor.com/wp-content/uploads/2019/02/178793622.jpg?resize=1024%2C683",
+      "https://wowslider.com/sliders/demo-18/data1/images/hongkong1081704.jpg"
+      // "https://i0.wp.com/theluxuryeditor.com/wp-content/uploads/2019/02/178793622.jpg?resize=1024%2C683",
     ],
     circles: [
       {
@@ -53,7 +54,8 @@ export const list3 = [
   {
     id: 3,
     imgSrc: [
-      "https://i0.wp.com/theluxuryeditor.com/wp-content/uploads/2019/02/178793622.jpg?resize=1024%2C683",
+      "https://wowslider.com/sliders/demo-18/data1/images/london830775.jpg"
+      // "https://i0.wp.com/theluxuryeditor.com/wp-content/uploads/2019/02/178793622.jpg?resize=1024%2C683",
     ],
     circles: [
       {
