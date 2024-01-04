@@ -8,7 +8,7 @@ const returnPolicyFAQ = [
     id: 1,
     question: "What do we mean when we say change of mind?",
     answer:
-      "You can purchase products from us in store or online and we will accept them back for a full refund in the original method of payment up to 60 days after the purchase, 90 days if you are a IKEA Family or Business member.",
+      "You can purchase products from us in store or online and we will accept them back for a full refund in the original method of payment up to 60 days after the purchase, 90 days if you are a AYATRIO Family or Business member.",
   },
   {
     id: 2,
@@ -45,8 +45,8 @@ const ReturnPolicyPage = () => {
       <Header />
       <div className="mt-20 sm:ml-[50px] ml-[20px] sm:mr-[50px] mr-[20px] p-10 space-y-10">
         <div className="flex flex-col space-y-7 w-full">
-          <div>
-            <h1 className="font-bold text-4xl w-2/3">
+          <div className="md:w-2/3">
+            <h1 className="font-bold text-4xl">
               Returns Policy - It’s ok to change your mind, we support you in
               the safest way!
             </h1>
@@ -57,13 +57,14 @@ const ReturnPolicyPage = () => {
           <p className="underline">Online order</p>
           <p className="underline">In-store order</p>
         </div>
-        <p className="w-2/3">
+        <p className="md:w-2/3">
           With our return policy, we have ensured that our customers have a safe
-          shopping experience with IKEA. Our mission is to enhance the customer
-          experience and to enable our customers in making informed decisions.
+          shopping experience with AYATRIO. Our mission is to enhance the
+          customer experience and to enable our customers in making informed
+          decisions.
         </p>
         <h2 className="font-bold text-xl">AYATRIO India:</h2>
-        <div className="space-y-5 flex flex-col w-2/3">
+        <div className="space-y-5 flex flex-col md:w-2/3">
           <h4 className="font-bold">Returns Policy - Effective Nov, 2022</h4>
           <ul>
             <li>
@@ -71,7 +72,7 @@ const ReturnPolicyPage = () => {
               purchase
             </li>
             <li>
-              &#8226; IKEA Family members: Returns or Exchange within 90 Days
+              &#8226; AYATRIO Family members: Returns or Exchange within 90 Days
               from the date of purchase
             </li>
             <li>
@@ -109,11 +110,11 @@ const ReturnPolicyPage = () => {
               from our full price mattress range. If the new mattress is higher
               in price you will need to pay the difference, if the mattress you
               select is lower in price the difference will be refunded to you on
-              an IKEA gift card.
+              an AYATRIO gift card.
             </li>
           </ul>
         </div>
-        <div className="space-y-7 flex flex-col w-2/3">
+        <div className="space-y-7 flex flex-col md:w-2/3">
           <h4 className="font-bold">
             Terms and Conditions for online purchase:
           </h4>
@@ -121,7 +122,7 @@ const ReturnPolicyPage = () => {
             <li>
               &#8226; For returns or exchange of online orders customer can
               either contact Customer Support Center (Timing: 8 am - 10 pm) or
-              head to your local IKEA store.
+              head to your local AYATRIO store.
             </li>
             <li>
               &#8226; Customer needs to contact Customer Support Center through
@@ -164,13 +165,13 @@ const ReturnPolicyPage = () => {
             </li>
           </ul>
         </div>
-        <div className="space-y-7 flex flex-col w-2/3">
+        <div className="space-y-7 flex flex-col md:w-2/3">
           <h4 className="font-bold">
             Terms and Conditions for in-store purchase:
           </h4>
           <ul className="space-y-5">
             <li>
-              &#8226; Customer can either head to your local IKEA store and
+              &#8226; Customer can either head to your local AYATRIO store and
               enter through the Exchanges & returns entrance.
             </li>
             <li>
@@ -192,13 +193,14 @@ const ReturnPolicyPage = () => {
               &#8226; Returns or Exchange will be processed on presenting the
               original invoice onlyAll refunds will be processed in the original
               mode of payment. We request customer to carry All refunds will be
-              processed within 21 days from the date of returns accepted by IKEA
+              processed within 21 days from the date of returns accepted by
+              AYATRIO
             </li>
           </ul>
         </div>
-        <div className="space-y-7 flex flex-col w-2/3">
+        <div className="space-y-7 flex flex-col md:w-2/3">
           <h4 className="font-bold">
-            IKEA India reserves the rights to reject/ refuse the returns and
+            AYATRIO India reserves the rights to reject/ refuse the returns and
             refunds in case:
           </h4>
           <ul className="space-y-5">
@@ -214,32 +216,34 @@ const ReturnPolicyPage = () => {
             </li>
           </ul>
         </div>
-        <div className="space-y-7 flex flex-col w-2/3">
+        <div className="space-y-7 flex flex-col md:w-2/3">
           <h4 className="font-bold">Have more questions about returns?</h4>
           <ul className="space-y-5">
-            <li>&#8226; Write to us at customercare.india@ikea.com</li>
+            <li>&#8226; Write to us at customercare.india@AYATRIO.com</li>
             <li>&#8226; Call us at 18004194532 (8 am - 10 pm)</li>
           </ul>
         </div>
-        <p className="flex flex-col w-2/3">
+        <p className="flex flex-col md:w-2/3">
           The terms and conditions set out in this return policy apply to all
-          goods purchased from IKEA India. This return policy is in addition to
-          the customer's statutory rights.
+          goods purchased from AYATRIO India. This return policy is in addition
+          to the customer's statutory rights.
         </p>
         {/* Faq section starts */}
-        <div className="flex flex-col w-5/6">
-        {returnPolicyFAQ.map((curElement) => {
-          return <QuestionAnswer key={curElement.id} {...curElement} />;
-        })}
+        <div className="flex flex-col">
+          {returnPolicyFAQ.map((curElement) => {
+            return <QuestionAnswer key={curElement.id} {...curElement} />;
+          })}
         </div>
-        <h2 className="font-bold text-xl">How do I initiate a refund?</h2>
-        <div className="flex flex-col w-5/6">
-        {initiateRefund.map((curElement) => {
-          return <QuestionAnswer key={curElement.id} {...curElement} />;
-        })}
+        <div>
+          <h2 className="font-bold text-xl">How do I initiate a refund?</h2>
+          <div className="flex flex-col">
+            {initiateRefund.map((curElement) => {
+              return <QuestionAnswer key={curElement.id} {...curElement} />;
+            })}
+          </div>
         </div>
         {/* Faq section ends */}
-        <div className="space-y-7 flex flex-col w-2/3">
+        <div className="space-y-7 flex flex-col md:w-2/3">
           <div>
             <h4 className="font-semibold">Delivery packaging:</h4>
             <p>
@@ -281,7 +285,7 @@ const ReturnPolicyPage = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,18 @@
+.image-text{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (min-width: 865px){
+    .image-text{
+        flex-direction: row; 
+    }
+    .image-text > div:nth-of-type(1) {
+        flex: 0 0 50%; /* First div (index starts at 1) */
+      }
+      
+      .image-text > div:nth-of-type(2) {
+        flex: 1; /* Second div */
+      }
+}

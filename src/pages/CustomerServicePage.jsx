@@ -4,6 +4,7 @@ import FAQ from "../components/FAQ/FAQ";
 import Footer from "../components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import FAQSwiper from "../components/FAQSwiper/FAQSwiper";
+import "./styles/CustomerServicePage.css";
 
 const servicesData = [
   {
@@ -78,7 +79,7 @@ const gridDataRow1 = [
 const gridDataRow2 = [
   {
     heading: "Warranty",
-    text: "IKEA products comes with warranty",
+    text: "AYATRIO products comes with warranty",
   },
   {
     heading: "Terms and conditions",
@@ -113,22 +114,18 @@ const CustomerServicePage = () => {
   return (
     <div>
       <Header />
-      <div className="mt-20 sm:ml-[50px] ml-[20px] sm:mr-[50px] mr-[20px] p-10 space-y-10">
+      <div className="mt-20 sm:ml-[20px] sm:mr-[20px] sm:p-10 sm:space-y-10">
         <div className="space-y-6">
           <h1 className="font-bold text-4xl">Customer Service</h1>
-          <div className="flex space-x-5">
+          <div className="service-container">
             {servicesData.map((option, id) => {
               return (
                 <div
-                  className="flex flex-col hover:underline cursor-pointer"
+                  className="service-item hover:underline cursor-pointer"
                   key={option.id}
                   onClick={() => handleOptionClick(option.id)}
                 >
-                  <img
-                    className="max-h-[85px] max-w-[150px]"
-                    src={option.image}
-                    alt=""
-                  />
+                  <img src={option.image} alt="" />
                   <p className="text-sm">{option.text}</p>
                 </div>
               );
@@ -137,7 +134,7 @@ const CustomerServicePage = () => {
         </div>
         <div>
           <h2 className="font-bold text-2xl">Helping you help yourself </h2>
-          <p className="flex flex-wrap max-w-[1000px]">
+          <p className="">
             Looking to check the status of your order? Want to return a product
             or order a spare part? We have convenient self service options which
             will let you do just that!{" "}
@@ -145,29 +142,25 @@ const CustomerServicePage = () => {
         </div>
         {/* Section of grid starts */}
         <section>
-          <div className="flex flex-wrap space-y-2 w-full">
-            <div className="flex space-x-1">
+          <div>
+            <div className="grid-row-1">
               {gridDataRow1.map((gridItem) => {
                 return (
-                  <div>
-                    <div className="flex flex-col items-center text-center bg-gray-200 p-6">
-                      <h3 className="font-bold">{gridItem.heading}</h3>
-                      <p>{gridItem.text}</p>
-                      <p className="underline text-gray-500">Read more</p>
-                    </div>
+                  <div className="bg-gray-200 py-10 px-5 border border-white text-center">
+                    <h3 className="font-bold">{gridItem.heading}</h3>
+                    <p>{gridItem.text}</p>
+                    <p className="underline text-gray-500">Read more</p>
                   </div>
                 );
               })}
             </div>
-            <div className="flex w-full space-x-1">
+            <div className="grid-row-2">
               {gridDataRow2.map((gridItem) => {
                 return (
-                  <div className="w-1/2">
-                    <div className="flex flex-col items-center text-center bg-gray-200 p-6">
-                      <h3 className="font-bold">{gridItem.heading}</h3>
-                      <p>{gridItem.text}</p>
-                      <p className="underline text-gray-500">Read more</p>
-                    </div>
+                  <div className="bg-gray-200 py-10 px-5 border border-white text-center">
+                    <h3 className="font-bold">{gridItem.heading}</h3>
+                    <p>{gridItem.text}</p>
+                    <p className="underline text-gray-500">Read more</p>
                   </div>
                 );
               })}
@@ -198,8 +191,8 @@ const CustomerServicePage = () => {
         <FAQ />
         {/* Plan and Shop from home starts */}
         <section>
-          <div className="flex w-full justify-between items-start space-x-5">
-            <div className="flex flex-col w-1/2 space-y-2">
+          <div className="plan-section">
+            <div className="">
               <h2 className="text-2xl font-bold">Plan and shop from home</h2>
               <p>
                 Are you looking for innovative solutions in furnishing your
@@ -208,7 +201,7 @@ const CustomerServicePage = () => {
                 advice, online or in-store​.
               </p>
             </div>
-            <div className="flex w-1/2">
+            <div className="">
               <img
                 className="object-contain w-full h-auto "
                 src="https://media.istockphoto.com/id/1331493599/photo/shot-of-a-businessman-using-a-computer-while-working-in-a-call-center.jpg?s=612x612&w=0&k=20&c=ocaFzVRnDARFnANjyd6CMrwAI0Ua6I0Na_MKej8IysA="
@@ -220,7 +213,7 @@ const CustomerServicePage = () => {
         {/* Plan and Shop from home starts */}
         {/* Three buttons section starts */}
         <section>
-          <div className="flex justify-between items-center space-x-4">
+          <div className="three-buttons">
             <button className="bg-black text-white rounded-3xl p-3 px-4 text-sm font-semibold">
               Book interior design
             </button>
@@ -233,20 +226,21 @@ const CustomerServicePage = () => {
           </div>
         </section>
         {/* Three buttons section ends */}
-        {/* Find an ikea section starts */}
+        {/* Find an AYATRIO section starts */}
         <section>
-          <div className="flex w-full">
-            <div className="flex w-2/3">
+          <div className="find-section">
+            <div>
               <img
-                className="w-full h-auto"
                 src="https://www.ikea.com/ext/ingkadam/m/314e597614cbeb4e/original/PE315126-crop003.jpg?f=xxl"
                 alt=""
               />
             </div>
-            <div className="bg-gray-200 flex w-1/3">
+            <div className="bg-gray-200">
               <div className="p-7 space-y-5">
                 <div>
-                  <h3 className="font-bold text-xl">Find an IKEA near you</h3>
+                  <h3 className="font-bold text-xl">
+                    Find an AYATRIO near you
+                  </h3>
                   <p>
                     Visit us in store and get inspired. We're open and excited
                     for your visit. Browse our products, walk through our room
@@ -255,14 +249,14 @@ const CustomerServicePage = () => {
                 </div>
                 <div>
                   <button className="bg-black text-white rounded-3xl p-3 px-4 text-sm font-semibold">
-                    find your IKEA
+                    find your AYATRIO
                   </button>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        {/* Find an ikea section ends */}
+        {/* Find an AYATRIO section ends */}
         {/* Still have questions section starts */}
         <section>
           <div className="flex space-y-9 flex-col">

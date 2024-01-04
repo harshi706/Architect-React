@@ -54,102 +54,110 @@ const GiftCards = () => {
           {/* Three options with images section starts */}
           <section>
             <div className="flex flex-col space-x-5 space-y-5 w-full items-center">
-              <div className="flex space-x-5">
-                <div className="flex">
-                  <img src="https://www.ikea.com/images/d8/c4/d8c400a6100c951e8ada8b9d0c3af79c.png?f=l" />
+              <div className="flex flex-col lg:flex-row gap-8">
+                <div className="flex flex-col">
+                  <div>
+                    <img src="https://www.ikea.com/images/d8/c4/d8c400a6100c951e8ada8b9d0c3af79c.png?f=l" />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <h2 className="font-bold text-xl">Digital Gift Card</h2>
+                    <p>
+                      You can buy one or more AYATRIO Gift cards with any value
+                      up to 10,000 INR through our website, in just a few steps.
+                      Your AYATRIO Gift card is emailed straight to your inbox.
+                      Bought gift cards can only be redeemed in stores (for
+                      now).
+                    </p>
+                    <p>
+                      Share the gift card number and its PIN with any of our
+                      checkout co-workers for gift card redemption.
+                    </p>
+                    <div>
+                      <button className="bg-black text-white rounded-3xl py-2 px-4 text-sm font-semibold">
+                        Buy AYATRIO Gift Card online
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex">
-                  <img
-                    className="flex"
-                    src="https://www.ikea.com/images/1d/13/1d13922950e815adedd027dab6cb000d.png?f=l"
-                  
-                    alt=""
-                  />
+                <div className="flex flex-col">
+                  <div className="lg:mt-16">
+                    <img
+                      src="https://www.ikea.com/images/1d/13/1d13922950e815adedd027dab6cb000d.png?f=l"
+                      alt=""
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <h2 className="font-bold text-xl">Physical Gift Card</h2>
+                    <p>
+                      You can buy a physical AYATRIO Gift Card with any value up
+                      to 10,000 INR at AYATRIO stores (in Hyderabad, Mumbai
+                      (Navi Mumbai, Worli, RCity) and Bangalore (Nagasandra).
+                    </p>
+                  </div>
                 </div>
-                <div className="flex">
-                  <img
-                    className="flex"
-                    src="https://www.ikea.com/images/d0/da/d0da1e68d5a522b5c415ebec91a03eb0.png?f=l"
-                  
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div className="flex space-x-5 items-start w-full">
-                <div className="flex flex-col space-y-3 w-1/3">
-                  <h2 className="font-bold text-xl">Digital Gift Card</h2>
-                  <p>
-                    You can buy one or more IKEA Gift cards with any value up to
-                    10,000 INR through our website, in just a few steps. Your
-                    IKEA Gift card is emailed straight to your inbox. Bought
-                    gift cards can only be redeemed in stores (for now).
-                  </p>
-                  <p>
-                    Share the gift card number and its PIN with any of our
-                    checkout co-workers for gift card redemption.
-                  </p>
-                  <button className="bg-black text-white rounded-3xl p-3 px-4 text-sm font-semibold w-1/2">
-                    Buy IKEA Gift Card online
-                  </button>
-                </div>
-                <div className="flex flex-col space-y-3 w-1/3">
-                  <h2 className="font-bold text-xl">Physical Gift Card</h2>
-                  <p>
-                    You can buy a physical IKEA Gift Card with any value up to
-                    10,000 INR at IKEA stores (in Hyderabad, Mumbai (Navi
-                    Mumbai, Worli, RCity) and Bangalore (Nagasandra).
-                  </p>
-                </div>
-                <div className="flex flex-col space-y-3 w-1/3">
-                  <h2 className="font-bold text-xl">
-                    Interested in buying Gift Cards for your business (employee
-                    and business contacts) ?{" "}
-                  </h2>
-                  <p>
-                    Please submit a gift card request by filling out the
-                    webform. To access the webform, click the link below, Enter
-                    your company details and upload any files if needed.
-                  </p>
-                  <p>
-                    One of our IKEA co-workers will reach out to you for further
-                    information and processing gift cards.{" "}
-                  </p>
-                  <button className="bg-black text-white rounded-3xl p-3 px-4 text-xs font-semibold w-1/2">
-                    Buy IKEA Gift Card for Business
-                  </button>
+                <div className="flex flex-col">
+                  <div className="lg:mt-16">
+                    <img
+                      src="https://www.ikea.com/images/d0/da/d0da1e68d5a522b5c415ebec91a03eb0.png?f=l"
+                      alt=""
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <h2 className="font-bold text-xl">
+                      Interested in buying Gift Cards for your business
+                      (employee and business contacts) ?{" "}
+                    </h2>
+                    <p>
+                      Please submit a gift card request by filling out the
+                      webform. To access the webform, click the link below,
+                      Enter your company details and upload any files if needed.
+                    </p>
+                    <p>
+                      One of our AYATRIO co-workers will reach out to you for
+                      further information and processing gift cards.{" "}
+                    </p>
+                    <div>
+                      <button className="bg-black text-white rounded-3xl p-3 px-4 text-xs font-semibold">
+                        Buy AYATRIO Gift Card for Business
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
           {/* Three options with images section ends */}
-          <div className="w-1/2 flex">
+          <div className="md:w-1/2 flex">
             <p>
               You will be directed to a third-party site operated by a trusted
               partner, Frizbee
-              (https://ikeain.frizbee-solutions.com/home/digital) You can always
-              return to finish your shopping on IKEA.in
+              (https://AYATRIOin.frizbee-solutions.com/home/digital) You can
+              always return to finish your shopping on AYATRIO.in
             </p>
           </div>
           {/* image and text section starts */}
           <section>
-            <div className="flex space-x-7 w-full">
-              <div className="w-1/2">
-                <img src="https://www.ikea.com/images/ikea-gift-card-c1e223317d716400b161481ec9313cb3.png?f=l" alt=""/>
+            <div className="flex flex-col md:flex-row gap-3 w-full">
+              <div className="md:w-1/2">
+                <img
+                  src="https://www.ikea.com/images/AYATRIO-gift-card-c1e223317d716400b161481ec9313cb3.png?f=l"
+                  alt=""
+                />
               </div>
-              <div className="space-y-6 w-1/2">
+              <div className="space-y-6 md:w-1/2">
                 <h2 className="font-bold text-2xl">
-                  An IKEA Gift Card is always a great surprise!{" "}
+                  An AYATRIO Gift Card is always a great surprise!{" "}
                 </h2>
                 <p>
-                  Everyone loves receiving an IKEA Gift Card. Whether that’s to
-                  mark a birthday, for a special occasion or just to show how
+                  Everyone loves receiving an AYATRIO Gift Card. Whether that’s
+                  to mark a birthday, for a special occasion or just to show how
                   much you care.
                 </p>
                 <p>
-                  With an IKEA Gift Card they can choose just what they always
-                  wanted. Which will make you happy too.
+                  With an AYATRIO Gift Card they can choose just what they
+                  always wanted. Which will make you happy too.
                 </p>
-                <p className="underline">Buy an IKEA Gift Card</p>
+                <p className="underline">Buy an AYATRIO Gift Card</p>
                 <p className="underline">Check the Gift Card balance</p>
                 <p className="underline">FAQs</p>
               </div>
@@ -158,8 +166,8 @@ const GiftCards = () => {
           {/* image and text section ends */}
           {/* check gift card balance section starts */}
           <section>
-            <div className="flex w-full">
-              <div className="flex flex-col space-y-4 w-1/2 p-10">
+            <div className="flex flex-col gap-3 lg:flex-row w-full">
+              <div className="flex flex-col gap-3 lg:w-1/2">
                 <h2 className="font-bold text-2xl">
                   Check the balance of your gift or refund card
                 </h2>
@@ -170,24 +178,21 @@ const GiftCards = () => {
                   card, the balance on your card will also appear on the
                   receipt.
                 </p>
-                <div className="flex space-x-4 w-full">
-                  <button className="w-1/2 border-2 border-black rounded-full px-5 py-4 font-bold">
+                <div className="flex flex-col md:flex-row gap-3">
+                  <button className="md:w-1/2 border-2 border-black rounded-full px-5 py-4 font-bold">
                     Sign Up
                   </button>
-                  <button className="w-1/2 border-2 bg-blue-800 rounded-full px-5 py-4 font-bold text-white">
+                  <button className="md:w-1/2 border-2 bg-blue-800 rounded-full px-5 py-4 font-bold text-white">
                     Log in
                   </button>
                 </div>
               </div>
-              <div>
-                <div className="bg-[rgb(0,124,193)] pl-6 pr-12 py-14">
+                <div className="lg:mr-8 lg:w-1/2">
                   <svg
-                    width="359"
-                    height="247"
+                    width={300}
                     viewBox="0 0 359 247"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    class="gcbalance-gift-card-image"
                   >
                     <g filter="url(#filter0_d_840_70921)">
                       <path
@@ -293,7 +298,6 @@ const GiftCards = () => {
                       </filter>
                     </defs>
                   </svg>
-                </div>
               </div>
             </div>
           </section>
@@ -301,11 +305,11 @@ const GiftCards = () => {
           <hr />
           {/* gift card faq section starts */}
           <section>
-            <div className="flex flex-col space-y-11 w-full">
+            <div className="flex flex-col gap-5 w-full">
               <h3 className="font-bold text-xl">FAQs</h3>
               {giftCardFaqs.map((curElement) => {
                 return (
-                  <div className="space-y-2 w-1/2">
+                  <div className="space-y-1 md:w-1/2">
                     <h3 className="font-bold text-lg">{curElement.question}</h3>
                     <p>{curElement.answer}</p>
                   </div>

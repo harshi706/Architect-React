@@ -9,16 +9,16 @@ const DeliveryServicePage = () => {
       <div className="mt-20 sm:ml-[50px] ml-[20px] sm:mr-[50px] mr-[20px] p-10 space-y-10">
         {/* Delivery Service section starts */}
         <section>
-          <div className="flex flex-col w-full space-y-10">
+          <div className="flex flex-col w-full gap-4">
             <div className="flex flex-col space-y-5">
               <h1 className="font-bold text-4xl">Delivery Service</h1>
-              <div className="flex w-full space-x-4">
-                <div className="w-1/2">
+              <div className="flex flex-col md:flex-row w-full space-x-4">
+                <div className="md:w-1/2">
                   <img src="https://www.ikea.com/images/a1/f3/a1f3a28f8295be2e6093c49327aa3ca3.jpg?f=l" />
                 </div>
-                <div className="flex-col space-y-7 w-1/2">
+                <div className="flex-col space-y-7 md:w-1/2">
                   <p>
-                    We can deliver your IKEA purchases to your home or
+                    We can deliver your AYATRIO purchases to your home or
                     workplace. We can deliver to your front door, or we can take
                     your delivery items all the way into your room of choice.
                   </p>
@@ -62,7 +62,7 @@ const DeliveryServicePage = () => {
                 a co-worker at the home delivery desk after the checkout area.
               </p>
             </div>
-            <div className="flex flex-col space-y-4 w-1/2">
+            <div className="flex flex-col space-y-4 md:w-1/2">
               <p>
                 <p className="font-bold text-lg underline">Kitchen Delivery Costs:</p>
               </p>
