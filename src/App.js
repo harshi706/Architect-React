@@ -120,6 +120,7 @@ function App() {
               path="/sustainable-everyday"
               element={<SustainabilityPage />}
             />
+            {/* Responsive upto this point */}
             <Route path="/design-service" element={<DesignServicePage />} />
             {/* Above routes were added by Syed Amaan Ali */}
           </Routes>

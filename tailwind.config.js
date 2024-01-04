@@ -3,8 +3,10 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    screens:{
-      'sm':'451px',//modify the screen width
+    screens: {
+      sm: "451px", //modify the screen width
+      md: "800px",
+      lg: "1000px",
     },
 
     extend: {
@@ -18,7 +20,6 @@ module.exports = {
       width: {
         70: "70%",
       },
-      
     },
   },
   plugins: [],

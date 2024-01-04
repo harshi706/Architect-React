@@ -27,7 +27,7 @@ const mainGridData = [
   {
     image:
       "https://www.ikea.com/images/79/70/7970eabb14bf7ab32978a85b4df243ac.png?f=l",
-    text: "IKEA profile, IKEA Family, IKEA for Business",
+    text: "AYATRIO profile, AYATRIO Family, AYATRIO for Business",
   },
   {
     image:
@@ -68,7 +68,7 @@ const questionAndAnswers = [
     question:
       "I received articles that arrived in a damaged condition, how can I solve it?",
     answer:
-      "You can fill this form so our team can help you with the return process. We will get back to you in 48-72 hrs. after filling up the form. https://www.ikea.com/in/en/customer-service/returns-pubb98c97b0",
+      "You can fill this form so our team can help you with the return process. We will get back to you in 48-72 hrs. after filling up the form. https://www.AYATRIO.com/in/en/customer-service/returns-pubb98c97b0",
   },
   {
     question:
@@ -79,7 +79,7 @@ const questionAndAnswers = [
   {
     question: "Do you have a guarantee on Mattresses?",
     answer:
-      "We offer a 'Love it, Exchange It policy for mattresses' wherein the customer gets to try the mattress for a minimum of 30 days. In case they wish to return we will only exchange the mattress once during this 90-day period. For more information please click on: https://www.ikea.com/in/en/customer-service/returns-claims/return-policy/",
+      "We offer a 'Love it, Exchange It policy for mattresses' wherein the customer gets to try the mattress for a minimum of 30 days. In case they wish to return we will only exchange the mattress once during this 90-day period. For more information please click on: https://www.AYATRIO.com/customer-service/returns-claims/return-policy/",
   },
   {
     question:
@@ -102,13 +102,13 @@ const questionAndAnswers = [
     question:
       "What happens if there is an issue with my Assembly service provided?",
     answer:
-      "If a problem occurs with your Assembly (done by IKEA India) please reach us via chat or call us at 1800-419-4532 or chat/email for resolution. Kindly share your receipt and order number available.",
+      "If a problem occurs with your Assembly (done by AYATRIO India) please reach us via chat or call us at 1800-419-4532 or chat/email for resolution. Kindly share your receipt and order number available.",
   },
   {
     question:
       "If screws (missing spares) are missing in the package, can you send them to me?",
     answer:
-      "If a problem occurs then please chat or call the IKEA Contact Centre at 1800-419-4532 for resolution. Our team can book a spare on your behalf free of cost, these need to be collected from the store within 48 hrs. of booking.",
+      "If a problem occurs then please chat or call the AYATRIO Contact Centre at 1800-419-4532 for resolution. Our team can book a spare on your behalf free of cost, these need to be collected from the store within 48 hrs. of booking.",
   },
   {
     question:
@@ -153,9 +153,9 @@ const questionAndAnswers = [
   },
   {
     question:
-      "I have issues with the article functionality and it was assembled by IKEA. How can I resolve this?",
+      "I have issues with the article functionality and it was assembled by AYATRIO. How can I resolve this?",
     answer:
-      "We are sorry to know about that. Please fill this form with the relevant details https://www.ikea.com/in/en/customer-service/returns-pubb98c97b0 and our team will contact you within 24-48 hrs.",
+      "We are sorry to know about that. Please fill this form with the relevant details https://www.AYATRIO.com/in/en/customer-service/returns-pubb98c97b0 and our team will contact you within 24-48 hrs.",
   },
   {
     question: "Is there a way I can track my complaint online?",
@@ -166,13 +166,13 @@ const questionAndAnswers = [
     question:
       "The appliance isn't working as expected. What is the solution here?",
     answer:
-      "In the event that an appliance is not functioning properly, *please have the order number/invoice handy* please Contact our Customer support on: https://www.ikea.com/in/en/customer-service/contact-us/ to speak with our after sales team.",
+      "In the event that an appliance is not functioning properly, *please have the order number/invoice handy* please Contact our Customer support on: https://www.AYATRIO.com/in/en/customer-service/contact-us/ to speak with our after sales team.",
   },
   {
     question:
       "I wish to return the article post the return policy timeline. Is that possible?",
     answer:
-      "We're sorry to hear that you're still having problems. If your product is outside of its guarantee period then we are unable to accept the return. More details can be found here: https://www.ikea.com/in/en/customer-service/returns-pubb98c97b0",
+      "We're sorry to hear that you're still having problems. If your product is outside of its guarantee period then we are unable to accept the return. More details can be found here: https://www.AYATRIO.com/in/en/customer-service/returns-pubb98c97b0",
   },
 ];
 
@@ -206,10 +206,10 @@ const FaqPage = () => {
         <section>
           <div className="flex flex-col space-y-6">
             <div className="flex font-bold text-xl">Jump to a topic:</div>
-            <div className="grid grid-cols-3 gap-7">
+            <div className="flex flex-col lg:grid lg:grid-cols-3 gap-2">
               {mainGridData.map((curElement) => {
                 return (
-                  <div className="flex flex-col space-y-1 cursor-pointer">
+                  <div className="flex flex-col space-y-1 cursor-pointer hover:underline">
                     <img src={curElement.image} alt=""/>
                     <p>{curElement.text}</p>
                   </div>
@@ -221,8 +221,8 @@ const FaqPage = () => {
         {/* main grid section ends */}
         {/* FAQs start */}
         <section>
-          <div className="flex flex-col space-y-7 w-2/3">
-            <h4 className="font-bold text-lg">
+          <div className="flex flex-col space-y-7 md:w-2/3">
+            <h4 className="font-bold text-xl">
               Returns, Guarantees & Complaints
             </h4>
             {questionAndAnswers.map((curElement) => {

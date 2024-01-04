@@ -4,25 +4,25 @@ import Footer from "../components/Footer/Footer";
 
 const storesInformation = [
   {
-    storeName: "IKEA Store - HITEC City",
+    storeName: "AYATRIO Store - HITEC City",
     address:
       "Raidurg, Serilingampally, Mandal, Survey no. 83/1, Plot No.25, 26, Part 29 Panmaqtha, Rangareddy, Hyderabad, 500032, Telangana, India.",
   },
   {
-    storeName: "IKEA Store - Navi Mumbai",
+    storeName: "AYATRIO Store - Navi Mumbai",
     address: "Turbhe MIDC, Turbhe, Navi Mumbai, 400705, Maharashtra, India.",
   },
   {
-    storeName: "IKEA Worli City Store",
+    storeName: "AYATRIO Worli City Store",
     address:
       "Unit-1 Level 0, Unit -2 Level 1, Unit -3 Level 2, Bldg #18 & #10 Trade View, Utopia City, Pandurang Budhkar Marg, near Kamala Mills Compound, Worli, Mumbai, Maharastra, 400013",
   },
   {
-    storeName: "IKEA Store - Nagasandra",
+    storeName: "AYATRIO Store - Nagasandra",
     address: "Manjunatha Nagar, Bagalakunte, Bengaluru, Karnataka 560073",
   },
   {
-    storeName: "IKEA Store - R CITY",
+    storeName: "AYATRIO Store - R CITY",
     address:
       "R CITY Mall,  3rd and 4th Floor, North Wing, T-28I and TF-1,146 CTS No. 166/1 to 23 off village Ghatkopar, LBS Marg, Mumbai, Maharashtra - 400086",
   },
@@ -36,7 +36,7 @@ const ContactUsPage = () => {
         {/* Contact us section starts */}
         <section>
           <div className="flex flex-col w-full space-y-10">
-            <div className="flex flex-col w-2/3 space-y-5">
+            <div className="flex flex-col md:w-2/3 gap-4">
               <h1 className="font-bold text-4xl">Contact us</h1>
               <p>
                 Whether you’re looking for answers, would like to solve a
@@ -65,7 +65,7 @@ const ContactUsPage = () => {
             <div>
               <h2 className="font-bold text-xl">Our Stores</h2>
             </div>
-            <div className="grid grid-cols-2 gap-10">
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-10">
               {storesInformation.map((curElement) => {
                 return (
                   <div>
@@ -86,7 +86,7 @@ const ContactUsPage = () => {
         <hr />
         {/* Chat with us section starts */}
         <section>
-          <div className="flex flex-col space-y-10">
+          <div className="flex flex-col gap-3">
             <div>
               <h3 className="font-bold text-xl">Chat with us</h3>
               <p>Available from 8 am- 10 pm</p>
@@ -103,7 +103,7 @@ const ContactUsPage = () => {
             </div>
             <div>
               <h3 className="font-bold text-xl">Email us</h3>
-              <p>Mail to: customercare.india@ikea.com</p>
+              <p>Mail to: customercare.india@AYATRIO.com</p>
             </div>
           </div>
         </section>

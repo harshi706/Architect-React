@@ -10,20 +10,19 @@ const PriceGuarantee = () => {
         {/* top text section starts */}
         <section>
           <div className="flex flex-col space-y-5 w-full">
-            <h4 className="w-2/3 font-bold text-4xl">Prices and price tags</h4>
-            <p className="w-2/3">
-              At IKEA you get low prices every day! Find all you need to know
+            <h4 className="md:w-2/3 font-bold text-4xl">Prices and price tags</h4>
+            <p className="md:w-2/3">
+              At AYATRIO you get low prices every day! Find all you need to know
               about a product on the price tag in store or on the product pages
               of this website. Whether it's what a product is made from, its
               size assembled or packaged, the how-to-care instructions, or of
               course the price.
             </p>
-            <br /> {/* This line break creates a gap */}
-            <p className="w-2/3">
+            <p className="md:w-2/3">
               "To design a desk which costs $1,000 is easy for a furniture
               designer, but to design a functional and good desk which costs $50
               can only be done by the very best." - Ingvar Kamprad, founder of
-              IKEA
+              AYATRIO
             </p>
           </div>
         </section>
@@ -32,21 +31,21 @@ const PriceGuarantee = () => {
         {/* text and image section starts */}
         <section>
           <div className="flex flex-col space-y-5 w-full">
-            <div>
+            <div className="md:w-2/3">
               <h3 className="font-bold text-lg">
                 Our prices are the same in store or online
               </h3>
             </div>
-            <div className="flex w-full justify-between">
-              <div className="w-1/2 space-y-4">
+            <div className="flex flex-col md:flex-row w-full justify-between space-y-3">
+              <div className="md:w-1/2 space-y-4">
                 <p>
                   When you check-out you will see the delivery costs and have
-                  the option to add assembly. (Remember, IKEA products are
+                  the option to add assembly. (Remember, AYATRIO products are
                   designed to be easy to assemble, so if you don't want to pay
                   why not give it a try?)
                 </p>
                 <p>
-                  And if you are an IKEA Family member, you can buy some
+                  And if you are an AYATRIO Family member, you can buy some
                   products at a special price.
                 </p>
                 <p>
@@ -60,7 +59,7 @@ const PriceGuarantee = () => {
                   may vary slightly in size and colour.
                 </p>
               </div>
-              <div>
+              <div className="md:w-1/2">
                 <img src="https://www.ikea.com/images/df/f6/dff696a5fff1917bfb078a9ab30cc7ac.jpg?f=l" alt=""/>
               </div>
             </div>
@@ -74,7 +73,7 @@ const PriceGuarantee = () => {
             <div>
               <h4 className="font-bold text-xl">In store price tags </h4>
             </div>
-            <div className="flex space-x-2">
+            <div className="flex flex-col md:flex-row space-x-2">
               <div>
                 <img src="https://www.ikea.com/images/51/33/51333ade6e31c4e9e11a8d63a22c34c1.png?f=s" alt=""/>
               </div>
