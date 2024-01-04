@@ -28,6 +28,8 @@ const Search = ({ places, onResultClick }) => {
     setSearchQuery(event.target.value);
   };
 
+  console.log(places);
+
   const [searchQuery, setSearchQuery] = useState("");
   const dispatch = useDispatch();
 
@@ -75,10 +77,14 @@ const Search = ({ places, onResultClick }) => {
   };
   const handleResultClick = (item) => {
     if (onResultClick && item) {
-      onResultClick({ lat: item.latitude, lng: item.longitude });
+      onResultClick({
+        lat: item.geo_location.latitude,
+        lng: item.geo_location.longitude,
+      });
     } else {
       onResultClick({ lat: 20.593, lng: 78.96 });
     }
+    console.log(item);
   };
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
@@ -142,12 +148,14 @@ const Search = ({ places, onResultClick }) => {
                 borderRadius: "0px 0px 15px 15px",
               }}
             >
-              {filteredData.map((item, index) => (
+              {places.map((item, index) => (
                 <div
                   className={`flex justify-evenly items-center hover:bg-gray-100`}
-                  key={item.location_id}
+                  key={item._id}
                   onClick={() =>
-                    index === 0 ? handleResultClick() : handleResultClick(item)
+                    index === 0
+                      ? handleResultClick()
+                      : handleResultClick(item)
                   }
                   onMouseEnter={() => handleItemHover(item)}
                   onMouseLeave={() => handleItemHover(null)}
@@ -158,11 +166,7 @@ const Search = ({ places, onResultClick }) => {
                     <MdAccessTime className="text-gray-700 text-xl" />
                   )}
                   <div className="py-2 px-4 text-gray-700 cursor-pointer">
-                    {index === 0
-                      ? "India"
-                      : `${
-                          item.address_obj.state ? item.address_obj.state : ""
-                        } ${item.name}`}
+                    {index === 0 ? "India" : `${item.name}`}
                   </div>
                   <IoClose
                     className={`text-gray-800 text-xl 
@@ -197,19 +201,21 @@ const Search = ({ places, onResultClick }) => {
             </div>
           </div>
 
-          {searchQuery && (
+          {true && (
             <div
               className="dropdown-container bg-white w-[19rem] h-44 border border-gray-200 shadow-md overflow-auto"
               style={{
                 borderRadius: "0px 0px 15px 15px",
               }}
             >
-              {filteredData.map((item, index) => (
+              {places.map((item, index) => (
                 <div
                   className={`flex justify-evenly items-center hover:bg-gray-100`}
                   key={item.location_id}
                   onClick={() =>
-                    index === 0 ? handleResultClick() : handleResultClick(item)
+                    index === 0
+                      ? handleResultClick()
+                      : handleResultClick(item)
                   }
                   onMouseEnter={() => handleItemHover(item)}
                   onMouseLeave={() => handleItemHover(null)}
@@ -222,9 +228,7 @@ const Search = ({ places, onResultClick }) => {
                   <div className="py-2 px-4 text-gray-700 cursor-pointer">
                     {index === 0
                       ? "India"
-                      : `${
-                          item.address_obj.state ? item.address_obj.state : ""
-                        } ${item.name}`}
+                      : `${item.name} ${(item.address).slice(0, 20)}`}
                   </div>
                   <IoClose
                     className={`text-gray-800 text-xl 

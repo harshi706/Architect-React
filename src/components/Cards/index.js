@@ -22,7 +22,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Imagechanger from "../Imagechanger/Imagechanger";
 // import Skeleton from "react-loading-skeleton";
 // import Skeletoncard from "../Skeleton/Skeletoncard";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectRecommendedProduct } from "../../Features/Slices/recommendationSlice";
 // import Doublecard from "../Doublecard/Doublecard";
 import Multicard from "../Imagechanger/Multicard";
@@ -64,6 +64,7 @@ function Cards() {
   useEffect(() => {
     setTrendingData(trendingSelect);
   }, [trendingSelect]);
+  // console.log(trendingSelect);
   const recommendedProducts = useSelector(selectRecommendedProduct);
   const recommendedProductsDataFromLocalStorage = JSON.parse(
     localStorage.getItem("recommendedProducts")
@@ -81,18 +82,26 @@ function Cards() {
   function filterProductsByCategory(products, category) {
     return products.filter((product) => product.category === category);
   }
-
+useEffect(() => {
+  const datax = localStorage.getItem("recommendedProducts");
+  const x =  JSON.stringify(datax)
+  console.log(datax);
+}, [])
 
 //memo hook
 const MemoizedMainSlider = useMemo(() => <MainSlider />, []);
 const MemoizedProfileContent = useMemo(() => <Profile />, []);
-
+const MemoizedTrendingProducts = useMemo(()=><Trending/>,[])
   return (
     <div className="">
-      {MemoizedMainSlider}
-      <Trending />
-      <div className="h-40 my-10 sm:px-[50px] px-[20px]">
-        <img src={Offer} alt="" className="w-full h-full object-fit" />
+     {MemoizedMainSlider}
+      {MemoizedTrendingProducts}
+      <div className="h-40 my-10 sm:px-[50px] px-[50px]">
+        <img
+          src={Offer}
+          alt=""
+          className="w-full h-full object-fit"
+        />
       </div>
       {/* 1st */}
       <Image />

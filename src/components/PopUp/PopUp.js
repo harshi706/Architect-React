@@ -15,16 +15,16 @@ function App() {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/categories");
+      const response = await axios.get("http://34.201.163.233:8080/api/categories");
       setFetchedCategories(response.data[0].categories);
     } catch (error) {
       console.error("Error fetching categories:", error.message);
     }
   };
-
+  console.log(fetchedCategories)
   const fetchCitiesAndHobbies = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/citiesAndHobbies");
+      const response = await axios.get("http://34.201.163.233:8080/api/citiesAndHobbies");
       setFetchedCities(response.data[0].cities);
       setFetchedHobbies(response.data[0].hobbies);
     } catch (error) {
@@ -36,7 +36,7 @@ function App() {
   useEffect(() => {
     fetchCategories();
   }, []);
-
+console.log(fetchedCategories)
   const [openPopUp1, setOpenPopUp1] = useState(true);
   const [openPopUp2, setOpenPopUp2] = useState(false);
   const [openPopUp3, setOpenPopUp3] = useState(false);
@@ -176,7 +176,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/preferences",
+        "http://34.201.163.233:8080/api/preferences",
         {
           deviceId: localStorage.getItem("deviceid"),
           userPreferredCities: preferencesDataToSendToBackend.preferredCities,
